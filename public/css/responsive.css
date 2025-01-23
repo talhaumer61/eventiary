@@ -1,3868 +1,865 @@
-@media only screen and (max-width: 767px) {
-  /* Default CSS */
-  body {
-    font-size: 15px;
-  }
-  .ptb-100 {
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-  .pt-100 {
-    padding-top: 50px;
-  }
-  .ptb-70 {
-    padding-top: 50px;
-    padding-bottom: 20px;
-  }
-  .pb-100 {
-    padding-bottom: 50px !important;
-  }
-  .pt-70 {
-    padding-top: 50px;
-  }
-  .pb-70 {
-    padding-bottom: 20px;
-  }
-  .pt-45 {
-    padding-top: 30px;
-  }
-  .pb-10 {
-    padding-bottom: 0;
-  }
-  .pl-20 {
-    padding-left: 0;
-  }
-  .pr-20 {
-    padding-right: 0;
-  }
-  .ml-20 {
-    margin-left: 0;
-  }
-  .ps-2 {
-    padding-left: 0 !important;
-  }
-  .ps-3 {
-    padding-left: 0 !important;
-  }
-  .ps-5 {
-    padding-left: 0 !important;
-  }
-  .ps-0 {
-    padding-left: 15px !important;
-  }
-  .pe-0 {
-    padding-right: 15px !important;
-  }
-  .p-0 {
-    padding-left: 15px !important;
-    padding-right: 15px !important;
-  }
-  .default-btn {
-    padding: 8px 18px;
-  }
-  .section-title h2 {
-    font-size: 26px;
-  }
-  .section-title p {
-    padding-top: 10px;
-  }
-  .float-end {
-    float: none !important;
-    margin-bottom: 0 !important;
-  }
-  /* Default CSS End */
-  /* Main Banner CSS */
-  .banner-area {
-    padding: 50px 0;
-  }
-  .banner-content h1 {
-    font-size: 35px;
-  }
-  .banner-content p {
-    margin-bottom: 20px;
-  }
-  .banner-content .popular-searches-tag {
-    font-size: 15px;
-    margin-bottom: 20px;
-  }
-  .banner-content .popular-searches-tag .title {
-    margin-right: 10px;
-  }
-  .banner-content .popular-searches-tag a {
-    font-size: 14px;
-  }
-  .banner-content ul {
-    margin: 0;
-  }
-  .banner-content ul li img {
-    max-width: 40px;
-    border: 2px solid var(--whiteColor);
-  }
-  .banner-content ul li.title {
-    font-size: 13px;
-  }
-  .banner-form {
-    padding: 20px 10px;
-    max-width: 100%;
-    margin-right: 0;
-    margin-left: 0;
-  }
-  .banner-form .form-group {
-    border-right: none;
-    padding-right: 0;
-    margin-bottom: 10px;
-  }
-  .banner-form .form-group.select-group {
-    border: none;
-    padding-right: 0;
-  }
-  .banner-form .form-group i {
-    font-size: 16px;
-    left: 10px;
-  }
-  .banner-form .form-group .form-control {
-    background-color: #e4f9f4;
-    padding: 15px 10px 15px 35px;
-    font-size: 13px;
-  }
-  .banner-form .form-group .form-control.form-select {
-    padding: 15px 40px 15px 15px;
-  }
-  .banner-form .submit-btn {
-    padding: 10px 20px;
-    background-color: var(--mainColor);
-  }
-  .banner-img {
-    margin-top: 30px;
-  }
-  .banner-img img {
-    max-width: 100%;
-  }
-  .banner-img::before {
-    display: none;
-  }
-  .banner-img .banner-img-shape {
-    display: none;
-  }
-  .banner-shape {
-    display: none;
-  }
-  .banner-area-two {
-    padding: 50px 0;
-  }
-  .banner-content-two h1 {
-    font-size: 35px;
-  }
-  .banner-content-two p {
-    margin-bottom: 20px;
-  }
-  .banner-content-two .popular-searches-tag {
-    font-size: 15px;
-  }
-  .banner-content-two .popular-searches-tag .title {
-    margin-right: 10px;
-  }
-  .banner-content-two .popular-searches-tag a {
-    font-size: 14px;
-  }
-  .banner-form-two {
-    padding: 20px 10px;
-    max-width: 100%;
-    margin-right: 0;
-    margin-left: 0;
-    margin-bottom: 20px;
-  }
-  .banner-form-two .form-group {
-    border-right: none;
-    padding-right: 0;
-    margin-bottom: 10px;
-  }
-  .banner-form-two .form-group.select-group {
-    border: none;
-    padding-right: 0;
-  }
-  .banner-form-two .form-group i {
-    font-size: 18px;
-    left: 10px;
-  }
-  .banner-form-two .form-group .form-control {
-    background-color: #e4f9f4;
-    padding: 15px 10px 15px 35px;
-  }
-  .banner-form-two .submit-btn {
-    padding: 10px 20px;
-    background-color: var(--mainColor);
-  }
-  .banner-img-two {
-    max-width: 100%;
-    margin-top: 30px;
-    padding-bottom: 0;
-    margin-left: 0;
-    margin-right: 0;
-  }
-  .banner-img-two img {
-    max-width: 100%;
-  }
-  .banner-img-two .banner-shape-two {
-    display: none;
-  }
-  .banner-area-three {
-    padding: 50px 0;
-  }
-  .banner-content-three h1 {
-    font-size: 30px;
-    margin-bottom: 20px;
-  }
-  .banner-content-three .popular-searches-tag {
-    font-size: 15px;
-  }
-  .banner-content-three .popular-searches-tag .title {
-    margin-right: 10px;
-  }
-  .banner-content-three .popular-searches-tag a {
-    font-size: 14px;
-  }
-  .banner-form-three {
-    padding: 20px 10px;
-    max-width: 100%;
-    margin-right: 0;
-    margin-left: 0;
-    margin-bottom: 20px;
-  }
-  .banner-form-three .form-group {
-    border-right: none;
-    padding-right: 0;
-    margin-bottom: 10px;
-  }
-  .banner-form-three .form-group.select-group {
-    border: none;
-    padding-right: 0;
-  }
-  .banner-form-three .form-group i {
-    font-size: 18px;
-    left: 10px;
-  }
-  .banner-form-three .form-group .form-control {
-    background-color: #e4f9f4;
-    padding: 15px 10px 15px 45px;
-  }
-  .banner-form-three .submit-btn {
-    padding: 10px 20px;
-  }
-  .banner-three-other {
-    display: none;
-  }
-  /* Main Banner CSS End */
-  /* Inner Banner CSS */
-  .inner-banner .inner-title {
-    padding-top: 70px;
-    padding-bottom: 70px;
-  }
-  .inner-banner .inner-title h3 {
-    font-size: 30px;
-  }
-  /* Inner Banner CSS End */
-  .about-area .col-6 {
-    width: 50%;
-  }
-  .about-img img {
-    border-radius: 50px;
-  }
-  .browse-jobs-item {
-    margin-bottom: 30px;
-    padding: 25px 15px 25px 85px;
-  }
-  .browse-jobs-item i {
-    top: 12px;
-    left: 15px;
-    width: 50px;
-    font-size: 24px;
-  }
-  .browse-jobs-item h3 {
-    font-size: 18px;
-  }
-  .browse-jobs-item i {
-    top: 12px;
-  }
-  .company-area .section-title {
-    margin-bottom: 10px;
-  }
-  .company-card {
-    padding: 25px 15px 25px 79px;
-  }
-  .company-card img {
-    left: 15px;
-    max-width: 55px;
-  }
-  .company-card h3 {
-    font-size: 20px;
-  }
-  .company-details-card {
-    padding: 25px 20px;
-  }
-  .company-details-card img {
-    position: inherit;
-    top: 0;
-    left: 0;
-    margin-bottom: 20px;
-  }
-  .services-card {
-    padding: 25px 15px 25px 80px;
-  }
-  .services-card i {
-    top: 25px;
-    left: 15px;
-    width: 50px;
-    font-size: 24px;
-  }
-  .services-card h3 {
-    font-size: 18px;
-  }
-  .counter-card h3 {
-    font-size: 30px;
-  }
-  .counter-card p {
-    font-size: 16px;
-  }
-  .counter-area .col-6 {
-    width: 50%;
-  }
-  /* Browse Jobs CSS */
-  .browse-jobs-card {
-    padding: 20px 10px 20px 75px;
-  }
-  .browse-jobs-card .icon {
-    left: 10px;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    font-size: 22px;
-  }
-  .browse-jobs-card h3 {
-    font-size: 20px;
-  }
-  .browse-jobs-card .more-btn {
-    top: 75%;
-    transform: translateY(-75%);
-    right: 10px;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    font-size: 18px;
-  }
-  .browse-jobs-list {
-    margin-bottom: 30px;
-  }
-  .browse-jobs-list h3 {
-    margin-bottom: 20px;
-  }
-  /* Browse Jobs CSS End */
-  /* Find Jobs Area CSS */
-  .find-jobs-card {
-    padding: 20px 15px;
-  }
-  .find-jobs-card.d-flex {
-    display: block !important;
-  }
-  .find-jobs-card .find-jobs-img {
-    margin-right: 0;
-    margin-bottom: 20px;
-  }
-  .find-jobs-card .content .content-list li {
-    padding: 6px 16px;
-    font-size: 12px;
-    margin-right: 5px;
-  }
-  .find-jobs-card .content h3 {
-    font-size: 22px;
-  }
-  .find-jobs-card .content .content-list2 li.list-one {
-    font-size: 17px;
-    margin-right: 10px;
-  }
-  .find-jobs-card .content .content-list2 li.list-two {
-    font-size: 15px;
-  }
-  .find-jobs-card .content .content-list3 li {
-    margin-right: 10px;
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-  .find-jobs-card .content .content-list3 li b {
-    font-size: 15px;
-  }
-  .find-jobs-card .content .content-list3 li:last-child {
-    margin-right: 0;
-  }
-  .find-jobs-card .find-jobs-btn {
-    position: inherit;
-    top: 0;
+
+
+@media only screen and (min-width: 1801px){
+    .ttm-left-span .ttm-video-btn{left: 0%;}
+}
+@media only screen and (max-width: 1799px) and (min-width: 1601px){
+    .ttm-left-span .ttm-video-btn{left: 14%;}
+}
+@media only screen and (max-width: 2000px) and (min-width: 1601px){
+    .ttm-left-span .ttm-col-wrapper-bg-layer {
+    margin-left: -500px;
+    width: auto;
     right: 0;
-    opacity: 1;
-    margin-top: 7px;
-  }
-  .find-jobs-card:hover .find-jobs-btn {
-    opacity: 1;
-    top: 0;
-    transform: translateY(0%);
-  }
-  /* Find Jobs Area CSS End */
-  /* Testimonials Area CSS */
-  .testimonials-widget-item .content-img .line1 {
-    width: 8px;
-    height: 20px;
-  }
-  .testimonials-widget-item .content-img .line2 {
-    width: 8px;
-    height: 20px;
-  }
-  .testimonials-widget-item p {
-    font-size: 16px;
-    margin-top: 25px;
-  }
-  .testimonials-item {
-    padding: 30px 20px;
-  }
-  .testimonials-item .content .line1 {
-    width: 8px;
-    height: 20px;
-  }
-  .testimonials-item .content .line2 {
-    width: 8px;
-    height: 20px;
-  }
-  .testimonials-item p {
-    font-size: 16px;
-    margin-top: 25px;
-    margin-bottom: 15px;
-  }
-  .testimonials-item .rating {
-    font-size: 16px;
-  }
-  /* Testimonials Area CSS End */
-  /* Freelancers Area CSS */
-  .freelancers-area .section-title {
-    margin-bottom: 15px;
-  }
-  .freelancers-card {
-    padding: 20px 10px;
-  }
-  .freelancers-card .title h3 {
-    font-size: 20px;
-  }
-  .freelancers-card .title img {
-    margin-left: 10px;
-  }
-  .freelancers-card p {
-    margin-bottom: 10px;
-  }
-  .freelancers-card .rating i {
-    font-size: 15px;
-  }
-  .freelancers-card .sub-title {
-    display: inline-block;
-  }
-  .freelancers-card .sub-title .sub-title1 {
-    font-size: 15px;
-    display: block;
-    margin-bottom: 10px;
-  }
-  .freelancers-card .sub-title .sub-title1 b {
-    font-size: 16px;
-  }
-  .freelancers-card .sub-title .sub-title2 {
-    font-size: 15px;
-  }
-  .freelancers-card .sub-title .sub-title2 b {
-    font-size: 16px;
-  }
-  .freelancer-details-profile {
-    padding: 25px 20px;
-  }
-  .freelancer-details-profile img {
-    position: inherit;
-    top: 0;
-    left: 0;
-    margin-right: 0;
-    margin-bottom: 15px;
-  }
-  .freelancer-details-profile h3 {
-    font-size: 20px;
-  }
-  .freelancer-details-profile .freelancer-details-btn {
-    margin-top: 10px;
-    position: inherit;
-    top: 0%;
-    transform: translateY(0%);
+    }
+    .ttm-right-span .ttm-col-wrapper-bg-layer {
+    margin-right: -500px;
+     width: auto;
+     right: 0;
+    }
+}
+@media only screen and (max-width: 1600px) and (min-width: 1401px){
+    .ttm-left-span .ttm-col-wrapper-bg-layer {
+        margin-left: -300px;
+        width: auto;
+        right: 0;
+    }
+    .ttm-right-span .ttm-col-wrapper-bg-layer {
+        margin-right: -300px;
+         width: auto;
+         right: 0;
+    }
+    .ttm-left-span .ttm-video-btn{ left: 14%;}
+}
+@media only screen and (min-width: 1200px) and (max-width: 1400px){
+    .ttm-left-span .ttm-col-wrapper-bg-layer {
+    width: auto;
+    margin-left: -150px;
     right: 0;
-  }
-  /* Freelancers Area CSS End */
-  /* Recent Job Area */
-  .recent-job-item {
-    padding: 20px 15px 20px 90px;
-  }
-  .recent-job-item .recent-job-img {
-    top: 20px;
-  }
-  .recent-job-item h3 {
-    font-size: 18px;
-    max-width: 235px;
-    padding-right: 30px;
-  }
-  .recent-job-item .job-list1 li {
-    font-size: 15px;
-    margin-bottom: 10px;
-  }
-  .recent-job-item .job-list2 {
-    margin: 10px 0 0;
-  }
-  .recent-job-item .job-list2 li {
-    padding: 6px 14px;
-    font-size: 13px;
-  }
-  .recent-job-card {
-    padding: 25px 15px;
-  }
-  .recent-job-card .content {
+   }
+   .ttm-right-span .ttm-col-wrapper-bg-layer {
+    width: auto;
+    margin-right: -150px;
+    right: 0;
+   }
+}
+@media only screen and (min-width: 1300px) and (max-width: 1400px){
+    .ttm-left-span .ttm-video-btn{ left: 28%;}
+
+}
+@media only screen and (min-width: 992px) and (max-width: 1299px){
+    .ttm-left-span .ttm-video-btn{ left: 35%;}
+
+}
+@media only screen and (min-width: 1200px){
+
+    /* header */
+    .ttm-header-style-classic-overlay .ttm-stickable-header-w {
+        background-color: rgb(20, 8, 31,.93);
+        position: absolute;
+        z-index: 9999;
+    }
+    #site-header-menu #site-navigation {
+        position: relative;
+        height: 117px;
+        line-height: 117px ;
+    }
+    #site-header-menu #site-navigation .menu{
+        float: right;
+    }
+    #site-header-menu #site-navigation .menu{position: relative;}
+    #site-header-menu #site-navigation .menu:before {
+        display: block;
+        content: "";
+        position: absolute;
+        height: 30px;
+        width: 1px;
+        right: -2px;
+        top: 50%;
+        margin-top: -13px;
+        background-color: rgba(255,255,255,0.08);
+    }
+    #site-header-menu #site-navigation .menu > ul {
+        margin: 0px;
+        padding: 0px;
+    }
+    #site-header-menu #site-navigation .menu > ul > li {
+        display: inline-block;
+        position: relative;
+    }
+    #site-header-menu #site-navigation .menu > ul > li > a{
+        display: block;
+        margin: 0px 17px 0px 17px;
+        position: relative;
+        z-index: 1;
+        line-height: 117px !important;
+        font-weight: 600;
+        text-transform: capitalize;
+        font-size: 15px;
+    }
+    #site-header-menu #site-navigation .menu > ul > li > a:before{
+        width: 100%;
+        height: 2px;
+        display: block;
+        opacity: 0;
+        position: absolute;
+        content: "";
+        opacity: 0;
+        -webkit-transition: all 0.25s ease-out;
+        transition: all 0.25s ease-out;
+        top: 81px;
+        margin: 0 auto -2px;
+        left: 0;
+    }
+    
+    #site-header-menu #site-navigation .menu > ul > li:hover > a:before {
+        top: 76px;
+        opacity: 1;
+    }
+    #site-header-menu .fixed-header #site-navigation .menu > ul > li:hover > a:before {
+        top: 50px;
+    }
+    #site-header-menu #site-navigation .menu ul > li> ul li.has-submenu > a:after {
+        content: "\f105";
+        position: absolute;
+        background-color: transparent;
+        right: 12px;
+        top: 16px;
+        display: inline-block;
+        font-family: "FontAwesome";
+        font-size: 15px;
+        margin-left: 4px;
+        opacity: 0.8;
+    }
+    #site-header-menu #site-navigation .menu > ul ul {
+        text-align: left;
+        position: absolute;
+        visibility: hidden;
+        display: block;
+        opacity: 0;
+        width: 260px;
+        padding: 0px;
+        line-height: 14px;
+        margin: 0;
+        list-style: none;
+        left: 0;
+        border-radius: 0;
+        -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+        box-shadow: 0 6px 12px rgba(0,0,0,.175);
+        background-clip: padding-box;
+        transition: all .2s ease;
+        z-index: 99;
+    }
+    #site-header-menu #site-navigation .menu > ul > li:last-child:hover > ul {
+        right: 0;
+        left: auto;
+    }
+    #site-header-menu #site-navigation .menu > ul li > ul ul {
+        border-left: 0;
+        left: 100%;
+        top: 0px;
+    }
+    #site-header-menu #site-navigation .menu > ul > li > ul,
+    #site-header-menu #site-navigation .menu > ul li > ul ul {
+        background-color: #ffffff;
+        box-shadow: 0 3px 25px 0px rgba(0,0,0,.07), 0 0 0 rgba(0,0,0,.10) inset;
+    }
+    #site-header-menu #site-navigation .menu > ul li:hover > ul {
+        opacity: 1;
+        display: block;
+        visibility: visible;
+    }
+    #site-header-menu #site-navigation .menu > ul ul li{
+        position: relative;
+        border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+    #site-header-menu #site-navigation .menu > ul ul li:last-child{
+        border-bottom: none;
+    }
+    #site-header-menu #site-navigation .menu > ul ul li > a{
+        display: block;
+        padding: 16px 17px;
+        position: relative;
+        font-size: 14px;
+        line-height: 16px;
+        color: #505767;
+    }
+
+    /* header-icon */
+    .ttm-header-icons .ttm-header-icon {
+        margin-left: 11px;
+    }
+    .ttm-header-icons {
+        height: 117px;
+        padding-left: 10px;
+    }
+
+    .fixed-header {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9;
+    }
+    .ttm-stickable-header.fixed-header {
+        z-index: 111;
+        background-color: #14081f;
+        box-shadow: 0 4px 10px 0 rgba(0,0,0,0.06);
+    }
+    #site-header-menu .ttm-stickable-header.fixed-header #site-navigation,
+    .ttm-stickable-header.fixed-header .site-branding,
+    .ttm-stickable-header.fixed-header .ttm-header-icons,
+    #site-header-menu .ttm-stickable-header.fixed-header #site-navigation .menu > ul > li > a,
+    .ttm-header-style-classic-box.ttm-header-overlay #site-header-menu .ttm-stickable-header.fixed-header #site-navigation,
+    .ttm-header-style-classic-box.ttm-header-overlay .ttm-stickable-header.fixed-header .site-branding,
+    .ttm-header-style-classic-box.ttm-header-overlay .ttm-stickable-header.fixed-header .ttm-header-icons,
+    .ttm-header-style-classic-box.ttm-header-overlay #site-header-menu .ttm-stickable-header.fixed-header #site-navigation .menu > ul > li > a {
+        height: 70px !important; 
+        line-height: 70px !important;
+    }
+    .ttm-stickable-header.fixed-header .site-branding img { max-height: 65px;    }
+
+    /* ttm-header-overlay */
+    .ttm-header-style-classic-box.ttm-header-overlay .ttm-topbar-wrapper {
+        padding: 0px 0px 47px;
+    }
+    .ttm-header-style-classic-box.ttm-header-overlay .site-header-main{ background-color: #fff; }
+    .ttm-header-style-classic-box.ttm-header-overlay .ttm-stickable-header-w {
+        top: 52.5px;
+        position: absolute;
+        z-index: 21;
+        width: 100%;
+    }
+    .ttm-header-style-classic-box .ttm-stickable-header:not(.fixed-header) .site-branding {
+        padding-left: 30px;
+    }
+    .ttm-header-style-classic-box .ttm-stickable-header:not(.fixed-header) #site-navigation{
+        padding-right: 30px;
+    }
+    .ttm-header-style-classic-box.ttm-header-overlay #site-header-menu #site-navigation,
+    .ttm-header-style-classic-box.ttm-header-overlay .site-branding,
+    .ttm-header-style-classic-box.ttm-header-overlay .ttm-header-icons,
+    .ttm-header-style-classic #site-header-menu #site-navigation,
+    .ttm-header-style-classic .site-branding,
+    .ttm-header-style-classic .ttm-header-icons{
+        height: 105px;
+        line-height: 105px !important;
+    }
+    .ttm-header-style-classic-box.ttm-header-overlay #site-header-menu #site-navigation .menu > ul > li > a,
+    .ttm-header-style-classic #site-header-menu #site-navigation .menu > ul > li > a  {
+        height: 105px;
+        line-height: 105px !important;
+       
+    }
+    #site-header-menu #site-navigation .menu > ul > li.has-submenu > a:after{
+        content: "\f107";
+        display: inline-block;
+        font-family: "FontAwesome";
+        position: relative;
+        font-size: 10px;
+        margin-left: 2px;
+        margin-top: 3px;
+        opacity: 0.5;
+    }
+    .ttm-header-style-classic-overlay #site-header-menu #site-navigation .menu > ul > li.has-submenu > a:after{opacity: 1;}
+    .ttm-header-style-classic-box.ttm-header-overlay .ttm-header-icons:before{
+        background-color: rgba( 40,61,88 ,0.15);
+    }
+    .ttm-header-style-classic-box .ttm-search-overlay {
+        max-width: 1140px;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .ttm-header-style-classic-box.ttm-header-overlay .ttm-search-overlay .container{
+        max-width: 1140px;
+    }
+    .ttm-header-style-classic-box .ttm-stickable-header.fixed-header .ttm-search-overlay{ width: 100%; max-width: 100%; }
+    .ttm-header-style-classic-box.ttm-header-overlay .ttm-stickable-header.fixed-header,
+    .ttm-header-style-classic .ttm-stickable-header.fixed-header{ background-color: #fff; }
+
+
+    /* footer */
+    .first-footer >div>.row .widget-area .widget { margin: 16px 0 12px; }
+}
+@media all and (max-width: 1199px) {
+
+	/* break-1199-colum */
+    .break-1199-colum .row .col-lg-7,
+    .break-1199-colum .row .col-lg-5, 
+    .break-1199-colum .row .col-lg-3, 
+    .break-1199-colum .row .col-lg-6, 
+    .break-1199-colum .row .col-lg-9,
+    .break-1199-colum .row .col-lg-4,
+    .break-1199-colum .row .col-lg-8{
+        padding: 0;
+        flex: 100% !important;
+        max-width: 100% !important;
+        float: none !important;
+        display: block !important;
+    }
+    .break-1199-colum.bg-layer > .row > [class*='col-']{ padding: 0; }
+    .break-1199-colum.bg-layer .row > [class*='col-'] > [class*='ttm-col-bgcolor-yes'],
+    .break-1199-colum.bg-layer .row > [class*='col-'] > [class*='ttm-col-bgimage-yes']{ padding-left: 15px; padding-right: 15px; }
+    .break-1199-colum .ttm-equal-height-image {display: block;width: 100%;}
+    .break-1199-colum .ttm-col-bgimage-yes {height: auto !important;}
+
+    .break-1199-colum .ttm-equal-height-image {display: block;width: 100%;}
+    .break-1199-colum .ttm-col-bgimage-yes {height: auto !important;}
+
+    /* Header */
+    header .container{ max-width: 100%; }
+    .ttm-header-wrap{ width: auto; display: block; position: relative;}
+
+    /* page-title */
+    .ttm-page-title-row .title-box{padding-top: 0;}
+    
+    /*intro-section*/
+    .ttm-row.intro-section.style2{ padding: 0 0 50px; }
+    .ttm-row.intro-section.style2 .intro-content{ padding-left: 0;  padding-right: 0; padding-top: 0 ;}
+    .ttm-row.intro-section.style2 .intro-content .ttm-col-bgcolor-yes{ text-align: center; }
+    .padding-3 {padding-left: 15px;}
+
+    /* padding */
+    .res-1199-ptb-0{ padding: 0px !important; }
+    .res-1199-pt-0{ padding-top: 0px !important; }
+    .res-1199-pb-30{ padding-bottom: 30px !important; }
+    .res-1199-pl-30{ padding-left: 30px !important; }
+    .res-1199-pl-15{ padding-left: 15px !important; }
+    .res-1199-pb-50{ padding-bottom: 50px !important; }
+    .res-1199-mt-0{ margin-top: 0 !important; }
+    .res-1199-ml-0{ margin-left: 0 !important; }
+    .res-1199-mr-0{ margin-right: 0 !important; }
+    .res-1199-mlr-15{margin-left: 15px!important;  margin-right: 15px !important; }
+    .res-1199-plr-0{ padding-left: 0px !important; padding-right: 0px !important; }
+    .res-1199-plr-15{ padding-left: 15px !important; padding-right: 15px !important; }
+    .res-1199-pr-0{padding-right: 0!important;}
+
+    /* margin */
+    .res-1199-m-0{margin: 0;}
+
+    /* Header-style-elegant */
+    .ttm-topbar-wrapper ,
+    .site-header-menu .ttm-rt-contact{
+        display: none;
+    }
+    #site-header-menu #site-navigation .menu, #site-header-menu #site-navigation .menu > ul ul, #site-header-menu #site-navigation .menu ul li > ul li a:before {
+        display: none;
+    }
+    #site-header-menu #site-navigation .menu ul > li ul li > a { padding : 15px 15px 15px 15px;font-size: 14px;font-weight: 400; }
+    #site-header-menu #site-navigation .menu ul li > ul li.active > a,
+    #site-header-menu #site-navigation .menu ul li > ul li > a.active,
+    #site-header-menu #site-navigation .menu ul li > ul li > a:hover{background-color: transparent!important;color: #fd226a!important;}
+    #site-header-menu #site-navigation .menu ul li > a:hover
+    {color: #fd226a;}
+    .site-branding{ float: none; text-align: center; }
+    .site-branding {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+    .site-header-menu-inner.ttm-stickable-header {
+    width: auto;
+    display: block;
     position: relative;
-    padding-left: 0;
-  }
-  .recent-job-card .content .recent-job-img {
-    position: inherit;
-    margin-bottom: 10px;
-  }
-  .recent-job-card .content h3 {
-    font-size: 20px;
-  }
-  .recent-job-card .content .job-list1 {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  .recent-job-card .content .job-list1 li {
-    margin-right: 10px;
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-  .recent-job-card .content span {
-    font-size: 14px;
-  }
-  .recent-job-card .job-sub-content {
+    }
+    #site-navigation .menu > ul {
+        position: absolute;
+        padding: 10px 20px;
+        box-shadow: rgba(0,0,0,0.12) 3px 3px 15px;
+        border-top: 3px solid;
+        z-index: 100;
+        width: 100%;
+        top: 105px;
+        background-color: #fff;
+        margin: 0;
+    }
+    .ttm-header-style-classic-overlay #site-navigation .menu > ul {top: 117px;}
+    #site-navigation .menu > ul li:not(:last-child){
+        border-bottom: 1px solid rgba(80,87,103,0.15);
+    }
+    #site-header-menu #site-navigation .menu li, #site-header-menu #site-navigation .menu > ul > li {
     display: block;
   }
-  .recent-job-card .job-sub-content .job-list2 li {
-    padding: 5px 14px;
-    font-size: 12px;
-    margin-right: 0;
-  }
-  .recent-job-card .job-sub-content .price {
-    font-size: 16px;
-    margin-top: 13px;
-  }
-  .recent-job-card .job-sub-content .price b {
-    font-size: 14px;
-  }
-  .recent-job-card .bookmark-btn {
-    top: 20px;
-  }
-  .recent-job-card .download-btn {
-    margin-top: 15px;
-    position: inherit;
-    bottom: 0;
-    left: 0;
-    padding: 8px 20px;
-    font-size: 14px;
-  }
-  .job-post-card {
-    padding: 25px 15px 15px;
-  }
-  .job-post-card .job-post-img {
-    position: inherit;
-    top: 0;
-    left: 0;
-    margin-bottom: 10px;
-  }
-  .job-post-card h3 {
-    font-size: 20px;
-  }
-  .job-post-card .content {
+    #site-header-menu #site-navigation .menu ul > li.has-submenu > a:after{ 
+        position: absolute;
+        right: 15px;
+        font-size: 16px;
+        opacity: .8;
+        content: "\f107";
+        display: inline-block;
+        font-family: "FontAwesome";
+        font-size: 19px;
+        margin-left: 4px;
+        margin-top: 3px;
+    }
+    #site-header-menu #site-navigation .menu ul li a {
+        display: block;
+        padding: 15px 0px;
+        text-decoration: none;
+        line-height: 18px !important;
+        height: auto;
+        line-height: 18px;
+        font-weight: 500;
+        font-size: 16px;
+    }
+    .ttm-header-style-overlay #ttm-stickable-header-w.ttm-stickable-header-w.ttm-bgcolor-custom {
+        background-color: #020d26 !important;
+    }
+
+    /* Header-style-classic */
+    .ttm-header-style-classic-overlay #ttm-stickable-header-w.ttm-stickable-header-w {
+        background-color: #14081f;
+    }
+
+    .ttm-row .container,.element-row .container{ max-width: 100%; padding: 0; }
+    .ttm-row .container > .row, footer .container .row,.element-row .container > .row{ margin: 0; }
+
+    #site-header-menu .site-navigation{position: relative;}
+    #site-header-menu #site-navigation .menu ul li a{color: rgba(80,87,103,1);}
+    .ttm-menu-toggle {
+      	position: relative;
+        height: 30px;
+        width: 30px;
+        float: left;
+        top: 10px;
+        margin-left: -10px;
+	}
+	.ttm-menu-toggle label {
+        cursor: pointer;
+        position: absolute;
+        z-index: 99;
+        height: 100%;
+        width: 100%;
+        top: 43px;
+        left: 15px;
+        margin: 0;
+	}
+	.ttm-menu-toggle .toggle-block {
+    	position: absolute;
+        height: 2px;
+        width: 100%;
+        padding: 0;
+        background-color: #ecf0f1;
+	}
+	.ttm-header-style-classic .ttm-menu-toggle .toggle-block,
+    .ttm-header-style-classic-box .ttm-menu-toggle .toggle-block{ background-color: #262626;}
+	.ttm-menu-toggle .toggle-blocks-1 {
+	    position: relative;
+	    float: left;
+	}
+    .ttm-header-style-classic .ttm-stickable-header-w{height: 105px;}
+	.ttm-menu-toggle .toggle-blocks-2 {
+	    position: relative;
+	    float: left;
+	    margin-top: 6px;
+	}
+	.ttm-menu-toggle .toggle-blocks-3 {
+	    position: relative;
+	    float: left;
+	    margin-top: 6px;
+	}
+	.ttm-menu-toggle input[type=checkbox]:checked ~ .ttm-menu-toggle-block > .toggle-blocks-2 { opacity: 0; }
+	.ttm-menu-toggle input[type=checkbox]:checked ~ .ttm-menu-toggle-block > .toggle-blocks-1 {
+	  transform: rotate(135deg);
+	  -webkit-transform: rotate(135deg);
+	  margin-top: 10px;
+	}
+	.ttm-menu-toggle input[type=checkbox]:checked ~ .ttm-menu-toggle-block > .toggle-blocks-3 {
+	    transform: rotate(-135deg);
+	    -webkit-transform: rotate(-135deg);
+	    margin-top: -12px;
+	}
+	
+	#site-header-menu #site-navigation .menu {clear: both;min-width: inherit;float: none;}
+	#site-header-menu #site-navigation .menu.active, #site-header-menu #site-navigation .menu > ul ul.active {max-height: 55em;display: block;}
+	#site-header-menu #site-navigation .menu ul li > ul {padding-left: 15px;margin: 0;}
+	#site-header-menu #site-navigation .menu, #site-header-menu #site-navigation .menu > ul ul {overflow: hidden;max-height: 0;background-color: #fff;}
+	
+	.ttm-header-icon{margin-left: 10px;}
+	.ttm-header-style-classic .ttm-header-icon{line-height: 105px;}
+
+    .ttm-header-icons {margin-right: 10px;}
+    .ttm-tabs .content-tab {padding: 36px 0px 50px 0px;}
+
+    /* ttm-newstter-box */
+    .ttm-newstter-box form .mailchimp-inputbox button{margin: 0 auto;margin-top: 20px;}
+
+    .featured-imagebox-post.ttm-box-view-left-image{margin: 0;}
+    .ttm-box-view-left-image .ttm-featured-img-left{padding-left: 15px;}
+
+    /* timer*/
+    #timer-box .timer-box-position,
+    #timer-box .timer-box-position:first-child{margin-left: 0;}
+}
+	
+@media only screen and (min-width: 992px) and (max-width: 1199px){
+	
+    footer .first-footer form button {width: 150px;}
+    .ttm-right-span .ttm-col-wrapper-bg-layer {width: auto;margin-right: -80px;right: 0;}
+    .timer-wraper .timer-box-content.text-right{text-align: left!important;}
+    .ttm_single_image_wrapper.mr-85{margin-right: 55px!important;}
+
+}
+@media only screen and (min-width: 992px){
+	.ttm-tabs.element-tab-style-horizontal.width-shape-line ul.tabs li{
+        text-align: center;
+        -webkit-flex: 1 1 auto;
+        flex: 1 1 auto;
+    }
+
+    .ttm-tabs:not(.element-tab-style-vertical) > ul{ display: -webkit-flex; display: flex;}
+    .ttm-sidebar-section .ttm-sidebar-right .col-lg-9.content-area,
+    .ttm-sidebar-section .ttm-sidebar-left .col-lg-9.content-area,
+    .shop-intro-section .ttm-sidebar-right .col-lg-9.product-area{flex: 0 0 70%;max-width: 70%;}
+    .ttm-sidebar-section .ttm-sidebar-right .col-lg-3.widget-area,
+    .ttm-sidebar-section .ttm-sidebar-left .col-lg-3.widget-area,
+    .shop-intro-section .ttm-sidebar-right .col-lg-3.product-sidebar-right{flex: 0 0 30%;max-width: 30%;}
+    .ttm-search-overlay form {width: 670px;margin: 75px auto 93px;}
+    .footer .company-desc{padding-left: 30px;}
+
+
+}
+
+
+@media (max-width: 991px){
+
+	.ttm-row,
+    .ttm-row.intro-section,
+	.ttm-row.service-section,
+	.ttm-row.gallery-section,
+    .ttm-row.last-section,
+    section.error-404,
+    .ttm-row.testimonial-section.style2,
+    .ttm-row.blog-section2,
+    .ttm-row.service-process-section,
+    .ttm-row.about-intro-section,
+    .ttm-row.sponser-section,
+    .ttm-row.team-member-section,
+    .ttm-sidebar.shop-intro-section,
+    .ttm-sidebar-section.classic-blog-section,
+    .ttm-sidebar-section,
+    .ttm-row.cta-section.style2{padding: 50px 0px;}
+    
+    .element-row,
+    .ttm-row.about-team-section,
+    .ttm-row.upcoming-event-section,
+    .ttm-row.row-text-section,
+    .ttm-row.portfolio-section,
+    .ttm-row.homeshop-intro-section,
+    .ttm-row.home-features-section,
+    .ttm-row.home-features-section2,
+    .ttm-row.shop-last-section,
+    .ttm-row.row-text-section,
+    .ttm-row.grid-blog-section{padding: 50px 0px 30px;}
+
+    .ttm-row.intro-section,
+    .ttm-row.home-features-section{padding-top: 0;}
+    .ttm-row.team-section{padding-bottom: 50px;}
+    .ttm-row.fid-section {padding: 30px 0px;}
+    .ttm-row.fid-section {margin-top: 0px;}
+    .ttm-row.provide-service-section{padding-bottom: 30px;}
+    .ttm-row.gallery-section2 {padding-top: 85px;}
+    .ttm-row.pricing-section{padding-top: 50px;}
+    .ttm-row.entry-content-section2,
+    .ttm-row.service-section3{padding-bottom: 20px;}
+    .ttm-row.only-text-section {padding-bottom: 100px;padding-top: 50px;}
+    .ttm-row.cta-section {padding: 50px 0 10px;}
+    
+
+
+    
+	.break-991-colum .row .col-md-7,
+	.break-991-colum .row .col-md-5,
+	.break-991-colum .row .col-md-4, 
+	.break-991-colum .row .col-md-3, 
+	.break-991-colum .row .col-md-6, 
+	.break-991-colum .row .col-md-9,
+    .break-991-colum .row .col-md-8{
+		flex: 100% !important;
+		max-width: 100% !important;
+		float: none !important;
+		display: block !important;
+	}
+	.break-991-colum.bg-layer > .row > [class*='col-']{ padding: 0 15px; }
+	.break-991-colum.bg-layer .row > [class*='col-'] > [class*='ttm-col-bgcolor-yes']{ padding-left: 15px; padding-right: 15px; }
+    .break-991-colum .ttm-col-bgimage-yes {height: auto !important;}
+
+    .ttm-equal-height-image,
+    .break-991-colum .ttm-equal-height-image{
     display: block;
-  }
-  .job-post-card .content .content-item .content-list li {
-    margin-right: 10px;
-    font-size: 15px;
-    margin-bottom: 12px;
-  }
-  .job-post-card .content .content-item .content-list li b {
-    font-size: 17px;
-  }
-  .job-post-card .content .content-item .content-list li:last-child {
-    margin-right: 0;
-  }
-  .job-post-card .content .content-item span {
-    margin-left: 0;
-    font-size: 17px;
-    display: block;
-    margin-bottom: 10px;
-  }
-  .job-post-card .content .content-item span b {
-    font-size: 14px;
-  }
-  .job-post-card .content .content-list2 li {
-    padding: 5px 14px;
-    font-size: 13px;
-    margin-bottom: 10px;
-  }
-  .job-post-form .form-group {
-    margin-bottom: 15px;
-  }
-  .job-post-form .form-group i {
-    font-size: 18px;
-  }
-  .job-post-form .form-group .form-control {
-    font-size: 14px;
-  }
-  /* Recent Job Area End */
-  .career-content {
-    margin-bottom: 23px;
-  }
-  .career-content .content {
-    margin-bottom: 10px;
-  }
-  .career-content ul li {
-    margin-bottom: 0;
-  }
-  .career-content ul li:last-child {
-    margin-bottom: 0;
-  }
-  .career-content ul li.title {
-    margin-right: 0;
-    margin-left: 0;
-    display: block;
-  }
-  .career-area .col-6 {
-    width: 50%;
-  }
-  .career-img .images1 {
-    margin-top: 25px;
-    margin-bottom: 20px;
-  }
-  /* Pricing Area */
-  .pricing-wraps .table-responsive {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-  .pricing-wraps .pricing-table {
-    text-align: center;
-  }
-  .pricing-wraps .pricing-table table thead tr th {
-    padding: 10px 40px;
-    white-space: nowrap;
-  }
-  .pricing-wraps .pricing-table table thead tr th:first-child {
-    padding-left: 0;
-  }
-  .pricing-wraps .pricing-table table thead tr th.pricing-name {
-    font-size: 24px;
-  }
-  .pricing-wraps .pricing-table table thead tr th.pricing-name span {
-    font-size: 15px;
-  }
-  .pricing-wraps .pricing-table table thead tr td {
-    white-space: nowrap;
-  }
-  .pricing-wraps .pricing-table table thead tr td:first-child {
-    padding-left: 0;
-  }
-  .pricing-wraps .pricing-table table tbody tr td.pricing-name-list1 a {
-    font-size: 18px;
-  }
-  .pricing-wraps .pricing-table table tbody tr td.pricing-name-list2 a {
-    font-size: 18px;
-  }
-  .pricing-wraps .pricing-table table tbody tr td.pricing-name-list3 .unit-amount {
-    font-size: 18px;
-  }
-  .pricing-wraps .pricing-table table tbody tr td.pricing-body-list1 a {
-    font-size: 15px;
-  }
-  .pricing-wraps .pricing-table table tbody tr td.pricing-body-list2 a {
-    font-size: 15px;
-  }
-  .pricing-wraps .pricing-table table tbody tr td.pricing-body-list2 .icon {
-    font-size: 16px;
-  }
-  .pricing-wraps .pricing-table table tbody tr td.pricing-body-list2 .price-btn {
-    padding: 7px 16px;
-    font-size: 14px;
-  }
-  .pricing-wraps .pricing-table table tbody tr td.pricing-body-list3 .unit-amount {
-    font-size: 15px;
-  }
-  .pricing-wraps .pricing-table table tbody tr td.pricing-body-list3 .icon {
-    font-size: 16px;
-  }
-  .pricing-wraps .pricing-table table tbody tr td.pricing-body-list3 .price-btn {
-    padding: 7px 16px;
-    font-size: 14px;
-  }
-  .pricing-content .section-title {
-    margin-bottom: 20px;
-  }
-  .pricing-content ul li {
-    margin-bottom: 13px;
-  }
-  .pricing-content ul li:last-child {
-    margin-bottom: 0;
-  }
-  .pricing-content ul li.title {
-    margin-right: 0;
-    margin-left: 0;
-    display: block;
-  }
-  .pricing-card {
-    border-radius: 10px;
-    padding: 25px 15px;
-  }
-  .pricing-card .pricing-title {
-    margin-bottom: 15px;
-  }
-  .pricing-card .pricing-title h2 {
-    font-size: 20px;
-  }
-  .pricing-card h3 {
-    font-size: 32px;
-    margin-bottom: 15px;
-  }
-  .pricing-card h3 span {
-    font-size: 15px;
-  }
-  .pricing-card ul li {
-    margin-bottom: 10px;
-    font-size: 16px;
-  }
-  .pricing-card .price-btn-area {
-    margin-top: 20px;
-  }
-  .pricing-card .price-btn-area .price-btn {
-    padding: 10px 20px;
-  }
-  /* Pricing Area  End */
-  /* Job Listing Area */
-  .job-listing-top {
-    padding: 25px 15px;
-  }
-  .job-listing-right {
-    border: none;
-    background-color: var(--whiteColor);
-    text-align: center;
-    padding: 15px;
-    margin-bottom: 20px;
-  }
-  .job-listing-right ul li {
-    margin: 5px;
-  }
-  .job-listing-right ul li:last-child {
-    margin-bottom: 0;
-  }
-  .job-listing-form .form-group {
-    border: none;
-    padding-right: 0;
-    margin-top: 0;
-    margin-bottom: 20px;
-  }
-  .job-listing-form .form-group i {
-    left: 10px;
-    font-size: 18px;
-  }
-  .job-listing-form .form-group .form-control {
-    background-color: var(--whiteColor);
-    padding: 10px 27px 10px 40px;
-  }
-  .job-listing-form .form-group .form-control.form-select {
-    padding: 10px 15px;
-  }
-  .job-listing-topper .job-listing-title h3 {
-    margin-bottom: 15px;
-  }
-  .job-listing-topper .job-listing-category .form-group {
-    margin-bottom: 15px;
-  }
-  /* Job Listing Area End */
-  /* Candidates Area End */
-  .candidates-topper .candidates-title h3 {
-    margin-bottom: 15px;
-  }
-  .candidates-topper .candidates-category-form .form-group {
-    margin-bottom: 10px;
-  }
-  .candidates-details-right .content-profile {
-    padding: 25px 20px 20px;
-  }
-  .candidates-details-right .content-profile .content-profile-img img {
-    margin-bottom: 10px;
-  }
-  .candidates-details-right .content-info {
-    padding: 25px 20px 20px;
-  }
-  .candidates-details-right .content-info h3 {
-    margin-bottom: 10px;
-  }
-  .candidates-details-right .content-info ul li span {
-    font-size: 15px;
-  }
-  .candidates-details-right .content-info ul li a {
-    font-size: 17px;
-  }
-  .content-widget-right {
-    padding: 25px 20px 20px;
-  }
-  .content-widget-right h3 {
-    margin-bottom: 10px;
-  }
-  .candidates-details-content {
-    padding: 25px 15px;
-  }
-  .candidates-details-content h1 {
-    font-size: 28px;
-  }
-  .candidates-details-content h2 {
-    font-size: 26px;
-  }
-  .candidates-details-content h3 {
-    font-size: 23px;
-  }
-  .candidates-details-content h4 {
-    font-size: 21px;
-  }
-  .candidates-details-content h5 {
-    font-size: 20px;
-  }
-  .candidates-details-content .content {
-    padding-bottom: 20px;
-  }
-  .candidates-details-content .candidates-details-experience .experience-card {
-    padding-left: 0;
-  }
-  .candidates-details-content .candidates-details-experience .experience-card img {
-    position: inherit;
-    top: 0;
-    transform: translateY(0%);
-    margin-bottom: 10px;
-  }
-  .candidates-details-content .candidates-details-experience .experience-card .experience-list li {
-    margin-right: 10px;
-    font-size: 15px;
-    margin-bottom: 10px;
-  }
-  .candidates-details-content .candidates-details-experience .experience-card .experience-list li:last-child {
-    margin-bottom: 0;
-  }
-  .candidates-details-content .candidates-skill {
-    padding-bottom: 20px;
-  }
-  .candidates-details-content .candidates-skill .candidates-skill-tag li a {
-    padding: 6px 20px;
-  }
-  .candidates-details-content .candidates-education .education-card {
-    padding-left: 0;
-    position: relative;
-    padding-left: 0;
-  }
-  .candidates-details-content .candidates-education .education-card img {
-    position: inherit;
-    top: 0;
-    transform: translateY(0%);
-    margin-bottom: 10px;
-  }
-  .candidates-details-content .candidates-education .education-card .experience-list li {
-    margin-right: 10px;
-    font-size: 15px;
-    margin-bottom: 10px;
-  }
-  .candidates-details-content .candidates-education .education-card .experience-list li:last-child {
-    margin-bottom: 0;
-  }
-  .other-candidates-list {
-    padding: 25px 20px;
-  }
-  /* Candidates Area End */
-  /* Blog Area */
-  .blog-card .blog-img .tag {
-    padding: 6px 14px;
-    font-size: 12px;
-    left: 10px;
-  }
-  .blog-card .content {
-    padding-left: 10px;
-  }
-  .blog-card .content ul li {
-    font-size: 14px;
-  }
-  .blog-card .content h3 {
-    font-size: 22px;
-  }
-  .blog-details-content h1 {
-    font-size: 28px;
-  }
-  .blog-details-content h2 {
-    font-size: 26px;
-  }
-  .blog-details-content h3 {
-    font-size: 23px;
-  }
-  .blog-details-content h4 {
-    font-size: 21px;
-  }
-  .blog-details-content h5 {
-    font-size: 20px;
-  }
-  .blog-details-content .content ul li {
-    margin-right: 20px;
-    font-size: 14px;
-  }
-  .blog-details-content .content ul li.images {
-    margin-right: 5px;
-  }
-  .blog-details-content .content ul li.images img {
-    width: 30px;
-    height: 30px;
-  }
-  .blog-details-content .content ul li a {
-    padding: 6px 14px;
-    font-size: 12px;
-  }
-  .blog-details-content .blockquote {
-    padding: 30px 20px;
-  }
-  .blog-details-content .blockquote .line1 {
-    bottom: 30px;
-  }
-  .blog-details-content .blockquote .line2 {
-    bottom: 30px;
-  }
-  .blog-details-content .blog-details-list ul li {
-    font-size: 15px;
-    padding-left: 30px;
-  }
-  .blog-details-content .blog-details-list ul li i {
-    width: 20px;
-    height: 20px;
-    line-height: 20px;
-    font-size: 13px;
-    top: 5px;
-  }
-  .blog-details-content .blog-portfolio .blog-portfolio-img {
-    margin-top: 0;
-  }
-  .blog-details-content .article-share-area {
-    padding: 12px 10px;
-  }
-  .blog-details-content .article-share-area .article-social-icon {
-    margin-bottom: 10px;
-  }
-  .blog-details-content .article-share-area .article-social-icon .social-icon li {
-    margin-right: 5px;
-  }
-  .blog-details-content .article-share-area .article-social-icon .social-icon li.title {
-    font-size: 16px;
-  }
-  .blog-details-content .article-share-area .article-social-icon .social-icon li a {
-    display: inline-block;
-    border: none;
-  }
-  .blog-details-content .article-share-area .article-social-icon .social-icon li a i {
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    font-size: 16px;
-  }
-  .blog-details-content .article-share-area .tag {
+    width: 100%;
+    }
+	/* margin */
+    .res-991-m-0{ margin: 0 !important;}
+	.res-991-ml-0{ margin-left: 0!important;}
+	.res-991-mr-0{ margin-right: 0!important;}
+	.res-991-mt-0{ margin-top: 0 !important;}
+	.res-991-mt-20{ margin-top: 20px;}
+	.res-991-mt-30{ margin-top: 30px;}
+    .res-991-mb-0{ margin-bottom: 0px!important;}
+    .res-991-mb-20{ margin-bottom: 20px ;}
+	.res-991-mb-30{ margin-bottom: 30px!important;}
+	.res-991-mb-50{ margin-bottom: 50px;}
+	.res-row991-m0{margin: 0px;}
+	.res-991-mlr-15{margin-left: 15px!important;margin-right: 15px!important;}
+	
+	/* padding */
+	.padding-1{ padding:45px 15px;}
+	.padding-2{ padding:45px 0px;}
+    .padding-3 {padding: 50px 15px 15px 15px;}
+    .padding-4 {padding: 50px 0px 15px 63px;}
+	.padding-6{ padding-right: 0px; padding-top: 30px;padding-left: 15px;}
+	.padding-10{ margin-left: 0; padding-left: 15px; padding-right: 15px; padding-top: 40px; padding-bottom: 50px; }
+    .padding-14{padding-left: 15px;}
+    .padding-15{margin-left: 0;padding-top: 60px;padding-left: 15px;}
+	.res-991-p-0{ padding: 0 ! important;}
+	.res-991-pt-15{ padding-top: 15px !important; }
+	.res-991-pt-40{ padding-top: 40px !important; }
+	.res-991-pt-0 { padding-top: 0px !important; }
+	.res-991-pl-0 { padding-left: 0px !important; }
+	.res-991-pl-15 { padding-left: 15px !important; }
+    .res-991-pb-0{padding-bottom: 0!important;}
+	.res-991-pb-5{ padding-bottom: 5px !important }
+	.res-991-pb-30{ padding-bottom: 30px !important }
+	.res-991-pb-380{ padding-bottom: 380px !important }
+	.res-991-plr-0{ padding-left: 0px !important; padding-right: 0px !important;	}
+	.res-991-plr-15{ padding-left: 15px !important; padding-right: 15px !important;	}
+	.res-991-ptb-35{ padding-top: 35px !important; padding-bottom: 35px !important;	}
+    .res-991-ptb-200{ padding-top: 200px !important; padding-bottom: 200px !important; }
+    .res_991_ml_45{margin-left: -45px!important;}
+	.res_991_ml_55{margin-left: -55px!important;}
+	.layer-content.ml_190{margin-left: auto;}
+	.res-991-center-text{text-align: center!important;}
+	.ttm-pricetable-column-w{margin-bottom: 30px;}
+
+    /* section-title */
+    .section-title h2.title {font-size: 40px;line-height: 42px;}
+    .section-title, .title-box-only {margin-bottom: 30px;}
+    .separator .sep-line.mb-50{margin-bottom: 35px;}
+    .row:not(.text-center) .section-title h2.title {margin-bottom: 15px;}
+    .row.text-center .section-title h2.title {margin-bottom: 5px;}
+    
+    /* iamge-width */
+    .featured-thumbnail img {width: 100%;}
+	
+    .about-service-row.mb_125 {margin-bottom: 0px;}
+    .timer-wraper.text-center{text-align: left!important}
+
+    .footer .company-logo,
+    .footer .company-desc{display: block;}
+    
+    /* form */
+    .ttm-newstter-box form input{
+    width: 100%;
+    margin: 0 auto;
     float: none;
-    margin-bottom: 5px;
-  }
-  .blog-details-content .article-share-area .tag a {
-    padding: 5px 14px;
-    font-size: 13px;
-  }
-  /* Blog Area End */
-  .job-details-widget-side .job-details-widget {
-    padding: 20px 15px;
-    border-radius: 10px;
-  }
-  .job-details-widget-side .job-details-widget .title {
-    font-size: 20px;
-  }
-  .job-details-widget-side .job-details-widget .bar {
-    margin-bottom: 15px;
-  }
-  .job-details-widget-side .job-details-widget .job-details-category li {
-    font-size: 15px;
-  }
-  .job-details-widget-side .job-details-widget .job-details-social {
-    margin: 10px 0 0;
-  }
-  .job-details-widget-side .job-details-widget .job-details-social span {
-    font-size: 15px;
-    margin-bottom: 0;
-  }
-  .job-details-widget-side .job-details-widget .job-details-social .social-icon li {
-    margin-right: 5px;
-  }
-  .job-details-widget-side .job-details-widget .job-details-social .social-icon li a i {
-    font-size: 16px;
-  }
-  .job-details-content h1 {
-    font-size: 28px;
-  }
-  .job-details-content h2 {
-    font-size: 26px;
-  }
-  .job-details-content h3 {
-    font-size: 23px;
-  }
-  .job-details-content h4 {
-    font-size: 21px;
-  }
-  .job-details-content h5 {
-    font-size: 20px;
-  }
-  .job-details-content .article-social-icon .social-icon li {
-    margin-right: 5px;
-  }
-  .job-details-content .article-social-icon .social-icon li.title {
-    font-size: 16px;
-  }
-  .job-details-content .article-social-icon .social-icon li a i {
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    font-size: 16px;
-  }
-  /* Contact Area */
-  .contact-info-item {
-    margin-top: 0;
-  }
-  .contact-info-item i {
-    top: 12px;
-  }
-  .contact-form {
-    padding: 25px 15px;
-  }
-  .contact-form .agree-label label a.forget {
-    position: inherit;
-  }
-  .user-all-form .contact-form .default-btn {
-    width: 100%;
-    text-align: center;
-  }
-  .user-all-form .contact-form .sub-title {
-    margin-top: 15px;
-    margin-bottom: 15px;
-  }
-  .user-all-form .contact-form .login-with-account ul {
-    list-style-type: none;
-    margin-bottom: 0;
-    padding: 0;
-  }
-  .user-all-form .contact-form .login-with-account ul li {
-    display: block;
-    margin-bottom: 15px;
-  }
-  .user-all-form .contact-form .login-with-account ul li:last-child {
-    margin-bottom: 0;
-  }
-  .user-all-form .contact-form .login-with-account ul li a {
-    padding: 8px 20px;
-    font-size: 15px;
-  }
-  /* Contact Area End */
-  /* Employers CV Area */
-  .employers-cv-bg {
-    padding: 30px 20px;
-  }
-  .employers-cv-bg h2 {
-    font-size: 26px;
-  }
-  .employers-cv-bg p {
-    margin-bottom: 15px;
-  }
-  .employers-cv-btn {
-    float: none;
-  }
-  .employers-cv-btn .employersButton-button {
-    padding: 10px 20px;
-    font-size: 14px;
-  }
-  /* Employers CV Area End */
-  /* Error Area */
-  .error-area .error-content h1 {
-    font-size: 70px;
-  }
-  .error-area .error-content h3 {
-    margin-top: 20px;
-    font-size: 26px;
-  }
-  .error-area .error-content p {
-    font-size: 15px;
-    margin-top: 10px;
-    padding: 0 15px;
-  }
-  /* Error Area End */
-  /* Coming Soon Area */
-  .coming-soon-area .coming-soon-content {
-    padding-left: 15px;
-    padding-right: 15px;
-    border-radius: 0;
-    animation: none;
-  }
-  .coming-soon-area .coming-soon-content h1 {
-    font-size: 30px;
-    line-height: 1.1;
-    margin-top: 0;
-  }
-  .coming-soon-area .coming-soon-content p {
-    font-size: 14px;
-    margin-top: 15px;
-  }
-  .coming-soon-area .coming-soon-content #timer {
-    margin-top: 30px;
-  }
-  .coming-soon-area .coming-soon-content #timer div {
-    font-size: 30px;
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-bottom: 15px;
-  }
-  .coming-soon-area .coming-soon-content #timer div span {
-    font-size: 14px;
-    margin-top: -5px;
-  }
-  .coming-soon-area .coming-soon-content #timer div::before {
-    display: none;
-  }
-  .coming-soon-area .coming-soon-content .newsletter-form {
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-  .coming-soon-area .coming-soon-content .newsletter-form .input-newsletter {
-    height: 55px;
-    padding-left: 13px;
-    font-size: 15px;
-  }
-  .coming-soon-area .coming-soon-content .newsletter-form .default-btn {
-    position: relative;
-    font-size: 14px;
-    margin-top: 15px;
-    width: 100%;
-    height: 50px;
-  }
-  /* Coming Soon Area End */
-  /* Footer Area */
-  .footer-widget h3 {
-    margin-bottom: 15px;
-  }
-  .footer-widget h3.title {
-    margin-bottom: 10px;
-  }
-  .footer-widget .footer-logo {
-    margin-bottom: 10px;
-  }
-  .footer-widget p {
-    margin-bottom: 15px;
-  }
-  .footer-widget .footer-list li {
-    margin-bottom: 10px;
-  }
-  .footer-widget .footer-contact-list li {
-    margin-bottom: 10px;
-  }
-  .footer-widget .footer-contact-list li i {
-    font-size: 18px;
-  }
-  .copy-right-text {
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  .copy-right-social-link {
-    text-align: center;
-  }
-  /* Footer Area End */
-  .go-top {
-    font-size: 18px;
-    width: 35px;
-    height: 35px;
-    line-height: 32px;
-  }
-  .go-top .active {
-    top: 85%;
-  }
+    }
+    .ttm-left-span .ttm-video-btn{ left: 42%;}
+    .mailchimp-inputbox input[type="email"]{max-width: 100%;width: -webkit-fill-available;}
+    .mailchimp-inputbox input[type="submit"] {margin-top: 20px;}
+
+    .ttm-box-desc-text{padding-top: 20px;}
+    
+    /* single-img */
+    .ttm_single_image_wrapper img{width: 100%;}
+
+    .ttm-box-view-left-image .ttm-featured-img-left {padding-left: 0; padding-right: 0;}
+    .featured-imagebox-post.ttm-box-view-left-image{padding: 0 15px;margin: 0;}
+    .ttm-box-view-left-image .ttm-featured-content-right{padding: 0 15px;}
+    .timer-wraper .timer-box-content.text-right{text-align: left!important;}
+
+    /* cta-wrapper*/
+    .featured-box.style5 .featured-content{margin-bottom: 40px;}
+    .ttm-search-overlay form{max-width: 550px;margin: 65px auto 83px;}
+
+    /* progress-bar*/
+    .ttm-progress-bar .progress {margin-left: 15px;}
+     .ttm-icon-left-true.ttm-progress-bar h4 {margin-left: 45px;}
+
+    .about-timer-wraper{margin-top: -5px;}
+
+    .ttm-page-title-row {height: 310px;}
+
+    .ttm-box-seperator.row .col-lg-4 .featured-box{border:none!important;}
+    .featured-box.style4 {padding: 25px 40px 25px 40px;}
+
+    .title-box .page-title-heading h1 {font-size: 34px;line-height: 44px;}
+
 }
-@media only screen and (max-width: 520px) {
-  .col-6 {
-    width: 100%;
+
+
+@media only screen and (min-width: 768px) and (max-width: 991px){
+	.res-col991-plr-0{padding-left: 0px; padding-right: 0px;}
+    .res-row991-mlr-15{margin-left: 15px!important; margin-right: 15px!important;}
+	.service-image-wrap .service-label label {
+    margin: -25px 29px 0;
+    padding: 12px 25px 12px;
   }
+  .ttm-tabs ul.tabs li a{padding: 14px 14px;}
+  .ttm-tabs.element-tab-style-horizontal.width-shape-line:not(.element-tab-style-vertical) > ul{ display: block;text-align: center;}
+
+  .first-footer .ttm-newstter-box{max-width: 90%;}
+  .widget.widget_nav_menu a {font-size: 14px;}
 }
-@media only screen and (min-width: 521px) and (max-width: 767px) {
-  .contact-info-item {
-    padding: 25px 10px 25px 70px;
-  }
-  .contact-info-item i {
-    top: 17px;
-    left: 10px;
-    width: 50px;
-    height: 75px;
-    line-height: 75px;
-    font-size: 24px;
-  }
-  .job-listing-topper .job-listing-category .form-group {
-    margin-bottom: 0;
-  }
-  .candidates-topper .candidates-category-form .form-group {
-    margin-bottom: 0;
-  }
-  .browse-jobs-item {
-    padding: 25px 10px 25px 70px;
-  }
-  .browse-jobs-item i {
-    top: 17px;
-    left: 10px;
-    width: 45px;
-    height: 70px;
-    line-height: 70px;
-    font-size: 24px;
-  }
-  .browse-jobs-item h3 {
-    font-size: 17px;
-  }
-  .freelancer-details-profile {
-    padding: 30px 20px 30px 140px;
-  }
-  .freelancer-details-profile img {
-    position: absolute;
-    top: 22px;
-    left: 20px;
-    margin-right: 0;
-    margin-bottom: 0;
-  }
-  .freelancer-details-profile h3 {
-    font-size: 20px;
-  }
-  .freelancer-details-profile .freelancer-details-btn {
-    margin-top: 0;
-    position: absolute;
-    top: 52%;
-    transform: translateY(-50%);
-    right: 20px;
-  }
-  .recent-job-item h3 {
-    max-width: 265px;
-  }
+
+@media only screen and (min-width: 768px){
+	.ttm-tabs ul.connect-tabs  li:not(:last-child):before,
+	.ttm-tabs ul.connect-tabs  li:not(:last-child):after{
+	   background: #d7d7d7 none repeat scroll 0 0;
+	    content: "";
+	    height: 1px;
+	    right: -100%;
+	    position: absolute;
+	    width: 100%;
+	    z-index: 2;
+	}
+	.ttm-tabs ul.connect-tabs  li:not(:last-child):before{top: 20%;}
+	.ttm-tabs ul.connect-tabs  li:not(:last-child):after{bottom: 20%;}
+    .ttm-tabs.element-tab-style-horizontal ul.tabs li:not(:last-child){margin-right: 10px;}
+    .ttm-tabs.element-tab-style-horizontal ul.tabs li:not(:first-child){margin-left: 10px;}
+	.comment-box .reply{position: absolute;top: 20px;right: 15px;}
+    div.product.ttm-single-product-details div.images {width: 40%;}
+    div.product.ttm-single-product-details div.summary {width: 57%;}
 }
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-  .browse-jobs-list {
-    margin-bottom: 30px;
-  }
-  .browse-jobs-list h3 {
-    margin-bottom: 15px;
-    font-size: 18px;
-  }
-  .browse-jobs-list h3 i {
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    font-size: 20px;
-    margin-right: 7px;
-  }
-  /* Browse Jobs CSS */
-  .browse-jobs-card {
-    padding: 20px 10px 20px 10px;
-  }
-  .browse-jobs-card .icon {
-    position: inherit;
-    top: 0;
-    left: 0;
-    transform: translateY(0);
-    margin-bottom: 10px;
-  }
-  .browse-jobs-card h3 {
-    font-size: 20px;
-  }
-  .browse-jobs-card .more-btn {
-    top: 30%;
-    transform: translateY(-30%);
-  }
-  /* Browse Jobs CSS End */
-  .recent-job-card {
-    padding: 25px 15px;
-  }
-  .recent-job-card .content {
-    padding-left: 85px;
-  }
-  .recent-job-card .content .recent-job-img {
-    position: absolute;
-    margin-bottom: 0;
-  }
-  .recent-job-card .content h3 {
-    font-size: 20px;
-  }
-  .recent-job-card .job-sub-content {
-    display: flex;
-  }
-  .recent-job-card .job-sub-content .price {
-    margin-top: 0;
-  }
-  /* Pricing Area */
-  .pricing-content ul li {
-    margin-bottom: 13px;
-  }
-  .pricing-content ul li:last-child {
-    margin-bottom: 0;
-  }
-  .pricing-content ul li.title {
-    margin-left: 30px;
-    display: inline-block;
-  }
-  /* Pricing Area  End */
-  .career-content {
-    margin-bottom: 23px;
-  }
-  .career-content ul li {
-    margin-bottom: 0;
-  }
-  .career-content ul li:last-child {
-    margin-bottom: 0;
-  }
-  .career-content ul li.title {
-    margin-left: 30px;
-    display: inline-block;
-  }
-  /* Blog Area */
-  .blog-details-content .article-share-area {
-    padding: 12px 10px;
-  }
-  .blog-details-content .article-share-area .article-social-icon {
-    margin-bottom: 0;
-  }
-  .blog-details-content .article-share-area .tag {
-    float: right;
-    margin-bottom: 0;
-  }
-  /* Blog Area End */
-}
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  /* Default CSS */
-  body {
-    font-size: 15px;
-  }
-  .ptb-100 {
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-  .pt-100 {
-    padding-top: 50px;
-  }
-  .ptb-70 {
-    padding-top: 50px;
-    padding-bottom: 20px;
-  }
-  .pb-100 {
-    padding-bottom: 50px !important;
-  }
-  .pt-70 {
-    padding-top: 50px;
-  }
-  .pb-70 {
-    padding-bottom: 20px;
-  }
-  .pt-45 {
-    padding-top: 30px;
-  }
-  .pb-10 {
-    padding-bottom: 0;
-  }
-  .pl-20 {
-    padding-left: 0;
-  }
-  .pr-20 {
-    padding-right: 0;
-  }
-  .ml-20 {
-    margin-left: 0;
-  }
-  .ps-2 {
-    padding-left: 0 !important;
-  }
-  .ps-3 {
-    padding-left: 0 !important;
-  }
-  .ps-5 {
-    padding-left: 0 !important;
-  }
-  .ps-0 {
-    padding-left: 15px !important;
-  }
-  .pe-0 {
-    padding-right: 15px !important;
-  }
-  .p-0 {
-    padding-left: 15px !important;
-    padding-right: 15px !important;
-  }
-  .default-btn {
-    padding: 8px 18px;
-  }
-  .section-title h2 {
-    font-size: 26px;
-  }
-  .section-title p {
-    padding-top: 10px;
-  }
-  .float-end {
-    float: none !important;
-    margin-bottom: 0 !important;
-  }
-  /* Default CSS End */
-  /* Main Banner CSS */
-  .banner-area {
-    padding: 50px 0;
-  }
-  .banner-content h1 {
-    font-size: 35px;
-  }
-  .banner-content p {
-    margin-bottom: 20px;
-  }
-  .banner-content .popular-searches-tag {
-    font-size: 15px;
-    margin-bottom: 20px;
-  }
-  .banner-content .popular-searches-tag .title {
-    margin-right: 10px;
-  }
-  .banner-content .popular-searches-tag a {
-    font-size: 14px;
-  }
-  .banner-content ul {
-    margin: 0;
-  }
-  .banner-content ul li img {
-    max-width: 40px;
-    border: 2px solid var(--whiteColor);
-  }
-  .banner-content ul li.title {
-    font-size: 13px;
-  }
-  .banner-form {
-    padding: 25px 20px;
-    max-width: 100%;
+@media (max-width: 767px){
+
+	.res-mt20-767{margin-top: 20px;}
+
+    .res_mt30_767{margin-top: -30px;}
+	.res-mt30-767{margin-top: 30px;}
+	.res-mb30-767{margin-bottom: 30px;}
+	.res-pt75-767{padding-top: 75px;}
+
+    .ttm-row.home-features-section {padding-top: 20px!important;}
+
+	
+    .ttm-row.gallery-section .ttm-btn.pull-right{float: left;}
+    .ttm-btn.pull-right.mt-35,
+    .ttm-btn.pull-right.mt-55,
+    .ttm-btn.pull-right.mt-57{margin-top: 15px!important;}
+    .res-767-pl-15{padding-left: 15px!important;}
+    .res-767-plr-15{padding-left: 15px!important; padding-right: 15px!important;}
+    .res-767-plr-40{padding-left: 40px!important; padding-right: 40px!important;}
+    .res-767-mlr-15{margin: 0 15px!important;}
+    .res-767-mt-0{margin-top: 0!important;}
+    .ttm-footer2-right {text-align: left;}
+    .ttm-tabs.element-tab-style-horizontal ul.tabs li, .ttm-tabs.element-tab-style-horizontal ul {
+    display: block;
     margin-right: 0;
     margin-left: 0;
   }
-  .banner-form .form-group {
-    border-right: none;
-    padding-right: 0;
-    margin-bottom: 10px;
-  }
-  .banner-form .form-group.select-group {
-    border: none;
-    padding-right: 0;
-  }
-  .banner-form .form-group i {
-    font-size: 18px;
-    left: 10px;
-  }
-  .banner-form .form-group .form-control {
-    background-color: #e4f9f4;
-    padding: 15px 10px 15px 35px;
-  }
-  .banner-form .form-group .form-control.form-select {
-    padding: 15px 40px 15px 15px;
-  }
-  .banner-form .submit-btn {
-    padding: 10px 20px;
-    background-color: var(--mainColor);
-  }
-  .banner-img {
-    margin-top: 30px;
-  }
-  .banner-img img {
+   
+   .padding-7 {padding: 10px 0px 0px 0px;}
+   .ttm-row.event-section3{margin-top: 0;padding-top: 50px;padding-bottom: 50px;}
+   .ttm-blog-classic-content .post-title.ml-85,
+   .ttm-blog-classic-content .post-meta.ml-85{margin-left: 0!important;}
+   .ttm-sidebar.ttm-sidebar-section > .container{max-width: 100%;}
+   
+   
+   
+    /* featured-imagebox */
+  .featured-imagebox-post.ttm-box-view-top-image .featured-content-post{
     max-width: 100%;
-  }
-  .banner-img::before {
-    display: none;
-  }
-  .banner-img .banner-img-shape {
-    display: none;
-  }
-  .banner-shape {
-    display: none;
-  }
-  .banner-area-two {
-    padding: 50px 0;
-  }
-  .banner-content-two h1 {
-    font-size: 35px;
-  }
-  .banner-content-two p {
-    margin-bottom: 20px;
-  }
-  .banner-content-two .popular-searches-tag {
-    font-size: 15px;
-  }
-  .banner-content-two .popular-searches-tag .title {
-    margin-right: 10px;
-  }
-  .banner-content-two .popular-searches-tag a {
-    font-size: 14px;
-  }
-  .banner-form-two {
-    padding: 20px 15px;
-    max-width: 100%;
-    margin-right: 0;
-    margin-left: 0;
-    margin-bottom: 20px;
-  }
-  .banner-form-two .form-group {
-    border-right: none;
-    padding-right: 0;
-    margin-bottom: 0;
-  }
-  .banner-form-two .form-group.select-group {
-    border: none;
-    padding-right: 0;
-  }
-  .banner-form-two .form-group i {
-    font-size: 18px;
-    left: 10px;
-  }
-  .banner-form-two .form-group .form-control {
-    background-color: #e4f9f4;
-    padding: 15px 10px 15px 35px;
-  }
-  .banner-form-two .submit-btn {
-    padding: 12px 20px;
-  }
-  .banner-img-two {
-    max-width: 100%;
-    margin-top: 30px;
-    padding-bottom: 0;
-    margin-left: 0;
-    margin-right: 0;
-  }
-  .banner-img-two img {
-    max-width: 100%;
-  }
-  .banner-img-two .banner-shape-two {
-    display: none;
-  }
-  .banner-area-three {
-    padding: 50px 0;
-  }
-  .banner-content-three h1 {
-    font-size: 30px;
-    margin-bottom: 20px;
-  }
-  .banner-content-three .popular-searches-tag {
-    font-size: 15px;
-  }
-  .banner-content-three .popular-searches-tag .title {
-    margin-right: 10px;
-  }
-  .banner-content-three .popular-searches-tag a {
-    font-size: 14px;
-  }
-  .banner-form-three {
-    padding: 20px;
-    max-width: 100%;
-    margin-right: 0;
-    margin-left: 0;
-    margin-bottom: 20px;
-  }
-  .banner-form-three .form-group {
-    border-right: none;
-    padding-right: 0;
-  }
-  .banner-form-three .form-group.select-group {
-    border: none;
-    padding-right: 0;
-  }
-  .banner-form-three .form-group i {
-    font-size: 18px;
-    left: 10px;
-  }
-  .banner-form-three .form-group .form-control {
-    background-color: #e4f9f4;
-    padding: 15px 10px 15px 35px;
-  }
-  .banner-form-three .submit-btn {
-    padding: 12px 20px;
-  }
-  .banner-three-other {
-    display: none;
-  }
-  .banner-area .container-fluid, .banner-area-two .container-fluid {
-    width: 720px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  /* Main Banner CSS End */
-  /* Inner Banner CSS */
-  .inner-banner .inner-title {
-    padding-top: 70px;
-    padding-bottom: 70px;
-  }
-  .inner-banner .inner-title h3 {
-    font-size: 30px;
-  }
-  /* Inner Banner CSS End */
-  .company-area .section-title {
-    margin-bottom: 10px;
-  }
-  /* Browse Jobs CSS */
-  .browse-jobs-card {
-    padding: 20px 10px 20px 75px;
-  }
-  .browse-jobs-card .icon {
-    left: 10px;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    font-size: 22px;
-  }
-  .browse-jobs-card h3 {
-    font-size: 20px;
-  }
-  .browse-jobs-card .more-btn {
-    top: 75%;
-    transform: translateY(-75%);
-    right: 10px;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    font-size: 18px;
-  }
-  .browse-jobs-list {
-    margin-bottom: 30px;
-  }
-  .browse-jobs-list h3 {
-    margin-bottom: 20px;
-  }
-  .browse-jobs-list h3 i {
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    font-size: 20px;
-    margin-right: 7px;
-  }
-  .browse-jobs-item {
-    padding: 25px 10px 25px 70px;
-  }
-  .browse-jobs-item i {
-    top: 17px;
-    left: 10px;
-    width: 45px;
-    height: 70px;
-    line-height: 70px;
-    font-size: 24px;
-  }
-  .browse-jobs-item h3 {
-    font-size: 17px;
-  }
-  /* Browse Jobs CSS End */
-  .services-card {
-    padding: 25px 15px 25px 80px;
-  }
-  .services-card i {
-    top: 25px;
-    left: 15px;
-    width: 50px;
-    font-size: 24px;
-  }
-  .services-card h3 {
-    font-size: 18px;
-  }
-  .counter-card h3 {
-    font-size: 30px;
-  }
-  /* Find Jobs Area CSS */
-  .find-jobs-card {
-    padding: 20px 15px;
-  }
-  .find-jobs-card .content .content-list li {
-    padding: 6px 16px;
-    font-size: 12px;
-    margin-right: 5px;
-  }
-  .find-jobs-card .content h3 {
-    font-size: 22px;
-  }
-  .find-jobs-card .content .content-list2 li.list-one {
-    font-size: 17px;
-    margin-right: 10px;
-  }
-  .find-jobs-card .content .content-list2 li.list-two {
-    font-size: 15px;
-  }
-  .find-jobs-card .content .content-list3 li {
-    margin-right: 10px;
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-  .find-jobs-card .content .content-list3 li b {
-    font-size: 16px;
-  }
-  .find-jobs-card .content .content-list3 li:last-child {
-    margin-right: 0;
-  }
-  /* Find Jobs Area CSS End */
-  /* Job Listing Area */
-  .job-listing-top {
-    padding: 25px 15px;
-  }
-  .job-listing-right {
-    border: none;
-    background-color: var(--whiteColor);
-    text-align: center;
-    padding: 15px;
-    margin-bottom: 20px;
-  }
-  .job-listing-right ul li {
-    margin: 5px;
-  }
-  .job-listing-right ul li:last-child {
-    margin-bottom: 0;
-  }
-  .job-listing-form .form-group {
-    border: none;
-    padding-right: 0;
-    margin-top: 0;
-    margin-bottom: 20px;
-  }
-  .job-listing-form .form-group i {
-    left: 10px;
-    font-size: 18px;
-  }
-  .job-listing-form .form-group .form-control {
-    background-color: var(--whiteColor);
-    padding: 10px 27px 10px 40px;
-  }
-  .job-listing-form .form-group .form-control.form-select {
-    padding: 10px 15px;
-  }
-  .job-listing-topper .job-listing-title h3 {
-    margin-bottom: 15px;
-  }
-  /* Job Listing Area End */
-  .job-post-card h3 {
-    font-size: 20px;
-  }
-  .job-post-card .content {
-    display: block;
-  }
-  .job-post-card .content .content-item .content-list li {
-    margin-right: 10px;
-    font-size: 15px;
-    margin-bottom: 12px;
-  }
-  .job-post-card .content .content-item .content-list li b {
-    font-size: 17px;
-  }
-  .job-post-card .content .content-item .content-list li:last-child {
-    margin-right: 0;
-  }
-  .job-post-card .content .content-item span {
-    margin-left: 20px;
-    font-size: 17px;
-  }
-  .job-post-card .content .content-item span b {
-    font-size: 14px;
-  }
-  .job-post-card .content .content-list2 li {
-    padding: 5px 14px;
-    font-size: 13px;
-  }
-  .job-post-card-ml .content {
-    display: block;
-  }
-  .job-post-card-ml .content .content-item span {
-    margin-left: 0;
-    display: block;
-    margin-bottom: 10px;
-  }
-  .job-post-form .form-group {
-    margin-bottom: 15px;
-  }
-  .job-post-form .form-group i {
-    font-size: 18px;
-  }
-  .job-post-form .form-group .form-control {
-    font-size: 14px;
-  }
-  .job-details-widget-side .job-details-widget {
-    padding: 20px 15px;
-    border-radius: 10px;
-  }
-  .job-details-widget-side .job-details-widget .title {
-    font-size: 20px;
-  }
-  .job-details-widget-side .job-details-widget .bar {
-    margin-bottom: 15px;
-  }
-  .job-details-widget-side .job-details-widget .job-details-category li {
-    font-size: 15px;
-  }
-  .job-details-widget-side .job-details-widget .job-details-social {
-    margin: 10px 0 0;
-  }
-  .job-details-widget-side .job-details-widget .job-details-social span {
-    font-size: 15px;
-    margin-bottom: 0;
-  }
-  .job-details-widget-side .job-details-widget .job-details-social .social-icon li {
-    margin-right: 5px;
-  }
-  .job-details-widget-side .job-details-widget .job-details-social .social-icon li a i {
-    font-size: 16px;
-  }
-  .job-details-content h1 {
-    font-size: 28px;
-  }
-  .job-details-content h2 {
-    font-size: 26px;
-  }
-  .job-details-content h3 {
-    font-size: 23px;
-  }
-  .job-details-content h4 {
-    font-size: 21px;
-  }
-  .job-details-content h5 {
-    font-size: 20px;
-  }
-  /* Testimonials Area CSS */
-  .testimonials-widget-item .content-img .line1 {
-    width: 8px;
-    height: 20px;
-  }
-  .testimonials-widget-item .content-img .line2 {
-    width: 8px;
-    height: 20px;
-  }
-  .testimonials-widget-item p {
-    font-size: 16px;
-    margin-top: 25px;
-  }
-  .testimonials-item {
-    padding: 30px 20px;
-  }
-  .testimonials-item .content .line1 {
-    width: 8px;
-    height: 20px;
-  }
-  .testimonials-item .content .line2 {
-    width: 8px;
-    height: 20px;
-  }
-  .testimonials-item p {
-    font-size: 16px;
-    margin-top: 25px;
-    margin-bottom: 15px;
-  }
-  .testimonials-item .rating {
-    font-size: 16px;
-  }
-  /* Testimonials Area CSS End */
-  /* Freelancers Area CSS */
-  .freelancers-area .section-title {
-    margin-bottom: 15px;
-  }
-  .freelancers-card {
-    padding: 20px 10px;
-  }
-  .freelancers-card .title h3 {
-    font-size: 20px;
-  }
-  .freelancers-card .title img {
-    margin-left: 10px;
-  }
-  .freelancers-card p {
-    margin-bottom: 10px;
-  }
-  .freelancers-card .rating i {
-    font-size: 15px;
-  }
-  .freelancers-card .sub-title .sub-title1 {
-    font-size: 15px;
-  }
-  .freelancers-card .sub-title .sub-title1 b {
-    font-size: 16px;
-  }
-  .freelancers-card .sub-title .sub-title2 {
-    font-size: 15px;
-    margin-left: 12px;
-  }
-  .freelancers-card .sub-title .sub-title2 b {
-    font-size: 16px;
-  }
-  /* Freelancers Area CSS End */
-  /* Recent Job Area */
-  .recent-job-item {
-    padding: 20px 10px 20px 75px;
-  }
-  .recent-job-item .recent-job-img {
-    top: 20px;
-    left: 10px;
-  }
-  .recent-job-item .recent-job-img img {
-    width: 50px;
-  }
-  .recent-job-item h3 {
-    font-size: 18px;
-    max-width: 235px;
-  }
-  .recent-job-item .job-list1 li {
-    font-size: 14px;
-    margin-bottom: 10px;
-    margin-right: 7px;
-  }
-  .recent-job-item .job-list1 li i {
-    margin-right: 0;
-  }
-  .recent-job-item .job-list2 {
-    margin: 10px 0 0;
-  }
-  .recent-job-item .job-list2 li {
-    padding: 6px 14px;
-    font-size: 13px;
-  }
-  .recent-job-item .bookmark-btn {
-    top: 43px;
-    font-size: 16px;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-  }
-  .recent-job-card {
-    padding: 25px 15px;
-  }
-  .recent-job-card .content h3 {
-    font-size: 20px;
-  }
-  .recent-job-card .content .job-list1 {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  .recent-job-card .content .job-list1 li {
-    margin-right: 70px;
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-  .recent-job-card .content span {
-    font-size: 14px;
-  }
-  .recent-job-card .job-sub-content .job-list2 li {
-    padding: 5px 14px;
-    font-size: 12px;
-    margin-right: 0;
-  }
-  .recent-job-card .job-sub-content .price {
-    font-size: 16px;
-  }
-  .recent-job-card .job-sub-content .price b {
-    font-size: 14px;
-  }
-  .recent-job-card .bookmark-btn {
-    top: 20px;
-  }
-  /* Recent Job Area End */
-  .candidates-topper .candidates-title h3 {
-    margin-bottom: 15px;
-  }
-  .candidates-details-content h1 {
-    font-size: 28px;
-  }
-  .candidates-details-content h2 {
-    font-size: 26px;
-  }
-  .candidates-details-content h3 {
-    font-size: 23px;
-  }
-  .candidates-details-content h4 {
-    font-size: 21px;
-  }
-  .candidates-details-content h5 {
-    font-size: 20px;
-  }
-  /* Pricing Area */
-  .pricing-wraps .table-responsive {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-  .pricing-wraps .pricing-table {
-    text-align: center;
-  }
-  .pricing-wraps .pricing-table table thead tr th {
-    padding: 10px 20px;
-    white-space: nowrap;
-  }
-  .pricing-wraps .pricing-table table thead tr th:first-child {
-    padding-left: 0;
-  }
-  .pricing-wraps .pricing-table table thead tr th.pricing-name {
-    font-size: 24px;
-  }
-  .pricing-wraps .pricing-table table thead tr th.pricing-name span {
-    font-size: 15px;
-  }
-  .pricing-wraps .pricing-table table thead tr td {
-    white-space: nowrap;
-  }
-  .pricing-wraps .pricing-table table thead tr td:first-child {
-    padding-left: 0;
-  }
-  .pricing-wraps .pricing-table table tbody tr td.pricing-name-list1 a {
-    font-size: 18px;
-  }
-  .pricing-wraps .pricing-table table tbody tr td.pricing-name-list2 a {
-    font-size: 18px;
-  }
-  .pricing-wraps .pricing-table table tbody tr td.pricing-name-list3 .unit-amount {
-    font-size: 18px;
-  }
-  .pricing-wraps .pricing-table table tbody tr td.pricing-body-list1 a {
-    font-size: 15px;
-  }
-  .pricing-wraps .pricing-table table tbody tr td.pricing-body-list2 a {
-    font-size: 15px;
-  }
-  .pricing-wraps .pricing-table table tbody tr td.pricing-body-list2 .icon {
-    font-size: 16px;
-  }
-  .pricing-wraps .pricing-table table tbody tr td.pricing-body-list2 .price-btn {
-    padding: 7px 16px;
-    font-size: 14px;
-  }
-  .pricing-wraps .pricing-table table tbody tr td.pricing-body-list3 .unit-amount {
-    font-size: 15px;
-  }
-  .pricing-wraps .pricing-table table tbody tr td.pricing-body-list3 .icon {
-    font-size: 16px;
-  }
-  .pricing-wraps .pricing-table table tbody tr td.pricing-body-list3 .price-btn {
-    padding: 7px 16px;
-    font-size: 14px;
-  }
-  .pricing-content .section-title {
-    margin-bottom: 20px;
-  }
-  .pricing-content ul li.title {
-    margin-left: 25px;
-  }
-  .pricing-card {
-    border-radius: 10px;
-    padding: 25px 15px;
-  }
-  .pricing-card .pricing-title {
-    margin-bottom: 15px;
-  }
-  .pricing-card .pricing-title h2 {
-    font-size: 20px;
-  }
-  .pricing-card h3 {
-    font-size: 32px;
-    margin-bottom: 15px;
-  }
-  .pricing-card h3 span {
-    font-size: 15px;
-  }
-  .pricing-card ul li {
-    margin-bottom: 10px;
-    font-size: 16px;
-  }
-  .pricing-card .price-btn-area {
-    margin-top: 20px;
-  }
-  .pricing-card .price-btn-area .price-btn {
-    padding: 10px 20px;
-  }
-  /* Pricing Area  End */
-  /* Coming Soon Area */
-  .coming-soon-area .coming-soon-content {
-    padding-top: 30px;
-    padding-bottom: 50px;
-    padding-left: 15px;
-    padding-right: 15px;
-    border-radius: 0;
-    animation: none;
-  }
-  .coming-soon-area .coming-soon-content h1 {
-    font-size: 45px;
-    line-height: 1.1;
-    margin-top: 0;
-  }
-  .coming-soon-area .coming-soon-content p {
-    font-size: 16px;
-    margin-top: 15px;
-  }
-  /* Coming Soon Area End */
-  .blog-area .section-title {
-    margin-bottom: 10px;
-  }
-  .blog-card .blog-img .tag {
-    padding: 6px 14px;
-    font-size: 12px;
-    left: 10px;
-  }
-  .blog-card .content {
-    padding-left: 10px;
-  }
-  .blog-card .content ul li {
-    font-size: 14px;
-  }
-  .blog-card .content h3 {
-    font-size: 20px;
-  }
-  .blog-details-content h1 {
-    font-size: 28px;
-  }
-  .blog-details-content h2 {
-    font-size: 26px;
-  }
-  .blog-details-content h3 {
-    font-size: 23px;
-  }
-  .blog-details-content h4 {
-    font-size: 21px;
-  }
-  .blog-details-content h5 {
-    font-size: 20px;
-  }
-  .blog-details-content .content ul li {
-    margin-right: 20px;
-    font-size: 14px;
-  }
-  .blog-details-content .content ul li.images {
-    margin-right: 5px;
-  }
-  .blog-details-content .content ul li.images img {
-    width: 30px;
-    height: 30px;
-  }
-  .blog-details-content .content ul li a {
-    padding: 6px 14px;
-    font-size: 12px;
-  }
-  .blog-details-content .blockquote {
-    padding: 30px 20px;
-  }
-  .blog-details-content .blockquote .line1 {
-    bottom: 30px;
-  }
-  .blog-details-content .blockquote .line2 {
-    bottom: 30px;
-  }
-  .blog-details-content .blog-details-list ul li {
-    font-size: 15px;
-    padding-left: 30px;
-  }
-  .blog-details-content .blog-details-list ul li i {
-    width: 20px;
-    height: 20px;
-    line-height: 20px;
-    font-size: 13px;
-    top: 5px;
-  }
-  .blog-details-content .article-share-area {
-    padding: 12px 10px;
-  }
-  .blog-details-content .article-share-area .article-social-icon .social-icon li {
-    margin-right: 5px;
-  }
-  .blog-details-content .article-share-area .article-social-icon .social-icon li.title {
-    font-size: 16px;
-  }
-  .blog-details-content .article-share-area .article-social-icon .social-icon li a {
-    display: inline-block;
-    border: none;
-  }
-  .blog-details-content .article-share-area .article-social-icon .social-icon li a i {
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    font-size: 16px;
-  }
-  .blog-details-content .article-share-area .tag a {
-    padding: 5px 14px;
-    font-size: 13px;
-  }
-  /* Contact Area */
-  .contact-info-item {
-    margin-top: 0;
-  }
-  .contact-info-item i {
-    top: 12px;
-  }
-  .contact-form {
-    padding: 30px 20px;
-  }
-  .user-all-form .contact-form .default-btn {
-    width: 100%;
-    text-align: center;
-  }
-  .user-all-form .contact-form .sub-title {
-    margin-top: 15px;
-    margin-bottom: 15px;
-  }
-  .user-all-form .contact-form .login-with-account ul {
-    list-style-type: none;
-    margin-bottom: 0;
-    padding: 0;
-  }
-  .user-all-form .contact-form .login-with-account ul li {
-    display: block;
-    margin-bottom: 15px;
-  }
-  .user-all-form .contact-form .login-with-account ul li:last-child {
-    margin-bottom: 0;
-  }
-  .user-all-form .contact-form .login-with-account ul li a {
-    padding: 8px 20px;
-    font-size: 15px;
-  }
-  /* Contact Area End */
-  /* Employers CV Area */
-  .employers-cv-bg {
-    padding: 30px 20px;
-  }
-  .employers-cv-bg h2 {
-    font-size: 26px;
-  }
-  .employers-cv-bg p {
-    margin-bottom: 15px;
-  }
-  .employers-cv-btn {
-    float: none;
-  }
-  .employers-cv-btn .employersButton-button {
-    padding: 10px 20px;
-    font-size: 14px;
-  }
-  /* Employers CV Area End */
-  /* Error Area */
-  .error-area .error-content h1 {
-    font-size: 120px;
-  }
-  .error-area .error-content h3 {
-    margin-top: 20px;
-    font-size: 30px;
-  }
-  .error-area .error-content p {
-    font-size: 15px;
-    margin-top: 10px;
-    padding: 0 15px;
-  }
-  /* Error Area End */
-  /* Footer Area */
-  .footer-widget h3 {
-    margin-bottom: 15px;
-  }
-  .footer-widget h3.title {
-    margin-bottom: 10px;
-  }
-  .footer-widget .footer-logo {
-    margin-bottom: 10px;
-  }
-  .footer-widget p {
-    margin-bottom: 15px;
-  }
-  .footer-widget .footer-list li {
-    margin-bottom: 10px;
-  }
-  .footer-widget .footer-contact-list li {
-    margin-bottom: 10px;
-  }
-  .footer-widget .footer-contact-list li i {
-    font-size: 18px;
-  }
-  /* Footer Area End */
-  .go-top {
-    font-size: 18px;
-    width: 35px;
-    height: 35px;
-    line-height: 32px;
-  }
-  .go-top .active {
-    top: 85%;
-  }
-}
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .ps-2 {
-    padding-left: 0 !important;
-  }
-  .ps-3 {
-    padding-left: 0 !important;
-  }
-  .ps-5 {
-    padding-left: 0 !important;
-  }
-  .section-title h2 {
-    font-size: 32px;
-  }
-  /* Navbar Area */
-  .others-options {
-    display: none !important;
-  }
-  .desktop-nav .navbar .navbar-nav .nav-item {
-    padding-bottom: 20px;
-    padding-top: 20px;
-  }
-  .side-nav-responsive {
-    display: block;
-  }
-  .side-nav-responsive .dot-menu {
-    right: 10px;
-    top: 20px;
-  }
-  .side-nav-responsive .container-max .container {
-    top: 65px;
-  }
-  /* Navbar Area End */
-  /* Main Banner CSS */
-  .banner-content h1 {
-    font-size: 48px;
-  }
-  .banner-content p {
-    margin-bottom: 20px;
-  }
-  .banner-content .popular-searches-tag {
-    font-size: 15px;
-    margin-bottom: 50px;
-  }
-  .banner-content .popular-searches-tag .title {
-    margin-right: 10px;
-  }
-  .banner-content .popular-searches-tag a {
-    font-size: 14px;
-  }
-  .banner-form {
-    padding: 10px;
-    margin-right: -155px;
-  }
-  .banner-form .form-group {
-    padding-right: 7px;
-  }
-  .banner-form .form-group i {
-    font-size: 16px;
-  }
-  .banner-form .form-group .form-control {
-    font-size: 13px;
-    padding: 10px 1px 10px 20px;
-  }
-  .banner-form .form-group .form-control.form-select {
-    padding: 15px 20px 15px 0;
-  }
-  .banner-form .submit-btn {
-    padding: 13px 20px;
-    font-size: 14px;
-  }
-  .banner-img {
-    margin-top: 20px;
-  }
-  .banner-img img {
-    max-width: 100%;
-  }
-  .banner-img .banner-img-shape .shape2 {
-    top: 19%;
-    left: -85px;
-  }
-  .banner-img .banner-img-shape .shape2 img {
-    max-width: 80px;
-  }
-  .banner-img .banner-img-shape .shape4 {
-    top: -15px;
-    left: 50px;
-    width: 60px;
-    height: 60px;
-    line-height: 60px;
-  }
-  .banner-img .banner-img-shape .shape4 img {
-    width: 40px;
-  }
-  .banner-img .banner-img-shape .shape5 {
-    top: 10%;
-    right: 20px;
-  }
-  .banner-img .banner-img-shape .shape5 img {
-    max-width: 60px;
-  }
-  .banner-content-two h1 {
-    font-size: 45px;
-  }
-  .banner-content-two .popular-searches-tag {
-    font-size: 15px;
-  }
-  .banner-content-two .popular-searches-tag .title {
-    margin-right: 10px;
-  }
-  .banner-content-two .popular-searches-tag a {
-    font-size: 14px;
-  }
-  .banner-form-two {
-    max-width: 665px;
-    margin-right: -25px;
-    z-index: 22;
-    position: relative;
-  }
-  .banner-form-two .submit-btn {
-    padding: 10px 20px;
-    background-color: var(--mainColor);
-  }
-  .banner-img-two .shape1 a {
-    display: block;
-  }
-  .banner-img-two .shape1 a img {
-    max-width: 330px;
-  }
-  .banner-img-two .shape3 {
-    top: 40.5%;
-    transform: translateY(-40.5%);
-  }
-  .banner-shape-two .shape2 {
-    left: 30px;
-  }
-  .banner-content-three {
-    position: relative;
-  }
-  .banner-content-three h1 {
-    font-size: 50px;
-  }
-  .banner-three-other .other-content3 {
-    bottom: -45px;
-    left: 0%;
-  }
-  .banner-three-other .other-content3 img {
-    max-width: 115px;
-  }
-  .banner-three-other .other-content8 {
-    top: -30px;
-  }
-  .banner-three-other .other-content9 {
-    bottom: -95px;
     right: 0;
-  }
-  .banner-three-other .other-content9 img {
-    max-width: 165px;
-  }
-  .banner-three-other .other-content9 .other-into-content img {
-    max-width: 40px;
-  }
-  .banner-three-other .other-content10 {
-    bottom: -190px;
-    right: 0;
-  }
-  .banner-three-other .other-content10 img {
-    width: 35px;
-  }
-  .banner-form-two {
-    padding: 10px;
-  }
-  .banner-form-two .form-group i {
-    font-size: 17px;
-  }
-  .banner-form-two .form-group .form-control {
-    font-size: 13px;
-    padding: 10px 0 10px 23px;
-  }
-  .banner-form-two .submit-btn {
-    padding: 12px 20px;
-    font-size: 14px;
-  }
-  /* Main Banner CSS End */
-  /* Browse Jobs CSS */
-  .browse-jobs-card {
-    padding: 20px 10px 20px 70px;
-  }
-  .browse-jobs-card .icon {
-    left: 10px;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    font-size: 22px;
-  }
-  .browse-jobs-card h3 {
-    font-size: 19px;
-  }
-  .browse-jobs-card .more-btn {
-    top: 75%;
-    transform: translateY(-75%);
-    right: 10px;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    font-size: 18px;
-  }
-  .browse-jobs-list h3 {
-    margin-bottom: 20px;
-    font-size: 18px;
-  }
-  .browse-jobs-list h3 i {
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    font-size: 20px;
-    margin-right: 5px;
-  }
-  .browse-jobs-item {
-    padding: 25px 15px;
-    margin-top: 0;
-  }
-  .browse-jobs-item i {
-    position: inherit;
-    top: 0;
-    left: 0;
-    width: 50px;
-    height: 75px;
-    line-height: 75px;
-    font-size: 24px;
-    margin-bottom: 10px;
-    display: inline-block;
-  }
-  .browse-jobs-item h3 {
-    font-size: 18px;
-  }
-  /* Browse Jobs CSS End */
-  .company-card {
-    padding: 25px 12px 25px 66px;
-  }
-  .company-card img {
-    left: 12px;
-    max-width: 45px;
-  }
-  .company-card h3 {
-    font-size: 18px;
-  }
-  .company-card p {
-    font-size: 14px;
-    margin-bottom: 5px;
-  }
-  .company-card .company-btn {
-    font-size: 14px;
-  }
-  /* Find Jobs Area CSS */
-  .find-jobs-card {
-    padding: 20px 15px;
-  }
-  .find-jobs-card .content .content-list li {
-    padding: 6px 16px;
-    font-size: 12px;
-    margin-right: 5px;
-  }
-  .find-jobs-card .content h3 {
-    font-size: 22px;
-  }
-  .find-jobs-card .content .content-list2 li.list-one {
-    font-size: 17px;
-    margin-right: 10px;
-  }
-  .find-jobs-card .content .content-list2 li.list-two {
-    font-size: 15px;
-  }
-  .find-jobs-card .content .content-list3 li {
-    margin-right: 10px;
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-  .find-jobs-card .content .content-list3 li b {
-    font-size: 16px;
-  }
-  .find-jobs-card .content .content-list3 li:last-child {
-    margin-bottom: 0;
-  }
-  /* Find Jobs Area CSS End */
-  /* Job Listing Area */
-  .job-listing-top {
-    padding: 25px 15px;
-  }
-  .job-post-card-ml h3 {
-    font-size: 20px;
-  }
-  .job-post-card-ml .content {
-    display: block;
-  }
-  .job-post-card-ml .content .content-item .content-list li {
-    margin-right: 10px;
-    font-size: 15px;
-    margin-bottom: 12px;
-  }
-  .job-post-card-ml .content .content-item .content-list li b {
-    font-size: 17px;
-  }
-  .job-post-card-ml .content .content-item .content-list li:last-child {
-    margin-right: 0;
-  }
-  .job-post-card-ml .content .content-item span {
-    margin-left: 20px;
-    font-size: 17px;
-  }
-  .job-post-card-ml .content .content-item span b {
-    font-size: 14px;
-  }
-  .job-post-card-ml .content .content-list2 li {
-    padding: 5px 14px;
-    font-size: 13px;
-  }
-  .job-post-form .form-group i {
-    font-size: 18px;
-  }
-  .job-post-form .form-group .form-control {
-    font-size: 15px;
-  }
-  .job-post-form .submit-btn {
-    padding: 12px 20px;
-  }
-  .job-listing-right {
-    border: none;
-    background-color: var(--whiteColor);
-    text-align: center;
-    padding: 15px;
-    margin-bottom: 0;
-  }
-  .job-listing-right ul li {
-    margin: 5px;
-  }
-  .job-listing-right ul li:last-child {
-    margin-bottom: 0;
-  }
-  .job-listing-form {
-    vertical-align: middle;
-  }
-  .job-listing-form .form-group {
-    border: none;
-    padding-right: 0;
-    margin-top: 0;
-  }
-  .job-listing-form .form-group i {
-    left: 8px;
-    font-size: 16px;
-  }
-  .job-listing-form .form-group .form-control {
-    background-color: var(--whiteColor);
-    padding: 10px 27px 10px 40px;
-    font-size: 14px;
-  }
-  .job-listing-form .form-group .form-control.form-select {
-    padding: 10px 15px;
-  }
-  .job-listing-form .submit-btn {
-    padding: 12px 20px;
-  }
-  /* Job Listing Area End */
-  .job-details-widget-side .job-details-widget {
-    padding: 20px 15px;
-    border-radius: 10px;
-  }
-  .job-details-widget-side .job-details-widget .title {
-    font-size: 20px;
-  }
-  .job-details-widget-side .job-details-widget .bar {
-    margin-bottom: 15px;
-  }
-  .job-details-widget-side .job-details-widget .job-details-category li {
-    font-size: 15px;
-  }
-  .job-details-widget-side .job-details-widget .job-details-social {
-    margin: 10px 0 0;
-  }
-  .job-details-widget-side .job-details-widget .job-details-social span {
-    font-size: 15px;
-    margin-bottom: 0;
-  }
-  .job-details-widget-side .job-details-widget .job-details-social .social-icon li {
-    margin-right: 5px;
-  }
-  .job-details-widget-side .job-details-widget .job-details-social .social-icon li a i {
-    font-size: 16px;
-  }
-  /* Testimonials Area CSS */
-  .testimonials-widget-item .content-img .line1 {
-    width: 8px;
-    height: 20px;
-  }
-  .testimonials-widget-item .content-img .line2 {
-    width: 8px;
-    height: 20px;
-  }
-  .testimonials-widget-item p {
-    font-size: 16px;
-    margin-top: 25px;
-    max-width: 650px;
-  }
-  .testimonials-item {
-    padding: 40px 70px;
-  }
-  .testimonials-item .content .line1 {
-    width: 8px;
-    height: 20px;
-  }
-  .testimonials-item .content .line2 {
-    width: 8px;
-    height: 20px;
-  }
-  .testimonials-item p {
-    font-size: 16px;
-    margin-top: 25px;
-    margin-bottom: 15px;
-  }
-  .testimonials-item .rating {
-    font-size: 16px;
-  }
-  /* Testimonials Area CSS End */
-  /* Freelancers Area CSS */
-  .freelancers-card {
-    padding: 20px 10px;
-  }
-  .freelancers-card .title h3 {
-    font-size: 20px;
-  }
-  .freelancers-card .title img {
-    margin-left: 10px;
-  }
-  .freelancers-card p {
-    margin-bottom: 10px;
-  }
-  .freelancers-card .rating i {
-    font-size: 15px;
-  }
-  .freelancers-card .sub-title .sub-title1 {
-    font-size: 15px;
-  }
-  .freelancers-card .sub-title .sub-title1 b {
-    font-size: 16px;
-  }
-  .freelancers-card .sub-title .sub-title2 {
-    font-size: 15px;
-    margin-left: 12px;
-  }
-  .freelancers-card .sub-title .sub-title2 b {
-    font-size: 16px;
-  }
-  /* Freelancers Area CSS End */
-  /* Recent Job Area CSS */
-  .recent-job-item h3 {
-    font-size: 20px;
-  }
-  .recent-job-item .job-list1 li {
-    font-size: 15px;
-  }
-  .recent-job-card {
-    padding: 25px 15px;
-  }
-  .recent-job-card .content h3 {
-    font-size: 20px;
-  }
-  .recent-job-card .content .job-list1 {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  .recent-job-card .content .job-list1 li {
-    margin-right: 70px;
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-  .recent-job-card .content span {
-    font-size: 14px;
-  }
-  .recent-job-card .job-sub-content .job-list2 li {
-    padding: 5px 14px;
-    font-size: 12px;
-    margin-right: 0;
-  }
-  .recent-job-card .job-sub-content .price {
-    font-size: 16px;
-  }
-  .recent-job-card .job-sub-content .price b {
-    font-size: 14px;
-  }
-  .recent-job-card .bookmark-btn {
-    top: 20px;
-  }
-  .recent-job-card .download-btn {
-    margin-top: 15px;
-    position: inherit;
     bottom: 0;
-    left: 0;
-    padding: 8px 20px;
-    font-size: 14px;
-  }
-  /* Recent Job Area CSS End */
-  /* Candidates Area */
-  .candidates-topper .candidates-category-form .form-group .form-control {
-    font-size: 14px;
-  }
-  .candidates-details-right .content-profile {
-    padding: 25px 15px 20px;
-  }
-  .candidates-details-right .content-profile .content-profile-img img {
-    margin-bottom: 10px;
-    max-width: 70px;
-  }
-  .candidates-details-right .content-profile .title h3 {
-    font-size: 20px;
-  }
-  .candidates-details-right .content-profile .title img {
-    margin-left: 10px;
-    max-width: 28px;
-  }
-  .candidates-details-right .content-info {
-    padding: 25px 15px 20px;
-  }
-  .candidates-details-right .content-info h3 {
-    margin-bottom: 10px;
-  }
-  .candidates-details-right .content-info ul li span {
-    font-size: 15px;
-  }
-  .candidates-details-right .content-info ul li a {
-    font-size: 16px;
-  }
-  .content-widget-right {
-    padding: 25px 15px 20px;
-  }
-  .content-widget-right h3 {
-    margin-bottom: 10px;
-  }
-  .content-widget-right .download-btn {
-    padding: 10px;
-    font-size: 15px;
-  }
-  .candidates-details-content {
-    padding: 25px 15px;
-  }
-  .candidates-details-content .content {
-    padding-bottom: 20px;
-  }
-  .candidates-details-content .candidates-details-experience .experience-card .experience-list li {
-    margin-right: 10px;
-    font-size: 15px;
-    margin-bottom: 10px;
-  }
-  .candidates-details-content .candidates-details-experience .experience-card .experience-list li:last-child {
-    margin-bottom: 0;
-  }
-  .candidates-details-content .candidates-skill {
-    padding-bottom: 20px;
-  }
-  .candidates-details-content .candidates-skill .candidates-skill-tag li a {
-    padding: 6px 20px;
-  }
-  .candidates-details-content .candidates-education .education-card .experience-list li {
-    margin-right: 10px;
-    font-size: 15px;
-    margin-bottom: 10px;
-  }
-  .candidates-details-content .candidates-education .education-card .experience-list li:last-child {
-    margin-bottom: 0;
-  }
-  .other-candidates-list {
-    padding: 25px 13px;
-  }
-  .other-candidates-list ul li {
-    padding-left: 0;
-  }
-  .other-candidates-list ul li .profile {
-    position: inherit;
-    margin-bottom: 10px;
-  }
-  /* Candidates Area End */
-  /* Pricing Area */
-  .pricing-wraps .pricing-table {
-    text-align: center;
-  }
-  .pricing-wraps .pricing-table table thead tr th {
-    padding: 10px 20px;
-    white-space: nowrap;
-  }
-  .pricing-wraps .pricing-table table thead tr th:first-child {
-    padding-left: 0;
-  }
-  .pricing-wraps .pricing-table table thead tr th.pricing-name {
-    font-size: 24px;
-  }
-  .pricing-wraps .pricing-table table thead tr th.pricing-name span {
-    font-size: 15px;
-  }
-  .pricing-wraps .pricing-table table thead tr td {
-    white-space: nowrap;
-  }
-  .pricing-wraps .pricing-table table thead tr td:first-child {
-    padding-left: 0;
-  }
-  .pricing-wraps .pricing-table table tbody tr td.pricing-name-list1 a {
-    font-size: 18px;
-  }
-  .pricing-wraps .pricing-table table tbody tr td.pricing-name-list2 a {
-    font-size: 18px;
-  }
-  .pricing-wraps .pricing-table table tbody tr td.pricing-name-list3 .unit-amount {
-    font-size: 18px;
-  }
-  .pricing-wraps .pricing-table table tbody tr td.pricing-body-list1 a {
-    font-size: 15px;
-  }
-  .pricing-wraps .pricing-table table tbody tr td.pricing-body-list2 a {
-    font-size: 15px;
-  }
-  .pricing-wraps .pricing-table table tbody tr td.pricing-body-list2 .icon {
-    font-size: 16px;
-  }
-  .pricing-wraps .pricing-table table tbody tr td.pricing-body-list2 .price-btn {
-    padding: 7px 13px;
-    font-size: 14px;
-  }
-  .pricing-wraps .pricing-table table tbody tr td.pricing-body-list3 .unit-amount {
-    font-size: 15px;
-  }
-  .pricing-wraps .pricing-table table tbody tr td.pricing-body-list3 .icon {
-    font-size: 16px;
-  }
-  .pricing-wraps .pricing-table table tbody tr td.pricing-body-list3 .price-btn {
-    padding: 7px 13px;
-    font-size: 14px;
-  }
-  .pricing-content ul li.title {
-    margin-left: 25px;
-  }
-  .pricing-card {
-    border-radius: 10px;
-    padding: 25px 15px;
-  }
-  .pricing-card .pricing-title {
-    margin-bottom: 15px;
-  }
-  .pricing-card .pricing-title h2 {
-    font-size: 20px;
-  }
-  .pricing-card h3 {
-    font-size: 32px;
-    margin-bottom: 15px;
-  }
-  .pricing-card h3 span {
-    font-size: 15px;
-  }
-  .pricing-card ul li {
-    margin-bottom: 10px;
-    font-size: 16px;
-  }
-  .pricing-card .price-btn-area {
-    margin-top: 20px;
-  }
-  .pricing-card .price-btn-area .price-btn {
-    padding: 10px 20px;
-    font-size: 14px;
-  }
-  /* Pricing Area  End */
-  .career-content {
-    margin-bottom: 23px;
-  }
-  .career-content ul li {
-    margin-bottom: 0;
-  }
-  .career-content ul li:last-child {
-    margin-bottom: 0;
-  }
-  .career-content ul li.title {
-    margin-left: 25px;
-    display: inline-block;
-  }
-  .blog-card .blog-img .tag {
-    padding: 6px 14px;
-    font-size: 12px;
-    left: 10px;
-  }
-  .blog-card .content {
-    padding-left: 10px;
-  }
-  .blog-card .content ul li {
-    font-size: 14px;
-  }
-  .blog-card .content h3 {
-    font-size: 22px;
-  }
-  .contact-info-item {
-    padding: 25px 15px;
-    margin-top: 0;
-  }
-  .contact-info-item i {
-    position: inherit;
-    top: 0;
-    left: 0;
-    width: 50px;
-    height: 75px;
-    line-height: 75px;
-    font-size: 24px;
-    margin-bottom: 10px;
-    display: inline-block;
-  }
-  .employers-cv-content h2 {
-    font-size: 34px;
-  }
-  /* Footer Area */
-  .footer-widget h3 {
-    font-size: 20px;
-  }
-  .footer-widget .footer-list li {
-    font-size: 15px;
-  }
-  .footer-widget .footer-contact-list li {
-    font-size: 15px;
-  }
-  .footer-widget .footer-contact-list li i {
-    font-size: 17px;
-  }
-  /* Footer Area End */
-  .go-top {
-    font-size: 18px;
-    width: 35px;
-    height: 35px;
-    line-height: 32px;
-  }
-  .go-top .active {
-    top: 85%;
-  }
-}
-@media only screen and (min-width: 1200px) and (max-width: 1299px) {
-  /* Navbar Area */
-  .desktop-nav .navbar .navbar-nav .nav-item a {
-    margin-left: 10px;
-    margin-right: 10px;
-    font-size: 15px;
-  }
-  .others-options .optional-item {
-    margin-right: 15px;
-  }
-  .others-options .optional-item .default-btn {
-    padding: 10px 20px;
-  }
-  .others-options .optional-item .search-btn {
-    margin-left: 15px;
-  }
-  /* Navbar Area End */
-  .banner-content h1 {
-    font-size: 60px;
-  }
-  .banner-content-two h1 {
-    font-size: 50px;
-  }
-  .banner-content-two .popular-searches-tag {
-    font-size: 15px;
-  }
-  .banner-content-two .popular-searches-tag .title {
-    margin-right: 10px;
-  }
-  .banner-content-two .popular-searches-tag a {
-    font-size: 14px;
-  }
-  .banner-form {
-    padding: 10px;
-  }
-  .banner-form .form-group {
-    padding-right: 7px;
-  }
-  .banner-form .form-group i {
-    font-size: 17px;
-  }
-  .banner-form .form-group .form-control {
-    font-size: 14px;
-    padding: 10px 1px 10px 20px;
-  }
-  .banner-form .form-group .form-control.form-select {
-    padding: 15px 20px 15px 0;
-  }
-  .banner-form .submit-btn {
-    padding: 13px 20px;
-    font-size: 14px;
-  }
-  .banner-img .banner-img-shape .shape2 {
-    top: 19%;
-    left: -85px;
-  }
-  .banner-img .banner-img-shape .shape2 img {
-    max-width: 80px;
-  }
-  .banner-img .banner-img-shape .shape4 {
-    top: -15px;
-    left: 50px;
-    width: 60px;
-    height: 60px;
-    line-height: 60px;
-  }
-  .banner-img .banner-img-shape .shape4 img {
-    width: 40px;
-  }
-  .banner-img .banner-img-shape .shape5 {
-    top: 10%;
-    right: 20px;
-  }
-  .banner-img .banner-img-shape .shape5 img {
-    max-width: 60px;
-  }
-  .banner-form-two {
-    max-width: 665px;
-    margin-right: -25px;
-    z-index: 22;
     position: relative;
   }
-  .banner-form-two .form-group i {
-    font-size: 17px;
-  }
-  .banner-form-two .form-group .form-control {
-    font-size: 14px;
-    padding: 10px 1px 10px 20px;
-  }
-  .banner-form-two .form-group .form-control.form-select {
-    padding: 15px 20px 15px 0;
-  }
-  .banner-form-two .submit-btn {
-    padding: 10px 20px;
-  }
-  .banner-content-three {
-    position: relative;
-  }
-  .banner-content-three h1 {
-    font-size: 50px;
-  }
-  .banner-three-other .other-content3 {
-    bottom: -45px;
-    left: 0%;
-  }
-  .banner-three-other .other-content3 img {
-    max-width: 115px;
-  }
-  .banner-three-other .other-content8 {
-    top: -30px;
-  }
-  .banner-three-other .other-content9 {
-    bottom: -95px;
-    right: 0;
-  }
-  .banner-three-other .other-content9 img {
-    max-width: 165px;
-  }
-  .banner-three-other .other-content9 .other-into-content img {
-    max-width: 40px;
-  }
-  .banner-three-other .other-content10 {
-    bottom: -190px;
-    right: 0;
-  }
-  .banner-three-other .other-content10 img {
-    width: 35px;
-  }
-  /* Browse Jobs CSS */
-  .browse-jobs-card {
-    padding: 20px 10px 20px 70px;
-  }
-  .browse-jobs-card .icon {
-    left: 10px;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    font-size: 22px;
-  }
-  .browse-jobs-card h3 {
-    font-size: 19px;
-  }
-  .browse-jobs-card .more-btn {
-    right: 10px;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    font-size: 18px;
-  }
-  .browse-jobs-list h3 {
-    margin-bottom: 20px;
-    font-size: 20px;
-  }
-  .browse-jobs-list h3 i {
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    font-size: 20px;
-    margin-right: 5px;
-  }
-  .browse-jobs-item {
-    padding: 25px 10px 25px 75px;
-  }
-  .browse-jobs-item i {
-    left: 15px;
-    width: 50px;
-    font-size: 24px;
-  }
-  .browse-jobs-item h3 {
-    font-size: 18px;
-  }
-  /* Browse Jobs CSS End */
-  .company-card {
-    padding: 25px 15px 25px 79px;
-  }
-  .company-card img {
-    left: 15px;
-    max-width: 55px;
-  }
-  .company-card h3 {
-    font-size: 20px;
-  }
-  /* Find Jobs Area CSS */
-  .find-jobs-card {
-    padding: 20px 15px;
-  }
-  .find-jobs-card .content .content-list li {
-    padding: 6px 16px;
-    font-size: 12px;
-    margin-right: 5px;
-  }
-  .find-jobs-card .content h3 {
-    font-size: 22px;
-  }
-  .find-jobs-card .content .content-list2 li.list-one {
-    font-size: 17px;
-    margin-right: 10px;
-  }
-  .find-jobs-card .content .content-list2 li.list-two {
-    font-size: 15px;
-  }
-  .find-jobs-card .content .content-list3 li {
-    margin-right: 10px;
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-  .find-jobs-card .content .content-list3 li b {
-    font-size: 16px;
-  }
-  .find-jobs-card .content .content-list3 li:last-child {
-    margin-right: 0;
-  }
-  /* Find Jobs Area CSS End */ /* Find Jobs Area CSS */
-  .find-jobs-card {
-    padding: 20px 15px;
-  }
-  .find-jobs-card .content .content-list li {
-    padding: 6px 16px;
-    font-size: 12px;
-    margin-right: 5px;
-  }
-  .find-jobs-card .content h3 {
-    font-size: 22px;
-  }
-  .find-jobs-card .content .content-list2 li.list-one {
-    font-size: 17px;
-    margin-right: 10px;
-  }
-  .find-jobs-card .content .content-list2 li.list-two {
-    font-size: 15px;
-  }
-  .find-jobs-card .content .content-list3 li {
-    margin-right: 10px;
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-  .find-jobs-card .content .content-list3 li b {
-    font-size: 16px;
-  }
-  .find-jobs-card .content .content-list3 li:last-child {
-    margin-right: 0;
-  }
-  /* Find Jobs Area CSS End */
-  .job-listing-right ul li.icon {
-    font-size: 18px;
-  }
-  .job-listing-right ul li.tag {
-    padding: 6px 12px;
-    font-size: 12px;
-  }
-  .job-listing-right ul li.tag i {
-    font-size: 16px;
-    top: 5px;
-  }
-  .job-listing-form .form-group .form-control {
-    font-size: 14px;
-    padding: 10px 10px 10px 27px;
-  }
-  .job-post-card-ml h3 {
-    font-size: 20px;
-  }
-  .job-post-card-ml .content {
+  .featured-imagebox-post.ttm-box-view-top-image{margin-bottom: 20px!important;}
+ 
+  
+
+  /* cart */
+	table .cart_item .product-thumbnail,
+	.shop_table_responsive thead{ display: none; }
+	table.shop_table_responsive tr.cart_item td:not(.product-remove)::before {
+	    content: attr(data-title) ": ";
+	    font-weight: 700;
+	    float: left;
+	}
+    table.shop_table:not(.checkout-review-order-table) tbody tr {display: block;}
+    table.shop_table:not(.checkout-review-order-table) tr td {
     display: block;
-  }
-  .job-post-card-ml .content .content-item .content-list li {
-    margin-right: 10px;
-    font-size: 15px;
-    margin-bottom: 12px;
-  }
-  .job-post-card-ml .content .content-item .content-list li b {
-    font-size: 17px;
-  }
-  .job-post-card-ml .content .content-item .content-list li:last-child {
-    margin-right: 0;
-  }
-  .job-post-card-ml .content .content-item span {
-    margin-left: 20px;
-    font-size: 17px;
-  }
-  .job-post-card-ml .content .content-item span b {
-    font-size: 14px;
-  }
-  .job-post-card-ml .content .content-list2 li {
-    padding: 5px 14px;
-    font-size: 13px;
-  }
-  .job-listing-topper .job-listing-category .form-group .form-control {
-    font-size: 14px;
-  }
-  .candidates-topper .candidates-category-form .form-group .form-control {
-    font-size: 14px;
-  }
-  /* Testimonials Area CSS */
-  .testimonials-widget-item .content-img .line1 {
-    width: 8px;
-    height: 20px;
-  }
-  .testimonials-widget-item .content-img .line2 {
-    width: 8px;
-    height: 20px;
-  }
-  .testimonials-widget-item p {
-    font-size: 16px;
-    margin-top: 25px;
-    max-width: 650px;
-  }
-  .testimonials-item .content .line1 {
-    width: 8px;
-    height: 20px;
-  }
-  .testimonials-item .content .line2 {
-    width: 8px;
-    height: 20px;
-  }
-  .testimonials-item p {
-    font-size: 17px;
-    margin-top: 25px;
-    margin-bottom: 15px;
-  }
-  .testimonials-item .rating {
-    font-size: 16px;
-  }
-  /* Testimonials Area CSS End */
-  .other-candidates-list {
-    padding: 25px 13px;
-  }
-  .other-candidates-list ul li {
-    padding-left: 70px;
-  }
-  .other-candidates-list ul li .profile img {
-    max-width: 60px;
-  }
-  .other-candidates-list ul li .sub-title h3 {
-    font-size: 17px;
-  }
-  .other-candidates-list ul li .sub-title img {
-    margin-left: 5px;
-  }
-  /* Freelancers Area CSS */
-  .freelancers-card {
-    padding: 20px 10px;
-  }
-  .freelancers-card .title h3 {
-    font-size: 20px;
-  }
-  .freelancers-card .title img {
-    margin-left: 10px;
-  }
-  .freelancers-card p {
-    margin-bottom: 10px;
-  }
-  .freelancers-card .rating i {
-    font-size: 15px;
-  }
-  .freelancers-card .sub-title .sub-title1 {
-    font-size: 15px;
-  }
-  .freelancers-card .sub-title .sub-title1 b {
-    font-size: 16px;
-  }
-  .freelancers-card .sub-title .sub-title2 {
-    font-size: 15px;
-    margin-left: 12px;
-  }
-  .freelancers-card .sub-title .sub-title2 b {
-    font-size: 16px;
-  }
-  /* Freelancers Area CSS End */
-  /* Recent Job Area CSS */
-  .recent-job-item h3 {
-    font-size: 18px;
-  }
-  .recent-job-item .job-list1 li {
-    font-size: 15px;
-  }
-  .recent-job-item .bookmark-btn {
-    top: 55px;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    font-size: 16px;
-  }
-  .recent-job-card {
-    padding: 25px 15px;
-  }
-  .recent-job-card .content h3 {
-    font-size: 20px;
-  }
-  .recent-job-card .content .job-list1 {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  .recent-job-card .content .job-list1 li {
-    margin-right: 70px;
-    font-size: 15px;
-    margin-bottom: 10px;
-  }
-  .recent-job-card .content span {
-    font-size: 15px;
-  }
-  .recent-job-card .job-sub-content .job-list2 li {
-    padding: 5px 14px;
-    font-size: 12px;
-    margin-right: 10px;
-  }
-  .recent-job-card .job-sub-content .price {
-    font-size: 16px;
-  }
-  .recent-job-card .job-sub-content .price b {
-    font-size: 14px;
-  }
-  .recent-job-card .bookmark-btn {
-    top: 20px;
-  }
-  .recent-job-card .download-btn {
-    margin-top: 15px;
-    position: inherit;
-    bottom: 0;
-    left: 0;
-    padding: 8px 20px;
-    font-size: 14px;
-  }
-  /* Recent Job Area CSS End */
-  .job-details-widget-side .job-details-widget {
-    padding: 20px 15px;
-    border-radius: 10px;
-  }
-  .job-details-widget-side .job-details-widget .title {
-    font-size: 20px;
-  }
-  .job-details-widget-side .job-details-widget .bar {
-    margin-bottom: 15px;
-  }
-  .job-details-widget-side .job-details-widget .job-details-category li {
-    font-size: 15px;
-  }
-  .job-details-widget-side .job-details-widget .job-details-social {
-    margin: 10px 0 0;
-  }
-  .job-details-widget-side .job-details-widget .job-details-social span {
-    font-size: 15px;
-    margin-bottom: 0;
-  }
-  .job-details-widget-side .job-details-widget .job-details-social .social-icon li {
-    margin-right: 5px;
-  }
-  .job-details-widget-side .job-details-widget .job-details-social .social-icon li a i {
-    font-size: 16px;
-  }
-  /* Pricing Area */
-  .pricing-wraps .pricing-table {
-    text-align: center;
-  }
-  .pricing-wraps .pricing-table table thead tr th {
-    padding: 10px 20px;
-    white-space: nowrap;
-  }
-  .pricing-wraps .pricing-table table thead tr th:first-child {
-    padding-left: 0;
-  }
-  .pricing-wraps .pricing-table table thead tr th.pricing-name {
-    font-size: 24px;
-  }
-  .pricing-wraps .pricing-table table thead tr th.pricing-name span {
-    font-size: 15px;
-  }
-  .pricing-wraps .pricing-table table thead tr td {
-    white-space: nowrap;
-  }
-  .pricing-wraps .pricing-table table thead tr td:first-child {
-    padding-left: 0;
-  }
-  .pricing-wraps .pricing-table table tbody tr td.pricing-name-list1 a {
-    font-size: 18px;
-  }
-  .pricing-wraps .pricing-table table tbody tr td.pricing-name-list2 a {
-    font-size: 18px;
-  }
-  .pricing-wraps .pricing-table table tbody tr td.pricing-name-list3 .unit-amount {
-    font-size: 18px;
-  }
-  .pricing-wraps .pricing-table table tbody tr td.pricing-body-list1 a {
-    font-size: 15px;
-  }
-  .pricing-wraps .pricing-table table tbody tr td.pricing-body-list2 a {
-    font-size: 15px;
-  }
-  .pricing-wraps .pricing-table table tbody tr td.pricing-body-list2 .icon {
-    font-size: 16px;
-  }
-  .pricing-wraps .pricing-table table tbody tr td.pricing-body-list2 .price-btn {
-    padding: 7px 13px;
-    font-size: 14px;
-  }
-  .pricing-wraps .pricing-table table tbody tr td.pricing-body-list3 .unit-amount {
-    font-size: 15px;
-  }
-  .pricing-wraps .pricing-table table tbody tr td.pricing-body-list3 .icon {
-    font-size: 16px;
-  }
-  .pricing-wraps .pricing-table table tbody tr td.pricing-body-list3 .price-btn {
-    padding: 7px 13px;
-    font-size: 14px;
-  }
-  .pricing-content ul li.title {
-    margin-left: 25px;
-  }
-  /* Pricing Area  End */
-  .blog-card .blog-img .tag {
-    left: 10px;
-  }
-  .blog-card .content {
-    padding-left: 10px;
-  }
-  .blog-card .content h3 {
-    font-size: 22px;
-  }
-  .contact-info-item {
-    padding: 25px 10px 25px 75px;
-  }
-  .contact-info-item i {
-    top: 17px;
-    left: 12px;
-    width: 50px;
-    height: 75px;
-    line-height: 75px;
-    font-size: 24px;
-  }
-}
-@media only screen and (min-width: 1300px) and (max-width: 1350px) {
-  .banner-content-two h1 {
-    font-size: 60px;
-  }
-}
-@media only screen and (min-width: 1300px) and (max-width: 1499px) {
-  .recent-job-card-pt {
-    padding: 25px 15px;
-  }
-  .recent-job-card-pt .content h3 {
-    font-size: 20px;
-  }
-  .recent-job-card-pt .content .job-list1 {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  .recent-job-card-pt .content .job-list1 li {
-    margin-right: 70px;
-    font-size: 15px;
-    margin-bottom: 10px;
-  }
-  .recent-job-card-pt .content span {
-    font-size: 15px;
-  }
-  .recent-job-card-pt .job-sub-content .job-list2 li {
-    padding: 5px 14px;
-    font-size: 12px;
-    margin-right: 10px;
-  }
-  .recent-job-card-pt .job-sub-content .price {
-    font-size: 16px;
-  }
-  .recent-job-card-pt .job-sub-content .price b {
-    font-size: 14px;
-  }
-  .recent-job-card-pt .bookmark-btn {
-    top: 20px;
-  }
-  .recent-job-card-pt .download-btn {
-    bottom: 60px;
-    right: 15px;
-    padding: 8px 20px;
-    font-size: 14px;
-  }
-}
-@media only screen and (min-width: 1300px) {
-  .container {
-    max-width: 1320px !important;
-  }
-  .container-fluid {
-    max-width: 1320px !important;
-  }
-}
-@media only screen and (min-width: 1350px) and (max-width: 1469px) {
-  .container-fluid {
-    max-width: 1360px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-}
-@media only screen and (min-width: 1470px) and (max-width: 1799px) {
-  .container-fluid {
-    max-width: 1460px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-  .banner-img img {
-    max-width: 100%;
-  }
-  .banner-img .banner-img-shape .shape2 {
-    top: 25%;
-    left: -135px;
-  }
-}
-@media only screen and (min-width: 1800px) {
-  .container-fluid {
-    max-width: 1720px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-  .banner-img img {
-    max-width: 100%;
-  }
-  .banner-shape .shape-in-one img {
-    max-width: 100%;
-  }
-  .banner-shape .shape-in-two img {
-    max-width: 100%;
-  }
-  .banner-three-other .other-content1 {
-    left: -7%;
-  }
-  .banner-three-other .other-content2 {
-    left: -12%;
-  }
-  .banner-three-other .other-content4 {
-    left: -5%;
-  }
-  .banner-three-other .other-content5 {
-    left: -30%;
-  }
-  .banner-three-other .other-content8 {
-    top: -5px;
-    right: 3%;
-  }
-  .banner-three-other .other-content9 {
-    right: 0;
-  }
-}
-@media only screen and (max-width: 991px) {
-  .nav-sidebar {
-    display: none;
-  }
-  .mobile-nav {
-    display: inline-block;
-  }
-  .navbar-area {
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-  .navbar-area.is-sticky {
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-  .mobile-responsive-nav {
-    display: block;
-  }
-  .mobile-responsive-nav .mobile-responsive-menu {
-    position: relative;
-  }
-  .mobile-responsive-nav .mobile-responsive-menu.mean-container .mean-nav {
-    margin-top: 55px;
-    background-color: #ffffff;
-  }
-  .mobile-responsive-nav .mobile-responsive-menu.mean-container .mean-nav ul {
-    font-size: 15px;
-    border: none !important;
-  }
-  .mobile-responsive-nav .mobile-responsive-menu.mean-container .mean-nav ul li a {
-    color: #000000;
-    border-top-color: #DBEEFD;
-    text-transform: capitalize;
-  }
-  .mobile-responsive-nav .mobile-responsive-menu.mean-container .mean-nav ul li a i {
-    display: none;
-  }
-  .mobile-responsive-nav .mobile-responsive-menu.mean-container .mean-nav ul li a.mean-expand {
-    width: 50%;
-    height: 28px;
     text-align: right;
-    padding: 11px !important;
-    background: transparent !important;
-    border-left: none !important;
-    border-bottom: none !important;
-  }
-  .mobile-responsive-nav .mobile-responsive-menu.mean-container .mean-nav ul li a.active {
-    color: var(--mainColor);
-  }
-  .mobile-responsive-nav .mobile-responsive-menu.mean-container .mean-nav ul li li a {
-    font-size: 15px;
-  }
-  .mobile-responsive-nav .mobile-responsive-menu.mean-container .navbar-nav {
-    max-height: 64vh;
-    overflow-y: scroll;
-    box-shadow: 0 7px 13px 0 rgba(0, 0, 0, 0.1);
-    /* width */
-    /* Track */
-    /* Handle */
-    /* Handle on hover */
-  }
-  .mobile-responsive-nav .mobile-responsive-menu.mean-container .navbar-nav::-webkit-scrollbar {
-    width: 7px;
-  }
-  .mobile-responsive-nav .mobile-responsive-menu.mean-container .navbar-nav::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-  .mobile-responsive-nav .mobile-responsive-menu.mean-container .navbar-nav::-webkit-scrollbar-thumb {
-    background: #888;
-  }
-  .mobile-responsive-nav .mobile-responsive-menu.mean-container .navbar-nav::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
-  .mobile-responsive-nav .mean-container a.meanmenu-reveal {
-    top: 10px;
-    padding: 0;
-    width: 35px;
-    height: 30px;
-    padding-top: 6px;
-    color: var(--mainColor);
-  }
-  .mobile-responsive-nav .mean-container a.meanmenu-reveal span {
-    background: var(--mainColor);
-    height: 4px;
-    margin-top: -6px;
-    border-radius: 3px;
+}
+	.coupon{ float: none; padding-bottom: .5em; }
+	td.actions button{ width: 100%; }
+	.coupon input, td.actions .coupon .button{ width: 40%; }
+	.quantity{ display: inline-block; }
+	.cart-collaterals .cart_totals{ width: 100%; float: none; }
+
+    /* section-title */
+    .row.text-center .section-title p {width: 78%;margin: 0 auto;}
+    /* ttm-row*/
+    /* ttm-btn*/
+    .ttm-btn.pull-right{float: left;}
+    /* ttm-tabs*/
+    .ttm-tabs.element-tab-style-vertical .content-tab {padding: 10px 20px;}
+    /* footer*/
+    .ttm-footer2-left {width: 100%;padding-bottom: 0!important;}
+    .ttm-footer2-left, .ttm-footer2-right {
+    padding-top: 10px;
+    padding-bottom: 25px;
+    text-align: left;
+    }
+    .footer .second-footer .second-footer-inner {padding: 15px 0 15px;}
+    .mailchimp-inputbox{margin-top: 30px;}
+    .first-footer{padding-bottom: 20px;}
+    .first-footer .ttm-newstter-box{max-width: 100%;}
+    .ttm_single_image_wrapper.pt-107{padding-top: 0!important;}
+
+    /* cta-wrapper*/
+    .featured-box.iconalign-before-heading:not(.featured-box.style5) .featured-content .ttm-icon,
+    .featured-box.iconalign-before-heading .featured-content .featured-title {padding-left: 0px;margin-bottom: 20px;display: block;}
+    .featured-box.iconalign-before-heading:not(.featured-box.style5) .featured-content {display: table-cell;}
+
+    /* featured-imagebox-event*/
+    .featured-imagebox-event.ttm-box-view-top-image .featured-content.featured-content-event{
+    max-width: 100%;
+    opacity: 1;
+    visibility: visible;
+    right: 0;
+    bottom: 0;
     position: relative;
-    top: 8px;
-  }
-  .mobile-responsive-nav .mean-container .mean-bar {
-    background: transparent;
-    position: absolute;
-    z-index: 999;
-    padding: 0;
-  }
-  .mobile-responsive-nav .others-options {
-    display: none !important;
-  }
-  .mobile-responsive-nav .logo {
-    position: relative;
-  }
-  .mobile-responsive-nav .logo .logo-two {
-    display: none;
-  }
-  .desktop-nav {
-    display: none;
-  }
-  .side-nav-responsive {
-    display: block;
-  }
-  .employers-details-content h1 {
-    font-size: 28px;
-  }
-  .employers-details-content h2 {
-    font-size: 26px;
-  }
-  .employers-details-content h3 {
-    font-size: 23px;
-  }
-  .employers-details-content h4 {
-    font-size: 21px;
-  }
-  .employers-details-content h5 {
-    font-size: 20px;
-  }
-  .employers-details-content .article-social-icon .social-icon li {
-    margin-right: 5px;
-  }
-  .employers-details-content .article-social-icon .social-icon li.title {
-    font-size: 16px;
-  }
-  .employers-details-content .article-social-icon .social-icon li a {
-    display: inline-block;
-    border: none;
-  }
-  .employers-details-content .article-social-icon .social-icon li a i {
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    font-size: 16px;
-  }
-  .company-details-content h1 {
-    font-size: 28px;
-  }
-  .company-details-content h2 {
-    font-size: 26px;
-  }
-  .company-details-content h3 {
-    font-size: 23px;
-  }
-  .company-details-content h4 {
-    font-size: 21px;
-  }
-  .company-details-content h5 {
-    font-size: 20px;
-  }
-  .company-details-content .article-social-icon .social-icon li {
-    margin-right: 5px;
-  }
-  .company-details-content .article-social-icon .social-icon li.title {
-    font-size: 16px;
-  }
-  .company-details-content .article-social-icon .social-icon li a {
-    display: inline-block;
-    border: none;
-  }
-  .company-details-content .article-social-icon .social-icon li a i {
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    font-size: 16px;
-  }
-  /* Single Content */
-  .single-content h1 {
-    font-size: 28px;
-  }
-  .single-content h2 {
-    font-size: 26px;
-  }
-  .single-content h3 {
-    font-size: 23px;
-  }
-  .single-content h4 {
-    font-size: 21px;
-  }
-  .single-content h5 {
-    font-size: 20px;
-  }
-  /* Single Content End */
-  .candidates-details-right .content-info {
-    text-align: center;
-  }
-}/*# sourceMappingURL=responsive.css.map */
+    }
+    .featured-imagebox.featured-imagebox-event.mb-120{margin-bottom: 15px!important;}
+
+    .ttm-team-member-single-content-area{margin-top: 30px;}
+    .ttm-row-expand-leftfull .col-md-4{border:none;}
+    div.product.ttm-single-product-details div.images {width: 100%;}
+    div.product.ttm-single-product-details div.summary {width: 100%;float: none;}
+
+    .ttm-box-view-left-image .featured-content.featured-content-post,
+    .featured-imagebox-post.ttm-box-view-top-image .featured-content.featured-content-post{padding: 20px 10px 17px 20px;}
+
+    .featured-imagebox.static-title .featured-content {margin: -32px 39px 0;}
+    .title-box-only h4 {font-size: 32px;line-height: 38px;}
+    .title-box-only h2 {font-size: 48px;line-height: 58px;}
+    .featured-content.featured-content-post .featured-title{min-height: 52px;}
+
+    
+}
+@media only screen and (max-width: 680px) {
+	.ttm-search-overlay form{max-width: 350px;margin: 55px auto 73px;}
+
+}
+
+@media (max-width: 575px){
+	.ttm-pf-view-left-image .ttm-pf-single-detail-box {background-color: #fff;margin: 35px 20px;padding: 30px 20px;}
+    .res-575-plr-15{padding-right: 15px!important;padding-left: 15px!important;}
+}
+@media (max-width: 479px){
+	.comment-author {display: none;}
+    .comment-box {margin-left: 0px; }
+    td.actions .coupon button{width: 100%!important;}
+   .ttm-search-close{display: none;}
+}
+@media (max-width: 390px){
+    .site-branding img {max-height: 50px;}
+    .ttm-btn.ml-15,
+    .ttm-btn.ml-30{margin-left: 0!important;}
+    .ttm-header-icons {margin-right: 0px;}
+}

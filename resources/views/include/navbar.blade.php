@@ -1,334 +1,131 @@
-<div class="navbar-area">
-    <div class="mobile-responsive-nav">
-        <div class="container-fluid">
-            <div class="mobile-responsive-menu">
-                <div class="logo">
-                    <a href="index-2.html">
-                        <img src="{{asset('images/logo.png')}}" class="logo-one" alt="Logo">
-                        <img src="{{asset('images/logo-2.png')}}" class="logo-two" alt="Logo">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Menu For Desktop Device -->
-    <div class="desktop-nav desktop-nav-one nav-area">
-        <div class="container-fluid">
-            <nav class="navbar navbar-expand-md navbar-light ">
-                <a class="navbar-brand" href="index-2.html">
-                    <img src="{{asset('images/logo.png')}}" class="logo-one" alt="Logo">
-                    <img src="{{asset('images/logo-2.png')}}" class="logo-two" alt="Logo">
-                </a>
-
-                <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a href="/" class="nav-link active">
-                                Home 
+<header id="masthead" class="header ttm-header-style-classic-overlay">
+    <!-- ttm-header-wrap -->
+    <div class="ttm-header-wrap">
+        <!-- ttm-stickable-header-w -->
+        <div id="ttm-stickable-header-w" class="ttm-stickable-header-w clearfix">
+            <div id="site-header-menu" class="site-header-menu">
+                <div class="site-header-menu-inner ttm-stickable-header">
+                    <div class="container">
+                        <!-- site-branding -->
+                        <div class="site-branding">
+                            <a class="home-link" href="index.html" title="Planwey" rel="home">
+                                <img id="logo-img" class="img-center" src="{{asset('images/logo-img.png')}}" alt="logo-img">
                             </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                Our Services 
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                Events 
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link ">
-                                Organizers 
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                About Us
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                Contact Us
-                            </a>
-                        </li>
-
-                        {{-- <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                Jobs
-                                <i class="ri-arrow-down-s-line"></i>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a href="job-listing.html" class="nav-link">Job Listing</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="post-job.html" class="nav-link">Post A Job</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="job-details.html" class="nav-link">Job Details</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                Employers
-                                <i class="ri-arrow-down-s-line"></i>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a href="employers-listing.html" class="nav-link">
-                                        Employers Listing
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="employers-details.html" class="nav-link">
-                                        Employers Details
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="dashboard.html" class="nav-link">
-                                        Employers Dashboard
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                Candidates
-                                <i class="ri-arrow-down-s-line"></i>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a href="candidates-listing.html" class="nav-link">
-                                        Candidates Listing
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="candidates-details.html" class="nav-link">
-                                        Candidates Details
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                        <a href="candidates-dashboard.html" class="nav-link">
-                                            Candidates Dashboard
-                                        </a>
+                        </div><!-- site-branding end -->
+                        <!-- header-icins -->
+                        <div class="ttm-header-icons">
+                            <span class="ttm-header-icon ttm-header-cart-link">
+                                <a href="cart.html"><i class="fa fa-shopping-cart"></i>
+                                    <span class="number-cart">0</span>
+                                </a>
+                            </span>
+                            <div class="ttm-header-icon ttm-header-search-link">
+                                <a href="#" class="open"><i class="ti ti-search"></i></a>
+                                <div class="ttm-search-overlay">
+                                    <div class="container">
+                                        <div class="row">
+                                            <form method="get" class="ttm-site-searchform" action="#">
+                                                <div class="w-search-form-h">
+                                                    <div class="w-search-form-row">
+                                                        <div class="w-search-input">
+                                                            <input type="search" class="field searchform-s" name="s" placeholder="Type Word Then Enter...">
+                                                            <button type="submit">
+                                                                <i class="ti ti-search"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            <div class="ttm-search-close"><i class="fa fa-close"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- header-icons end -->
+                        <!--site-navigation -->
+                        <div id="site-navigation" class="site-navigation">
+                            <div class="ttm-menu-toggle">
+                                <input type="checkbox" id="menu-toggle-form" />
+                                <label for="menu-toggle-form" class="ttm-menu-toggle-block">
+                                    <span class="toggle-block toggle-blocks-1"></span>
+                                    <span class="toggle-block toggle-blocks-2"></span>
+                                    <span class="toggle-block toggle-blocks-3"></span>
+                                </label>
+                            </div>
+                            <nav id="menu" class="menu">
+                                <ul class="dropdown">
+                                    <li class="active"><a href="index.html">Home</a>
+                                        <ul>
+                                            <li class="active"><a href="index.html">Homepage 1</a></li>
+                                            <li><a href="homepage-2.html">Homepage 2</a></li>
+                                            <li><a href="homepage-3.html">Homepage 3</a></li>
+                                            <li><a href="#">Header Styles</a>
+                                                <ul>
+                                                    <li><a href="index.html">Header Classic Overlay</a></li>
+                                                    <li><a target="_blank" href="header-elegant.html">Header Elegant</a></li>
+                                                    <li><a target="_blank" href="header-classic.html">Header Classic</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
                                     </li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                Blog
-                                <i class="ri-arrow-down-s-line"></i>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a href="blog-1.html" class="nav-link">
-                                        Blog Grid
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="blog-2.html" class="nav-link">
-                                        Blog Left Sidebar 
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="blog-3.html" class="nav-link">
-                                        Blog Right Sidebar 
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="blog-details.html" class="nav-link">
-                                        Blog Details 
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="categories.html" class="nav-link">
-                                        Categories
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="tags.html" class="nav-link">
-                                        Tags
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                Pages 
-                                <i class="ri-arrow-down-s-line"></i>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a href="about.html" class="nav-link">
-                                        About Us
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="contact.html" class="nav-link">
-                                        Contact Us
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="testimonials.html" class="nav-link">
-                                        Testimonials
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        Freelancer
-                                        <i class="ri-arrow-down-s-line"></i>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="freelancer.html" class="nav-link">
-                                                Freelancer
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="freelancer-details.html" class="nav-link">
-                                                Freelancer Details 
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="dashboard-invoice.html" class="nav-link">
-                                        Invoice
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        Company
-                                        <i class="ri-arrow-down-s-line"></i>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="company.html" class="nav-link">
-                                                Company Listing
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="company-details.html" class="nav-link">
-                                                Company Details 
-                                            </a>
-                                        </li>
-
-                                        <li class="nav-item">
-                                            <a href="search-job.html" class="nav-link">
-                                                Search Job
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="pricing.html" class="nav-link">
-                                        Pricing Plan
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="faq.html" class="nav-link">
-                                        FAQ
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="log-in-register.html" class="nav-link">
-                                        Log In / Register
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="forgot-password.html" class="nav-link">
-                                        Forgot Password
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="terms-condition.html" class="nav-link">
-                                        Terms & Conditions
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="privacy-policy.html" class="nav-link">
-                                        Privacy Policy
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="404.html" class="nav-link">
-                                        404 Page
-                                    </a>
-                                </li>
-                                
-                                <li class="nav-item">
-                                    <a href="coming-soon.html" class="nav-link">
-                                        Coming Soon
-                                    </a>
-                                </li>
-                            </ul>
-                        </li> --}}
-                    </ul>
-
-                    <div class="others-options d-flex align-items-center">
-                        <div class="optional-item">
-                            <a href="#" class="default-btn two border-radius-5">Login / Register <i class="ri-user-3-line"></i></a>
-                        </div>
-
-                        <div class="optional-item">
-                            <a href="#" class="default-btn border-radius-5">Create an Event <i class="ri-briefcase-2-line"></i></a>
-                        </div>
-                    </div> 
-                </div>
-            </nav>
-        </div>
-    </div>
-
-    <div class="side-nav-responsive">
-        <div class="container-max">
-            <div class="dot-menu">
-                <div class="circle-inner">
-                    <div class="circle circle-one"></div>
-                    <div class="circle circle-two"></div>
-                    <div class="circle circle-three"></div>
-                </div>
-            </div>
-            
-            <div class="container">
-                <div class="side-nav-inner">
-                    <div class="side-nav justify-content-center align-items-center">
-                        <div class="side-nav-item">
-                            <a href="log-in-register.html" class="default-btn two">
-                                Login / Register <i class="ri-user-3-line"></i>
-                            </a>
-                        </div>
-
-                        <div class="side-nav-item">
-                            <a href="post-job.html" class="default-btn">
-                                Post A Job <i class="ri-briefcase-2-line"></i>
-                            </a>
-                        </div>
+                                    <li><a href="#">Pages</a>
+                                        <ul>
+                                            <li><a href="about-us.html">About Us</a></li>
+                                            <li><a href="services-1.html">Service</a></li>
+                                            <li><a href="services-2.html">Service details</a></li>
+                                            <li><a href="our-event.html">Our Events</a></li>
+                                            <li><a href="our-team.html">Our Team</a></li>
+                                            <li><a href="gallery.html">Gallery</a></li>
+                                            <li><a href="error.html">Error Page</a></li>
+                                            <li><a href="faq.html">FAQs</a></li>
+                                            <li><a href="element.html">Elements</a></li>
+                                        </ul>
+                                    </li>
+                                     <li><a href="#">Portfolio</a>
+                                        <ul>
+                                            <li><a href="portfolio-classic.html">Portfolio Classic</a></li>
+                                            <li><a href="portfolio-overlay.html">Portfolio Overlay</a></li>
+                                            <li><a href="#">Portfolio Details</a>
+                                                <ul>
+                                                    <li><a href="portfolio-details-01.html">Style One</a></li>
+                                                    <li><a href="portfolio-details-02.html">Style Two</a></li>
+                                                    <li><a href="portfolio-details-03.html">Style Three</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Blog</a>
+                                        <ul>
+                                            <li><a href="blog.html">Blog Classic</a></li>
+                                            <li><a href="blog-grid.html">Blog Grid</a></li>
+                                            <li><a href="single-blog.html">Single Blog</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="contact-us.html">Contact Us</a></li>
+                                    <li><a href="#">Shop</a>
+                                        <ul>
+                                            <li><a href="home-shop.html">Home Shop</a></li>
+                                            <li><a href="shop.html">Default Shop</a></li>
+                                            <li><a href="product-details.html">Single Product Details</a></li>
+                                            <li><a href="cart.html">Cart</a></li>
+                                            <li><a href="checkout.html">Checkout</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div><!-- site-navigation end-->
                     </div>
                 </div>
+                
             </div>
         </div>
     </div>
-</div>
+    <!--ttm-header-wrap end -->
+    <!--rev-slider -->
+    
+    <!--rev-slider end-->
+</header>
+<!--header end-->
+
+<!--site-main start-->
+<div class="site-main">

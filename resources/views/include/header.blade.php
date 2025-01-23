@@ -1,54 +1,66 @@
 <!DOCTYPE html>
-<html lang="zxx">
-    
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="keywords" content="">
+  <meta name="keywords" content= "">
+  <meta name="description" content="Eventiary: Your Event, Our Plannning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ $page_title }}</title>
 
-        <!--=== Bootstrap CSS ===-->
-        <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-        <!-- Animate Min CSS -->
-        <link rel="stylesheet" href="{{asset('css/animate.min.css')}}">
-        <!--=== remixIcon CSS ===-->
-        <link rel="stylesheet" href="{{asset('fonts/remixicon.css')}}">
-        <!-- Owl Carousel Min CSS --> 
-        <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
-        <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}">
-        <!--=== metisMenu Min CSS ===-->
-        <link rel="stylesheet" href="{{asset('css/metismenu.min.css')}}">
-        <!--=== simpleBar Min CSS ===--> 
-        <link rel="stylesheet" href="{{asset('css/simplebar.min.css')}}">
-        <!-- Dropzone CSS --> 
-        <link rel="stylesheet" href="{{asset('css/dropzone.min.css')}}">
-        <!-- Magnific Popup CSS --> 
-        <link rel="stylesheet" href="{{asset('css/magnific-popup.min.css')}}">
-        <!-- Odometer CSS -->
-        <link rel="stylesheet" href="{{asset('css/odometer.min.css')}}">
-        <!--=== meanMenu Min CSS ===-->
-        <link rel="stylesheet" href="{{asset('css/meanmenu.min.css')}}">
-        <!-- Style CSS -->
-        <link rel="stylesheet" href="{{asset('css/style.css')}}">
-        <!-- Responsive CSS -->
-        <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
-        <!-- Theme Dark CSS -->
-        {{-- <link rel="stylesheet" href="{{asset('css/theme-dark.css')}}"> --}}
+  <!-- favicon icon -->
+  <link rel="shortcut icon" href="{{asset('images/favicon.png')}}" media="all">
 
-        <!--=== Title & Favicon ===-->
-        <title>{{ $page_title }}</title>
-        <link rel="icon" type="image/png" href="{{asset('images/favicon.png')}}">
-    </head>
-    <body>
-        <!-- Pre Loader -->
+  <!-- bootstrap -->
+  <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}" media="all">
 
-        {{-- <div class="preloader">
-            <div class="d-table">
-                <div class="d-table-cell">
-                    <div class="spinner"></div>
-                </div>
-            </div>
-        </div> --}}
-        
-        <!-- End Pre Loader -->
+  <!-- animate -->
+  <link rel="stylesheet" type="text/css" href="{{asset('css/animate.css')}}" media="all">
+
+  <!-- owl-carousel -->
+  <link rel="stylesheet" type="text/css" href="{{asset('css/owl.carousel.css')}}" media="all">
+
+  <!-- fontawesome -->
+  <link rel="stylesheet" type="text/css" href="{{asset('css/font-awesome.css')}}" media="all">
+
+  <!-- themify -->
+  <link rel="stylesheet" type="text/css" href="{{asset('css/themify-icons.css')}}" media="all">
+
+  <!-- flaticon -->
+  <link rel="stylesheet" type="text/css" href="{{asset('css/flaticon.css')}}" media="all">
+
+  <!-- REVOLUTION LAYERS STYLES -->
+
+  <link rel="stylesheet" type="text/css" href="{{asset('revolution/css/layers.css')}}" media="all">
+
+  <link rel="stylesheet" type="text/css" href="{{asset('revolution/css/settings.css')}}" media="all">
+
+  <!-- prettyphoto -->
+  <link rel="stylesheet" type="text/css" href="{{asset('css/prettyPhoto.css')}}" media="all">
+
+  <!-- shortcodes -->
+  <link rel="stylesheet" type="text/css" href="{{asset('css/shortcodes.css')}}" media="all">
+
+  <!-- main -->
+  <link rel="stylesheet" type="text/css" href="{{asset('css/main.css')}}" media="all">
+
+  <!-- responsive -->
+  <link rel="stylesheet" type="text/css" href="{{asset('css/responsive.css')}}" media="all">
+
+</head>
+
+<body>
+
+    <!--page start-->
+    <div class="page">
+
+        <!-- preloader start -->
+        <div id="preloader">
+          <div id="status">&nbsp;</div>
+        </div>
+        <!-- preloader end -->
+
 
         @include('include.navbar')
