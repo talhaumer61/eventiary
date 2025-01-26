@@ -1219,7 +1219,7 @@ h2.title strong{
 .featured-imagebox.featured-imagebox-team:hover img {
     transform: scale(1.05);
     filter: gray;
-    -webkit-filter: grayscale(1);
+    /* -webkit-filter: grayscale(1); */
 }
 .featured-content-team .featured-title h5{margin-bottom: 0;}
 .featured-content-team .category{font-size: 13px;margin-top: -4px;display: block;}
@@ -2614,6 +2614,9 @@ ul.payment_methods {
 
 /*** Color Switcher Style
 ==================================================================== ***/
+.prt_floting_customsett{
+    display: none;
+}
 /* .prt_floting_customsett {
     position: fixed;
     top: 50%;
@@ -2624,7 +2627,7 @@ ul.payment_methods {
     box-shadow: 0 6px 12px rgb(0 0 0 / 25%);
     z-index: 99999;
 } */
-.tmtheme_fbar_icons {
+/* .tmtheme_fbar_icons {
     display: block;
     position: relative;
     width: 55px;
@@ -2696,4 +2699,4 @@ ul.payment_methods {
     font-size: 18px;
     line-height: 26px;
     margin-top: 15px;
-}
+} */

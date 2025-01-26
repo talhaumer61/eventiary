@@ -16,7 +16,7 @@
             <div class="col-md-6 col-lg-4">
                 <div class="featured-imagebox static-title mb-20">
                     <div class="featured-thumbnail">
-                        <img class="img-fluid" src="{{asset('images/blog/blog-01.jpg')}}" alt="">
+                        <img class="img-fluid eventcard-img" src="{{asset('images/blog/blog-01.jpg')}}" alt="">
                     </div>
                     <div class="featured-content">
                         <div class="featured-title">
@@ -28,7 +28,7 @@
             <div class="col-md-6 col-lg-4">
                 <div class="featured-imagebox static-title mb-20">
                     <div class="featured-thumbnail">
-                        <img class="img-fluid" src="{{asset('images/blog/blog-02.jpg')}}" alt="">
+                        <img class="img-fluid eventcard-img" src="{{asset('images/blog/blog-02.jpg')}}" alt="">
                     </div>
                     <div class="featured-content">
                         <div class="featured-title">
@@ -40,7 +40,7 @@
             <div class="col-md-6 col-lg-4">
                 <div class="featured-imagebox static-title mb-20">
                     <div class="featured-thumbnail">
-                        <img class="img-fluid" src="{{asset('images/blog/blog-03.jpg')}}" alt="">
+                        <img class="img-fluid eventcard-img" src="{{asset('images/blog/blog-03.jpg')}}" alt="">
                     </div>
                     <div class="featured-content">
                         <div class="featured-title">
@@ -52,7 +52,7 @@
         </div>
     </div>
 </section>
-<section class="ttm-row service-section style2 bg-layer clearfix bg-layer-equal-height break-991-colum">
+<section class="wwd-section ttm-row service-section style2 bg-layer clearfix bg-layer-equal-height break-991-colum">
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-lg-5">
@@ -67,7 +67,7 @@
             <div class="col-lg-7 col-md-12">
             <!-- about-content -->
             <div class="about-content ttm-bg ttm-col-bgcolor-yes ttm-right-span ttm-bgcolor-skincolor padding-15">
-                <div class="ttm-col-wrapper-bg-layer ttm-bg-layer"></div>
+                <div class="wwd-back ttm-col-wrapper-bg-layer ttm-bg-layer" style="background-color: #540D6E;"></div>
                 <div class="layer-content">
                     <!-- section title -->
                     <div class="section-title with-desc clearfix">

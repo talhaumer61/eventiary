@@ -1,4 +1,3 @@
-</div><!-- site-main end -->
 
 <!--footer--> 
 <footer class="footer widget-footer bg-img11 ttm-bgcolor-black ttm-bg ttm-bgimage-yes clearfix">
@@ -34,7 +33,7 @@
                         <div class="widget widget-out-link clearfix">
                             <h4 class="widget-title">Contact Us</h4>
                             <ul class="widget-contact">
-                                <li><i class="fa fa-map-marker"></i>Themeforest, Envanto HQ<br>24 Fifth st., Los Angeles, USA</li>
+                                <li><i class="fa fa-map-marker"></i>24 Fifth st., Los Angeles, USA</li>
                                 <li><i class="fa fa-envelope-o"></i><a href="#">info@example.com</a></li>
                                 <li><i class="fa fa-phone"></i>Phone: (+01) 123 456 7890 <br>Support: (+01) 123 456 7890  </li>
                             </ul>

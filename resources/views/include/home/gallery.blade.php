@@ -172,7 +172,7 @@
         </div><!-- row end -->
         <div class="row">
             <div class="col-md-12 text-center">
-                <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-round ttm-btn-style-fill ttm-btn-color-black mt-50" href="gallery.html">View More Gallery</a>
+                <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-round ttm-btn-style-fill ttm-btn-color-black mt-50" href="#">View More Gallery</a>
             </div>
         </div>
     </div>

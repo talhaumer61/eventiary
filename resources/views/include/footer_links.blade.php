@@ -26,7 +26,35 @@
     <script src="{{asset('revolution/js/extensions/revolution.extension.navigation.min.js')}}"></script>
     <script src="{{asset('revolution/js/extensions/revolution.extension.parallax.min.js')}}"></script>
     <script src="{{asset('revolution/js/extensions/revolution.extension.slideanims.min.js')}}"></script>
+    <script>
+        // Wait for the DOM to load
+        // Wait for the DOM to load
+document.addEventListener("DOMContentLoaded", function () {
+    // Get the current URL path
+    const currentPath = window.location.pathname;
 
+    // Select all menu items
+    const menuItems = document.querySelectorAll("#menu .dropdown a");
+
+    // Loop through each menu item
+    menuItems.forEach(item => {
+        // Check if the href of the item matches the current path
+        if (item.getAttribute("href") === currentPath) {
+            // Add the active class to the parent `<li>` of the matching link
+            item.parentElement.classList.add("active");
+
+            // If it's a dropdown, ensure parent dropdowns also get the `active` class
+            let parent = item.parentElement.parentElement.closest("li");
+            while (parent) {
+                parent.classList.add("active");
+                parent = parent.parentElement.closest("li");
+            }
+        }
+    });
+});
+
+
+    </script>
     
 
    

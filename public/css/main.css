@@ -2,67 +2,13 @@
 @import url('https://fonts.googleapis.com/css?family=Belleza&amp;subset=latin-ext&amp;display=swap');
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;display=swap');
 
-/**
-  1. General
-     - Variables
-     - Transition
-     - Shadow
-     - Extra-outer
-
-  2. Spacing
-     - Padding
-     - Margin
-
-  3. Color
-     - Skin-color, Skin-bg-color, Skin-border-color
-     - darkGrey-color, darkGrey-bg-color
-     - white-color, white-bg-color, white-border-color
-     - Grey-color, Grey-bg-color, grey-border-color
-     - Extra-color
-
-  4. Pre-loader
-
-  5. Tooltip
-
-  6. TopBar
-
-  7. Header
-     - SiteBrand(logo)
-     - SiteNavigation(Menu)
-     - ttm-rt-contact(HeaderIcons - Search, Cart)
-     - ttm-search-overlay
-
-  8. Footer
-     - FirstFooter
-     - SecondFooter
-     - menu-footer-services
-     - mailchimp-inputbox
-     - flicker-widget
-
-  9. GoTop BUtton
-  
-  10. Page-Title-Row
-
-  11. list
-   
-  11. Inner-Pages
-      -homepage-2
-      - Services
-      - error_page
-      - contact-us
-      - team-member-single
-      - portfolio
-      - blog
-      - home-shop
-      - element
-
-*/
-
- 
-/* ===============================================
-    General
-------------------------*/
 /** Variables **/
+:root{
+    --secondcolor:#ECE8EF;
+    --purple:#540D6E;
+    --mulberry:#C54B8C;
+
+}
 ul, li{ 
     padding: 0; 
     margin: 0;
@@ -76,12 +22,12 @@ a:focus {
     text-decoration: none; 
 }
 a:focus, a:hover { 
-    color: #fd226a; 
+    color: var(--mulberry); 
     text-decoration: none; 
 }
 a, button, input { 
     outline: medium none; 
-    color: #fd226a; 
+    color: var(--mulberry); 
     text-decoration: none;
 }
 strong{ 
@@ -94,17 +40,17 @@ iframe{
 }
 
 *::-moz-selection { 
-    background: #fd226a; 
+    background: var(--mulberry); 
     color: #fff; 
     text-shadow: none; 
 }
 ::-moz-selection { 
-    background: #fd226a; 
+    background: var(--mulberry); 
     color: #fff;
     text-shadow: none; 
 }
 ::selection { 
-    background: #fd226a; 
+    background: var(--mulberry); 
     color: #fff; 
     text-shadow: none; 
 }
@@ -175,7 +121,7 @@ input::-webkit-input-placeholde  {
 }
 
 a:hover {
-    color: #fd226a;
+    color: var(--mulberry);
 }
 
 menu, ol, ul {
@@ -672,7 +618,7 @@ ul.star-rating li,
 .price .Price-amount.amount .Price-currencySymbol,
 .ttm-bgcolor-white .ttm-fid-contents h4,
 .ttm-header-style-classic-overlay .ttm-header-icons .ttm-header-cart-link a:hover{
-    color: #fd226a;
+    color: var(--mulberry);
 }
 /*bgcolor-skincolor*/
 .ttm-bgcolor-skincolor,
@@ -731,7 +677,7 @@ a.checkout-button:hover,
 .mailchimp-inputbox input[type="submit"],
 div.product ul.tabs li.active,
 .progress .progress-bar.progress-bar-color-bar_skincolor.with-lable:before{
-    background-color: #fd226a;
+    background-color: var(--mulberry);
 }
 .ttm-box-view-overlay,
 .ttm-portfolio-box-view-overlay {
@@ -748,7 +694,7 @@ div.product ul.tabs li.active,
 .ttm-pagination .page-numbers.current,
 .ttm-btn.ttm-btn-color-skincolor.ttm-btn-style-border,
 .tp-caption.highlight-black-button:hover{
-    border-color: #fd226a ;
+    border-color: var(--mulberry) ;
 
 }
 .sidebar .widget .widget-title:before, 
@@ -761,10 +707,10 @@ div.product ul.tabs li.active,
 .icon-outline-border .ttm-icon_element-style-rounded:before,
 .ttm-icon_element-border.ttm-icon_element-color-skincolor,
 .ttm-icon.ttm-icon_element-border.ttm-icon_element-color-skincolor{
-    border-color: #fd226a;
+    border-color: var(--mulberry);
 }
 
-.ttm-search-overlay {border-top-color: #fd226a;}
+.ttm-search-overlay {border-top-color: var(--mulberry);}
 .comment-form textarea:focus,
 .comment-form input[type="text"]:focus, 
 .comment-form input[type="email"]:focus, 
@@ -773,10 +719,10 @@ div.product ul.tabs li.active,
 .ttm-search-overlay .w-search-form-row:before,
 .contactform .text-input:focus,
 .contactform .text-area:focus{
-    border-bottom-color: #fd226a !important ;
+    border-bottom-color: var(--mulberry) !important ;
 }
 div.product ul.tabs li.active:before{
-    border-top-color: #fd226a !important ;
+    border-top-color: var(--mulberry) !important ;
 }
 /*white-color*/
 .ttm-textcolor-white,
@@ -2182,3 +2128,12 @@ article.post blockquote p{
 
 
 
+.service-section2, .gallery-view-section,.wwd-section{
+    background-color: var(--secondcolor);
+}
+.wwd-back{
+    background-color: var(--babypurple);
+}
+.eventcard-img{
+    height: 300px;
+}
