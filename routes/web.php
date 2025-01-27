@@ -8,9 +8,7 @@ Route::get('/events', [siteController::class,'events']);
 Route::get('/organizers', [siteController::class,'organizers']);
 Route::get('/login', [siteController::class,'login']);
 Route::get('/signup', [siteController::class,'signup']);
-Route::get('/dashboard', function () {
-    return view('create_event');
-});
+Route::get('/create-event', [siteController::class,'create_event']);
 Route::get('/client-dashboard', function () {
     return view('dashboard');
 });

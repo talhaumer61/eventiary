@@ -64,7 +64,8 @@
                                     <li>
                                         <a href="#">About Us</a>
                                     </li>
-                                    <li><a href="contact-us.html">Contact Us</a></li>
+                                    <li><a href="#">Contact Us</a></li>
+                                    <li><a class="active" style="color: var(--mulberry);" href="/client-dashboard">Dashboard</a></li>
                                     {{-- <li class="active"><a href="contact-us.html">Login</a></li> --}}
                                     
                                 </ul>
