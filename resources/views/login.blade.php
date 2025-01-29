@@ -12,7 +12,7 @@
 	<meta name="keywords" content="">
 
     <!-- Favicon -->
-    <link rel="icon" href="https://spruko.com/demo/udon/dist/assets/images/brand-logos/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
 
     <!-- Main Theme Js -->
     <script src="dashboard/js/authentication-main.js"></script>
@@ -46,51 +46,53 @@
                             </div> --}}
                             <p class="h5 mb-2 text-center">Sign In</p>
                             <p class="mb-4 text-muted op-7 fw-normal text-center">Welcome back Jhon !</p>
-                            <div class="row gy-3">
-                                <div class="col-xl-12">
-                                    <label for="signin-username" class="form-label text-default">User Name</label>
-                                    <input type="text" class="form-control form-control-lg" id="signin-username" placeholder="user name">
-                                </div>
-                                <div class="col-xl-12 mb-2">
-                                    <label for="signin-password" class="form-label text-default d-block">Password<a href="reset-password-basic.html" class="float-end text-danger">Forget password ?</a></label>
-                                    <div class="position-relative">
-                                        <input type="password" class="form-control form-control-lg" id="signin-password" placeholder="password">
-                                        <a href="javascript:void(0);" class="show-password-button text-muted" onclick="createpassword('signin-password',this)" id="button-addon2"><i class="ri-eye-off-line align-middle"></i></a>
+                            <form action="{{ route('clientLogin') }}" method="POST">
+                                @csrf
+                                <div class="row gy-3">
+                                    <!-- Username Field -->
+                                    <div class="col-xl-12">
+                                        <label for="signin-username" class="form-label text-default">User Name</label>
+                                        <input type="text" class="form-control form-control-lg @error('username') is-invalid @enderror" 
+                                               name="username" id="signin-username" placeholder="user name" value="{{ old('username') }}">
+                                        @error('username')
+                                            <div class="text-danger mt-1">{{ $message }}</div>
+                                        @enderror
                                     </div>
-                                    <div class="mt-2">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                            <label class="form-check-label text-muted fw-normal" for="defaultCheck1">
-                                                Remember password ?
-                                            </label>
+                            
+                                    <!-- Password Field -->
+                                    <div class="col-xl-12 mb-2">
+                                        <label for="signin-password" class="form-label text-default d-block">Password
+                                            <a href="#" class="float-end text-danger">Forget password ?</a>
+                                        </label>
+                                        <div class="position-relative">
+                                            <input type="password" 
+                                                   class="form-control form-control-lg @error('password') border border-danger @enderror"
+                                                   name="password" id="signin-password" placeholder="password">
+                                            <a href="javascript:void(0);" class="show-password-button text-muted" 
+                                               onclick="createpassword('signin-password',this)" id="button-addon2">
+                                                <i class="ri-eye-off-line align-middle"></i>
+                                            </a>
                                         </div>
+                                        @error('password')
+                                            <div class="text-danger mt-1">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
-                            </div>
-                            {{-- <div class="text-center my-3 authentication-barrier">
-                                <span>OR</span>
-                            </div>
-                            <div class="d-grid mb-3">
-                                <button class="btn btn-lg btn-light-ghost border d-flex align-items-center justify-content-center">
-                                    <span class="avatar avatar-xs">
-                                        <img src="dashboard/images/media/apps/google.png" alt="">
-                                    </span>
-                                    <span class="lh-1 ms-2 fs-13 text-default">Signin with Google</span>
-                                </button>
-                            </div>
-                            <div class="d-grid mb-3">
-                                <button class="btn btn-lg btn-light-ghost border d-flex align-items-center justify-content-center">
-                                    <span class="avatar avatar-xs invert-1">
-                                        <img src="dashboard/images/media/apps/apple.png" alt="">
-                                    </span>
-                                    <span class="lh-1 ms-2 fs-13 text-default">Signin with Apple</span>
-                                </button>
-                            </div> --}}
-                            <div class="d-grid mt-4">
-                                <a href="index.html" class="btn btn-lg btn-primary">Sign In</a>
-                            </div>
+                            
+                                <!-- General Error Message (if any) -->
+                                @if (session('error'))
+                                    <div class="alert alert-danger mt-2">
+                                        {{ session('error') }}
+                                    </div>
+                                @endif
+                            
+                                <div class="d-grid mt-4">
+                                    <button type="submit" class="btn btn-lg btn-primary">Sign In</button>
+                                </div>
+                            </form>                            
+                            
                             <div class="text-center">
-                                <p class="text-muted mt-3 mb-0">Dont have an account? <a href="sign-up-basic.html" class="text-primary">Sign Up</a></p>
+                                <p class="text-muted mt-3 mb-0">Dont have an account? <a href="/signup" class="text-primary">Sign Up</a></p>
                             </div>
                         </div>
                     </div>

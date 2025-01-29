@@ -52,24 +52,35 @@
                             </div>
                             <nav id="menu" class="menu">
                                 <ul class="dropdown">
-                                    <li >
-                                        <a href="/">Home</a>
-                                    </li>
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="/events">Events</a></li>
+                                    <li><a href="/organizers">Organizers</a></li>
                                     <li>
-                                        <a href="/events">Events</a>
+                                        <a href="#">More</a>
+                                        <ul>
+                                            <li><a href="#">About Us</a></li>
+                                            <li><a href="#">Contact Us</a></li>
+                                            <li><a href="#">FAQ's</a></li>
+                                            
+                                            <!-- Show Logout only if user is logged in -->
+                                            @if(session()->has('user'))
+                                                <li><a href="/logout">Logout</a></li>
+                                            @endif
+                                        </ul>
                                     </li>
-                                    <li>
-                                        <a href="/organizers">Organizers</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">About Us</a>
-                                    </li>
-                                    <li><a href="#">Contact Us</a></li>
-                                    <li><a class="active" style="color: var(--mulberry);" href="/client-dashboard">Dashboard</a></li>
-                                    {{-- <li class="active"><a href="contact-us.html">Login</a></li> --}}
-                                    
+                            
+                                    <!-- Show Dashboard only if user is logged in and a Client -->
+                                    @if(session()->has('user') && session('user')->login_type == 2)
+                                        <li><a href="/client-dashboard" class="active" style="color: var(--mulberry);">Dashboard</a></li>
+                                    @endif
+                            
+                                    <!-- Show Login only if user is not logged in -->
+                                    @if(!session()->has('user'))
+                                        <li><a href="/login">Login</a></li>
+                                    @endif
                                 </ul>
                             </nav>
+                            
                         </div><!-- site-navigation end-->
                     </div>
                 </div>

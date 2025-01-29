@@ -21,7 +21,7 @@ class siteController extends Controller
     public function events(){
         return view('events');
     }
-    public function create_event(){
-        return view('create_event');
-    }
+    // public function create_event(){
+    //     return view('create_event');
+    // }
 }
