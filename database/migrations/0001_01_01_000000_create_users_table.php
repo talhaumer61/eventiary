@@ -22,11 +22,12 @@ return new class extends Migration
             $table->string('salt');
             $table->string('password');
             $table->string('photo')->nullable();
+            $table->string('phone')->nullable();
             $table->string('remember_token')->nullable();
-            $table->bigInteger('id_added');
-            $table->bigInteger('id_modify');
-            $table->timestamp('date_added')->useCurrent();
-            $table->timestamp('date_modify')->nullable()->useCurrentOnUpdate();
+            $table->bigInteger('id_added')->nullable();
+            $table->bigInteger('id_modify')->nullable();
+            $table->timestamp('date_added')->nullable();
+            $table->timestamp('date_modify')->nullable();
             $table->boolean('is_deleted')->default(false)->comment('1 = deleted');
             $table->bigInteger('id_deleted')->nullable();
             $table->timestamp('date_deleted')->nullable();

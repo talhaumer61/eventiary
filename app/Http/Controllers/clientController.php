@@ -64,6 +64,19 @@ class clientController extends Controller
         }
     }
 
+    // Check availability of username or email (AJAX Request)
+    public function checkAvailability(Request $request)
+    {
+        $field = $request->field;
+        $value = $request->value;
+
+        $exists = DB::table(env('USERS'))->where($field, $value)->exists();
+
+        return response()->json([
+            'exists' => $exists
+        ]);
+    }
+
     public function login(Request $request)
     {
         // if (session()->has('user')) {
@@ -135,6 +148,6 @@ class clientController extends Controller
         // Optionally, if you are using Laravel's built-in Auth system, you can use:
         // Auth::logout();
 
-        return redirect('/login')->with('message', 'You have successfully logged out.');
+        return redirect('/')->with('message', 'You have successfully logged out.');
     }
 }

@@ -73,7 +73,10 @@
   --default-border: #e8e8e8;
   --default-background: #f7f8f9;
   --menu-bg: #fff;
+
   --primary-bg: #13081d;
+  --mulberry:#C54B8C;
+  
   --color-white: #fdfcfd;
   --menu-prime-color: #f7f8f9;
   --menu-border-color: #e8e8e8;
@@ -21095,5 +21098,5 @@ h6 {
   font-weight: 400;
 }
 .admin-sidebar{
-  background-color: var(--color-white);
+  background-color: var(--mulberry) !important;
 }

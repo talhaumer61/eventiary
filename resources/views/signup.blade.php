@@ -99,6 +99,8 @@
 
     <!-- Show Password JS -->
     <script src="dashboard/js/show-password.js"></script>
+    
+    {{-- Password Confirmation --}}
     <script>
         function validateSignupForm() {
             let isValid = true;
@@ -168,6 +170,46 @@
                 element.classList.add('d-none');
             });
         }
+    </script>
+    
+    {{-- Check Email & Username Availability --}}
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            function checkAvailability(field, value, errorElement) {
+                if (value.length < 3) {
+                    document.getElementById(errorElement).classList.add("d-none");
+                    return;
+                }
+    
+                fetch("{{ route('checkAvailability') }}", {
+                    method: "POST",
+                    headers: {
+                        "X-CSRF-TOKEN": document.querySelector('input[name="_token"]').value,
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ field: field, value: value })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    let errorEl = document.getElementById(errorElement);
+                    if (data.exists) {
+                        errorEl.textContent = field.charAt(0).toUpperCase() + field.slice(1) + " is already taken.";
+                        errorEl.classList.remove("d-none");
+                    } else {
+                        errorEl.classList.add("d-none");
+                    }
+                })
+                .catch(error => console.error("Error:", error));
+            }
+    
+            document.getElementById("signup-username").addEventListener("input", function () {
+                checkAvailability("username", this.value, "username-error");
+            });
+    
+            document.getElementById("signup-email").addEventListener("input", function () {
+                checkAvailability("email", this.value, "email-error");
+            });
+        });
     </script>
     
 

@@ -23,7 +23,7 @@
                 <div class="featured-imagebox featured-imagebox-portfolio">
                     <!-- featured-thumbnail-->
                     <div class="featured-thumbnail">
-                        <a href="#"> <img class="img-fluid" src="{{asset('images/gallery/gallery-1.jpg')}}" alt="image"></a>
+                        <a href="#"> <img class="img-fluid gallery-img" src="{{asset('images/gallery/gallery-1.jpg')}}" alt="image"></a>
                     </div><!-- featured-thumbnail END-->
                     <!-- ttm-box-view-overlay -->
                     <div class="ttm-box-view-overlay">
@@ -48,7 +48,7 @@
                 <div class="featured-imagebox featured-imagebox-portfolio">
                     <!-- featured-thumbnail-->
                     <div class="featured-thumbnail">
-                        <a href="#"> <img class="img-fluid" src="{{asset('images/gallery/gallery-5.jpg')}}" alt="image"></a>
+                        <a href="#"> <img class="img-fluid gallery-img" src="{{asset('images/gallery/gallery-5.jpg')}}" alt="image"></a>
                     </div><!-- featured-thumbnail END-->
                     <!-- ttm-box-view-overlay -->
                     <div class="ttm-box-view-overlay">
@@ -73,7 +73,7 @@
                 <div class="featured-imagebox featured-imagebox-portfolio">
                     <!-- featured-thumbnail-->
                     <div class="featured-thumbnail">
-                        <a href="#"> <img class="img-fluid" src="{{asset('images/gallery/gallery-2.jpg')}}" alt="image"></a>
+                        <a href="#"> <img class="img-fluid gallery-img" src="{{asset('images/gallery/gallery-2.jpg')}}" alt="image"></a>
                     </div><!-- featured-thumbnail END-->
                     <!-- ttm-box-view-overlay -->
                     <div class="ttm-box-view-overlay">
@@ -98,7 +98,7 @@
                 <div class="featured-imagebox featured-imagebox-portfolio">
                     <!-- featured-thumbnail-->
                     <div class="featured-thumbnail">
-                        <a href="#"> <img class="img-fluid" src="{{asset('images/gallery/gallery-3.jpg')}}" alt="image"></a>
+                        <a href="#"> <img class="img-fluid gallery-img" src="{{asset('images/gallery/gallery-3.jpg')}}" alt="image"></a>
                     </div><!-- featured-thumbnail END-->
                     <!-- ttm-box-view-overlay -->
                     <div class="ttm-box-view-overlay">
@@ -123,7 +123,7 @@
                 <div class="featured-imagebox featured-imagebox-portfolio">
                     <!-- featured-thumbnail-->
                     <div class="featured-thumbnail">
-                        <a href="#"> <img class="img-fluid" src="{{asset('images/gallery/gallery-4.jpg')}}" alt="image"></a>
+                        <a href="#"> <img class="img-fluid gallery-img" src="{{asset('images/gallery/gallery-4.jpg')}}" alt="image"></a>
                     </div><!-- featured-thumbnail END-->
                     <!-- ttm-box-view-overlay -->
                     <div class="ttm-box-view-overlay">
@@ -149,7 +149,7 @@
                 <div class="featured-imagebox featured-imagebox-portfolio">
                     <!-- featured-thumbnail-->
                     <div class="featured-thumbnail">
-                        <a href="#"> <img class="img-fluid" src="{{asset('images/gallery/gallery-8.jpg')}}" alt="image"></a>
+                        <a href="#"> <img class="img-fluid gallery-img" src="{{asset('images/gallery/gallery-8.jpg')}}" alt="image"></a>
                     </div><!-- featured-thumbnail END-->
                     <!-- ttm-box-view-overlay -->
                     <div class="ttm-box-view-overlay">

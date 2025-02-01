@@ -254,9 +254,11 @@
                     data-paddingright="[30,30,30,25]"
                     data-paddingbottom="[15,15,15,10]"
                     data-paddingleft="[30,30,30,25]"
-                    >Get A Quote <span><i class="ti ti-angle-right"></i></span></a>
+                    >Get A Quote <span><i class="ti ti-angle-right"></i></span>
+                    </a>
 
-                    <a class="tp-caption tp-resizeme classic-border-button" href="#" target="_self" id="slide-2-layer-7" data-x="['left','left','left','center']" data-hoffset="['249','249','240','0']" data-y="['middle','middle','middle','middle']" data-voffset="['200','130','89','99']"
+                    {{-- classic-border-button --}}
+                    <a class="tp-caption tp-resizeme highlight-skin-button" href="#" target="_self" id="slide-2-layer-7" data-x="['left','left','left','center']" data-hoffset="['249','249','240','0']" data-y="['middle','middle','middle','middle']" data-voffset="['200','130','89','99']"
 
                     data-fontsize="['14','14','14','14']"
                     data-lineheight="['14','14','14','14']"

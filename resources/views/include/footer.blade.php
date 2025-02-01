@@ -100,13 +100,13 @@
                 <div class="col-sm-12 col-xs-12 col-md-4 ttm-footer2-right">
                     <div class="ttm-social-link-wrapper">
                         <ul class="social-icons">
-                            <li><a href="https://www.facebook.com/preyantechnosys19" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="https://twitter.com/PreyanTechnosys" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="https://www.instagram.com/preyan_technosys/" target="_blank"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="https://www.linkedin.com/in/preyan-technosys-pvt-ltd/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
                         </ul>
                     </div>
-                    <P>Copyright © 2018 PresentUp. All rights reserved.</P>
+                    <P>Copyright © {{ date('Y') }} Eventiary. All rights reserved.</P>
                 </div>
             </div>
         </div>
