@@ -73,6 +73,11 @@
                                     @if(session()->has('user') && session('user')->login_type == 2)
                                         <li><a href="/client-dashboard" class="active" style="color: var(--mulberry);">Dashboard</a></li>
                                     @endif
+                                    
+                                    <!-- Show Dashboard only if user is logged in and a Oragnizer -->
+                                    @if(session()->has('user') && session('user')->login_type == 3)
+                                        <li><a href="/organizer-dashboard" class="active" style="color: var(--mulberry);">Dashboard</a></li>
+                                    @endif
                             
                                     <!-- Show Login only if user is not logged in -->
                                     @if(!session()->has('user'))

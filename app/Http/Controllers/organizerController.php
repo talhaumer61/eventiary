@@ -2,20 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Http\Request;
 
-class clientController extends Controller
+class organizerController extends Controller
 {
     public function index(){
-        return view('client.dashboard');
-    }
-    public function create_event(){
-        return view('client.create_event');
+        return view('organizer.dashboard');
     }
     public function profile(){
-        return view('client.profile');
+        return view('organizer.profile');
     }
     public function signup(Request $request)
     {
@@ -25,6 +22,7 @@ class clientController extends Controller
             'username' => 'required|string|max:255|unique:' . env('USERS') . ',username',
             'email' => 'required|string|email|max:255|unique:' . env('USERS') . ',email',
             'password' => 'required|string|min:8|confirmed', // Password confirmation field required
+            'phone' => 'required|string|max:15|unique:' . env('USERS') . ',phone', // Added phone validation
         ]);
 
         // Generate a unique salt
@@ -45,12 +43,13 @@ class clientController extends Controller
             'name' => $request->name,
             'username' => $request->username,
             'email' => $request->email,
+            'phone' => $request->phone, 
             'salt' => $salt,
             'password' => $hashedPassword,
             'photo' => $photoPath,
             'status' => 1, // Active by default
             'id_role' => 1, // Default Access
-            'login_type' => 2, // Default login type (client)
+            'login_type' => 3, // Default login type (Organizer)
         ]);
 
         // If user is successfully added
@@ -63,8 +62,4 @@ class clientController extends Controller
             return back()->withErrors(['error' => 'Failed to create account. Please try again.'])->withInput();
         }
     }
-
-    
-
-    
 }

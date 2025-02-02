@@ -1,3 +1,3 @@
-@include('client.header',['page_title' => 'Profile | Eventiary'])
-@include('client.include.profile.my_profile')
-@include('client.footer')
+@include('admin.header',['page_title' => 'Profile | Eventiary'])
+@include('admin.include.profile.my_profile')
+@include('admin.footer')

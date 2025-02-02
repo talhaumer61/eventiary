@@ -45,8 +45,8 @@
                                 </a>
                             </div> --}}
                             <p class="h5 mb-2 text-center">Sign In</p>
-                            <p class="mb-4 text-muted op-7 fw-normal text-center">Welcome back Jhon !</p>
-                            <form action="{{ route('clientLogin') }}" method="POST">
+                            {{-- <p class="mb-4 text-muted op-7 fw-normal text-center">Welcome back Jhon !</p> --}}
+                            <form action="{{ route('userLogin') }}" method="POST">
                                 @csrf
                                 <div class="row gy-3">
                                     <!-- Username Field -->

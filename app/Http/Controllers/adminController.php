@@ -14,6 +14,9 @@ class AdminController extends Controller
     public function adminLogin(){
         return view('admin.login');
     }
+    public function profile(){
+        return view('admin.profile');
+    }
     public function login(Request $request)
     {
         // if (session()->has('user')) {
