@@ -93,6 +93,7 @@
                             
                             <div class="text-center">
                                 <p class="text-muted mt-3 mb-0">Dont have an account? <a href="/signup" class="text-primary">Sign Up</a></p>
+                                <p class="text-muted mt-3 mb-0">Register as as Organizer! <a href="/organizer-signup" class="text-primary">Register</a></p>
                             </div>
                         </div>
                     </div>

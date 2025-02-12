@@ -41,6 +41,7 @@ class siteController extends Controller
         $user = DB::table(env('USERS'))
                 ->where(function ($query) use ($request) {
                     $query->where('username', $request->username)
+                        ->where('login_type', [2,3])
                         ->orWhere('email', $request->username);
                 })
                 ->first();
@@ -112,4 +113,97 @@ class siteController extends Controller
             'exists' => $exists
         ]);
     }
+
+    // Change Password
+    public function changePassword(Request $request)
+    {
+        // Validate input fields
+        $request->validate([
+            'current_password' => 'required|string',
+            'new_password' => 'required|string|min:8|confirmed', // Must match `new_password_confirmation`
+        ]);
+
+        // Fetch the authenticated user from session
+        $user = session('user');
+
+        if (!$user) {
+            return back()->withErrors(['error' => 'User not found. Please login again.']);
+        }
+
+        // Fetch user from database
+        $dbUser = DB::table(env('USERS'))->where('id', $user->id)->first();
+
+        if (!$dbUser) {
+            return back()->withErrors(['error' => 'User not found in database.']);
+        }
+
+        // Verify current password
+        $salt = $dbUser->salt;
+        $currentHash = hash('sha256', $request->current_password . $salt);
+        for ($round = 0; $round < 65536; $round++) {
+            $currentHash = hash('sha256', $currentHash . $salt);
+        }
+
+        if ($currentHash !== $dbUser->password) {
+            return back()->withErrors(['current_password' => 'Current password is incorrect.'])->withInput();
+        }
+
+        // Hash new password
+        $newHash = hash('sha256', $request->new_password . $salt);
+        for ($round = 0; $round < 65536; $round++) {
+            $newHash = hash('sha256', $newHash . $salt);
+        }
+
+        // Update password in database
+        DB::table(env('USERS'))->where('id', $dbUser->id)->update([
+            'password' => $newHash,
+            'date_modify' => now(),
+            'id_modify' => $dbUser->id,
+        ]);
+
+        // Log password change event
+        sendRemark('Password Changed Successfully', '4', $dbUser->id);
+        
+        // Store success message
+        sessionMsg('success', 'Password changed successfully!', 'success');
+
+        return back();
+    }
+
+
+    public function checkCurrentPassword(Request $request)
+    {
+        $request->validate([
+            'current_password' => 'required|string',
+        ]);
+
+        // Get the logged-in user
+        $user = session('user');
+
+        if (!$user) {
+            return response()->json(['success' => false, 'message' => 'User not found. Please login again.']);
+        }
+
+        // Fetch user from the database
+        $dbUser = DB::table(env('USERS'))->where('id', $user->id)->first();
+
+        if (!$dbUser) {
+            return response()->json(['success' => false, 'message' => 'User not found in database.']);
+        }
+
+        // Verify current password
+        $salt = $dbUser->salt;
+        $currentHash = hash('sha256', $request->current_password . $salt);
+        for ($round = 0; $round < 65536; $round++) {
+            $currentHash = hash('sha256', $currentHash . $salt);
+        }
+
+        if ($currentHash !== $dbUser->password) {
+            return response()->json(['success' => false, 'message' => 'Current password is incorrect.']);
+        }
+
+        return response()->json(['success' => true, 'message' => 'Password is correct.']);
+    }
+
+
 }

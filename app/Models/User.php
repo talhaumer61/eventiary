@@ -17,11 +17,20 @@ class User extends Authenticatable
      *
      * @var list<string>
      */
+    protected $table = 'users'; // If your table name is different from Laravel's convention
+
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        'status', 'id_role', 'login_type', 'name', 'username', 'email',
+        'salt', 'password', 'photo', 'phone', 'remember_token', 
+        'id_added', 'id_modify', 'date_added', 'date_modify',
+        'is_deleted', 'id_deleted', 'date_deleted', 'ip_deleted'
     ];
+
+    // protected $fillable = [
+    //     'name',
+    //     'email',
+    //     'password',
+    // ];
 
     /**
      * The attributes that should be hidden for serialization.

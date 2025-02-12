@@ -21,7 +21,18 @@
     <!-- Color Picker JS -->
     <script src="{{asset('dashboard/libs/%40simonwep/pickr/pickr.es5.min.js')}}"></script>
 
+     <!-- Apex Charts JS -->
+     <script src="dashboard/libs/apexcharts/apexcharts.min.js"></script>
 
+    <!-- Mail Settings -->
+    <script src="dashboard/js/mail-settings.js"></script>
+
+     <!-- Used For Sessions By Device Chart -->
+     <script src="dashboard/libs/moment/moment.js"></script>
+ 
+     <!-- Analytics-Dashboard JS -->
+     <script src="dashboard/js/analytics-dashboard.js"></script>
+ 
     
     <!-- Custom-Switcher JS -->
     <script src="{{asset('dashboard/js/custom-switcher.min.js')}}"></script>
@@ -66,6 +77,105 @@
                 }
             });
         });
+
+    </script>
+    {{-- <script>
+        document.getElementById("changePasswordForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+        
+            let isValid = true;
+            let currentPassword = document.getElementById("current-password").value;
+            let newPassword = document.getElementById("new-password").value;
+            let confirmPassword = document.getElementById("confirm-password").value;
+        
+            // Reset error messages
+            document.getElementById("currentPasswordError").innerText = "";
+            document.getElementById("newPasswordError").innerText = "";
+            document.getElementById("confirmPasswordError").innerText = "";
+        
+            // Validate current password
+            if (currentPassword.trim() === "") {
+                document.getElementById("currentPasswordError").innerText = "Current password is required.";
+                isValid = false;
+            }
+        
+            // Validate new password
+            let passwordRegex = /^.{8,}$/;
+                if (!passwordRegex.test(newPassword)) {
+                    document.getElementById("newPasswordError").innerText = "Password must be at least 8 characters long.";
+                    isValid = false;
+            }
+        
+            // Validate confirm password
+            if (newPassword !== confirmPassword) {
+                document.getElementById("confirmPasswordError").innerText = "Passwords do not match.";
+                isValid = false;
+            }
+        
+            // Submit form if all validations pass
+            if (isValid) {
+                this.submit();
+            }
+        });
+    </script> --}}
+    <script>
+        document.getElementById("changePasswordForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent form submission
+
+    let isValid = true;
+    
+    let currentPassword = document.getElementById("current-password").value.trim();
+    let newPassword = document.getElementById("new-password").value.trim();
+    let confirmPassword = document.getElementById("confirm-password").value.trim();
+
+    // Clear previous errors
+    document.getElementById("currentPasswordError").innerText = "";
+    document.getElementById("newPasswordError").innerText = "";
+    document.getElementById("confirmPasswordError").innerText = "";
+
+    // Validate new password (Minimum 8 characters)
+    let passwordRegex = /^.{8,}$/;
+    if (!passwordRegex.test(newPassword)) {
+        document.getElementById("newPasswordError").innerText = "Password must be at least 8 characters long.";
+        isValid = false;
+    }
+
+    // Check if new password and confirm password match
+    if (newPassword !== confirmPassword) {
+        document.getElementById("confirmPasswordError").innerText = "Passwords do not match.";
+        isValid = false;
+    }
+
+    if (!isValid) {
+        return; // Stop if validation fails
+    }
+
+    // **AJAX request to check current password**
+    fetch("{{ route('check-current-password') }}", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').getAttribute("content")
+        },
+        body: JSON.stringify({ current_password: currentPassword })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (!data.success) {
+            let errorElement = document.getElementById("currentPasswordError");
+            errorElement.innerText = "Current password is incorrect.";
+            console.log("Current password is incorrect.");
+            errorElement.style.color = "red"; // Ensure it's visible
+            return;
+        }
+        
+        // Submit the form if password is correct
+        document.getElementById("changePasswordForm").submit();
+    })
+    .catch(error => {
+        console.error("Error:", error);
+    });
+});
 
     </script>
 

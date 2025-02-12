@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
@@ -15,7 +17,9 @@ class AdminController extends Controller
         return view('admin.login');
     }
     public function profile(){
-        return view('admin.profile');
+        $user = User::where('id', session('user')->id)->first(); // Fetch user data using model
+
+        return view('admin.profile', compact('user'));
     }
     public function login(Request $request)
     {
@@ -26,13 +30,15 @@ class AdminController extends Controller
         $request->validate([
             'username' => 'required|string',
             'password' => 'required|string',
+            'login_type' => 'required|string',
         ]);
 
         // $user = DB::table(env('USERS'))->where('username', $request->username)->first();
         $user = DB::table(env('USERS'))
                 ->where(function ($query) use ($request) {
-                    $query->where('username', $request->username)
-                        ->orWhere('email', $request->username);
+                    $query ->where('username', $request->username)
+                            ->where('login_type', $request->login_type)
+                            ->orWhere('email', $request->username);
                 })
                 ->first();
 

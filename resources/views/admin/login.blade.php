@@ -48,6 +48,7 @@
                             <p class="mb-4 text-muted op-7 fw-normal text-center">Welcome back Jhon !</p>
                             <form action="{{ route('adminLogin') }}" method="POST">
                                 @csrf
+                                <input type="hidden" name="login_type" value="1">
                                 <div class="row gy-3">
                                     <!-- Username Field -->
                                     <div class="col-xl-12">

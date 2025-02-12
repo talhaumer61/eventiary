@@ -319,7 +319,7 @@
               </a>
               <!-- End::header-link|dropdown-toggle -->
               <ul class="main-header-dropdown dropdown-menu pt-0 overflow-hidden header-profile-dropdown dropdown-menu-end" aria-labelledby="mainHeaderProfile">
-                  <li><a class="dropdown-item d-flex align-items-center" href="/profile"><i class="bi bi-person fs-18 me-2 op-7"></i>Profile</a></li>
+                  <li><a class="dropdown-item d-flex align-items-center" href="/admin-profile"><i class="bi bi-person fs-18 me-2 op-7"></i>Profile</a></li>
                   <li><a class="dropdown-item d-flex align-items-center" href="#"><i class="bi bi-gear fs-16 me-2 op-7"></i>Settings</a></li>
                   <li><a class="dropdown-item d-flex align-items-center" href="#"><i class="bi bi-box-arrow-right fs-18 me-2 op-7"></i>Log Out</a></li>
               </ul>

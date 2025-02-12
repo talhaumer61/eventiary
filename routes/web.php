@@ -43,17 +43,20 @@ Route::middleware([RedirectIfAuthenticated::class])->group(function () {
     // Routes Accessible Only to Admin (login_type = 1)
     Route::middleware([VerifyAdmin::class])->group(function () {
         Route::get('/administrator', [AdminController::class, 'index']);
-        Route::get('/profile', [AdminController::class, 'profile']);
+        Route::get('/admin-profile', [AdminController::class, 'profile']);
     });
     
 // });
 
 // Routes Accessible Only to Logged-in Users (Protected Routes)
 Route::middleware([AuthenticateUser::class])->group(function () {
+    Route::post('/check-current-password', [SiteController::class, 'checkCurrentPassword'])->name('check-current-password');
+
+    Route::post('/change-password', [siteController::class, 'changePassword'])->name('change-password');
     // Routes Accessible Only to Clients (login_type = 2)
     Route::middleware([VerifyClient::class])->group(function () {
         Route::get('/client-dashboard', [clientController::class, 'index'])->name('dashboard');
-        Route::get('/profile', [organizerController::class, 'profile']);
+        Route::get('/profile', [clientController::class, 'profile']);
         Route::get('/create-event', [clientController::class, 'create_event']);
     });
     
