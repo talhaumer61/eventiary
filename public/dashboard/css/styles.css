@@ -76,6 +76,7 @@
 
   --primary-bg: #13081d;
   --mulberry:#C54B8C;
+  --mulberry-light:#f192c5;
   
   --color-white: #fdfcfd;
   --menu-prime-color: #f7f8f9;
@@ -21098,5 +21099,5 @@ h6 {
   font-weight: 400;
 }
 .admin-sidebar{
-  background-color: var(--mulberry) !important;
+  background-color: var(--mulberry-light) !important;
 }

@@ -33,11 +33,20 @@
                         <span class="side-menu__label">Dashboard</span>
                     </a>
                 </li>
-                <li class="slide">
-                    <a href="/create-event" class="side-menu__item">
-                        <i class="bi bi-layout-text-window side-menu__icon"></i>
-                        <span class="side-menu__label">Create an Event</span>
+                <li class="slide has-sub">
+                    <a href="javascript:void(0);" class="side-menu__item">
+                        <i class="bi bi-ticket-detailed side-menu__icon"></i>
+                        <span class="side-menu__label">Events</span>
+                        <i class="fe fe-chevron-right side-menu__angle"></i>
                     </a>
+                    <ul class="slide-menu child1" style="position: relative; left: 0px; top: 0px; margin: 0px; transform: translate3d(128px, 270px, 0px); display: none; box-sizing: border-box;" data-popper-placement="bottom">
+                        <li class="slide side-menu__label1">
+                            <a href="javascript:void(0)">Types</a>
+                        </li>
+                        <li class="slide">
+                            <a href="/event-types" class="side-menu__item">Types</a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="slide">
                     <a href="#" class="side-menu__item">

@@ -1,12 +1,11 @@
-<!-- Page Header -->
 <div class="my-4 page-header-breadcrumb d-flex align-items-center justify-content-between flex-wrap gap-2">
     <div>
-        <h1 class="page-title fw-medium fs-18 mb-2">Create Event</h1>
+        <h1 class="page-title fw-medium fs-18 mb-2">Add Product</h1>
         <div class="">
             <nav>
                 <ol class="breadcrumb mb-0">
-                    <li class="breadcrumb-item"><a href="javascript:void(0);">Dashboard</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Event</li>
+                    <li class="breadcrumb-item"><a href="javascript:void(0);">Ecommerce</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Add Product</li>
                 </ol>
             </nav>
         </div>
@@ -34,7 +33,7 @@
                                 <div class="card-body p-0">
                                     <div class="row gy-3">
                                         <div class="col-xl-12">
-                                            <label for="product-name-add" class="form-label">Title</label>
+                                            <label for="product-name-add" class="form-label">Product Name</label>
                                             <input type="text" class="form-control" id="product-name-add" placeholder="Name">
                                             <label for="product-name-add" class="form-label mt-1 fs-12 op-5 text-muted mb-0">*Product Name should not exceed 30 characters</label>
                                         </div>
@@ -202,4 +201,3 @@
         </div>
     </div>
 </div>
-<!--End::row-1 -->

@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\EventType;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
-
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -13,6 +14,62 @@ class AdminController extends Controller
     public function index(){
         return view('admin.dashboard');
     }
+
+    public function event_types($action="list",$href=null){
+        if($action == "edit" && isset($href)){
+
+        }else{
+            return view('admin.event_types',compact('action'));
+        }
+    }
+
+    public function addEventType(Request $request)
+    {
+        // Validate the form input
+        $request->validate([
+            'type_name'   => 'required|string|max:255',
+            'type_status' => 'required|in:1,2',
+            'type_desc'   => 'nullable|string|max:500',
+            'type_icon'   => 'nullable|image|mimes:jpg,jpeg,png,svg|max:2048', // Max 2MB
+        ]);
+
+        // Define custom storage path
+        $iconPath = null;
+        if ($request->hasFile('type_icon')) {
+            $file = $request->file('type_icon');
+
+            // Define the destination path
+            $destinationPath = public_path('uploads/events/types');
+
+            // Ensure the directory exists
+            if (!file_exists($destinationPath)) {
+                mkdir($destinationPath, 0777, true);
+            }
+
+            // Generate a unique filename
+            $fileName = time() . '_' . $file->getClientOriginalName();
+
+            // Move the file to the destination
+            $file->move($destinationPath, $fileName);
+
+            // Store the relative path in the database
+            $iconPath = 'uploads/events/types/' . $fileName;
+        }
+
+        // Insert into database
+        EventType::create([
+            'type_name'   => $request->type_name,
+            'type_href'   => Str::slug($request->type_name),
+            'type_status' => $request->type_status,
+            'type_desc'   => $request->type_desc,
+            'type_icon'  => $iconPath, // Store the file path
+            'id_added'    => session('user')->id,
+            'date_added'  => now(),
+        ]);
+
+        return redirect('/event-types')->with('success', 'Event type added successfully!');
+    }
+
     public function adminLogin(){
         return view('admin.login');
     }
@@ -72,7 +129,7 @@ class AdminController extends Controller
                 ]);
 
                 sendRemark('Login Successfully', '4', $user->id);
-                sessionMsg('success', 'Login Successfully', 'success');
+                // sessionMsg('success', 'Login Successfully', 'success');
                 // return redirect('/client-dashboard ');
                 return redirect('/administrator');
             } else {

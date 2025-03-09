@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\clientController;
+use App\Http\Controllers\DatabaseController;
 use App\Http\Controllers\organizerController;
 use App\Http\Controllers\siteController;
 use App\Http\Middleware\RedirectIfAuthenticated;
@@ -43,7 +44,12 @@ Route::middleware([RedirectIfAuthenticated::class])->group(function () {
     // Routes Accessible Only to Admin (login_type = 1)
     Route::middleware([VerifyAdmin::class])->group(function () {
         Route::get('/administrator', [AdminController::class, 'index']);
+        Route::get('/event-types/{action?}/{href?}', [AdminController::class, 'event_types'])->name('event_types');
+        Route::post('/event-types/add', [AdminController::class, 'addEventType'])->name('addEventType');
         Route::get('/admin-profile', [AdminController::class, 'profile']);
+
+        Route::post('/delete-record', [DatabaseController::class, 'deleteRecord'])->name('delete.record');
+
     });
     
 // });
