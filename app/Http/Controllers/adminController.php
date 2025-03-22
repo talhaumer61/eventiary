@@ -17,12 +17,15 @@ class AdminController extends Controller
 
     public function event_types($action="list",$href=null){
         if($action == "edit" && isset($href)){
-
+            $eventType = DB::table('event_types')->where('type_href', $href)->first();
+            return view('admin.event_types', compact('action', 'eventType'));
         }else{
-            return view('admin.event_types',compact('action'));
+            $eventTypes = DB::table('event_types')->select('type_id', 'type_name', 'type_status', 'type_icon', 'type_href')->where('type_status', '1')->where('is_deleted', '0')->paginate(10);;
+            // Pass the data to the view
+            return view('admin.event_types', compact('action', 'eventTypes'));
         }
     }
-
+    // Add a new Event Type
     public function addEventType(Request $request)
     {
         // Validate the form input
@@ -69,6 +72,55 @@ class AdminController extends Controller
 
         return redirect('/event-types')->with('success', 'Event type added successfully!');
     }
+    // Edit an Event Tpye
+    public function editEventType(Request $request, $href)
+    {
+        // Find the event type using type_href instead of ID
+        $eventType = EventType::where('type_href', $href)->firstOrFail();
+
+        // Validate input (make 'type_icon' nullable)
+        $request->validate([
+            'type_name'   => 'required|string|max:255',
+            'type_status' => 'required|in:1,2',
+            'type_desc'   => 'nullable|string|max:500',
+            'type_icon'   => 'nullable|image|mimes:jpg,jpeg,png,svg|max:2048',
+        ]);
+
+        // Handle file upload only if a new file is provided
+        if ($request->hasFile('type_icon')) {
+            $file = $request->file('type_icon');
+            $destinationPath = public_path('uploads/events/types');
+
+            if (!file_exists($destinationPath)) {
+                mkdir($destinationPath, 0777, true);
+            }
+
+            $fileName = time() . '_' . $file->getClientOriginalName();
+            $file->move($destinationPath, $fileName);
+
+            // Delete old icon if exists
+            if ($eventType->type_icon && file_exists(public_path($eventType->type_icon))) {
+                unlink(public_path($eventType->type_icon));
+            }
+
+            // Store new file path
+            $eventType->type_icon = 'uploads/events/types/' . $fileName;
+        }
+
+        // Update other fields
+        $eventType->type_name   = $request->type_name;
+        $eventType->type_href   = Str::slug($request->type_name); // Update href if name changes
+        $eventType->type_status = $request->type_status;
+        $eventType->type_desc   = $request->type_desc;
+        $eventType->id_modify  = session('user')->id;
+        $eventType->date_modify = now();
+        
+        // Save changes
+        $eventType->save();
+
+        return redirect('/event-types')->with('success', 'Event type updated successfully!');
+    }
+
 
     public function adminLogin(){
         return view('admin.login');

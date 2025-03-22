@@ -54,6 +54,12 @@
     69,
     214,
     91;
+
+    
+  --primary-bg: #13081d;
+  --mulberry:#C54B8C;
+  --admin-sidebar:#cf3185;
+
   --default-body-bg-color: rgb(var(--body-bg-rgb));
   --primary-color: rgb(var(--primary-rgb));
   --primary-border: rgb(var(--primary-rgb));
@@ -73,10 +79,6 @@
   --default-border: #e8e8e8;
   --default-background: #f7f8f9;
   --menu-bg: #fff;
-
-  --primary-bg: #13081d;
-  --mulberry:#C54B8C;
-  --mulberry-light:#f192c5;
   
   --color-white: #fdfcfd;
   --menu-prime-color: #f7f8f9;
@@ -16649,7 +16651,9 @@ code[class*=language-] {
 }
 .app-sidebar .side-menu__item.active,
 .app-sidebar .side-menu__item:hover {
-  color: var(--primary-color);
+  /* color: var(--primary-color); */
+  /* color: rgb(0 217 255); */
+  color: #000;
   background-color: var(--default-background);
 }
 .app-sidebar .side-menu__item.active .side-menu__label,
@@ -16791,7 +16795,8 @@ code[class*=language-] {
 [data-nav-layout=vertical] .main-menu > .slide.active > .side-menu__item,
 [data-nav-layout=vertical] .main-menu > .slide:hover > .side-menu__item {
   margin-block: 0.25rem;
-  background-color: var(--default-background);
+  /* background-color: var(--default-background); */
+  background-color: black;
 }
 [data-nav-layout=vertical] .main-menu > .slide.active .slide-menu .side-menu__item:hover .side-menu__angle,
 [data-nav-layout=vertical] .main-menu > .slide:hover .slide-menu .side-menu__item:hover .side-menu__angle {
@@ -21099,5 +21104,5 @@ h6 {
   font-weight: 400;
 }
 .admin-sidebar{
-  background-color: var(--mulberry-light) !important;
+  background-color: var(--admin-sidebar) !important;
 }

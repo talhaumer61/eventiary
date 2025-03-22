@@ -1,3 +1,5 @@
+    <!-- jQuery CDN (Add this in your HTML file inside <head> or before </body>) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- Popper JS -->
     <script src="{{asset('dashboard/libs/%40popperjs/core/umd/popper.min.js')}}"></script>

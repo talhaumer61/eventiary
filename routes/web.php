@@ -46,6 +46,7 @@ Route::middleware([RedirectIfAuthenticated::class])->group(function () {
         Route::get('/administrator', [AdminController::class, 'index']);
         Route::get('/event-types/{action?}/{href?}', [AdminController::class, 'event_types'])->name('event_types');
         Route::post('/event-types/add', [AdminController::class, 'addEventType'])->name('addEventType');
+        Route::post('/event-types/edit/{href}', [AdminController::class, 'editEventType'])->name('editEventType');
         Route::get('/admin-profile', [AdminController::class, 'profile']);
 
         Route::post('/delete-record', [DatabaseController::class, 'deleteRecord'])->name('delete.record');

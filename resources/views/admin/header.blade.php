@@ -12,10 +12,10 @@
           <div class="header-element">
               <div class="horizontal-logo">
                   <a href="/administrator" class="header-logo">
-                      <img src="images/logo-img.png" alt="logo" class="desktop-logo">
-                      <img src="images/favicon.png" alt="logo" class="toggle-logo">
-                      <img src="images/logo-img.png" alt="logo" class="desktop-dark">
-                      <img src="images/favicon.png" alt="logo" class="toggle-dark">
+                      <img src="{{asset('images/logo-img.png')}}" alt="logo" class="desktop-logo">
+                      <img src="{{asset('images/favicon.png')}}" alt="logo" class="toggle-logo">
+                      <img src="{{asset('images/logo-img.png')}}" alt="logo" class="desktop-dark">
+                      <img src="{{asset('images/favicon.png')}}" alt="logo" class="toggle-dark">
                   </a>
               </div>
           </div>
