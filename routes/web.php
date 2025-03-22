@@ -44,6 +44,10 @@ Route::middleware([RedirectIfAuthenticated::class])->group(function () {
     // Routes Accessible Only to Admin (login_type = 1)
     Route::middleware([VerifyAdmin::class])->group(function () {
         Route::get('/administrator', [AdminController::class, 'index']);
+        Route::get('/events-list', [AdminController::class, 'eventsList'])->name('eventsList');
+        Route::get('/users', [AdminController::class, 'usersList'])->name('usersList');
+        Route::get('/organizers-list', [AdminController::class, 'organizersList'])->name('organizersList');
+        Route::get('/transactions', [AdminController::class, 'transactions'])->name('admin.transactions');
         Route::get('/event-types/{action?}/{href?}', [AdminController::class, 'event_types'])->name('event_types');
         Route::post('/event-types/add', [AdminController::class, 'addEventType'])->name('addEventType');
         Route::post('/event-types/edit/{href}', [AdminController::class, 'editEventType'])->name('editEventType');

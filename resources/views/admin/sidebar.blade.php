@@ -28,7 +28,7 @@
                     </a>
                 </li>
                 <li class="slide">
-                    <a href="/client-dashboard" class="side-menu__item">
+                    <a href="/administrator" class="side-menu__item">
                         <i class="bi bi-house side-menu__icon"></i>
                         <span class="side-menu__label">Dashboard</span>
                     </a>
@@ -44,18 +44,21 @@
                             <a href="javascript:void(0)">Types</a>
                         </li>
                         <li class="slide">
+                            <a href="/events-list" class="side-menu__item">List</a>
+                        </li>
+                        <li class="slide">
                             <a href="/event-types" class="side-menu__item">Types</a>
                         </li>
                     </ul>
                 </li>
                 <li class="slide">
-                    <a href="#" class="side-menu__item">
+                    <a href="/users" class="side-menu__item">
                         <i class="bi bi-people-fill side-menu__icon"></i>
-                        <span class="side-menu__label">Manage Guests</span>
+                        <span class="side-menu__label">Users</span>
                     </a>
                 </li>
                 <li class="slide">
-                    <a href="#" class="side-menu__item">
+                    <a href="/organizers-list" class="side-menu__item">
                         <i class="bi bi-person-workspace side-menu__icon"></i>
                         <span class="side-menu__label">Organizers</span>
                     </a>
@@ -73,9 +76,9 @@
                     </a>
                 </li>
                 <li class="slide">
-                    <a href="#" class="side-menu__item">
+                    <a href="/transactions" class="side-menu__item">
                         <i class="bi bi-cash side-menu__icon"></i>
-                        <span class="side-menu__label">Payments</span>
+                        <span class="side-menu__label">Transactions</span>
                     </a>
                 </li>
                 <li class="slide">

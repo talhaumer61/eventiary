@@ -7047,6 +7047,7 @@
   content: "\e92e";
 }
 .fe-chevron-right:before {
+  color: white;
   content: "\e92f";
 }
 .fe-chevron-up:before {

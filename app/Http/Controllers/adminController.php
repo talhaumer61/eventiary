@@ -14,6 +14,18 @@ class AdminController extends Controller
     public function index(){
         return view('admin.dashboard');
     }
+    public function eventsList(){
+        return view('admin.events_list');
+    }
+    public function usersList(){
+        return view('admin.users_list');
+    }
+    public function organizersList(){
+        return view('admin.organizers_list');
+    }
+    public function transactions(){
+        return view('admin.transactions');
+    }
 
     public function event_types($action="list",$href=null){
         if($action == "edit" && isset($href)){
