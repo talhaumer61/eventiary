@@ -44,7 +44,10 @@
     <script src="{{asset('dashboard/libs/filepond-plugin-image-crop/filepond-plugin-image-crop.min.js')}}"></script>
     <script src="{{asset('dashboard/libs/filepond-plugin-image-resize/filepond-plugin-image-resize.min.js')}}"></script>
     <script src="{{asset('dashboard/libs/filepond-plugin-image-transform/filepond-plugin-image-transform.min.js')}}"></script>
-
+    
+    <!-- Internal Apex-Column-Charts JS -->
+    <script src="{{asset('dashboard/libs/apexcharts/apexcharts.min.js')}}"></script>
+    <script src="{{asset('dashboard/js/apexcharts-column.js')}}"></script>
     <!-- Internal Add Products JS -->
     <script src="{{asset('dashboard/js/add-products.js')}}"></script>
 

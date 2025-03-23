@@ -14,6 +14,18 @@ class clientController extends Controller
     public function create_event(){
         return view('client.create_event');
     }
+    public function guests(){
+        return view('client.guests');
+    }
+    public function user_messages(){
+        return view('client.user_messages');
+    }
+    public function payments(){
+        return view('client.payments');
+    }
+    public function budget_tracking(){
+        return view('client.budget_tracking');
+    }
     public function profile(){
         return view('client.profile');
     }

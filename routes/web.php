@@ -67,8 +67,12 @@ Route::middleware([AuthenticateUser::class])->group(function () {
     // Routes Accessible Only to Clients (login_type = 2)
     Route::middleware([VerifyClient::class])->group(function () {
         Route::get('/client-dashboard', [clientController::class, 'index'])->name('dashboard');
-        Route::get('/profile', [clientController::class, 'profile']);
+        Route::get('/user-profile', [clientController::class, 'profile']);
         Route::get('/create-event', [clientController::class, 'create_event']);
+        Route::get('/guests', [clientController::class, 'guests']);
+        Route::get('/user-messages', [clientController::class, 'user_messages']);
+        Route::get('/payments', [clientController::class, 'payments']);
+        Route::get('/budget-tracking', [clientController::class, 'budget_tracking']);
     });
     
     // Routes Accessible Only to Clients (login_type = 3)

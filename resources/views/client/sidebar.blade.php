@@ -40,7 +40,7 @@
                     </a>
                 </li>
                 <li class="slide">
-                    <a href="#" class="side-menu__item">
+                    <a href="/guests" class="side-menu__item">
                         <i class="bi bi-people-fill side-menu__icon"></i>
                         <span class="side-menu__label">Manage Guests</span>
                     </a>
@@ -58,19 +58,19 @@
                     </a>
                 </li>
                 <li class="slide">
-                    <a href="#" class="side-menu__item">
+                    <a href="/user-messages" class="side-menu__item">
                         <i class="bi bi-chat-dots side-menu__icon"></i>
                         <span class="side-menu__label">Messages</span>
                     </a>
                 </li>
                 <li class="slide">
-                    <a href="#" class="side-menu__item">
+                    <a href="/payments" class="side-menu__item">
                         <i class="bi bi-cash side-menu__icon"></i>
                         <span class="side-menu__label">Payments</span>
                     </a>
                 </li>
                 <li class="slide">
-                    <a href="#" class="side-menu__item">
+                    <a href="/budget-tracking" class="side-menu__item">
                         <i class="bi bi-credit-card side-menu__icon"></i>
                         <span class="side-menu__label">Budget Tracking</span>
                     </a>
