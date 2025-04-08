@@ -344,4 +344,5 @@
 
 </header>
 
+@include('client.sessionMsg')
 @include('client.sidebar')

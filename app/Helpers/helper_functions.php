@@ -70,19 +70,18 @@ function get_log_action($id = '') {
 
 // SESSION MESSAGE
 function sessionMsg($title = "", $msg = "", $type = "") {
-	if (!empty($title) && !empty($msg)&& !empty($type)){
-        session([
-            'msg' => [
-                'title' => $title,
-                'text' => $msg,
-                'type' => $type,
-            ]
-        ]);
-        return true;
+	if (!empty($title) && !empty($msg) && !empty($type)) {
+		session()->flash('msg', [
+			'title' => $title,
+			'text'  => $msg,
+			'type'  => $type,
+		]);
+		return true;
 	} else {
 		return false;
 	}
 }
+
 
 // SEND REMARKS
 function sendRemark($remarks = "", $action = "", $id_record = "") {

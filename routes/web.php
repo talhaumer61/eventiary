@@ -69,6 +69,7 @@ Route::middleware([AuthenticateUser::class])->group(function () {
         Route::get('/client-dashboard', [clientController::class, 'index'])->name('dashboard');
         Route::get('/user-profile', [clientController::class, 'profile']);
         Route::get('/create-event', [clientController::class, 'create_event']);
+        Route::post('/create-event', [clientController::class, 'store_event'])->name('event.store');
         Route::get('/guests', [clientController::class, 'guests']);
         Route::get('/user-messages', [clientController::class, 'user_messages']);
         Route::get('/payments', [clientController::class, 'payments']);

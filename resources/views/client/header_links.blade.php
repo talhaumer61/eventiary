@@ -47,9 +47,9 @@
     <link rel="stylesheet" href="dashboard/libs/quill/quill.bubble.css">
 
     <!-- Filepond CSS -->
-    <link rel="stylesheet" href="dashboard/libs/filepond/filepond.min.css">
-    <link rel="stylesheet" href="dashboard/libs/filepond-plugin-image-preview/filepond-plugin-image-preview.min.css">
-    <link rel="stylesheet" href="dashboard/libs/filepond-plugin-image-edit/filepond-plugin-image-edit.min.css">
+    <link rel="stylesheet" href="{{asset('dashboard/libs/filepond/filepond.min.css')}}">
+    <link rel="stylesheet" href="{{asset('dashboard/libs/filepond-plugin-image-preview/filepond-plugin-image-preview.min.css')}}">
+    <link rel="stylesheet" href="{{asset('dashboard/libs/filepond-plugin-image-edit/filepond-plugin-image-edit.min.css')}}">
 
     <!-- Date & Time Picker CSS -->
     <link rel="stylesheet" href="dashboard/libs/flatpickr/flatpickr.min.css">

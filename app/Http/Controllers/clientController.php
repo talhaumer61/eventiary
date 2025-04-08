@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use App\Models\Event;
 
 class clientController extends Controller
 {
@@ -12,8 +14,62 @@ class clientController extends Controller
         return view('client.dashboard');
     }
     public function create_event(){
-        return view('client.create_event');
+        $eventTypes = DB::table('event_types')
+        ->where('type_status', 1)
+        ->where('is_deleted', 0)
+        ->get();
+
+        return view('client.create_event', ['eventTypes' => $eventTypes]);
     }
+    public function store_event(Request $request)
+    {
+        // Validate incoming request
+        $request->validate([
+            'event_name' => 'required|string|max:255',
+            'id_type' => 'required|numeric',
+            'event_location' => 'required|string|max:255',
+            'no_of_guests' => 'nullable|integer|min:0',
+            'event_budget' => 'nullable|numeric|min:0',
+            'event_date' => 'nullable|date',
+            'event_detail' => 'nullable|string',
+            'event_image' => 'nullable|image|mimes:jpg,jpeg,png,svg|max:2048',
+        ]);
+
+        // Generate random event_href
+        $eventHref = Str::random(12);
+
+        // Handle image upload
+        $imagePath = null;
+        if ($request->hasFile('event_image')) {
+            $image = $request->file('event_image');
+            $fileName = time() . '_' . Str::slug($request->event_name) . '.' . $image->getClientOriginalExtension();
+            $destination = public_path('uploads/events');
+            $image->move($destination, $fileName);
+            $imagePath = 'uploads/events/' . $fileName;
+        }
+
+        // Create new Event record
+        Event::create([
+            'event_status'   => 1,
+            'event_name'     => $request->event_name,
+            'event_href'     => $eventHref,
+            'event_location' => $request->event_location,
+            'event_detail'   => $request->event_detail,
+            'event_budget'   => $request->event_budget,
+            'no_of_guests'   => $request->no_of_guests,
+            'event_date'     => $request->event_date,
+            'event_image'    => $imagePath,
+            'id_type'        => $request->id_type,
+            'id_added'       => session('user')->id,
+            'date_added'     => now(),
+        ]);
+
+        // Redirect back with success message
+        sessionMsg('success', 'Event Created', 'success');
+        return redirect()->back();
+        
+    }
+
     public function guests(){
         return view('client.guests');
     }
