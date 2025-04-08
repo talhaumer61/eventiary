@@ -61,9 +61,9 @@
                             
                                     <!-- Password Field -->
                                     <div class="col-xl-12 mb-2">
-                                        <label for="signin-password" class="form-label text-default d-block">Password
+                                        {{-- <label for="signin-password" class="form-label text-default d-block">Password
                                             <a href="#" class="float-end text-danger">Forget password ?</a>
-                                        </label>
+                                        </label> --}}
                                         <div class="position-relative">
                                             <input type="password" 
                                                    class="form-control form-control-lg @error('password') border border-danger @enderror"
@@ -93,7 +93,7 @@
                             
                             <div class="text-center">
                                 <p class="text-muted mt-3 mb-0">Dont have an account? <a href="/signup" class="text-primary">Sign Up</a></p>
-                                <p class="text-muted mt-3 mb-0">Register as as Organizer! <a href="/organizer-signup" class="text-primary">Register</a></p>
+                                <p class="text-muted mt-3 mb-0">Register as an Organizer! <a href="/organizer-signup" class="text-primary">Register</a></p>
                             </div>
                         </div>
                     </div>
@@ -116,7 +116,7 @@
                         <a href="javascript:void(0);" class="btn btn-icon authentication-cover-icon btn-wave">
                             <i class="ri-twitter-line fw-bold"></i>
                         </a>
-                        <a href="javascript:void(0);" class="btn btn-icon authentication-cover-icon btn-wave">
+                        <a href="https://www.instagram.com/eventiary._?igsh=eTZuaW9wNXQycTY4&utm_source=qr" target="_blank" class="btn btn-icon authentication-cover-icon btn-wave">
                             <i class="ri-instagram-line fw-bold"></i>
                         </a>
                         <a href="javascript:void(0);" class="btn btn-icon authentication-cover-icon btn-wave">

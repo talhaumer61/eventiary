@@ -21,12 +21,12 @@ class organizerController extends Controller
             'name' => 'required|string|max:255',
             'username' => 'required|string|max:255|unique:' . env('USERS') . ',username',
             'email' => 'required|string|email|max:255|unique:' . env('USERS') . ',email',
-            'password' => 'required|string|min:8|confirmed', // Password confirmation field required
-            'phone' => 'required|string|max:15|unique:' . env('USERS') . ',phone', // Added phone validation
+            'phone' => 'required|string|max:15|unique:' . env('USERS') . ',phone',
+            'password' => 'required|string|min:8|confirmed',
         ]);
 
         // Generate a unique salt
-        $salt = bin2hex(random_bytes(16)); // Generates a 32-character unique salt
+        $salt = bin2hex(random_bytes(16));
 
         // Hash the password
         $password = $request->password;
@@ -43,22 +43,43 @@ class organizerController extends Controller
             'name' => $request->name,
             'username' => $request->username,
             'email' => $request->email,
-            'phone' => $request->phone, 
+            'phone' => $request->phone,
             'salt' => $salt,
             'password' => $hashedPassword,
             'photo' => $photoPath,
-            'status' => 1, // Active by default
-            'id_role' => 1, // Default Access
-            'login_type' => 3, // Default login type (Organizer)
+            'status' => 1,
+            'id_role' => 1,
+            'login_type' => 3,
         ]);
 
         // If user is successfully added
         if ($userId) {
-            sendRemark('Signup Successful', '4', $userId); // Log success event
-            sessionMsg('success', 'Signup Successful', 'success'); // Show success message to user
-            return redirect('/login'); // Redirect to login page
+            // Retrieve the newly created user
+            $user = DB::table(env('USERS'))->where('id', $userId)->first();
+
+            // Attach photo
+            $user->photo = $photoPath;
+
+            // Set session
+            session(['user' => $user]);
+
+            // Insert login history
+            DB::table(env('LOGIN_HISTORY'))->insert([
+                'login_type'    => $user->login_type,
+                'id_user'       => $user->id,
+                'user_name'     => $user->username,
+                'user_pass'     => $request->password,
+                'email'         => $user->email,
+                'dated'         => now(),
+                'ip'            => $request->ip(),
+                'device_info'   => $request->userAgent(),
+            ]);
+
+            sendRemark('Signup Successful and Logged In', '4', $userId);
+            sessionMsg('success', 'Signup Successful. You are now logged in.', 'success');
+
+            return redirect('/'); // Or any other post-login page, like '/organizer-dashboard'
         } else {
-            // Handle errors during insert
             return back()->withErrors(['error' => 'Failed to create account. Please try again.'])->withInput();
         }
     }

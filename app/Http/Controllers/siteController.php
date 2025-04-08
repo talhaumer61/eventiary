@@ -41,7 +41,7 @@ class siteController extends Controller
         $user = DB::table(env('USERS'))
                 ->where(function ($query) use ($request) {
                     $query->where('username', $request->username)
-                        ->where('login_type', [2,3])
+                        ->whereIn('login_type', [2,3])
                         ->orWhere('email', $request->username);
                 })
                 ->first();
