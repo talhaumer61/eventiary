@@ -58,9 +58,9 @@
                                     <li>
                                         <a href="#">More</a>
                                         <ul>
-                                            <li><a href="#">About Us</a></li>
-                                            <li><a href="#">Contact Us</a></li>
-                                            <li><a href="#">FAQ's</a></li>
+                                            <li><a href="about-us">About Us</a></li>
+                                            <li><a href="contact-us">Contact Us</a></li>
+                                            <li><a href="faqs">FAQ's</a></li>
                                             
                                             <!-- Show Logout only if user is logged in -->
                                             @if(session()->has('user'))

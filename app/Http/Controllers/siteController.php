@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -10,6 +12,15 @@ class siteController extends Controller
 {
     public function home(){
         return view('home');
+    }
+    public function about_us(){
+        return view('about');
+    }
+    public function contact_us(){
+        return view('contact');
+    }
+    public function faqs(){
+        return view('faqs');
     }
     public function login(){
         return view('login');
@@ -21,11 +32,65 @@ class siteController extends Controller
         return view('organizer.signup');
     }
     public function organizers(){
-        return view('organizers');
+        $organizers = User::where('login_type', 3)
+                      ->where('is_deleted', false)
+                      ->get();
+
+        return view('organizers', compact('organizers'));
     }
-    public function events(){
-        return view('events');
+
+    // Events
+    public function events($href = null)
+    {
+        if ($href) {
+            $event = DB::table('events')
+                ->where('events.event_href', $href)
+                ->where('events.is_deleted', false)
+                ->where('events.event_status', 1)
+                ->first();
+
+            if (!$event) {
+                abort(404);
+            }
+
+            // Get event type detail
+            $eventType = DB::table('event_types')
+                ->where('type_id', $event->id_type)
+                ->where('is_deleted', false)
+                ->where('type_status', 1)
+                ->first();
+
+            // Get user who added the event
+            $addedBy = DB::table('users')
+                ->where('id', $event->id_added)
+                ->where('is_deleted', false)
+                ->where('status', 1)
+                ->first();
+
+            return view('events', [
+                'page_title' => $event->event_name . ' | Eventiary',
+                'event' => $event,
+                'eventType' => $eventType,
+                'addedBy' => $addedBy,
+                'is_detail' => true
+            ]);
+        } else {
+            $events = DB::table('events')
+                ->where('is_deleted', false)
+                ->where('event_status', 1)
+                ->orderBy('event_date', 'desc')
+                ->get();
+
+            return view('events', [
+                'page_title' => 'Events | Eventiary',
+                'events' => $events,
+                'is_detail' => false
+            ]);
+        }
     }
+
+
+    // User Authentication
     public function user_login(Request $request)
     {
         // if (session()->has('user')) {
@@ -88,7 +153,8 @@ class siteController extends Controller
             // return redirect('/portal');
         }
     }
-
+    
+    // Logout user 
     public function logout(Request $request)
     {
         // Clear the user session
@@ -205,6 +271,7 @@ class siteController extends Controller
         return response()->json(['success' => true, 'message' => 'Password is correct.']);
     }
 
+    // Update user Profile
     public function updateProfile(Request $request)
     {
         // Get user from session

@@ -14,8 +14,11 @@ use App\Http\Middleware\VerifyOrganizer;
 
 // Public Routes
 Route::get('/', [siteController::class, 'home']);
-Route::get('/events', [siteController::class, 'events']);
+Route::get('/events/{href?}', [siteController::class, 'events']);
 Route::get('/organizers', [siteController::class, 'organizers']);
+Route::get('/about-us', [siteController::class, 'about_us']);
+Route::get('/contact-us', [siteController::class, 'contact_us']);
+Route::get('/faqs', [siteController::class, 'faqs']);
 
 // Routes Accessible Only to Guests (Prevent Logged-in Users from Accessing Login/Signup)
 Route::middleware([RedirectIfAuthenticated::class])->group(function () {

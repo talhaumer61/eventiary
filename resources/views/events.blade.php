@@ -1,12 +1,17 @@
-@include('include.header',['page_title' => 'Events | Eventiary'])
+@include('include.header', ['page_title' => $page_title])
 
-    @include('include.events.title')
-    <!-- site-main start -->
+@if($is_detail)
+    {{-- Event Detail View --}}
+    @include('include.events.event_title')
     <div class="site-main">
-
-    @include('include.events.list')
-
+        @include('include.events.detail')
     </div>
-    <!-- site-main end -->
+@else
+    {{-- Event List View --}}
+    @include('include.events.title')
+    <div class="site-main">
+        @include('include.events.list')
+    </div>
+@endif
 
 @include('include.footer')
