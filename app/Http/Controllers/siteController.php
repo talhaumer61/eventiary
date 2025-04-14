@@ -205,5 +205,62 @@ class siteController extends Controller
         return response()->json(['success' => true, 'message' => 'Password is correct.']);
     }
 
+    public function updateProfile(Request $request)
+    {
+        // Get user from session
+        $user = session('user');
+
+        if (!$user) {
+            return redirect()->back()->with('error', 'User session not found.');
+        }
+
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'username' => 'required|string|max:255|unique:users,username,' . $user->id,
+            'phone' => 'nullable|string|max:20',
+            'photo' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+
+        // Find the user from database
+        $dbUser = \App\Models\User::find($user->id);
+
+        if (!$dbUser) {
+            return redirect()->back()->with('error', 'User not found.');
+        }
+
+        // Handle image upload
+        if ($request->hasFile('photo')) {
+            $file = $request->file('photo');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $path = 'uploads/users';
+
+            // Move uploaded file
+            $file->move(public_path($path), $filename);
+
+            // Delete old image if exists
+            // if ($dbUser->photo && file_exists(public_path($dbUser->photo))) {
+            //     unlink(public_path($dbUser->photo));
+            // }
+
+            $dbUser->photo = $path . '/' . $filename;
+        }
+
+        // Update other fields
+        $dbUser->name = $request->name;
+        $dbUser->username = $request->username;
+        $dbUser->phone = $request->phone;
+        $dbUser->id_modify = $user->id;
+        $dbUser->date_modify = now();
+
+        $dbUser->save();
+
+        // Update session data
+        session(['user' => $dbUser]);
+
+        sessionMsg('success', 'Profile Updated!', 'success');
+        return back()->with('success', 'Profile updated successfully!');
+    }
+
+
 
 }

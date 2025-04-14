@@ -11,11 +11,11 @@
           <!-- Start::header-element -->
           <div class="header-element">
               <div class="horizontal-logo">
-                  <a href="index.html" class="header-logo">
-                      <img src="dashboard/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
-                      <img src="dashboard/images/brand-logos/toggle-logo.png" alt="logo" class="toggle-logo">
-                      <img src="dashboard/images/brand-logos/desktop-dark.png" alt="logo" class="desktop-dark">
-                      <img src="dashboard/images/brand-logos/toggle-dark.png" alt="logo" class="toggle-dark">
+                  <a href="/client-dashboard" class="header-logo">
+                    <img src="{{asset('images/logo-img.png')}}" alt="logo" class="desktop-logo">
+                    <img src="{{asset('images/favicon.png')}}" alt="logo" class="toggle-logo">
+                    <img src="{{asset('images/logo-img.png')}}" alt="logo" class="desktop-dark">
+                    <img src="{{asset('images/favicon.png')}}" alt="logo" class="toggle-dark">
                   </a>
               </div>
           </div>
@@ -24,17 +24,6 @@
           <!-- Start::header-element -->
           <div class="header-element mx-lg-0 mx-2">
               <a aria-label="Hide Sidebar" class="sidemenu-toggle header-link animated-arrow hor-toggle horizontal-navtoggle" data-bs-toggle="sidebar" href="javascript:void(0);"><span></span></a>
-          </div>
-          <!-- End::header-element -->
-
-          <!-- Start::header-element -->
-          <div class="header-element header-search d-md-block d-none">
-              <!-- Start::header-link -->
-              <input type="text" class="header-search-bar form-control border-0 bg-body" placeholder="Search for Results...">
-              <a href="javascript:void(0);" class="header-search-icon border-0">
-                  <i class="bi bi-search"></i>
-              </a>
-              <!-- End::header-link -->
           </div>
           <!-- End::header-element -->
 
@@ -171,8 +160,8 @@
           
           <li class="header-element notifications-dropdown d-xl-block d-none">
               <!-- Start::header-link|dropdown-toggle -->
-              <a href="javascript:void(0);" class="header-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" id="messageDropdown" aria-expanded="false">
-                  <i class="bi bi-bell header-link-icon"></i>
+              <a href="javascript:void(0);" class=" header-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" id="messageDropdown" aria-expanded="false">
+                  <i class="btn-primary bi bi-bell header-link-icon"></i>
                   <span class="header-icon-pulse bg-secondary rounded pulse pulse-secondary"></span>
               </a>
               <!-- End::header-link|dropdown-toggle -->
@@ -310,10 +299,10 @@
               <a href="javascript:void(0);" class="header-link dropdown-toggle" id="mainHeaderProfile" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
                   <div class="d-flex align-items-center">
                       <div class="me-sm-2 me-0">
-                          <img src="dashboard/images/faces/9.jpg" alt="img" class="avatar avatar-sm avatar-rounded">
+                          <img src="{{ session('user')->photo }}" alt="img" class="avatar avatar-sm avatar-rounded">
                       </div>
                       <div class="d-xl-block d-none lh-1">
-                          <span class="fw-medium lh-1">Mr. Stark</span>
+                          <span class="fw-medium lh-1">{{ session('user')->name }}</span>
                       </div>
                   </div>
               </a>
@@ -321,7 +310,7 @@
               <ul class="main-header-dropdown dropdown-menu pt-0 overflow-hidden header-profile-dropdown dropdown-menu-end" aria-labelledby="mainHeaderProfile">
                   <li><a class="dropdown-item d-flex align-items-center" href="/user-profile"><i class="bi bi-person fs-18 me-2 op-7"></i>Profile</a></li>
                   <li><a class="dropdown-item d-flex align-items-center" href="#"><i class="bi bi-gear fs-16 me-2 op-7"></i>Settings</a></li>
-                  <li><a class="dropdown-item d-flex align-items-center" href="#"><i class="bi bi-box-arrow-right fs-18 me-2 op-7"></i>Log Out</a></li>
+                  <li><a class="dropdown-item d-flex align-items-center" href="/logout"><i class="bi bi-box-arrow-right fs-18 me-2 op-7"></i>Log Out</a></li>
               </ul>
           </li>  
           

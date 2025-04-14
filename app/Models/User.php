@@ -18,6 +18,7 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $table = 'users'; // If your table name is different from Laravel's convention
+    public $timestamps = false; // Since you are using custom timestamp fields
 
     protected $fillable = [
         'status', 'id_role', 'login_type', 'name', 'username', 'email',

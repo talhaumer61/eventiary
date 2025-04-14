@@ -3,10 +3,10 @@
     <!-- Start::main-sidebar-header -->
     <div class="main-sidebar-header admin-sidebar">
         <a href="/administrator" class="header-logo">
-            <img src="images/logo-img.png" alt="logo" class="desktop-logo">
-            <img src="images/favicon.png" alt="logo" class="toggle-dark">
-            <img src="images/logo-img.png" alt="logo" class="desktop-dark">
-            <img src="images/favicon.png" alt="logo" class="toggle-logo">
+            <img src="{{asset('images/logo-img.png')}}" alt="logo" class="desktop-logo">
+            <img src="{{asset('images/favicon.png')}}" alt="logo" class="toggle-dark">
+            <img src="{{asset('images/logo-img.png')}}" alt="logo" class="desktop-dark">
+            <img src="{{asset('images/favicon.png')}}" alt="logo" class="toggle-logo">
         </a>
     </div>
     <!-- End::main-sidebar-header -->

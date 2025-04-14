@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\Event;
+use App\Models\User;
 
 class clientController extends Controller
 {
@@ -21,6 +22,8 @@ class clientController extends Controller
 
         return view('client.create_event', ['eventTypes' => $eventTypes]);
     }
+
+    // add new event
     public function store_event(Request $request)
     {
         // Validate incoming request
@@ -70,6 +73,84 @@ class clientController extends Controller
         
     }
 
+    // update a event
+    public function update_event(Request $request, $event_href)
+    {
+        // Validate request
+        $request->validate([
+            'event_name' => 'required|string|max:255',
+            'id_type' => 'required|numeric',
+            'event_location' => 'required|string|max:255',
+            'no_of_guests' => 'nullable|integer|min:0',
+            'event_budget' => 'nullable|numeric|min:0',
+            'event_date' => 'nullable|date',
+            'event_detail' => 'nullable|string',
+            'event_image' => 'nullable|image|mimes:jpg,jpeg,png,svg|max:2048',
+        ]);
+
+        // Fetch existing event
+        $event = Event::where('event_href', $event_href)->firstOrFail();
+
+        // Handle image upload if new image provided
+        if ($request->hasFile('event_image')) {
+            // Delete old image if exists
+            if ($event->event_image && file_exists(public_path($event->event_image))) {
+                unlink(public_path($event->event_image));
+            }
+
+            $image = $request->file('event_image');
+            $fileName = time() . '_' . Str::slug($request->event_name) . '.' . $image->getClientOriginalExtension();
+            $destination = public_path('uploads/events');
+            $image->move($destination, $fileName);
+            $event->event_image = 'uploads/events/' . $fileName;
+        }
+
+        // Update fields
+        $event->event_name     = $request->event_name;
+        $event->event_location = $request->event_location;
+        $event->event_detail   = $request->event_detail;
+        $event->event_budget   = $request->event_budget;
+        $event->no_of_guests   = $request->no_of_guests;
+        $event->event_date     = $request->event_date;
+        $event->id_type        = $request->id_type;
+
+        $event->save();
+
+        // Redirect with success
+        sessionMsg('success', 'Event Updated', 'success');
+        return redirect('/my-events');
+    }
+
+
+    public function my_events($event_href = null)
+    {
+        $userId = session('user')->id;
+
+        if ($event_href) {
+            $event = DB::table('events')
+                ->where('event_href', $event_href)
+                ->where('id_added', $userId)
+                ->where('is_deleted', false)
+                ->first();
+
+            if (!$event) {
+                abort(404); // or redirect with error message
+            }
+            $eventTypes = DB::table('event_types')
+            ->where('type_status', 1)
+            ->where('is_deleted', 0)
+            ->get();
+            return view('client.my_events', compact('event','eventTypes'));
+        } else {
+            $myEvents = DB::table('events')
+                ->where('id_added', $userId)
+                ->where('is_deleted', false)
+                ->paginate(10);
+
+            return view('client.my_events', compact('myEvents'));
+        }
+    }
+
     public function guests(){
         return view('client.guests');
     }
@@ -83,7 +164,9 @@ class clientController extends Controller
         return view('client.budget_tracking');
     }
     public function profile(){
-        return view('client.profile');
+        $user = User::where('id', session('user')->id)->first(); // Fetch user data using model
+
+        return view('client.profile', compact('user'));
     }
     public function signup(Request $request)
     {

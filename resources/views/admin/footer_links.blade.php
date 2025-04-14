@@ -120,6 +120,8 @@
             }
         });
     </script> --}}
+
+    {{-- Change Password --}}
     <script>
         document.getElementById("changePasswordForm").addEventListener("submit", function (e) {
             e.preventDefault(); // Prevent form submission

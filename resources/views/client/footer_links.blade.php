@@ -1,3 +1,4 @@
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- Popper JS -->
     <script src="{{asset('dashboard/libs/%40popperjs/core/umd/popper.min.js')}}"></script>
@@ -67,6 +68,125 @@
                 if (item.getAttribute("href") === currentPath) {
                     item.classList.add("active"); // Add 'active' class to the matching menu item
                 }
+            });
+        });
+
+    </script>
+
+
+    {{-- Delete Record --}}
+    <!-- SweetAlert2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        function confirmDelete(table, id, column) {
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You are about to delete this record.",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#d33",
+                cancelButtonColor: "#3085d6",
+                confirmButtonText: "Yes, delete it!",
+                cancelButtonText: "Cancel"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Disable button to prevent multiple clicks
+                    $(".delete-btn").prop("disabled", true);
+
+                    $.ajax({
+                        url: "{{ route('delete.record') }}",
+                        type: "POST",
+                        data: {
+                            _token: document.querySelector('meta[name="csrf-token"]').getAttribute('content'), 
+                            table: table,
+                            id: id,
+                            column: column
+                        },
+                        success: function(response) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: response.message,
+                                icon: "success",
+                                timer: 2000,
+                                showConfirmButton: false
+                            }).then(() => {
+                                location.reload();
+                            });
+                        },
+                        error: function(xhr) {
+                            let errorMessage = "Something went wrong.";
+                            if (xhr.responseJSON && xhr.responseJSON.message) {
+                                errorMessage = xhr.responseJSON.message;
+                            }
+                            Swal.fire("Error!", errorMessage, "error");
+
+                            // Re-enable button in case of error
+                            $(".delete-btn").prop("disabled", false);
+                        }
+                    });
+                }
+            });
+        }
+    </script>
+
+    {{-- Change Password --}}
+    <script>
+        document.getElementById("changePasswordForm").addEventListener("submit", function (e) {
+            e.preventDefault(); // Prevent form submission
+
+            let isValid = true;
+            
+            let currentPassword = document.getElementById("current-password").value.trim();
+            let newPassword = document.getElementById("new-password").value.trim();
+            let confirmPassword = document.getElementById("confirm-password").value.trim();
+
+            // Clear previous errors
+            document.getElementById("currentPasswordError").innerText = "";
+            document.getElementById("newPasswordError").innerText = "";
+            document.getElementById("confirmPasswordError").innerText = "";
+
+            // Validate new password (Minimum 8 characters)
+            let passwordRegex = /^.{8,}$/;
+            if (!passwordRegex.test(newPassword)) {
+                document.getElementById("newPasswordError").innerText = "Password must be at least 8 characters long.";
+                isValid = false;
+            }
+
+            // Check if new password and confirm password match
+            if (newPassword !== confirmPassword) {
+                document.getElementById("confirmPasswordError").innerText = "Passwords do not match.";
+                isValid = false;
+            }
+
+            if (!isValid) {
+                return; // Stop if validation fails
+            }
+
+            // **AJAX request to check current password**
+            fetch("{{ route('check-current-password') }}", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').getAttribute("content")
+                },
+                body: JSON.stringify({ current_password: currentPassword })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (!data.success) {
+                    let errorElement = document.getElementById("currentPasswordError");
+                    errorElement.innerText = "Current password is incorrect.";
+                    console.log("Current password is incorrect.");
+                    errorElement.style.color = "red"; // Ensure it's visible
+                    return;
+                }
+                
+                // Submit the form if password is correct
+                document.getElementById("changePasswordForm").submit();
+            })
+            .catch(error => {
+                console.error("Error:", error);
             });
         });
 

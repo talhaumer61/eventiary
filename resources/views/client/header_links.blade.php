@@ -9,42 +9,43 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title> {{ $page_title }} </title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="Description" content="">
 	<meta name="keywords" content="">
     
     <!-- Favicon -->
-    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="{{asset('images/favicon.png')}}" type="image/x-icon">
     
     <!-- Choices JS -->
-    <script src="dashboard/libs/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script src="{{asset('dashboard/libs/choices.js/public/assets/scripts/choices.min.js')}}"></script>
 
     <!-- Main Theme Js -->
-    <script src="dashboard/js/main.js"></script>
+    <script src="{{asset('dashboard/js/main.js')}}"></script>
     
     <!-- Bootstrap Css -->
-    <link id="style" href="dashboard/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet" >
+    <link id="style" href="{{asset('dashboard/libs/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" >
 
     <!-- Style Css -->
-    <link href="dashboard/css/styles.css" rel="stylesheet" >
+    <link href="{{asset('dashboard/css/styles.css')}}" rel="stylesheet">
 
     <!-- Icons Css -->
-    <link href="dashboard/css/icons.css" rel="stylesheet" >
+    <link href="{{asset('dashboard/css/icons.css')}}" rel="stylesheet">
 
     <!-- Node Waves Css -->
-    <link href="dashboard/libs/node-waves/waves.min.css" rel="stylesheet" > 
+    <link href="{{asset('dashboard/libs/node-waves/waves.min.css')}}" rel="stylesheet"> 
 
     <!-- Simplebar Css -->
-    <link href="dashboard/libs/simplebar/simplebar.min.css" rel="stylesheet" >
+    <link href="{{asset('dashboard/libs/simplebar/simplebar.min.css')}}" rel="stylesheet">
     
     <!-- Color Picker Css -->
-    <link rel="stylesheet" href="dashboard/libs/flatpickr/flatpickr.min.css">
-    <link rel="stylesheet" href="dashboard/libs/%40simonwep/pickr/themes/nano.min.css">
+    <link rel="stylesheet" href="{{asset('dashboard/libs/flatpickr/flatpickr.min.css')}}">
+    <link rel="stylesheet" href="{{asset('dashboard/libs/%40simonwep/pickr/themes/nano.min.css')}}">
 
     <!-- Choices Css -->
-    <link rel="stylesheet" href="dashboard/libs/choices.js/public/assets/styles/choices.min.css">
+    <link rel="stylesheet" href="{{asset('dashboard/libs/choices.js/public/assets/styles/choices.min.css')}}">
 
-    <link rel="stylesheet" href="dashboard/libs/quill/quill.snow.css">
-    <link rel="stylesheet" href="dashboard/libs/quill/quill.bubble.css">
+    <link rel="stylesheet" href="{{asset('dashboard/libs/quill/quill.snow.css')}}">
+    <link rel="stylesheet" href="{{asset('dashboard/libs/quill/quill.bubble.css')}}">
 
     <!-- Filepond CSS -->
     <link rel="stylesheet" href="{{asset('dashboard/libs/filepond/filepond.min.css')}}">
@@ -52,7 +53,7 @@
     <link rel="stylesheet" href="{{asset('dashboard/libs/filepond-plugin-image-edit/filepond-plugin-image-edit.min.css')}}">
 
     <!-- Date & Time Picker CSS -->
-    <link rel="stylesheet" href="dashboard/libs/flatpickr/flatpickr.min.css">
+    <link rel="stylesheet" href="{{asset('dashboard/libs/flatpickr/flatpickr.min.css')}}">
 
 </head>
 

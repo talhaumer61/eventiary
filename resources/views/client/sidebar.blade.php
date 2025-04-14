@@ -2,11 +2,11 @@
 
     <!-- Start::main-sidebar-header -->
     <div class="main-sidebar-header">
-        <a href="index.html" class="header-logo">
-            <img src="dashboard/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
-            <img src="dashboard/images/brand-logos/toggle-dark.png" alt="logo" class="toggle-dark">
-            <img src="dashboard/images/brand-logos/desktop-dark.png" alt="logo" class="desktop-dark">
-            <img src="dashboard/images/brand-logos/toggle-logo.png" alt="logo" class="toggle-logo">
+        <a href="/client-dashboard" class="header-logo">
+            <img src="{{asset('images/logo-img.png')}}" alt="logo" class="desktop-logo">
+            <img src="{{asset('images/favicon.png')}}" alt="logo" class="toggle-dark">
+            <img src="{{asset('images/logo-img.png')}}" alt="logo" class="desktop-dark">
+            <img src="{{asset('images/favicon.png')}}" alt="logo" class="toggle-logo">
         </a>
     </div>
     <!-- End::main-sidebar-header -->
@@ -37,6 +37,12 @@
                     <a href="/create-event" class="side-menu__item">
                         <i class="bi bi-layout-text-window side-menu__icon"></i>
                         <span class="side-menu__label">Create an Event</span>
+                    </a>
+                </li>
+                <li class="slide">
+                    <a href="/my-events" class="side-menu__item">
+                        <i class="bi bi-layout-text-window side-menu__icon"></i>
+                        <span class="side-menu__label">My Events</span>
                     </a>
                 </li>
                 <li class="slide">
