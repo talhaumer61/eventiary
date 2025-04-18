@@ -81,7 +81,10 @@ Route::middleware([AuthenticateUser::class])->group(function () {
         Route::get('/my-events/{event_href?}', [clientController::class, 'my_events']);
         Route::post('/my-events/update/{event_href}', [clientController::class, 'update_event'])->name('event.update');
 
-        Route::get('/guests', [clientController::class, 'guests']);
+        Route::get('/guests/{action?}/{href?}', [clientController::class, 'guests']);
+        Route::post('/guests/store', [clientController::class, 'storeGuest'])->name('guests.store');
+        Route::post('/guests/update/{href}', [clientController::class, 'updateGuest'])->name('guests.update');
+
         Route::get('/user-messages', [clientController::class, 'user_messages']);
         Route::get('/payments', [clientController::class, 'payments']);
         Route::get('/budget-tracking', [clientController::class, 'budget_tracking']);

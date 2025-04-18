@@ -121,10 +121,8 @@ class siteController extends Controller
             }
 
             if ($inputHash === $storedHash) {
-                $photoPath = 'images/default_user.png';
-                if ($user->photo && Storage::disk('public')->exists($user->photo)) {
-                    $photoPath = $user->photo;
-                }
+                $photoPath = $user->photo ?: 'images/default_user.png';
+                $user->photo = $photoPath;
 
                 $user->photo = $photoPath;
                 session(['user' => $user]);

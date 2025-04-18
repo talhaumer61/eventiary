@@ -151,9 +151,118 @@ class clientController extends Controller
         }
     }
 
-    public function guests(){
-        return view('client.guests');
+    public function guests($action = "list", $href = null)
+    {
+        // Fetch events that are active and not deleted
+        $events = DB::table('events')
+            ->where('event_status', 1)
+            ->where('is_deleted', 0)
+            ->get();
+
+        // Fetch events that have guests associated with them
+        $guestsGroupedByEvent = DB::table('events')
+        ->join('guests', 'events.event_id', '=', 'guests.id_event')
+        ->where('guests.is_deleted', 0)
+        ->where('guests.status', 1)
+        ->where('events.event_status', 1)
+        ->where('events.is_deleted', 0)
+        ->select('events.event_id', 'events.event_name', 'guests.*') // Selecting required columns
+        ->orderBy('events.event_id')
+        ->get()
+        ->groupBy('event_id'); // Group guests by event_id
+
+        // Check if there are any events with guests
+        if ($guestsGroupedByEvent->isEmpty()) {
+            $guestsGroupedByEvent=null;
+            // If no guests are found, return a message or redirect accordingly
+            return view('client.guests', compact('action', 'events', 'guestsGroupedByEvent'))->with('message', 'No events with guests found.');
+        }
+
+        if ($action == "edit" && $href) {
+            $guest = DB::table('guests')
+                    ->where('href', $href)
+                    ->where('is_deleted', 0)
+                    ->first();
+            return view('client.guests', compact('action', 'events','guest'));
+        } else {
+            return view('client.guests', compact('action', 'events', 'guestsGroupedByEvent'));
+        }
     }
+
+
+    // add guest
+    public function storeGuest(Request $request)
+    {
+        $request->validate([
+            'name'      => 'required|string|max:255',
+            'id_event'  => 'required|exists:events,event_id',
+            'address'   => 'nullable|string|max:255',
+            'photo'     => 'nullable|image|mimes:jpg,jpeg,png,svg|max:2048',
+        ]);
+
+        $photoPath = null;
+
+        if ($request->hasFile('photo')) {
+            $fileName = time() . '_' . Str::random(10) . '.' . $request->photo->extension();
+            $uploadPath = 'uploads/guests';
+            $request->photo->move(public_path($uploadPath), $fileName);
+            $photoPath = $uploadPath . '/' . $fileName; // Full relative path
+        }
+
+        DB::table('guests')->insert([
+            'status'      => 1,
+            'name'        => $request->name,
+            'address'     => $request->address,
+            'photo'       => $photoPath,
+            'id_event'    => $request->id_event,
+            'href'        => Str::random(12),
+            'id_added'    => session('user')->id,
+            'date_added'  => now(),
+            'is_deleted'  => 0,
+        ]);
+
+        sessionMsg('success', 'Guest Added', 'success');
+        return redirect('/guests');
+    }
+
+    // edit guest
+    public function updateGuest(Request $request, $href)
+    {
+        $request->validate([
+            'name'      => 'required|string|max:255',
+            'id_event'  => 'required|exists:events,event_id',
+            'address'   => 'nullable|string|max:255',
+            'photo'     => 'nullable|image|mimes:jpg,jpeg,png,svg|max:2048',
+        ]);
+
+        $guest = DB::table('guests')->where('href', $href)->first();
+
+        if (!$guest) {
+            return redirect('/guests')->with('error', 'Guest not found.');
+        }
+
+        $photoPath = $guest->photo; // Keep old photo if new one not uploaded
+
+        if ($request->hasFile('photo')) {
+            $fileName = time() . '_' . Str::random(10) . '.' . $request->photo->extension();
+            $uploadPath = 'uploads/guests';
+            $request->photo->move(public_path($uploadPath), $fileName);
+            $photoPath = $uploadPath . '/' . $fileName; // Consistent path format
+        }
+
+        DB::table('guests')->where('href', $href)->update([
+            'name'       => $request->name,
+            'address'    => $request->address,
+            'photo'      => $photoPath,
+            'id_event'   => $request->id_event,
+            'date_added' => now(),
+        ]);
+
+        sessionMsg('success', 'Guest updated successfully', 'success');
+        return redirect('/guests');
+    }
+
+
     public function user_messages(){
         return view('client.user_messages');
     }
