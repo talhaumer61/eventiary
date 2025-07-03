@@ -42,7 +42,7 @@
                     data-paddingright="[18,18,18,18]"
                     data-paddingbottom="[6,6,6,5]"
                     data-paddingleft="[18,18,18,18]"
-                    >December 03rd 2018</div>
+                    >Your Event, OUr Planning</div>
                     
                     <div class="tp-caption tp-resizeme tp-shapewrapper" id="slide-1-layer-3" data-x="['center','center','center','center']" data-hoffset="['269','269','201','134']" data-y="['middle','middle','middle','middle']" data-voffset="['52','6','-7','29']"
 

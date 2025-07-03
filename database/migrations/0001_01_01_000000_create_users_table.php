@@ -12,26 +12,24 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('status')->comment('1: Active, 2: Inactive');
-            $table->integer('id_role')->comment('Permission switch');
-            $table->integer('login_type')->comment('Directory switch');
+            $table->id(); // bigIncrements
+
             $table->string('name');
             $table->string('username')->unique();
             $table->string('email')->unique();
-            $table->string('salt');
             $table->string('password');
-            $table->string('photo')->nullable();
+
+            $table->string('photo')->nullable()->default('images/default_user.png');
             $table->string('phone')->nullable();
-            $table->string('remember_token')->nullable();
-            $table->bigInteger('id_added')->nullable();
-            $table->bigInteger('id_modify')->nullable();
-            $table->timestamp('date_added')->nullable();
-            $table->timestamp('date_modify')->nullable();
-            $table->boolean('is_deleted')->default(false)->comment('1 = deleted');
-            $table->bigInteger('id_deleted')->nullable();
-            $table->timestamp('date_deleted')->nullable();
-            $table->string('ip_deleted')->nullable();
+
+            $table->integer('id_role')->default(1)->comment('Permission switch');
+            $table->integer('login_type')->default(2)->comment('Login source/type');
+            $table->integer('status')->default(1)->comment('Active/Inactive');
+
+            $table->rememberToken(); // for "remember me" functionality
+            $table->timestamps();    // adds created_at and updated_at
+
+            $table->softDeletes();   // adds deleted_at column for soft deletes
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {

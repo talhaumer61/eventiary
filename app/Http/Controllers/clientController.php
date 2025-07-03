@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\Event;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class clientController extends Controller
 {
@@ -124,7 +125,7 @@ class clientController extends Controller
 
     public function my_events($event_href = null)
     {
-        $userId = session('user')->id;
+        $userId = Auth::id();
 
         if ($event_href) {
             $event = DB::table('events')
@@ -277,69 +278,7 @@ class clientController extends Controller
 
         return view('client.profile', compact('user'));
     }
-    public function signup(Request $request)
-    {
-        // Validate incoming request
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'username' => 'required|string|max:255|unique:' . env('USERS') . ',username',
-            'email' => 'required|string|email|max:255|unique:' . env('USERS') . ',email',
-            'password' => 'required|string|min:8|confirmed',
-        ]);
-
-        // Generate salt and hash password
-        $salt = bin2hex(random_bytes(16));
-        $password = $request->password;
-        $hashedPassword = hash('sha256', $password . $salt);
-        for ($round = 0; $round < 65536; $round++) {
-            $hashedPassword = hash('sha256', $hashedPassword . $salt);
-        }
-
-        $photoPath = 'images/default_user.png';
-
-        // Insert user
-        $userId = DB::table(env('USERS'))->insertGetId([
-            'name' => $request->name,
-            'username' => $request->username,
-            'email' => $request->email,
-            'salt' => $salt,
-            'password' => $hashedPassword,
-            'photo' => $photoPath,
-            'status' => 1,
-            'id_role' => 1,
-            'login_type' => 2,
-        ]);
-
-        // Auto-login the user
-        if ($userId) {
-            // Get the user back
-            $user = DB::table(env('USERS'))->where('id', $userId)->first();
-
-            // Attach default photo if needed
-            $user->photo = $photoPath;
-
-            // Set session
-            session(['user' => $user]);
-
-            // Optional: Insert login history
-            DB::table(env('LOGIN_HISTORY'))->insert([
-                'login_type'    => $user->login_type,
-                'id_user'       => $user->id,
-                'user_name'     => $user->username,
-                'user_pass'     => $request->password,
-                'email'         => $user->email,
-                'dated'         => now(),
-                'ip'            => $request->ip(),
-                'device_info'   => $request->userAgent(),
-            ]);
-
-            sendRemark('Signup Successful and Logged In', '4', $userId);
-            sessionMsg('success', 'Signup Successful. You are now logged in.', 'success');
-            return redirect('/'); // or redirect('/client-dashboard')
-        } else {
-            return back()->withErrors(['error' => 'Failed to create account. Please try again.'])->withInput();
-        }
-    }
+    
 
 
     

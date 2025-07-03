@@ -298,11 +298,12 @@
               <!-- Start::header-link|dropdown-toggle -->
               <a href="javascript:void(0);" class="header-link dropdown-toggle" id="mainHeaderProfile" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
                   <div class="d-flex align-items-center">
+                    @php use Illuminate\Support\Facades\Auth; @endphp
                       <div class="me-sm-2 me-0">
-                          <img src="{{ session('user')->photo }}" alt="img" class="avatar avatar-sm avatar-rounded">
+                          <img src="{{ asset(Auth::user()->photo) }}" alt="img" class="avatar avatar-sm avatar-rounded">
                       </div>
                       <div class="d-xl-block d-none lh-1">
-                          <span class="fw-medium lh-1">{{ session('user')->name }}</span>
+                          <span class="fw-medium lh-1">{{ Auth::user()->name }}</span>
                       </div>
                   </div>
               </a>

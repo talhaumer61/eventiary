@@ -44,7 +44,9 @@
                     </div><!-- featured-imagebox -->
                 </div>
             @empty
-                <p class="text-center">No events found.</p>
+            <div class="p-4">
+                <h3 class="text-center fw-bolder text-danger bg-light p-3 rounded">No events found!</h3>
+            </div>
             @endforelse
         </div>
         

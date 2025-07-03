@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\Auth;
 
 class VerifyClient
 {
@@ -15,10 +16,9 @@ class VerifyClient
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $user = session('user');
+        $user = Auth::user();
 
-        // Check if user is logged in and has login_type 2
-        if (!$user || $user->login_type != 2) {
+        if (!$user || $user->login_type !== 2) {
             return redirect('/login')->withErrors(['message' => 'Unauthorized access.']);
         }
 

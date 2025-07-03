@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\clientController;
 use App\Http\Controllers\DatabaseController;
@@ -27,16 +28,17 @@ Route::middleware([RedirectIfAuthenticated::class])->group(function () {
     Route::get('/admin-login', [AdminController::class, 'adminLogin']);
     Route::post('/admin-login', [AdminController::class, 'login'])->name('adminLogin');
     
-    // Client & Organizer Login
-    Route::post('/login', [siteController::class, 'user_login'])->name('userLogin');
     
     // Organizer Registration
     Route::get('/organizer-signup', [siteController::class, 'organizer_signup']);
-    Route::post('/organizer-signup', [organizerController::class, 'signup'])->name('organizerSignup');
+    Route::post('/organizer-signup', [AuthController::class, 'organizer_signup'])->name('organizerSignup');
     
+    // Client & Organizer Login
+    Route::post('/login', [AuthController::class, 'user_login'])->name('userLogin');
+
     // Client Registration
     Route::get('/signup', [siteController::class, 'signup'])->name('signup');
-    Route::post('/signup', [clientController::class, 'signup'])->name('clientSignup');
+    Route::post('/signup', [AuthController::class, 'signup'])->name('clientSignup');
 
     Route::post('/check-availability', [siteController::class, 'checkAvailability'])->name('checkAvailability');
 });
@@ -99,5 +101,5 @@ Route::middleware([AuthenticateUser::class])->group(function () {
         Route::get('/profile', [clientController::class, 'profile']);
     });
     
-    Route::get('/logout', [siteController::class, 'logout'])->name('logout');
+    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });

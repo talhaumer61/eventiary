@@ -69,20 +69,30 @@
                                         </ul>
                                     </li>
                             
-                                    <!-- Show Dashboard only if user is logged in and a Client -->
-                                    @if(session()->has('user') && session('user')->login_type == 2)
+                                    @php
+                                        use Illuminate\Support\Facades\Auth;
+                                    @endphp
+
+                                    <!-- Show Dashboard only if user is logged in as Admin -->
+                                    @if(Auth::check() && Auth::user()->login_type == 1)
+                                        <li><a href="/administrator" class="active" style="color: var(--mulberry);">Dashboard</a></li>
+                                    @endif
+
+                                    <!-- Show Dashboard only if user is logged in as Client -->
+                                    @if(Auth::check() && Auth::user()->login_type == 2)
                                         <li><a href="/client-dashboard" class="active" style="color: var(--mulberry);">Dashboard</a></li>
                                     @endif
-                                    
-                                    <!-- Show Dashboard only if user is logged in and a Oragnizer -->
-                                    @if(session()->has('user') && session('user')->login_type == 3)
+
+                                    <!-- Show Dashboard only if user is logged in as Organizer -->
+                                    @if(Auth::check() && Auth::user()->login_type == 3)
                                         <li><a href="/organizer-dashboard" class="active" style="color: var(--mulberry);">Dashboard</a></li>
                                     @endif
-                            
+
                                     <!-- Show Login only if user is not logged in -->
-                                    @if(!session()->has('user'))
+                                    @if(!Auth::check())
                                         <li><a href="/login">Login</a></li>
                                     @endif
+
                                 </ul>
                             </nav>
                             
