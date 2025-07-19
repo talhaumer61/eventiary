@@ -81,45 +81,6 @@
         });
 
     </script>
-    {{-- <script>
-        document.getElementById("changePasswordForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent form submission
-        
-            let isValid = true;
-            let currentPassword = document.getElementById("current-password").value;
-            let newPassword = document.getElementById("new-password").value;
-            let confirmPassword = document.getElementById("confirm-password").value;
-        
-            // Reset error messages
-            document.getElementById("currentPasswordError").innerText = "";
-            document.getElementById("newPasswordError").innerText = "";
-            document.getElementById("confirmPasswordError").innerText = "";
-        
-            // Validate current password
-            if (currentPassword.trim() === "") {
-                document.getElementById("currentPasswordError").innerText = "Current password is required.";
-                isValid = false;
-            }
-        
-            // Validate new password
-            let passwordRegex = /^.{8,}$/;
-                if (!passwordRegex.test(newPassword)) {
-                    document.getElementById("newPasswordError").innerText = "Password must be at least 8 characters long.";
-                    isValid = false;
-            }
-        
-            // Validate confirm password
-            if (newPassword !== confirmPassword) {
-                document.getElementById("confirmPasswordError").innerText = "Passwords do not match.";
-                isValid = false;
-            }
-        
-            // Submit form if all validations pass
-            if (isValid) {
-                this.submit();
-            }
-        });
-    </script> --}}
 
     {{-- Change Password --}}
     <script>

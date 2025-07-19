@@ -161,6 +161,13 @@ Route::middleware([AuthenticateUser::class])->group(function () {
     // Routes Accessible Only to Vendor (login_type = 4)
     Route::middleware([VerifyVendor::class])->group(function () {
         Route::get('/vendor-dashboard', [VendorController::class, 'index'])->name('vendor-dashboard');
+        Route::get('/my-services/{action?}/{href?}', [VendorController::class, 'my_services'])->name('vendor.my_services');
+        Route::post('/my-services/store', [VendorController::class, 'store_service'])->name('vendor.storeService');
+        Route::put('/my-services/update/{id}', [VendorController::class, 'updateService'])->name('vendor.updateService');
+
+        Route::post('/vendor-delete-record', [DatabaseController::class, 'deleteRecord'])->name('vendor.delete.record');
+
+
     });
     
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');

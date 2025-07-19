@@ -11,14 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('vendor_types', function (Blueprint $table) {
-            $table->bigIncrements('type_id');
-            $table->integer('type_status')->comment('1: Active, 2: Inactive');
-            $table->string('type_name');
-            $table->string('type_href');
-            $table->string('type_icon')->nullable();
-            $table->string('type_photo')->nullable();
-            $table->string('type_desc')->nullable();
+        Schema::create('vendor_services', function (Blueprint $table) {
+            $table->bigIncrements('service_id');
+            $table->string('service_name');
+            $table->string('service_href');
+            $table->string('service_icon')->nullable();
+            $table->string('service_photo')->nullable();
+            $table->text('service_desc')->nullable();
+            $table->decimal('service_price', 10, 2)->nullable();
+            $table->unsignedBigInteger('id_vendor');
+            $table->unsignedBigInteger('id_type');
+            $table->integer('service_status')->default(1)->comment('1: Active, 2: Inactive');
+
             $table->bigInteger('id_added')->nullable();
             $table->bigInteger('id_modify')->nullable();
             $table->timestamp('date_added')->nullable();
@@ -27,7 +31,12 @@ return new class extends Migration
             $table->bigInteger('id_deleted')->nullable();
             $table->timestamp('date_deleted')->nullable();
             $table->string('ip_deleted')->nullable();
+
+            $table->foreign('id_vendor')->references('id')->on('users');
+            $table->foreign('id_type')->references('type_id')->on('vendor_types');
         });
+
+
     }
 
     /**
@@ -35,6 +44,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('vendor_types');
+        Schema::dropIfExists('vendor_services');
     }
 };

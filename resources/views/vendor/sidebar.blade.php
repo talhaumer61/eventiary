@@ -28,79 +28,16 @@
                     </a>
                 </li>
                 <li class="slide">
-                    <a href="/organizer-dashboard" class="side-menu__item">
+                    <a href="/vendor-dashboard" class="side-menu__item">
                         <i class="bi bi-house side-menu__icon"></i>
                         <span class="side-menu__label">Dashboard</span>
                     </a>
                 </li>
                 <li class="slide">
-                    <a href="#" class="side-menu__item">
+                    <a href="/my-services" class="side-menu__item">
                         <i class="bi bi-layout-text-window side-menu__icon"></i>
-                        <span class="side-menu__label">Events</span>
+                        <span class="side-menu__label">Services</span>
                     </a>
-                </li>
-                <li class="slide">
-                    <a href="#" class="side-menu__item">
-                        <i class="bi bi-people-fill side-menu__icon"></i>
-                        <span class="side-menu__label">Team</span>
-                    </a>
-                </li>
-                <li class="slide">
-                    <a href="#" class="side-menu__item">
-                        <i class="bi bi-person-workspace side-menu__icon"></i>
-                        <span class="side-menu__label">Bookings</span>
-                    </a>
-                </li>
-                <li class="slide">
-                    <a href="#" class="side-menu__item">
-                        <i class="bi bi-shop-window side-menu__icon"></i>
-                        <span class="side-menu__label">Vendors</span>
-                    </a>
-                </li>
-                <li class="slide">
-                    <a href="#" class="side-menu__item">
-                        <i class="bi bi-chat-dots side-menu__icon"></i>
-                        <span class="side-menu__label">Messages</span>
-                    </a>
-                </li>
-                <li class="slide">
-                    <a href="#" class="side-menu__item">
-                        <i class="bi bi-cash side-menu__icon"></i>
-                        <span class="side-menu__label">Payments</span>
-                    </a>
-                </li>
-                <li class="slide">
-                    <a href="#" class="side-menu__item">
-                        <i class="bi bi-credit-card side-menu__icon"></i>
-                        <span class="side-menu__label">Budget Tracking</span>
-                    </a>
-                </li>
-                <li class="slide">
-                    <a href="#" class="side-menu__item">
-                        <i class="bi bi-diagram-3 side-menu__icon"></i>
-                        <span class="side-menu__label">Jobs</span>
-                    </a>
-                </li>
-                <li class="slide has-sub">
-                    <a href="javascript:void(0);" class="side-menu__item">
-                        <i class="bi bi-ticket-detailed side-menu__icon"></i>
-                        <span class="side-menu__label">Tickets</span>
-                        <i class="fe fe-chevron-right side-menu__angle"></i>
-                    </a>
-                    <ul class="slide-menu child1" style="position: relative; left: 0px; top: 0px; margin: 0px; transform: translate3d(128px, 270px, 0px); display: none; box-sizing: border-box;" data-popper-placement="bottom">
-                        <li class="slide side-menu__label1">
-                            <a href="javascript:void(0)">Error</a>
-                        </li>
-                        <li class="slide">
-                            <a href="401-error.html" class="side-menu__item">Purchased Tickets</a>
-                        </li>
-                        <li class="slide">
-                            <a href="404-error.html" class="side-menu__item">Create Event Ticket</a>
-                        </li>
-                        <li class="slide">
-                            <a href="500-error.html" class="side-menu__item">Sold Tickets</a>
-                        </li>
-                    </ul>
                 </li>
 
             </ul>

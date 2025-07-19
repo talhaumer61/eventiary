@@ -39,4 +39,4 @@
 </div>
 <div id="responsive-overlay"></div>
 
-@include('organizer.footer_links')
+@include('vendor.footer_links')
