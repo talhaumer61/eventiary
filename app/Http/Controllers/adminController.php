@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\EventType;
 use App\Models\User;
+use App\Models\VendorType;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -78,7 +80,7 @@ class AdminController extends Controller
             'type_status' => $request->type_status,
             'type_desc'   => $request->type_desc,
             'type_icon'  => $iconPath, // Store the file path
-            'id_added'    => session('user')->id,
+            'id_added'    => Auth::id(), 
             'date_added'  => now(),
         ]);
 
@@ -124,7 +126,7 @@ class AdminController extends Controller
         $eventType->type_href   = Str::slug($request->type_name); // Update href if name changes
         $eventType->type_status = $request->type_status;
         $eventType->type_desc   = $request->type_desc;
-        $eventType->id_modify  = session('user')->id;
+        $eventType->id_modify  = Auth::id();
         $eventType->date_modify = now();
         
         // Save changes
@@ -133,12 +135,99 @@ class AdminController extends Controller
         return redirect('/event-types')->with('success', 'Event type updated successfully!');
     }
 
+    // Vendor Types Management
+    public function vendor_types($action = "list", $href = null)
+    {
+        if ($action == "edit" && isset($href)) {
+            $vendorType = DB::table('vendor_types')->where('type_href', $href)->first();
+            return view('admin.vendor_types', compact('action', 'vendorType'));
+        } else {
+            $vendorTypes = DB::table('vendor_types')
+                ->select('type_id', 'type_name', 'type_status', 'type_icon', 'type_href')
+                ->where('type_status', '1')
+                ->where('is_deleted', 0)
+                ->paginate(10);
+            return view('admin.vendor_types', compact('action', 'vendorTypes'));
+        }
+    }
+
+    public function addVendorType(Request $request)
+    {
+        $request->validate([
+            'type_name'   => 'required|string|max:255',
+            'type_status' => 'required|in:1,2',
+            'type_desc'   => 'nullable|string|max:500',
+            'type_icon'   => 'nullable|image|mimes:jpg,jpeg,png,svg|max:2048',
+        ]);
+
+        $iconPath = null;
+        if ($request->hasFile('type_icon')) {
+            $file = $request->file('type_icon');
+            $destinationPath = public_path('uploads/vendors/types');
+            if (!file_exists($destinationPath)) {
+                mkdir($destinationPath, 0777, true);
+            }
+            $fileName = time() . '_' . $file->getClientOriginalName();
+            $file->move($destinationPath, $fileName);
+            $iconPath = 'uploads/vendors/types/' . $fileName;
+        }
+
+        VendorType::create([
+            'type_name'   => $request->type_name,
+            'type_href'   => Str::slug($request->type_name),
+            'type_status' => $request->type_status,
+            'type_desc'   => $request->type_desc,
+            'type_icon'   => $iconPath,
+            'id_added'    => Auth::id(),
+            'date_added'  => now(),
+        ]);
+
+        return redirect('/vendor-types')->with('success', 'Vendor type added successfully!');
+    }
+
+    public function editVendorType(Request $request, $href)
+    {
+        $vendorType = VendorType::where('type_href', $href)->firstOrFail();
+
+        $request->validate([
+            'type_name'   => 'required|string|max:255',
+            'type_status' => 'required|in:1,2',
+            'type_desc'   => 'nullable|string|max:500',
+            'type_icon'   => 'nullable|image|mimes:jpg,jpeg,png,svg|max:2048',
+        ]);
+
+        if ($request->hasFile('type_icon')) {
+            $file = $request->file('type_icon');
+            $destinationPath = public_path('uploads/vendors/types');
+            if (!file_exists($destinationPath)) {
+                mkdir($destinationPath, 0777, true);
+            }
+            $fileName = time() . '_' . $file->getClientOriginalName();
+            $file->move($destinationPath, $fileName);
+
+            if ($vendorType->type_icon && file_exists(public_path($vendorType->type_icon))) {
+                unlink(public_path($vendorType->type_icon));
+            }
+
+            $vendorType->type_icon = 'uploads/vendors/types/' . $fileName;
+        }
+
+        $vendorType->type_name   = $request->type_name;
+        $vendorType->type_href   = Str::slug($request->type_name);
+        $vendorType->type_status = $request->type_status;
+        $vendorType->type_desc   = $request->type_desc;
+        $vendorType->id_modify   = Auth::id();
+        $vendorType->date_modify = now();
+        $vendorType->save();
+
+        return redirect('/vendor-types')->with('success', 'Vendor type updated successfully!');
+    }
 
     public function adminLogin(){
         return view('admin.login');
     }
     public function profile(){
-        $user = User::where('id', session('user')->id)->first(); // Fetch user data using model
+        $user = User::where('id', Auth::id(), )->first(); // Fetch user data using model
 
         return view('admin.profile', compact('user'));
     }

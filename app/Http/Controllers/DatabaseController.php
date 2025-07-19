@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class DatabaseController extends Controller
@@ -26,12 +27,11 @@ class DatabaseController extends Controller
         }
 
         // Get logged-in user ID from session
-        $user = session('user');  
-        $userId = is_array($user) ? $user['id'] : $user->id; 
+        $user = Auth::user();  
         // Soft delete (Mark as deleted)
         DB::table($table)->where($column, $id)->update([
             'is_deleted' => 1,
-            'id_deleted' => $userId,
+            'id_deleted' => Auth::user()->id,
             'ip_deleted' => request()->ip(),
             'date_deleted' => now(),
         ]);

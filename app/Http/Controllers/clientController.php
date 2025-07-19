@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\Event;
+use App\Models\EventOrganizerAssignment;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -64,7 +65,7 @@ class clientController extends Controller
             'event_date'     => $request->event_date,
             'event_image'    => $imagePath,
             'id_type'        => $request->id_type,
-            'id_added'       => session('user')->id,
+            'id_added'       => Auth::id(),
             'date_added'     => now(),
         ]);
 
@@ -217,7 +218,7 @@ class clientController extends Controller
             'photo'       => $photoPath,
             'id_event'    => $request->id_event,
             'href'        => Str::random(12),
-            'id_added'    => session('user')->id,
+            'id_added'    => Auth::id(),
             'date_added'  => now(),
             'is_deleted'  => 0,
         ]);
@@ -262,6 +263,64 @@ class clientController extends Controller
         sessionMsg('success', 'Guest updated successfully', 'success');
         return redirect('/guests');
     }
+
+    // Selected Organizers
+    public function my_organizers()
+    {
+        $clientId = Auth::user()->id; // or auth('client')->id();
+
+        // Get all events created by the logged-in client
+        $events = Event::where('id_added', $clientId)->get();
+
+        // Get all users with type = 3 (organizers)
+        $organizers = User::where('login_type', 3)->get();
+
+        // Fetch assignments with related event and organizer data
+        $assignments = EventOrganizerAssignment::with(['event', 'organizer'])
+            ->where('client_id', $clientId)
+            ->where('is_deleted', 0)
+            ->get();
+
+        return view('client.my_organizers', compact('events', 'organizers', 'assignments'));
+
+    }
+
+    public function assignOrganizer(Request $request)
+    {
+        $request->validate([
+            'event_id' => 'required|exists:events,event_id',
+            'organizer_id' => 'required|exists:users,id',
+            'description' => 'nullable|string|max:1000',
+        ]);
+
+        $clientId = Auth::id();
+
+        // Check if assignment already exists
+        $existing = EventOrganizerAssignment::where('client_id', $clientId)
+            ->where('event_id', $request->event_id)
+            ->where('organizer_id', $request->organizer_id)
+            ->where('is_deleted', null)
+            ->first();
+
+        if ($existing) {
+            sessionMsg('Error', 'You have already requested this organizer for the selected event.', 'danger');
+            return redirect()->back();
+        }
+
+        // Create new assignment
+        EventOrganizerAssignment::create([
+            'client_id' => $clientId,
+            'event_id' => $request->event_id,
+            'organizer_id' => $request->organizer_id,
+            'status' => EventOrganizerAssignment::STATUS_PENDING,
+            'description' => $request->description,
+        ]);
+
+        sessionMsg('Success', 'Organizer assigned successfully! Waiting for response.', 'success');
+        return redirect()->back();
+    }
+
+
 
 
     public function user_messages(){

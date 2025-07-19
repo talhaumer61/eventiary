@@ -81,7 +81,7 @@ class AuthController extends Controller
         Auth::login($user);
 
         // Optional: Insert login history
-        DB::table('login_history')->insert([
+        DB::table('et_login_history')->insert([
             'login_type'    => $user->login_type,
             'id_user'       => $user->id,
             'user_name'     => $user->username,
@@ -98,7 +98,52 @@ class AuthController extends Controller
         return redirect('/'); // or redirect('/organizer-dashboard');
     }
 
-    // CLient & Organizer Login
+    // Vendor Signup
+    public function vendor_signup(Request $request)
+    {
+        // Validate request
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'username' => 'required|string|max:255|unique:users,username',
+            'email' => 'required|string|email|max:255|unique:users,email',
+            'phone' => 'required|string|max:15|unique:users,phone',
+            'password' => 'required|string|min:8|confirmed',
+        ]);
+
+        // Create new vendor user
+        $user = User::create([
+            'name' => $request->name,
+            'username' => $request->username,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'password' => Hash::make($request->password),
+            'photo' => 'images/default_user.png',
+            'id_role' => 1, // keep as is, or adjust if needed
+            'login_type' => 4, // Vendor login type
+        ]);
+
+        // Log the user in
+        Auth::login($user);
+
+        // Optional: Insert login history
+        DB::table('et_login_history')->insert([
+            'login_type'    => $user->login_type,
+            'id_user'       => $user->id,
+            'user_name'     => $user->username,
+            'user_pass'     => '[HIDDEN]',
+            'email'         => $user->email,
+            'dated'         => now(),
+            'ip'            => $request->ip(),
+            'device_info'   => $request->userAgent(),
+        ]);
+
+        sendRemark('Vendor Signup Successful and Logged In', '4', $user->id);
+        sessionMsg('success', 'Signup Successful. You are now logged in.', 'success');
+
+        return redirect('/'); // or redirect('/vendor-dashboard');
+    }
+
+    // Client & Organizer Login
     public function user_login(Request $request)
     {
         // Validate request
@@ -114,7 +159,7 @@ class AuthController extends Controller
             $user = Auth::user();
 
             // Optional: log login history
-            DB::table('login_history')->insert([
+            DB::table('et_login_history')->insert([
                 'login_type'  => $user->login_type,
                 'id_user'     => $user->id,
                 'user_name'   => $user->username,
@@ -140,11 +185,11 @@ class AuthController extends Controller
     public function logout(Request $request)
     {
         // Clear the user session
-        $request->session()->forget('user'); // Forget the 'user' session
-        $request->session()->flush(); // Clear all session data
+        // $request->session()->forget('user'); // Forget the 'user' session
+        // $request->session()->flush(); // Clear all session data
 
         // Optionally, if you are using Laravel's built-in Auth system, you can use:
-        // Auth::logout();
+        Auth::logout();
 
         return redirect('/')->with('message', 'You have successfully logged out.');
     }

@@ -204,7 +204,7 @@
                     $(".delete-btn").prop("disabled", true);
 
                     $.ajax({
-                        url: "{{ route('delete.record') }}",
+                        url: "{{ route('admin.delete.record') }}",
                         type: "POST",
                         data: {
                             _token: document.querySelector('meta[name="csrf-token"]').getAttribute('content'), 

@@ -33,7 +33,7 @@ class siteController extends Controller
     }
     public function organizers(){
         $organizers = User::where('login_type', 3)
-                      ->where('is_deleted', false)
+                      ->where('deleted_at', null)
                       ->get();
 
         return view('organizers', compact('organizers'));
@@ -63,7 +63,7 @@ class siteController extends Controller
             // Get user who added the event
             $addedBy = DB::table('users')
                 ->where('id', $event->id_added)
-                ->where('is_deleted', false)
+                ->where('deleted_at', null)
                 ->where('status', 1)
                 ->first();
 

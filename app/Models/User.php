@@ -30,4 +30,10 @@ class User extends Authenticatable
     ];
 
     public $timestamps = true;
+
+    public function getAvatarAttribute()
+    {
+        return asset($this->photo ?? 'images/default_user.png');
+    }
+
 }

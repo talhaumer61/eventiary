@@ -63,7 +63,7 @@
                                             <li><a href="faqs">FAQ's</a></li>
                                             
                                             <!-- Show Logout only if user is logged in -->
-                                            @if(session()->has('user'))
+                                            @if(Auth::check())
                                                 <li><a href="/logout">Logout</a></li>
                                             @endif
                                         </ul>
@@ -86,6 +86,11 @@
                                     <!-- Show Dashboard only if user is logged in as Organizer -->
                                     @if(Auth::check() && Auth::user()->login_type == 3)
                                         <li><a href="/organizer-dashboard" class="active" style="color: var(--mulberry);">Dashboard</a></li>
+                                    @endif
+                                    
+                                    <!-- Show Dashboard only if user is logged in as Vendor -->
+                                    @if(Auth::check() && Auth::user()->login_type == 4)
+                                        <li><a href="/vendor-dashboard" class="active" style="color: var(--mulberry);">Dashboard</a></li>
                                     @endif
 
                                     <!-- Show Login only if user is not logged in -->

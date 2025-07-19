@@ -2,11 +2,11 @@
 
     <!-- Start::main-sidebar-header -->
     <div class="main-sidebar-header">
-        <a href="/client-dashboard" class="header-logo">
-            <img src="{{asset('images/logo-img.png')}}" alt="logo" class="desktop-logo">
-            <img src="{{asset('images/favicon.png')}}" alt="logo" class="toggle-dark">
-            <img src="{{asset('images/logo-img.png')}}" alt="logo" class="desktop-dark">
-            <img src="{{asset('images/favicon.png')}}" alt="logo" class="toggle-logo">
+        <a href="index.html" class="header-logo">
+            <img src="images/logo-img.png" alt="logo" class="desktop-logo">
+            <img src="images/favicon.png" alt="logo" class="toggle-dark">
+            <img src="images/logo-img.png" alt="logo" class="desktop-dark">
+            <img src="images/favicon.png" alt="logo" class="toggle-logo">
         </a>
     </div>
     <!-- End::main-sidebar-header -->
@@ -28,33 +28,27 @@
                     </a>
                 </li>
                 <li class="slide">
-                    <a href="/client-dashboard" class="side-menu__item">
+                    <a href="/organizer-dashboard" class="side-menu__item">
                         <i class="bi bi-house side-menu__icon"></i>
                         <span class="side-menu__label">Dashboard</span>
                     </a>
                 </li>
                 <li class="slide">
-                    <a href="/create-event" class="side-menu__item">
+                    <a href="#" class="side-menu__item">
                         <i class="bi bi-layout-text-window side-menu__icon"></i>
-                        <span class="side-menu__label">Create an Event</span>
+                        <span class="side-menu__label">Events</span>
                     </a>
                 </li>
                 <li class="slide">
-                    <a href="/my-events" class="side-menu__item">
-                        <i class="bi bi-layout-text-window side-menu__icon"></i>
-                        <span class="side-menu__label">My Events</span>
-                    </a>
-                </li>
-                <li class="slide">
-                    <a href="/guests" class="side-menu__item">
+                    <a href="#" class="side-menu__item">
                         <i class="bi bi-people-fill side-menu__icon"></i>
-                        <span class="side-menu__label">Manage Guests</span>
+                        <span class="side-menu__label">Team</span>
                     </a>
                 </li>
                 <li class="slide">
-                    <a href="my-organizers" class="side-menu__item">
+                    <a href="#" class="side-menu__item">
                         <i class="bi bi-person-workspace side-menu__icon"></i>
-                        <span class="side-menu__label">Organizers</span>
+                        <span class="side-menu__label">Bookings</span>
                     </a>
                 </li>
                 <li class="slide">
@@ -64,19 +58,19 @@
                     </a>
                 </li>
                 <li class="slide">
-                    <a href="/user-messages" class="side-menu__item">
+                    <a href="#" class="side-menu__item">
                         <i class="bi bi-chat-dots side-menu__icon"></i>
                         <span class="side-menu__label">Messages</span>
                     </a>
                 </li>
                 <li class="slide">
-                    <a href="/payments" class="side-menu__item">
+                    <a href="#" class="side-menu__item">
                         <i class="bi bi-cash side-menu__icon"></i>
                         <span class="side-menu__label">Payments</span>
                     </a>
                 </li>
                 <li class="slide">
-                    <a href="/budget-tracking" class="side-menu__item">
+                    <a href="#" class="side-menu__item">
                         <i class="bi bi-credit-card side-menu__icon"></i>
                         <span class="side-menu__label">Budget Tracking</span>
                     </a>

@@ -17,6 +17,13 @@
                             <div class="featured-title">
                                 <p><a href="#">View Profile <i class="ti ti-angle-right"></i></a></p>
                             </div>
+                            <form method="POST" action="{{ route('conversation.start') }}">
+                                @csrf
+                                <input type="hidden" name="receiver_id" value="{{ $organizer->id }}">
+                                <input type="hidden" name="event_id" value="{{ $event->event_id ?? '' }}">
+                                <button type="submit" class="btn btn-primary">Message</button>
+                            </form>
+
                             {{-- <span class="category">
                                 {{ $organizer->id_role == 1 ? 'Event Planner' : 'Organizer' }}
                             </span> --}}

@@ -1,9 +1,9 @@
-@include('admin.header_links')
+@include('organizer.header_links')
 
 <header class="app-header">
 
   <!-- Start::main-header-container -->
-  <div class="main-header-container container-fluid admin-sidebar">
+  <div class="main-header-container container-fluid">
 
       <!-- Start::header-content-left -->
       <div class="header-content-left">
@@ -11,11 +11,11 @@
           <!-- Start::header-element -->
           <div class="header-element">
               <div class="horizontal-logo">
-                  <a href="/administrator" class="header-logo">
-                      <img src="{{asset('images/logo-img.png')}}" alt="logo" class="desktop-logo">
-                      <img src="{{asset('images/favicon.png')}}" alt="logo" class="toggle-logo">
-                      <img src="{{asset('images/logo-img.png')}}" alt="logo" class="desktop-dark">
-                      <img src="{{asset('images/favicon.png')}}" alt="logo" class="toggle-dark">
+                  <a href="#" class="header-logo">
+                      <img src="images/logo-img.png" alt="logo" class="desktop-logo">
+                      <img src="images/favicon.png" alt="logo" class="toggle-logo">
+                      <img src="images/logo-img.png" alt="logo" class="desktop-dark">
+                      <img src="images/favicon.png" alt="logo" class="toggle-dark">
                   </a>
               </div>
           </div>
@@ -78,97 +78,6 @@
                   <!-- End::header-link-icon -->
               </a>  
           </li>
-          <!-- End::header-element -->
-
-          <!-- Start::header-element -->
-          {{-- <li class="header-element country-selector">
-              <!-- Start::header-link|dropdown-toggle -->
-              <a href="javascript:void(0);" class="header-link dropdown-toggle" data-bs-auto-close="outside" data-bs-toggle="dropdown">
-                  <img src="dashboard/images/flags/us_flag.jpg" alt="img" class="rounded-circle">
-              </a>
-              <!-- End::header-link|dropdown-toggle -->
-              <ul class="main-header-dropdown dropdown-menu dropdown-menu-end" data-popper-placement="none">
-                  <li>
-                      <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);">
-                          <span class="avatar avatar-xs lh-1 me-2">
-                              <img src="dashboard/images/flags/us_flag.jpg" alt="img">
-                          </span>
-                          English
-                      </a>
-                  </li>
-                  <li>
-                      <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);">
-                          <span class="avatar avatar-xs lh-1 me-2">
-                              <img src="dashboard/images/flags/spain_flag.jpg" alt="img" >
-                          </span>
-                          Spanish
-                      </a>
-                  </li>
-                  <li>
-                      <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);">
-                          <span class="avatar avatar-xs lh-1 me-2">
-                              <img src="dashboard/images/flags/french_flag.jpg" alt="img" >
-                          </span>
-                          French
-                      </a>
-                  </li>
-                  <li>
-                      <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);">
-                          <span class="avatar avatar-xs lh-1 me-2">
-                              <img src="dashboard/images/flags/germany_flag.jpg" alt="img" >
-                          </span>
-                          German
-                      </a>
-                  </li>
-                  <li>
-                      <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);">
-                          <span class="avatar avatar-xs lh-1 me-2">
-                              <img src="dashboard/images/flags/italy_flag.jpg" alt="img" >
-                          </span>
-                          Italian
-                      </a>
-                  </li>
-                  <li>
-                      <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);">
-                          <span class="avatar avatar-xs lh-1 me-2">
-                              <img src="dashboard/images/flags/russia_flag.jpg" alt="img" >
-                          </span>
-                          Russian
-                      </a>
-                  </li>
-              </ul>
-          </li> --}}
-          
-
-          
-          {{-- <li class="header-element header-theme-mode">
-              <!-- Start::header-link|layout-setting -->
-              <a href="javascript:void(0);" class="header-link layout-setting">
-                  <span class="light-layout">
-                      <!-- Start::header-link-icon -->
-                      <i class="bi bi-moon header-link-icon"></i>
-                      <!-- End::header-link-icon -->
-                  </span>
-                  <span class="dark-layout">
-                      <!-- Start::header-link-icon -->
-                      <i class="bi bi-brightness-high header-link-icon"></i>
-                      <!-- End::header-link-icon -->
-                  </span>
-              </a>
-              <!-- End::header-link|layout-setting -->
-          </li> --}}
-          
-
-          
-          {{-- <li class="header-element cart-dropdown">
-            <a type="button" class="btn btn-primary btn-wave" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-primary"
-                data-bs-placement="top" title="Primary Tooltip">
-                Primary Tooltip
-            </a>
-          </li> --}}
-          
-
-          
           <li class="header-element notifications-dropdown d-xl-block d-none">
               <!-- Start::header-link|dropdown-toggle -->
               <a href="javascript:void(0);" class="header-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" id="messageDropdown" aria-expanded="false">
@@ -291,27 +200,15 @@
               </div>
               <!-- End::main-header-dropdown -->
           </li>
-          
-
-          
-          {{-- <li class="header-element header-fullscreen">
-              <!-- Start::header-link -->
-              <a onclick="openFullscreen();" href="javascript:void(0);" class="header-link">
-                  <i class="bi bi-fullscreen full-screen-open header-link-icon"></i>
-                  <i class="bi bi-fullscreen-exit full-screen-close header-link-icon d-none"></i>
-              </a>
-              <!-- End::header-link -->
-          </li> --}}
-          
-
-          
+            @php
+                use Illuminate\Support\Facades\Auth;
+            @endphp
           <li class="header-element">
               <!-- Start::header-link|dropdown-toggle -->
               <a href="javascript:void(0);" class="header-link dropdown-toggle" id="mainHeaderProfile" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
                   <div class="d-flex align-items-center">
-                      @php use Illuminate\Support\Facades\Auth; @endphp
                       <div class="me-sm-2 me-0">
-                          <img src="{{ asset(Auth::user()->photo) }}" alt="img" class="avatar avatar-sm avatar-rounded">
+                          <img src="{{ Auth::user()->photo }}" alt="img" class="avatar avatar-sm avatar-rounded">
                       </div>
                       <div class="d-xl-block d-none lh-1">
                           <span class="fw-medium lh-1">{{ Auth::user()->name }}</span>
@@ -320,9 +217,9 @@
               </a>
               <!-- End::header-link|dropdown-toggle -->
               <ul class="main-header-dropdown dropdown-menu pt-0 overflow-hidden header-profile-dropdown dropdown-menu-end" aria-labelledby="mainHeaderProfile">
-                  <li><a class="dropdown-item d-flex align-items-center" href="/admin-profile"><i class="bi bi-person fs-18 me-2 op-7"></i>Profile</a></li>
+                  <li><a class="dropdown-item d-flex align-items-center" href="/profile"><i class="bi bi-person fs-18 me-2 op-7"></i>Profile</a></li>
                   <li><a class="dropdown-item d-flex align-items-center" href="#"><i class="bi bi-gear fs-16 me-2 op-7"></i>Settings</a></li>
-                  <li><a class="dropdown-item d-flex align-items-center" href="/logout"><i class="bi bi-box-arrow-right fs-18 me-2 op-7"></i>Log Out</a></li>
+                  <li><a class="dropdown-item d-flex align-items-center" href="#"><i class="bi bi-box-arrow-right fs-18 me-2 op-7"></i>Log Out</a></li>
               </ul>
           </li>  
           
@@ -345,4 +242,4 @@
 
 </header>
 
-@include('admin.sidebar')
+@include('organizer.sidebar')
