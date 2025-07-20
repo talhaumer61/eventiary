@@ -31,13 +31,35 @@ class siteController extends Controller
     public function organizer_signup(){
         return view('organizer.signup');
     }
-    public function organizers(){
+    public function organizers()
+    {
         $organizers = User::where('login_type', 3)
                       ->where('deleted_at', null)
                       ->get();
 
         return view('organizers', compact('organizers'));
     }
+
+    public function vendors($action = null, $id = null)
+    {
+        $vendors = User::where('login_type', 4)
+                    ->whereNull('deleted_at')
+                    ->get();
+
+        $selectedVendor = null;
+        $vendorServices = [];
+
+        if ($action === 'profile' && $id) {
+            $selectedVendor = User::with('services')->find($id); // make sure `services` relation exists
+            if ($selectedVendor) {
+                $vendorServices = $selectedVendor->services; // fetch services through relation
+            }
+        }
+
+        return view('vendors', compact('vendors', 'action', 'id', 'selectedVendor', 'vendorServices'));
+    }
+
+
 
     // Events
     public function events($href = null)

@@ -1,10 +1,21 @@
-@include('client.header', ['page_title' => 'Messages'])
+@php
+    $loginType = Auth::user()->login_type ?? null;
+@endphp
+
+@if($loginType === 2)
+    @include('client.header', ['page_title' => 'Messages'])
+@elseif($loginType === 3)
+    @include('organizer.header', ['page_title' => 'Messages'])
+@elseif($loginType === 4)
+    @include('vendor.header', ['page_title' => 'Messages'])
+@endif
+
 
 <div class="container mt-4">
     <div class="row">
         <!-- Left: Conversations -->
         <div class="col-md-4 border-end" id="conversation-list">
-            @include('client.include.messages.conversations')
+            @include('include.messages.conversations')
         </div>
 
         <!-- Right: Chat panel -->
@@ -134,4 +145,10 @@
 
 @endpush
 
-@include('client.footer')
+@if($loginType === 2)
+    @include('client.footer')
+@elseif($loginType === 3)
+    @include('organizer.footer')
+@elseif($loginType === 4)
+    @include('vendor.footer')
+@endif

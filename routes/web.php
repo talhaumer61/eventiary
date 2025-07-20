@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', [siteController::class, 'home']);
 Route::get('/events/{href?}', [siteController::class, 'events']);
 Route::get('/organizers', [siteController::class, 'organizers']);
+Route::get('/vendors/{action?}/{id?}', [siteController::class, 'vendors']);
 Route::get('/about-us', [siteController::class, 'about_us']);
 Route::get('/contact-us', [siteController::class, 'contact_us']);
 Route::get('/faqs', [siteController::class, 'faqs']);
@@ -115,7 +116,7 @@ Route::middleware([AuthenticateUser::class])->group(function () {
             ->sortByDesc('timestamp') // ✅ Sort by latest message
             ->values(); // reset keys
 
-        return view('client.include.messages.conversations', compact('conversations'));
+        return view('include.messages.conversations', compact('conversations'));
     })->name('conversations.list');
 
     // Change Password and Update Profile
@@ -155,7 +156,17 @@ Route::middleware([AuthenticateUser::class])->group(function () {
     // Routes Accessible Only to Organizers (login_type = 3)
     Route::middleware([VerifyOrganizer::class])->group(function () {
         Route::get('/organizer-dashboard', [organizerController::class, 'index'])->name('oranizer-dashboard');
+        Route::get('/my-bookings', [organizerController::class, 'my_bookings']);
+        Route::get('/booking-requests', [organizerController::class, 'booking_requests']);
+        Route::post('/organizer/request-action', [OrganizerController::class, 'requestAction'])->name('organizer.request-action');
+
+        Route::get('/my-vendors', [organizerController::class, 'vendors']);
+        Route::get('/organizer/vendor-services/{vendorId}', [OrganizerController::class, 'getVendorServices']);
+        Route::post('/vendor-assignment/submit', [OrganizerController::class, 'submitVendorAssignment'])->name('vendor.assignment.submit');
+
         Route::get('/profile', [clientController::class, 'profile']);
+
+        Route::post('/organizer-delete-record', [DatabaseController::class, 'deleteRecord'])->name('organizer.delete.record');
     });
     
     // Routes Accessible Only to Vendor (login_type = 4)
@@ -164,6 +175,11 @@ Route::middleware([AuthenticateUser::class])->group(function () {
         Route::get('/my-services/{action?}/{href?}', [VendorController::class, 'my_services'])->name('vendor.my_services');
         Route::post('/my-services/store', [VendorController::class, 'store_service'])->name('vendor.storeService');
         Route::put('/my-services/update/{id}', [VendorController::class, 'updateService'])->name('vendor.updateService');
+
+        Route::get('/service-requests', [VendorController::class, 'booking_requests']);
+        Route::post('/vendor/request-action', [VendorController::class, 'requestAction'])->name('vendor.request-action');
+
+        Route::get('/service-bookings', [VendorController::class, 'my_bookings']);
 
         Route::post('/vendor-delete-record', [DatabaseController::class, 'deleteRecord'])->name('vendor.delete.record');
 

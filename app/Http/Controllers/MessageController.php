@@ -33,7 +33,7 @@ class MessageController extends Controller
 
         $preselectedUser = $request->filled('receiver_id') ? User::find($request->receiver_id) : null;
 
-        return view('client.user_messages', [
+        return view('user_messages', [
             'conversations' => $conversations,
             'receiver_id' => $request->receiver_id,
             'event_id' => $request->event_id,
@@ -112,7 +112,7 @@ class MessageController extends Controller
 
         $messages = $messages->orderBy('created_at')->get();
 
-        return view('client.include.messages.messages', compact('receiver', 'event_id', 'messages'));
+        return view('include.messages.messages', compact('receiver', 'event_id', 'messages'));
     }
 
 

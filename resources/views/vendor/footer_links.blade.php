@@ -73,8 +73,6 @@
     </script>
 
     {{-- Delete Record --}}
-    
-
     <script>
         function confirmDelete(table, id, column) {
             Swal.fire({
@@ -126,6 +124,8 @@
             });
         }
     </script>
+
+    @stack('scripts')
 
 </body>
 

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\EventOrganizerAssignment;
+use App\Models\EventVendorAssignment;
 use App\Models\VendorService;
 use App\Models\VendorType;
 use Illuminate\Http\Request;
@@ -122,6 +124,51 @@ class VendorController extends Controller
         $service->save();
 
         return redirect()->route('vendor.my_services')->with('success', 'Service updated successfully!');
+    }
+
+
+    public function my_bookings()
+    {
+        $vendorId = Auth::id();
+
+        $assignments = EventVendorAssignment::with(['event', 'client', 'service']) // load service too
+            ->where('vendor_id', $vendorId)
+            ->where('is_deleted', false)
+            ->where('status', 1) // status 1 = accepted
+            ->orderBy('id', 'desc')
+            ->get();
+
+        return view('vendor.my_bookings', compact('assignments'));
+    }
+
+    public function booking_requests()
+    {
+        $vendorId = Auth::id(); // get currently logged-in vendor
+
+        $assignments = EventVendorAssignment::with(['event', 'client', 'service']) // eager load event + client
+            ->where('vendor_id', $vendorId)
+            ->where('is_deleted', false)
+            ->whereIn('status', [2, 3]) // status 2 = rejected, 3 = pending
+            ->orderBy('id', 'desc')
+            ->get();
+
+        return view('vendor.booking_requests', compact('assignments'));
+    }
+
+    public function requestAction(Request $request)
+    {
+        $request->validate([
+            'id' => 'required|exists:event_vendor_assignments,id',
+            'action' => 'required|in:accept,reject',
+        ]);
+
+        $assignment = EventVendorAssignment::find($request->id);
+        $assignment->status = $request->action === 'accept' ? 1 : 2;
+        $assignment->id_modify = Auth::user()->id;
+        $assignment->date_modify = now();
+        $assignment->save();
+
+        return back()->with('success', 'Request has been ' . $request->action . 'ed.');
     }
 
     

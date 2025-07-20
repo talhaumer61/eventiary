@@ -39,6 +39,21 @@
                         <span class="side-menu__label">Services</span>
                     </a>
                 </li>
+                <li class="slide has-sub">
+                    <a href="javascript:void(0);" class="side-menu__item">
+                        <i class="bi bi-ticket-detailed side-menu__icon"></i>
+                        <span class="side-menu__label">Bookings</span>
+                        <i class="fe fe-chevron-right side-menu__angle"></i>
+                    </a>
+                    <ul class="slide-menu child1" style="position: relative; left: 0px; top: 0px; margin: 0px; transform: translate3d(128px, 270px, 0px); display: none; box-sizing: border-box;" data-popper-placement="bottom">
+                        <li class="slide">
+                            <a href="/service-bookings" class="side-menu__item">My Bookings</a>
+                        </li>
+                        <li class="slide">
+                            <a href="/service-requests" class="side-menu__item">Requests</a>
+                        </li>
+                    </ul>
+                </li>
 
             </ul>
             <div class="slide-right" id="slide-right"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24"> <path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"></path> </svg></div>

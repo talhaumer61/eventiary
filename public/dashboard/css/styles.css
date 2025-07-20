@@ -16679,6 +16679,7 @@ code[class*=language-] {
 .app-sidebar .slide-menu.child2 .side-menu__item.active,
 .app-sidebar .slide-menu.child3 .side-menu__item.active {
   background-color: transparent !important;
+  color:#00C68A;
 }
 .app-sidebar .slide-menu {
   padding: 0rem;

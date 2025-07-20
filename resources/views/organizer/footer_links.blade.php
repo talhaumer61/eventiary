@@ -1,4 +1,7 @@
-
+    <!-- jQuery CDN (Add this in your HTML file inside <head> or before </body>) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- SweetAlert2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Popper JS -->
     <script src="{{asset('dashboard/libs/%40popperjs/core/umd/popper.min.js')}}"></script>
 
@@ -69,6 +72,60 @@
 
     </script>
 
+    {{-- Delete Record --}}
+    <script>
+        function confirmDelete(table, id, column) {
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You are about to delete this record.",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#d33",
+                cancelButtonColor: "#3085d6",
+                confirmButtonText: "Yes, delete it!",
+                cancelButtonText: "Cancel"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Disable button to prevent multiple clicks
+                    $(".delete-btn").prop("disabled", true);
+
+                    $.ajax({
+                        url: "{{ route('organizer.delete.record') }}",
+                        type: "POST",
+                        data: {
+                            _token: document.querySelector('meta[name="csrf-token"]').getAttribute('content'), 
+                            table: table,
+                            id: id,
+                            column: column
+                        },
+                        success: function(response) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: response.message,
+                                icon: "success",
+                                timer: 2000,
+                                showConfirmButton: false
+                            }).then(() => {
+                                location.reload();
+                            });
+                        },
+                        error: function(xhr) {
+                            let errorMessage = "Something went wrong.";
+                            if (xhr.responseJSON && xhr.responseJSON.message) {
+                                errorMessage = xhr.responseJSON.message;
+                            }
+                            Swal.fire("Error!", errorMessage, "error");
+
+                            // Re-enable button in case of error
+                            $(".delete-btn").prop("disabled", false);
+                        }
+                    });
+                }
+            });
+        }
+    </script>
+
+    @stack('scripts')
 </body>
 
 

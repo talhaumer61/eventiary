@@ -55,6 +55,7 @@
                                     <li><a href="/">Home</a></li>
                                     <li><a href="/events">Events</a></li>
                                     <li><a href="/organizers">Organizers</a></li>
+                                    <li><a href="/vendors">Vendors</a></li>
                                     <li>
                                         <a href="#">More</a>
                                         <ul>

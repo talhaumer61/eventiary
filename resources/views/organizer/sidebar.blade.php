@@ -45,14 +45,23 @@
                         <span class="side-menu__label">Team</span>
                     </a>
                 </li>
-                <li class="slide">
-                    <a href="#" class="side-menu__item">
-                        <i class="bi bi-person-workspace side-menu__icon"></i>
+                <li class="slide has-sub">
+                    <a href="javascript:void(0);" class="side-menu__item">
+                        <i class="bi bi-ticket-detailed side-menu__icon"></i>
                         <span class="side-menu__label">Bookings</span>
+                        <i class="fe fe-chevron-right side-menu__angle"></i>
                     </a>
+                    <ul class="slide-menu child1" style="position: relative; left: 0px; top: 0px; margin: 0px; transform: translate3d(128px, 270px, 0px); display: none; box-sizing: border-box;" data-popper-placement="bottom">
+                        <li class="slide">
+                            <a href="/my-bookings" class="side-menu__item">My Bookings</a>
+                        </li>
+                        <li class="slide">
+                            <a href="/booking-requests" class="side-menu__item">Requests</a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="slide">
-                    <a href="#" class="side-menu__item">
+                    <a href="/my-vendors" class="side-menu__item">
                         <i class="bi bi-shop-window side-menu__icon"></i>
                         <span class="side-menu__label">Vendors</span>
                     </a>

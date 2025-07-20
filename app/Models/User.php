@@ -36,4 +36,9 @@ class User extends Authenticatable
         return asset($this->photo ?? 'images/default_user.png');
     }
 
+    public function services()
+    {
+        return $this->hasMany(VendorService::class, 'id_vendor');
+    }
+
 }

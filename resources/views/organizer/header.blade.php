@@ -302,18 +302,18 @@
               </a>
               <!-- End::header-link -->
           </li> --}}
-          
-
-          
+            @php
+                use Illuminate\Support\Facades\Auth;
+            @endphp
           <li class="header-element">
               <!-- Start::header-link|dropdown-toggle -->
               <a href="javascript:void(0);" class="header-link dropdown-toggle" id="mainHeaderProfile" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
                   <div class="d-flex align-items-center">
                       <div class="me-sm-2 me-0">
-                          <img src="{{ session('user')->photo }}" alt="img" class="avatar avatar-sm avatar-rounded">
+                          <img src="{{ Auth::user()->photo }}" alt="img" class="avatar avatar-sm avatar-rounded">
                       </div>
                       <div class="d-xl-block d-none lh-1">
-                          <span class="fw-medium lh-1">{{ session('user')->name }}</span>
+                          <span class="fw-medium lh-1">{{ Auth::user()->name }}</span>
                       </div>
                   </div>
               </a>
@@ -321,27 +321,15 @@
               <ul class="main-header-dropdown dropdown-menu pt-0 overflow-hidden header-profile-dropdown dropdown-menu-end" aria-labelledby="mainHeaderProfile">
                   <li><a class="dropdown-item d-flex align-items-center" href="/profile"><i class="bi bi-person fs-18 me-2 op-7"></i>Profile</a></li>
                   <li><a class="dropdown-item d-flex align-items-center" href="#"><i class="bi bi-gear fs-16 me-2 op-7"></i>Settings</a></li>
-                  <li><a class="dropdown-item d-flex align-items-center" href="#"><i class="bi bi-box-arrow-right fs-18 me-2 op-7"></i>Log Out</a></li>
+                  <li><a class="dropdown-item d-flex align-items-center" href="/logout"><i class="bi bi-box-arrow-right fs-18 me-2 op-7"></i>Log Out</a></li>
               </ul>
           </li>  
-          
-
-          
-          {{-- <li class="header-element">
-              <!-- Start::header-link|switcher-icon -->
-              <a href="javascript:void(0);" class="header-link switcher-icon" data-bs-toggle="offcanvas" data-bs-target="#switcher-canvas">
-                  <i class="bi bi-gear header-link-icon border-0"></i>
-              </a>
-              <!-- End::header-link|switcher-icon -->
-          </li> --}}
-          
 
       </ul>
-      <!-- End::header-content-right -->
 
   </div>
-  <!-- End::main-header-container -->
 
 </header>
 
+@include('organizer.sessionMsg')
 @include('organizer.sidebar')
