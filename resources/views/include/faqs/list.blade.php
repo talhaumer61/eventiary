@@ -7,7 +7,7 @@
                     <p>Below you’ll find answers to some of the most frequently asked questions at
                         PresentUp. We are constantly adding most asked question to this page so if you have
                         a question and don’t see your answer, don’t hesitate to email us at <a
-                            href="#">info@example.com</a></p>
+                            href="#">info@eventiary.com</a></p>
                 </div>
                 <!-- wrap-acadion -->
                 <div class="wrap-acadion">
@@ -15,75 +15,71 @@
                         <!-- toggle -->
                         <div
                             class="toggle ttm-style-classic ttm-toggle-title ttm-toggle-title-bgcolor-grey">
-                            <h4 class="toggle-title">What can PresentUp Events do for an Event?</h4>
+                            <h4 class="toggle-title">What is Eventiary?</h4>
                             <div class="toggle-content">
-                                <p>PresentUp Events specializes in the planning of corporate, social and
-                                    non-profit events. This includes birthday, celebration parties, employee
-                                    events, conferences or meetings, weddings, bridal showers and more! We
-                                    have different and creative approach to bring your dreams to a reality.
+                                <p>
+                                    Eventiary is an all-in-one platform where clients can post events, organizers can apply to manage them, and vendors can offer specialized services like catering, decoration, photography, and more. It’s where great events begin.
                                 </p>
                             </div>
                         </div><!-- toggle end -->
                         <!-- toggle -->
                         <div
                             class="toggle ttm-style-classic ttm-toggle-title ttm-toggle-title-bgcolor-grey">
-                            <h4 class="toggle-title">How far will you travel for an Event?</h4>
+                            <h4 class="toggle-title">How do I post an event on Eventiary?</h4>
                             <div class="toggle-content">
-                                <p>Since launching the company, we have helped to host events throughout the
-                                    different state and even helped to coordinate an event overseas for one
-                                    client. Many of our clients are in the different region.</p>
+                                <p>
+                                    Simply sign up as a client, fill out the event details (type, date, location, budget, etc.), and publish your listing. Organizers will then be able to view and apply for your event.
+                                </p>
                             </div>
                         </div><!-- toggle end -->
                         <!-- toggle -->
                         <div
                             class="toggle ttm-style-classic ttm-toggle-title ttm-toggle-title-bgcolor-grey">
-                            <h4 class="toggle-title">How Can I Contact You?</h4>
+                            <h4 class="toggle-title">Is it free to post an event?</h4>
                             <div class="toggle-content">
-                                <p>Please visit contact us page for all your queries and redressal of
-                                    grievances. You can also contact us on +12 (3) 4567 899 number.</p>
+                                <p>
+                                    Yes, posting an event is absolutely free. You only pay once you hire an organizer or book a vendor’s service.
+                                </p>
                             </div>
                         </div><!-- toggle end -->
                         <!-- toggle -->
                         <div
                             class="toggle ttm-style-classic ttm-toggle-title ttm-toggle-title-bgcolor-grey">
-                            <h4 class="toggle-title">What happens if an Event is cancelled?</h4>
+                            <h4 class="toggle-title">Can I hire multiple vendors for one event?</h4>
                             <div class="toggle-content">
-                                <p>Sometimes the unexpected happens and you need to cancel your Event make
-                                    sure you call us or email us before 10 day ago before cancellation.</p>
+                                <p>
+                                    Yes! You can browse and hire vendors individually based on your event needs—such as catering, decoration, DJ services, etc.
+                                </p>
                             </div>
                         </div><!-- toggle end -->
                         <!-- toggle -->
                         <div
                             class="toggle ttm-style-classic ttm-toggle-title ttm-toggle-title-bgcolor-grey">
-                            <h4 class="toggle-title">How early should you start planning an event?</h4>
+                            <h4 class="toggle-title">How can I become an event organizer on Eventiary?</h4>
                             <div class="toggle-content">
-                                <p>Depending on the event, most will start planning at least 1 months in
-                                    advance. For large-scale events that span over multiple 12+ months to
-                                    plan. Our team has also planned and schedule celebrations everythings.
-                                    Our advice would be to start as early as possible.</p>
+                                <p>
+                                    Register as an organizer, complete your profile with experience, services offered, portfolio, and certifications (if any). Once approved, you can start browsing and applying for client-posted events.
+                                </p>
                             </div>
                         </div><!-- toggle end -->
                         <!-- toggle -->
                         <div
                             class="toggle ttm-style-classic ttm-toggle-title ttm-toggle-title-bgcolor-grey">
-                            <h4 class="toggle-title">Do you charge separately for your various event
-                                services?</h4>
+                            <h4 class="toggle-title"> What kind of vendors can join Eventiary?</h4>
                             <div class="toggle-content">
-                                <p>Some of our services come standard, others are priced separately. In
-                                    order to get an idea of what your event will cost, contact us to speak
-                                    with one of our event planner. They can give you a free estimate based
-                                    on your individual needs.</p>
+                                <p>
+                                    We welcome all types of event-related vendors—caterers, decorators, photographers, florists, sound & lighting providers, stage designers, and more.
+                                </p>
                             </div>
                         </div><!-- toggle end -->
                         <!-- toggle -->
                         <div
                             class="toggle ttm-style-classic ttm-toggle-title ttm-toggle-title-bgcolor-grey">
-                            <h4 class="toggle-title">If someone wants to get started planning an event, what
-                                should they do?</h4>
+                            <h4 class="toggle-title">Can I offer multiple services under one account?</h4>
                             <div class="toggle-content">
-                                <p>Call us on or visit our office. We will sit down with you to talk about
-                                    next steps and how our team can help build your dreams so that you can
-                                    enjoy the event—stress free!</p>
+                                <p>
+                                    Yes, you can create multiple listings under your vendor profile to showcase various services you offer.
+                                </p>
                             </div>
                         </div><!-- toggle end -->
                     </div>

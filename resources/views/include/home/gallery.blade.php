@@ -14,7 +14,7 @@
         </div>
     </div>
 </section>
-<section class="ttm-row gallery-view-section">
+<section class="ttm-row gallery-view-section" id="gallery-view-section">
     <div class="container">
         <!-- row -->
         <div class="row multi-columns-row ttm-boxes-spacing-5px style2 mt_65 g-0">
@@ -170,10 +170,10 @@
                 </div><!-- featured-item -->
             </div>
         </div><!-- row end -->
-        <div class="row">
+        {{-- <div class="row">
             <div class="col-md-12 text-center">
                 <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-round ttm-btn-style-fill ttm-btn-color-black mt-50" href="#">View More Gallery</a>
             </div>
-        </div>
+        </div> --}}
     </div>
 </section>

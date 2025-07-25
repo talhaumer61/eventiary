@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Event;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
@@ -135,7 +136,7 @@ class siteController extends Controller
         ]);
 
         // Fetch the authenticated user from session
-        $user = session('user');
+        $user = Auth::user();
 
         if (!$user) {
             return back()->withErrors(['error' => 'User not found. Please login again.']);
@@ -189,7 +190,7 @@ class siteController extends Controller
         ]);
 
         // Get the logged-in user
-        $user = session('user');
+        $user = Auth::user();
 
         if (!$user) {
             return response()->json(['success' => false, 'message' => 'User not found. Please login again.']);
@@ -220,7 +221,7 @@ class siteController extends Controller
     public function updateProfile(Request $request)
     {
         // Get user from session
-        $user = session('user');
+        $user = Auth::user();
 
         if (!$user) {
             return redirect()->back()->with('error', 'User session not found.');

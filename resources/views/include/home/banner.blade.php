@@ -42,7 +42,7 @@
                     data-paddingright="[18,18,18,18]"
                     data-paddingbottom="[6,6,6,5]"
                     data-paddingleft="[18,18,18,18]"
-                    >Your Event, OUr Planning</div>
+                    >Your Event, Our Planning</div>
                     
                     <div class="tp-caption tp-resizeme tp-shapewrapper" id="slide-1-layer-3" data-x="['center','center','center','center']" data-hoffset="['269','269','201','134']" data-y="['middle','middle','middle','middle']" data-voffset="['52','6','-7','29']"
 
@@ -98,7 +98,7 @@
                     data-paddingleft="[0,0,0,0]"
                     >Planning a Wedding, Proposal, Corporate or Event in our busy city is not so<br>easy, and it takes skills (and time) to make it all look easy-going </div>
 
-                    <a class="tp-caption tp-resizeme highlight-skin-button" href="#" target="_self" id="slide-1-layer-6" data-x="['center','center','center','center']" data-hoffset="['-97','-97','-97','-97']" data-y="['middle','middle','middle','middle']" data-voffset="['203','182','127','85']"
+                    <a class="tp-caption tp-resizeme highlight-skin-button" href="organizers" target="_self" id="slide-1-layer-6" data-x="['center','center','center','center']" data-hoffset="['-97','-97','-97','-97']" data-y="['middle','middle','middle','middle']" data-voffset="['203','182','127','85']"
 
                     data-fontsize="['14','14','14','14']"
                     data-lineheight="['14','14','14','14']"
@@ -115,26 +115,27 @@
                     data-paddingright="[30,30,30,25]"
                     data-paddingbottom="[15,15,15,10]"
                     data-paddingleft="[30,30,30,25]"
-                    >Online Request </a>
+                    >Hire an Organizer </a>
 
-                    <a class="tp-caption tp-resizeme classic-border-button" href="#" target="_self" id="slide-1-layer-7" data-x="['center','center','center','center']" data-hoffset="['98','98','98','98']" data-y="['middle','middle','middle','middle']" data-voffset="['203','182','128','85']"
+                    <a class="tp-caption tp-resizeme classic-border-button" href="/about-us" target="_self" id="slide-1-layer-7" data-x="['center','center','center','center']" data-hoffset="['98','98','98','98']" data-y="['middle','middle','middle','middle']" data-voffset="['203','182','128','85']"
 
-                    data-fontsize="['14','14','14','14']"
-                    data-lineheight="['14','14','14','14']"
-                    data-fontweight="['600','600','600','600']"
-                    data-width="none"
-                    data-height="none"
-                    data-whitespace="nowrap"
-                    data-type="text"
-                    data-actions=''
-                    data-responsive_offset="on"
-                    data-frames='[{"delay":2260,"speed":1500,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-                    data-textAlign="['inherit','inherit','inherit','inherit']"
-                    data-paddingtop="[15,15,15,10]"
-                    data-paddingright="[30,30,30,25]"
-                    data-paddingbottom="[15,15,15,10]"
-                    data-paddingleft="[30,30,30,25]"
-                    >More Gallery <span><i class="ti ti-angle-right"></i></span></a>
+                        data-fontsize="['14','14','14','14']"
+                        data-lineheight="['14','14','14','14']"
+                        data-fontweight="['600','600','600','600']"
+                        data-width="none"
+                        data-height="none"
+                        data-whitespace="nowrap"
+                        data-type="text"
+                        data-actions=''
+                        data-responsive_offset="on"
+                        data-frames='[{"delay":2260,"speed":1500,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                        data-textAlign="['inherit','inherit','inherit','inherit']"
+                        data-paddingtop="[15,15,15,10]"
+                        data-paddingright="[30,30,30,25]"
+                        data-paddingbottom="[15,15,15,10]"
+                        data-paddingleft="[30,30,30,25]"
+                        >About Us <span><i class="ti ti-angle-right"></i></span>
+                    </a>
                 </li>
                 
                 <li data-index="rs-2" data-transition="slotslide-vertical,fade" data-slotamount="default,default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default,default" data-easeout="default,default" data-masterspeed="default,300" data-thumb="" data-delay="10010" data-rotate="0,0" data-saveperformance="off" data-title="We Plan the Best Events" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
@@ -237,7 +238,7 @@
                     ><i class="ti ti-control-play"></i>
                     </a>
 
-                    <a class="tp-caption tp-resizeme highlight-skin-button" href="#" target="_self" id="slide-2-layer-6" data-x="['left','left','left','center']" data-hoffset="['50','50','50','0']" data-y="['middle','middle','middle','middle']" data-voffset="['200','130','89','39']"
+                    {{-- <a class="tp-caption tp-resizeme highlight-skin-button" href="#" target="_self" id="slide-2-layer-6" data-x="['left','left','left','center']" data-hoffset="['50','50','50','0']" data-y="['middle','middle','middle','middle']" data-voffset="['200','130','89','39']"
 
                     data-fontsize="['14','14','14','14']"
                     data-lineheight="['14','14','14','14']"
@@ -255,10 +256,10 @@
                     data-paddingbottom="[15,15,15,10]"
                     data-paddingleft="[30,30,30,25]"
                     >Get A Quote <span><i class="ti ti-angle-right"></i></span>
-                    </a>
+                    </a> --}}
 
                     {{-- classic-border-button --}}
-                    <a class="tp-caption tp-resizeme highlight-skin-button" href="#" target="_self" id="slide-2-layer-7" data-x="['left','left','left','center']" data-hoffset="['249','249','240','0']" data-y="['middle','middle','middle','middle']" data-voffset="['200','130','89','99']"
+                    {{-- <a class="tp-caption tp-resizeme highlight-skin-button" href="#" target="_self" id="slide-2-layer-7" data-x="['left','left','left','center']" data-hoffset="['249','249','240','0']" data-y="['middle','middle','middle','middle']" data-voffset="['200','130','89','99']"
 
                     data-fontsize="['14','14','14','14']"
                     data-lineheight="['14','14','14','14']"
@@ -275,7 +276,7 @@
                     data-paddingright="[30,30,30,25]"
                     data-paddingbottom="[15,15,15,10]"
                     data-paddingleft="[30,30,30,25]"
-                    >About Us </a>
+                    >About Us </a> --}}
                 </li>
             </ul>
         <div class="tp-loader"><div class="dot1"></div><div class="dot2"></div><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div>

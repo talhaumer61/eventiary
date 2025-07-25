@@ -32,4 +32,14 @@ class Event extends Model
         'date_deleted',
         'ip_deleted',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id_added');
+    }
+
+    public function eventType()
+    {
+        return $this->belongsTo(EventType::class, 'id_type');
+    }
 }

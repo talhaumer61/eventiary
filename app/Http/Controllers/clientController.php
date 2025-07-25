@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\Event;
 use App\Models\EventOrganizerAssignment;
+use App\Models\EventVendorAssignment;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,7 +17,8 @@ class clientController extends Controller
     public function index(){
         return view('client.dashboard');
     }
-    public function create_event(){
+    public function create_event()
+    {
         $eventTypes = DB::table('event_types')
         ->where('type_status', 1)
         ->where('is_deleted', 0)
@@ -320,6 +322,63 @@ class clientController extends Controller
         return redirect()->back();
     }
 
+    public function my_vendors()
+    {
+        $clientId = Auth::id();
+
+        // Events created by client
+        $events = Event::where('id_added', $clientId)->get();
+
+        // All vendors
+        $vendors = User::where('login_type', 4)->get();
+
+        // Assignments made by client
+        $assignments = EventVendorAssignment::with(['event', 'vendor', 'service'])
+            ->where('client_id', $clientId)
+            ->where('is_deleted', 0)
+            ->get();
+
+        return view('client.my_vendors', compact('events', 'vendors', 'assignments'));
+    }
+
+    public function assignVendor(Request $request)
+    {
+        $request->validate([
+            'event_id'    => 'required|exists:events,event_id',
+            'vendor_id'   => 'required|exists:users,id',
+            'service_id'  => 'required|exists:vendor_services,service_id',
+            'description' => 'nullable|string|max:1000',
+        ]);
+
+        $clientId = Auth::id();
+
+        // Prevent duplicate request
+        $existing = EventVendorAssignment::where('client_id', $clientId)
+            ->where('event_id', $request->event_id)
+            ->where('vendor_id', $request->vendor_id)
+            ->where('service_id', $request->service_id)
+            ->where('is_deleted', 0)
+            ->first();
+
+        if ($existing) {
+            sessionMsg('Error', 'You have already requested this vendor for the selected service and event.', 'danger');
+            return back();
+        }
+
+        EventVendorAssignment::create([
+            'client_id'   => $clientId,
+            'event_id'    => $request->event_id,
+            'vendor_id'   => $request->vendor_id,
+            'service_id'  => $request->service_id,
+            'status'      => 3,
+            'description' => $request->description,
+            'id_added'    => $clientId,
+            'date_added'  => now(),
+        ]);
+
+        sessionMsg('Success', 'Vendor request sent successfully!', 'success');
+        return redirect()->back();
+    }
 
 
 
@@ -333,7 +392,7 @@ class clientController extends Controller
         return view('client.budget_tracking');
     }
     public function profile(){
-        $user = User::where('id', session('user')->id)->first(); // Fetch user data using model
+        $user = User::where('id', Auth::user()->id)->first(); // Fetch user data using model
 
         return view('client.profile', compact('user'));
     }

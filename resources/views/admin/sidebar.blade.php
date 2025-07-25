@@ -70,11 +70,8 @@
                         <i class="fe fe-chevron-right side-menu__angle"></i>
                     </a>
                     <ul class="slide-menu child1" style="position: relative; left: 0px; top: 0px; margin: 0px; transform: translate3d(128px, 270px, 0px); display: none; box-sizing: border-box;" data-popper-placement="bottom">
-                        <li class="slide side-menu__label1">
-                            <a href="javascript:void(0)">Types</a>
-                        </li>
                         <li class="slide">
-                            <a href="#" class="side-menu__item">List</a>
+                            <a href="/vendors-list" class="side-menu__item">List</a>
                         </li>
                         <li class="slide">
                             <a href="/vendor-types" class="side-menu__item">Types</a>

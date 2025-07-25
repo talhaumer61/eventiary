@@ -46,7 +46,7 @@
                             </ul>
                         </div>
                     </div>
-                    <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-round ttm-btn-style-fill ttm-btn-color-skincolor mt-17" href="#" title="">Get A Quote</a>
+                    <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-round ttm-btn-style-fill ttm-btn-color-skincolor mt-17" href="/contact-us" title="">Contact Us</a>
                 </div>
             </div>
             <div class="col-md-4">

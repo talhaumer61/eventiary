@@ -61,6 +61,9 @@
           <div id="status">&nbsp;</div>
         </div>
         <!-- preloader end -->
+        {{-- @php
+            exit;
+        @endphp --}}
 
 
         @include('include.navbar')

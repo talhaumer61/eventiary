@@ -16,6 +16,7 @@ use App\Http\Middleware\VerifyClient;
 use App\Http\Middleware\VerifyOrganizer;
 use App\Http\Middleware\VerifyVendor;
 use App\Models\Message;
+use App\Models\VendorService;
 use Illuminate\Support\Facades\Auth;
 // Public Routes
 Route::get('/', [siteController::class, 'home']);
@@ -61,6 +62,7 @@ Route::middleware([RedirectIfAuthenticated::class])->group(function () {
         Route::get('/events-list', [AdminController::class, 'eventsList'])->name('eventsList');
         Route::get('/users', [AdminController::class, 'usersList'])->name('usersList');
         Route::get('/organizers-list', [AdminController::class, 'organizersList'])->name('organizersList');
+        Route::get('/vendors-list', [AdminController::class, 'vendorsList'])->name('vendorsList');
         Route::get('/transactions', [AdminController::class, 'transactions'])->name('admin.transactions');
 
         Route::get('/event-types/{action?}/{href?}', [AdminController::class, 'event_types'])->name('event_types');
@@ -139,6 +141,13 @@ Route::middleware([AuthenticateUser::class])->group(function () {
         Route::post('/assign-organizer', [ClientController::class, 'assignOrganizer'])->name('client.assign.organizer');
 
 
+        Route::get('/choose-vendors', [ClientController::class, 'my_vendors'])->name('client.my_vendors');
+        Route::get('/vendor/{id}/services', function($id) {
+            return VendorService::where('id_vendor', $id)
+                ->where('is_deleted', 0)
+                ->get();
+        });
+        Route::post('/assign-vendor', [ClientController::class, 'assignVendor'])->name('client.assign.vendor');
 
 
         Route::get('/guests/{action?}/{href?}', [clientController::class, 'guests']);

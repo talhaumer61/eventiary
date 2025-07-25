@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
 use App\Models\EventType;
 use App\Models\User;
 use App\Models\VendorType;
@@ -16,14 +17,26 @@ class AdminController extends Controller
     public function index(){
         return view('admin.dashboard');
     }
-    public function eventsList(){
-        return view('admin.events_list');
+    public function eventsList()
+    {
+        $events = Event::with(['user', 'eventType'])
+            ->where('is_deleted', false)
+            ->orderBy('event_id', 'desc')
+            ->get();
+
+        return view('admin.events_list', compact('events'));
     }
     public function usersList(){
-        return view('admin.users_list');
+        $clients = User::where('login_type', 2)->get(); // Fetch all clients
+        return view('admin.users_list', compact('clients'));
     }
-    public function organizersList(){
-        return view('admin.organizers_list');
+    public function organizersList() {
+        $organizers = User::where('login_type', 3)->get(); // 3 = Organizer
+        return view('admin.organizers_list', compact('organizers'));
+    }
+    public function vendorsList() {
+        $vendors = User::where('login_type', 4)->get(); // 4 = Vendor
+        return view('admin.vendors_list', compact('vendors'));
     }
     public function transactions(){
         return view('admin.transactions');

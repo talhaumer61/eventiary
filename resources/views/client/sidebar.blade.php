@@ -58,13 +58,13 @@
                     </a>
                 </li>
                 <li class="slide">
-                    <a href="#" class="side-menu__item">
+                    <a href="/choose-vendors" class="side-menu__item">
                         <i class="bi bi-shop-window side-menu__icon"></i>
                         <span class="side-menu__label">Vendors</span>
                     </a>
                 </li>
                 <li class="slide">
-                    <a href="/user-messages" class="side-menu__item">
+                    <a href="/chat" class="side-menu__item">
                         <i class="bi bi-chat-dots side-menu__icon"></i>
                         <span class="side-menu__label">Messages</span>
                     </a>
@@ -121,5 +121,5 @@
 <!-- End::app-sidebar -->
 
 <!-- Start::app-content -->
-<div class="main-content app-content">
+<div class="main-content app-content d-flex">
     <div class="container-fluid">

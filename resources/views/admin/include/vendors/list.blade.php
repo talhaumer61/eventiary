@@ -27,17 +27,17 @@
             </div>
         </div>
     </div>
-    @foreach($organizers as $organizer)
+    @foreach($vendors as $vendor)
         <div class="col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-sm-6">
             <div class="card custom-card text-center">
                 <div class="card-body p-4">
                     <div class="avatar avatar-xl avatar-rounded mb-3">
-                        <img src="{{ asset( ($organizer->photo ?? 'default.jpg')) }}" alt="" class="img-thumbnail">
+                        <img src="{{ asset( ($vendor->photo ?? 'default.jpg')) }}" alt="" class="img-thumbnail">
                     </div>
                     <div class="mb-3">
-                        <h6 class="mb-1 fw-medium">{{ $organizer->name }}</h6>
-                        <p class="mb-1 text-muted contact-mail text-truncate">{{ $organizer->email }}</p>
-                        <p class="fw-medium fs-11 mb-0 text-primary">{{ $organizer->phone?? 'N/A' }}</p>
+                        <h6 class="mb-1 fw-medium">{{ $vendor->name }}</h6>
+                        <p class="mb-1 text-muted contact-mail text-truncate">{{ $vendor->email }}</p>
+                        <p class="fw-medium fs-11 mb-0 text-primary">{{ $vendor->phone?? 'N/A' }}</p>
                     </div>
                     {{-- <div class="d-flex align-items-center justify-content-center gap-2">
                         <button type="button" class="btn btn-sm btn-outline-light border">View Profile</button>

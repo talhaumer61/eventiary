@@ -24,10 +24,13 @@
                         @foreach($services as $service)
                             <div class="col-md-6 mb-4">
                                 <div class="card h-100">
+                                    @if($service->service_photo)
+                                        <img src="{{ asset($service->service_photo) }}" class="card-img-top" alt="{{ $service->service_name }}" style="height: 200px; object-fit: cover;">
+                                    @endif
                                     <div class="card-body">
-                                        <h5 class="card-title">{{ $service->title }}</h5>
+                                        <h5 class="card-title">{{ $service->service_name }}</h5>
                                         <p class="card-text">{{ $service->description }}</p>
-                                        <p><strong>Price:</strong> Rs. {{ $service->price }}</p>
+                                        <p><strong>Price:</strong> Rs. {{ $service->service_price }}</p>
                                         <!-- Optional: add booking button -->
                                     </div>
                                 </div>

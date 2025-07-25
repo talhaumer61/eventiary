@@ -31,11 +31,6 @@
                                     required="required"></span>
                         </label>
                         <label class="col-md-6">
-                            <i class="ti ti-location-pin"></i>
-                            <span class="ttm-form-control"><input class="text-input" name="venue"
-                                    type="text" value="" placeholder="Venue" required="required"></span>
-                        </label>
-                        <label class="col-md-6">
                             <i class="ti ti-mobile"></i>
                             <span class="ttm-form-control"><input class="text-input" name="phone"
                                     type="text" value="" placeholder="Your Number:*"
@@ -46,7 +41,7 @@
                             <span class="ttm-form-control"><textarea class="text-area" name="message"
                                     placeholder="Your Message:*" required="required"></textarea></span>
                         </label>
-                        <input name="submit" type="submit" value="Make a Reservation"
+                        <input name="submit" type="submit" value="Submit"
                             class="ttm-btn ttm-btn-size-md ttm-btn-shape-round ttm-btn-style-fill ttm-btn-color-skincolor mt-20"
                             id="submit" title="Make a Reservation">
                     </form>

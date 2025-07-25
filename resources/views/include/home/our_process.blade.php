@@ -73,8 +73,8 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 <div class="mt-30">
-                    <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-round ttm-btn-style-border ttm-btn-color-white mt-20" href="#">Book Event</a>
-                    <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-round ttm-btn-style-fill ttm-btn-color-skincolor ml-30 mt-20" href="#" title="">Our Gallery</a>
+                    <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-round ttm-btn-style-border ttm-btn-color-white mt-20" href="/create-event">Book Event</a>
+                    <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-round ttm-btn-style-fill ttm-btn-color-skincolor ml-30 mt-20" href="#gallery-view-section" title="">Our Gallery</a>
                 </div>
             </div>
         </div>

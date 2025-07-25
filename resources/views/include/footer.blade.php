@@ -29,30 +29,30 @@
         <div class="container">
             <div class="second-footer-inner">
                 <div class="row">
-                    <div class="widget-area col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                    <div class="widget-area col-xs-12 col-sm-6 col-md-6 col-lg-4">
                         <div class="widget widget-out-link clearfix">
                             <h4 class="widget-title">Contact Us</h4>
                             <ul class="widget-contact">
-                                <li><i class="fa fa-map-marker"></i>24 Fifth st., Los Angeles, USA</li>
-                                <li><i class="fa fa-envelope-o"></i><a href="#">info@example.com</a></li>
-                                <li><i class="fa fa-phone"></i>Phone: (+01) 123 456 7890 <br>Support: (+01) 123 456 7890  </li>
+                                <li><i class="fa fa-map-marker"></i>Township, Lahore, Punjab, Pakistan</li>
+                                <li><i class="fa fa-envelope-o"></i><a href="#">info@eventiary.com</a></li>
+                                <li><i class="fa fa-phone"></i>Phone: (+92) 312 456 7890 
+                                    {{-- <br>Support: (+01) 123 456 7890   --}}
+                                </li>
                             </ul>
                         </div>
                     </div>
-                    <div class="widget-area col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                    <div class="widget-area col-xs-12 col-sm-6 col-md-6 col-lg-4">
                         <div class="widget widget_nav_menu clearfix">
                             <h4 class="widget-title">Our Services </h4>
                             <ul class="menu-footer-services">
-                                <li><a href="#">Our Story</a></li>
-                                <li><a href="#">Our Gallery</a></li>
-                                <li><a href="#">Event Guides</a></li>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Latest News</a></li>
-                                <li><a href="#">Pricing & Terms</a></li>
+                                <li><a href="/organizers">Organizers</a></li>
+                                <li><a href="/#gallery-view-section">Our Gallery</a></li>
+                                <li><a href="/events">Events</a></li>
+                                <li><a href="/about-us">About Us</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="widget-area col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                    {{-- <div class="widget-area col-xs-12 col-sm-6 col-md-6 col-lg-3">
                         <div class="widget widget-out-link clearfix ">
                             <h4 class="widget-title">Recent Posts</h4>
                             <ul class="widget-post ttm-recent-post-list">
@@ -68,16 +68,14 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
-                    <div class="widget-area col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                    </div> --}}
+                    <div class="widget-area col-xs-12 col-sm-6 col-md-6 col-lg-4">
                         <div class="widget widget-out-link clearfix ">
                             <h4 class="widget-title">Frequent Questions</h4>
                             <ul class="widget-text">
-                                <li><a href="#">How Can I Set An Event? </a></li>
-                                <li><a href="#">What Venues Do You Use? </a></li>
-                                <li><a href="#">Event Catalogue </a></li>
-                                <li><a href="#">Shipping & Delivery </a></li>
-                                <li><a href="#">What's your dream job? </a></li>
+                                <li><a href="/faqs"> What is Eventiary? </a></li>
+                                <li><a href="/faqs"> How do I post an event on Eventiary? </a></li>
+                                <li><a href="/faqs">Is it free to post an event? </a></li>
                             </ul>
                         </div>
                     </div>

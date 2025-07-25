@@ -89,7 +89,7 @@ function sendRemark($remarks = "", $action = "", $id_record = "") {
     if (!empty($remarks) && !empty($action) && !empty($id_record)) {
 
         // Retrieve the current logged-in user from session
-        $user = session('user');
+        $user = Auth::user();
         
         // Check if the user is authenticated
         if (!$user) {
