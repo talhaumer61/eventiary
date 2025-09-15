@@ -8,10 +8,31 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Mail\Message;
 
 class siteController extends Controller
 {
     public function home(){
+        // Email Logic
+        // $email = $request->input('email');
+        // $name = $request->input('name');
+        $email = 'bagartiyt@gmail.com';
+        $name = 'Sania Muhammad';
+        
+        $subject = "Welcome to Eventiary!";
+        $content = "<h1>Hi, {$name}!</h1><p>Thank you for registering. We're happy to have you.</p>";
+
+        // Call the helper function
+        $wasSent = sendEmail($email, $subject, $content);
+
+        if ($wasSent) {
+            // Email sent successfully
+            return view('home');
+        } else {
+            // Handle email failure
+            return redirect()->back()->with('error', 'Registration complete, but we could not send a welcome email.');
+        }
         return view('home');
     }
     public function about_us(){
