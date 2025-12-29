@@ -24,6 +24,15 @@ class EventOrganizerAssignment extends Model
         'id_modify',
         'date_added',
         'date_modify',
+        'id_deleted',
+        'date_deleted',
+        'ip_deleted',
+        'payment_status',
+        'payment_intent_id',
+        'payment_transaction_id',
+        'payment_date',
+        'payment_released',
+        'released_date'
     ];
 
     protected $primaryKey = 'id';

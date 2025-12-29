@@ -62,6 +62,9 @@
                                     {{ $event->event_budget ? 'Rs.' . number_format($event->event_budget, 2) : 'N/A' }}
                                 </td>
                                 <td>
+                                    <a href="/my-cards/{{$event->event_id}}" class="btn btn-primary-light btn-icon btn-sm">
+                                        <i class="ri-brush-line"></i>
+                                    </a>                                                                       
                                     <a href="{{ url('/my-events/' . $event->event_href) }}" class="btn btn-primary-light btn-icon btn-sm">
                                         <i class="ri-edit-line"></i>
                                     </a>                                                                       

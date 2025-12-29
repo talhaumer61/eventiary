@@ -24,6 +24,7 @@ class EventVendorAssignment extends Model
         'id_deleted',
         'date_deleted',
         'ip_deleted',
+        'payment_status',
     ];
 
     public function event()

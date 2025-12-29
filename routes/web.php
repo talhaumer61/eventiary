@@ -2,19 +2,31 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\clientController;
 use App\Http\Controllers\DatabaseController;
+use App\Http\Controllers\JobApplicationController;
+use App\Http\Controllers\JobController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\OrganizerAuthController;
 use App\Http\Controllers\organizerController;
+use App\Http\Controllers\OrganizerPortfolioController;
+use App\Http\Controllers\OrganizerTeamController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\siteController;
+use App\Http\Controllers\SiteJobsController;
+use App\Http\Controllers\StripeConnectController;
+use App\Http\Controllers\VendorAuthController;
 use App\Http\Controllers\VendorController;
+use App\Http\Controllers\VendorPaymentController;
 use App\Http\Middleware\RedirectIfAuthenticated;
 use App\Http\Middleware\AuthenticateUser;
 use App\Http\Middleware\VerifyAdmin;
 use App\Http\Middleware\VerifyClient;
 use App\Http\Middleware\VerifyOrganizer;
 use App\Http\Middleware\VerifyVendor;
+use App\Models\JobApplication;
 use App\Models\Message;
 use App\Models\VendorService;
 use Illuminate\Support\Facades\Auth;
@@ -22,10 +34,21 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', [siteController::class, 'home']);
 Route::get('/events/{href?}', [siteController::class, 'events']);
 Route::get('/organizers', [siteController::class, 'organizers']);
+Route::get('/organizer/{id}', [siteController::class, 'organizerProfile'])->name('organizer.profile');
+
+
 Route::get('/vendors/{action?}/{id?}', [siteController::class, 'vendors']);
 Route::get('/about-us', [siteController::class, 'about_us']);
 Route::get('/contact-us', [siteController::class, 'contact_us']);
 Route::get('/faqs', [siteController::class, 'faqs']);
+Route::get('/listed-jobs', [SiteJobsController::class, 'index']);
+Route::get('/job-detail/{job}', [SiteJobsController::class, 'show'])->name('jobs.show');
+
+Route::post('/jobs/{job}/apply', [JobApplicationController::class, 'apply'])
+     ->name('jobs.apply');
+
+        Route::get('/my-jobs/{jobId}/applications', [JobController::class, 'applications']);
+
 
 // Routes Accessible Only to Guests (Prevent Logged-in Users from Accessing Login/Signup)
 Route::middleware([RedirectIfAuthenticated::class])->group(function () {
@@ -35,20 +58,43 @@ Route::middleware([RedirectIfAuthenticated::class])->group(function () {
     
     
     // Organizer Registration
-    Route::get('/organizer-signup', [siteController::class, 'organizer_signup']);
-    Route::post('/organizer-signup', [AuthController::class, 'organizer_signup'])->name('organizerSignup');
+    // Route::get('/organizer-signup', [siteController::class, 'organizer_signup']);
+    // Route::post('/organizer-signup', [AuthController::class, 'organizer_signup'])->name('organizerSignup');
 
     // Vendor Registration
-    Route::get('/vendor-signup', [VendorController::class, 'vendor_signup']);
-    Route::post('/vendor-signup', [AuthController::class, 'vendor_signup'])->name('vendorSignup');
+    // Route::get('/vendor-signup', [VendorController::class, 'vendor_signup']);
+    // Route::post('/vendor-signup', [AuthController::class, 'vendor_signup'])->name('vendorSignup');
     
     // Client & Organizer Login
     Route::get('/login', [siteController::class, 'login'])->name('login');
     Route::post('/login', [AuthController::class, 'user_login'])->name('userLogin');
 
+    Route::get('/signup', [AuthController::class, 'showRegister']);
+    Route::post('/register', [AuthController::class, 'register'])->name('clientSignup');
+
+    Route::get('/verify-otp', [AuthController::class, 'showOtp'])->name('verify.otp');
+    Route::post('/verify-otp', [AuthController::class, 'verifyOtp']);
+    Route::get('/resend-otp', [AuthController::class, 'resendOtp'])->name('resend.otp');
+    
+    // Organizer Registration
+    Route::get('/organizer-signup', [OrganizerAuthController::class, 'showRegister']);
+    Route::post('/organizer-register', [OrganizerAuthController::class, 'register'])->name('organizerSignup');
+
+    Route::get('/organizer-verify-otp', [OrganizerAuthController::class, 'showOtp'])->name('organizer.verify.otp');
+    Route::post('/organizer-verify-otp', [OrganizerAuthController::class, 'verifyOtp']);
+    Route::get('/organizer-resend-otp', [OrganizerAuthController::class, 'resendOtp'])->name('organizer.resend.otp');
+    
+    Route::get('/vendor-signup', [VendorAuthController::class, 'showRegister']);
+    Route::post('/vendor-register', [VendorAuthController::class, 'register'])->name('vendorSignup');
+
+    Route::get('/vendor-verify-otp', [VendorAuthController::class, 'showOtp'])->name('vendor.verify.otp');
+    Route::post('/vendor-verify-otp', [VendorAuthController::class, 'verifyOtp']);
+    Route::get('/vendor-resend-otp', [VendorAuthController::class, 'resendOtp'])->name('vendor.resend.otp');
+
+
     // Client Registration
-    Route::get('/signup', [siteController::class, 'signup'])->name('signup');
-    Route::post('/signup', [AuthController::class, 'signup'])->name('clientSignup');
+    // Route::get('/signup', [siteController::class, 'signup'])->name('signup');
+    // Route::post('/signup', [AuthController::class, 'signup'])->name('clientSignup');
 
     Route::post('/check-availability', [siteController::class, 'checkAvailability'])->name('checkAvailability');
 });
@@ -64,6 +110,7 @@ Route::middleware([RedirectIfAuthenticated::class])->group(function () {
         Route::get('/organizers-list', [AdminController::class, 'organizersList'])->name('organizersList');
         Route::get('/vendors-list', [AdminController::class, 'vendorsList'])->name('vendorsList');
         Route::get('/transactions', [AdminController::class, 'transactions'])->name('admin.transactions');
+        Route::get('/all-jobs', [AdminController::class, 'all_jobs'])->name('admin.jobs');
 
         Route::get('/event-types/{action?}/{href?}', [AdminController::class, 'event_types'])->name('event_types');
         Route::post('/event-types/add', [AdminController::class, 'addEventType'])->name('addEventType');
@@ -84,7 +131,38 @@ Route::middleware([RedirectIfAuthenticated::class])->group(function () {
 // });
 
 // Routes Accessible Only to Logged-in Users (Protected Routes)
+Route::get('/organizer/connect', [StripeConnectController::class, 'connect'])
+    ->name('organizer.connect');
+
+Route::get('/organizer/connect/callback', [StripeConnectController::class, 'callback'])
+    ->name('organizer.connect.callback');
+
+
+        // Vendor Stripe onboarding
+        Route::get('/vendor/connect', [StripeConnectController::class, 'vendorConnect'])->name('vendor.connect');
+        Route::get('/vendor/callback', [StripeConnectController::class, 'vendorCallback'])->name('vendor.connect.callback');
 Route::middleware([AuthenticateUser::class])->group(function () {
+
+    // Organizer Payment
+    Route::get('/pay/assignment/{id}', [PaymentController::class, 'payAssignment'])->name('assignment.pay');
+    Route::get('/payment/success', [PaymentController::class, 'success'])->name('payment.success');
+    Route::get('/payment/cancel', [PaymentController::class, 'cancel'])->name('payment.cancel');
+
+    // Vendor Payments
+    Route::get('/vendor-assignment/{id}/pay', [VendorPaymentController::class, 'payVendorAssignment'])->name('vendor.assignment.pay');
+    Route::get('/vendor/payment/success', [VendorPaymentController::class, 'success'])->name('vendor.payment.success');
+    Route::get('/vendor/payment/cancel', [VendorPaymentController::class, 'cancel'])->name('vendor.payment.cancel');
+
+
+    // Stripe webhook
+    Route::post('/stripe/webhook', [PaymentController::class, 'webhook'])->name('stripe.webhook');
+
+    Route::post('/client/review/submit', [ClientController::class, 'submitReview'])
+    ->name('client.submit.review');
+    Route::post('/vendor/review/submit', [ClientController::class, 'submitVendorReview'])
+    ->name('client.vendor.submit.review');
+
+
 
     // Chat Routes
     Route::get('/chat', [MessageController::class, 'index'])->name('chat.index');
@@ -137,6 +215,12 @@ Route::middleware([AuthenticateUser::class])->group(function () {
         Route::get('/my-events/{event_href?}', [clientController::class, 'my_events']);
         Route::post('/my-events/update/{event_href}', [clientController::class, 'update_event'])->name('event.update');
 
+        Route::get('/my-cards/{eventId?}', [CardController::class, 'my_cards'])->name('my.cards');
+        Route::post('/cards/store', [CardController::class, 'store'])->name('cards.store');
+        Route::get('/cards/{card}', [CardController::class, 'show'])->name('cards.show');
+        Route::post('/cards/share', [CardController::class, 'share'])->name('client.cards.share');
+
+
         Route::get('/my-organizers', [clientController::class, 'my_organizers'])->name('my.organizers');
         Route::post('/assign-organizer', [ClientController::class, 'assignOrganizer'])->name('client.assign.organizer');
 
@@ -158,12 +242,22 @@ Route::middleware([AuthenticateUser::class])->group(function () {
         Route::get('/payments', [clientController::class, 'payments']);
         Route::get('/budget-tracking', [clientController::class, 'budget_tracking']);
 
+        Route::get('/my-jobs/{action?}/{job?}', [JobController::class, 'index']);
+        // Route::resource('job-detail/manage', [JobController::class,'manage']);
+        Route::post('/my-jobs/store', [JobController::class, 'store'])->name('jobs.store');
+
+        
+
+
         // Delete Record Route
         Route::post('/delete-record', [DatabaseController::class, 'deleteRecord'])->name('delete.record');
     });
     
     // Routes Accessible Only to Organizers (login_type = 3)
     Route::middleware([VerifyOrganizer::class])->group(function () {
+        // Payment Routes
+        
+
         Route::get('/organizer-dashboard', [organizerController::class, 'index'])->name('oranizer-dashboard');
         Route::get('/my-bookings', [organizerController::class, 'my_bookings']);
         Route::get('/booking-requests', [organizerController::class, 'booking_requests']);
@@ -175,11 +269,27 @@ Route::middleware([AuthenticateUser::class])->group(function () {
 
         Route::get('/profile', [clientController::class, 'profile']);
 
+        Route::get('/my-payments/{type}', [organizerController::class, 'payments'])->name('organizer.payments');
+        
+        Route::get('/portfolio/{action?}/{id?}', [OrganizerPortfolioController::class, 'index'])->name('organizer.portfolio.index');
+        Route::post('/portfolio/store', [OrganizerPortfolioController::class, 'store'])->name('organizer.portfolio.store');
+        Route::post('/portfolio/{portfolio}/update', [OrganizerPortfolioController::class, 'update'])->name('organizer.portfolio.update');
+        Route::delete('/portfolio/{portfolio}/delete', [OrganizerPortfolioController::class, 'destroy'])->name('organizer.portfolio.delete');
+
+        Route::get('/team/{action?}/{id?}', [OrganizerTeamController::class, 'index'])->name('organizer.team.index');
+        Route::post('/team/store', [OrganizerTeamController::class, 'store'])->name('organizer.team.store');
+        Route::post('/team/update/{id}', [OrganizerTeamController::class, 'update'])->name('organizer.team.update');
+        Route::delete('/team/delete/{id}', [OrganizerTeamController::class, 'destroy'])->name('organizer.team.delete');
+
+         // Delete Record Route
+
         Route::post('/organizer-delete-record', [DatabaseController::class, 'deleteRecord'])->name('organizer.delete.record');
     });
     
     // Routes Accessible Only to Vendor (login_type = 4)
     Route::middleware([VerifyVendor::class])->group(function () {
+
+        
         Route::get('/vendor-dashboard', [VendorController::class, 'index'])->name('vendor-dashboard');
         Route::get('/my-services/{action?}/{href?}', [VendorController::class, 'my_services'])->name('vendor.my_services');
         Route::post('/my-services/store', [VendorController::class, 'store_service'])->name('vendor.storeService');
@@ -189,6 +299,11 @@ Route::middleware([AuthenticateUser::class])->group(function () {
         Route::post('/vendor/request-action', [VendorController::class, 'requestAction'])->name('vendor.request-action');
 
         Route::get('/service-bookings', [VendorController::class, 'my_bookings']);
+        Route::get('/vendor/profile', [clientController::class, 'profile']);
+
+        Route::get('/vendor/payments', [VendorController::class, 'payments'])->name('vendor.payments');
+
+         // Delete Record Route
 
         Route::post('/vendor-delete-record', [DatabaseController::class, 'deleteRecord'])->name('vendor.delete.record');
 

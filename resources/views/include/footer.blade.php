@@ -48,6 +48,7 @@
                                 <li><a href="/organizers">Organizers</a></li>
                                 <li><a href="/#gallery-view-section">Our Gallery</a></li>
                                 <li><a href="/events">Events</a></li>
+                                <li><a href="/listed-jobs">Jobs</a></li>
                                 <li><a href="/about-us">About Us</a></li>
                             </ul>
                         </div>

@@ -1,5 +1,7 @@
 <?php
 use App\Models\Log;
+use App\Models\Notification;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Request;
@@ -141,4 +143,20 @@ function sendEmail($recipientEmail, $subject, $htmlContent) {
         // Log::error('Email sending failed: ' . $e->getMessage());
         return false; // Email sending failed
     }
+}
+
+function pushNotification($user_id, $title, $message = null, $link = null)
+{
+    // Prevent notifications for admin
+    $user = User::find($user_id);
+    if ($user && $user->login_type == 1) { // 1 = admin?
+        return false;
+    }
+
+    return Notification::create([
+        'user_id' => $user_id,
+        'title'   => $title,
+        'message' => $message,
+        'link'    => $link,
+    ]);
 }

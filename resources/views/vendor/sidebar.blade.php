@@ -21,6 +21,32 @@
             </div>
             <ul class="main-menu">
 
+                @if(Auth::check() && !Auth::user()->stripe_onboarded)
+                    <li class="slide">
+                        <a href="{{ route('vendor.connect') }}" 
+                        class="side-menu__item"
+                        style="
+                                background-color:#ff4d4d !important;
+                                color:#fff !important;
+                                border-radius:6px;
+                                font-weight:bold;
+                                box-shadow:0 0 10px #ff4d4d, 0 0 20px #ff1a1a, 0 0 30px #ff0000;
+                                animation:glowPulse 1.5s infinite ease-in-out;
+                        ">
+                            <i class="bi bi-credit-card side-menu__icon"></i>
+                            <span class="side-menu__label">Link Bank Account</span>
+                        </a>
+                    </li>
+
+                    <style>
+                    @keyframes glowPulse {
+                        0%   { box-shadow: 0 0 10px #ff4d4d; }
+                        50%  { box-shadow: 0 0 20px #ff1a1a; }
+                        100% { box-shadow: 0 0 10px #ff4d4d; }
+                    }
+                    </style>
+                @endif
+
                 <li class="slide">
                     <a href="/" class="side-menu__item">
                         <i class="bi bi-globe2 side-menu__icon"></i>
@@ -58,6 +84,12 @@
                     <a href="/chat" class="side-menu__item">
                         <i class="bi bi-chat-dots side-menu__icon"></i>
                         <span class="side-menu__label">Messages</span>
+                    </a>
+                </li>
+                <li class="slide">
+                    <a href="/vendor/payments" class="side-menu__item">
+                        <i class="bi bi-chat-dots side-menu__icon"></i>
+                        <span class="side-menu__label">Payments</span>
                     </a>
                 </li>
 

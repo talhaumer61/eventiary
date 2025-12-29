@@ -2,10 +2,10 @@
 
     <!-- Start::main-sidebar-header -->
     <div class="main-sidebar-header">
-        <a href="index.html" class="header-logo">
-            <img src="images/logo-img.png" alt="logo" class="desktop-logo">
+        <a href="/" class="header-logo">
+            <img src="{{asset('images/logo-img.png')}}" alt="logo" class="desktop-logo">
             <img src="images/favicon.png" alt="logo" class="toggle-dark">
-            <img src="images/logo-img.png" alt="logo" class="desktop-dark">
+            <img src="{{asset('images/logo-img.png')}}" alt="logo" class="desktop-dark">
             <img src="images/favicon.png" alt="logo" class="toggle-logo">
         </a>
     </div>
@@ -20,6 +20,33 @@
                 <svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24"> <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path> </svg>
             </div>
             <ul class="main-menu">
+
+                @if(Auth::check() && !Auth::user()->stripe_onboarded)
+                    <li class="slide">
+                        <a href="/vendor/connect" 
+                        class="side-menu__item"
+                        style="
+                                background-color:#ff4d4d !important;
+                                color:#fff !important;
+                                border-radius:6px;
+                                font-weight:bold;
+                                box-shadow:0 0 10px #ff4d4d, 0 0 20px #ff1a1a, 0 0 30px #ff0000;
+                                animation:glowPulse 1.5s infinite ease-in-out;
+                        ">
+                            <i class="bi bi-credit-card side-menu__icon"></i>
+                            <span class="side-menu__label">Link Bank Account</span>
+                        </a>
+                    </li>
+
+                    <style>
+                    @keyframes glowPulse {
+                        0%   { box-shadow: 0 0 10px #ff4d4d; }
+                        50%  { box-shadow: 0 0 20px #ff1a1a; }
+                        100% { box-shadow: 0 0 10px #ff4d4d; }
+                    }
+                    </style>
+                @endif
+
 
                 <li class="slide">
                     <a href="/" class="side-menu__item">
@@ -40,7 +67,7 @@
                     </a>
                 </li>
                 <li class="slide">
-                    <a href="#" class="side-menu__item">
+                    <a href="/team" class="side-menu__item">
                         <i class="bi bi-people-fill side-menu__icon"></i>
                         <span class="side-menu__label">Team</span>
                     </a>
@@ -73,41 +100,23 @@
                     </a>
                 </li>
                 <li class="slide">
-                    <a href="#" class="side-menu__item">
-                        <i class="bi bi-cash side-menu__icon"></i>
-                        <span class="side-menu__label">Payments</span>
-                    </a>
-                </li>
-                <li class="slide">
-                    <a href="#" class="side-menu__item">
-                        <i class="bi bi-credit-card side-menu__icon"></i>
-                        <span class="side-menu__label">Budget Tracking</span>
-                    </a>
-                </li>
-                <li class="slide">
-                    <a href="#" class="side-menu__item">
-                        <i class="bi bi-diagram-3 side-menu__icon"></i>
-                        <span class="side-menu__label">Jobs</span>
+                    <a href="/portfolio" class="side-menu__item">
+                        <i class="bi bi-chat-dots side-menu__icon"></i>
+                        <span class="side-menu__label">Portfolio</span>
                     </a>
                 </li>
                 <li class="slide has-sub">
                     <a href="javascript:void(0);" class="side-menu__item">
                         <i class="bi bi-ticket-detailed side-menu__icon"></i>
-                        <span class="side-menu__label">Tickets</span>
+                        <span class="side-menu__label">Payments</span>
                         <i class="fe fe-chevron-right side-menu__angle"></i>
                     </a>
                     <ul class="slide-menu child1" style="position: relative; left: 0px; top: 0px; margin: 0px; transform: translate3d(128px, 270px, 0px); display: none; box-sizing: border-box;" data-popper-placement="bottom">
-                        <li class="slide side-menu__label1">
-                            <a href="javascript:void(0)">Error</a>
+                        <li class="slide">
+                            <a href="/my-payments/received" class="side-menu__item">Received</a>
                         </li>
                         <li class="slide">
-                            <a href="401-error.html" class="side-menu__item">Purchased Tickets</a>
-                        </li>
-                        <li class="slide">
-                            <a href="404-error.html" class="side-menu__item">Create Event Ticket</a>
-                        </li>
-                        <li class="slide">
-                            <a href="500-error.html" class="side-menu__item">Sold Tickets</a>
+                            <a href="/my-payments/sent" class="side-menu__item">Sent</a>
                         </li>
                     </ul>
                 </li>

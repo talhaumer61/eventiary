@@ -2140,3 +2140,8 @@ article.post blockquote p{
 .gallery-img{
     height: 300px;
 }
+
+/* Remove the dark overlay that blocks modals */
+body.modal-open::before {
+    content: none !important;
+}

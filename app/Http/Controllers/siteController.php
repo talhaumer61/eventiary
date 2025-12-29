@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\OrganizerPortfolio;
+use App\Models\OrganizerTeamMember;
+use App\Models\Review;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,22 +20,22 @@ class siteController extends Controller
         // Email Logic
         // $email = $request->input('email');
         // $name = $request->input('name');
-        $email = 'bagartiyt@gmail.com';
-        $name = 'Sania Muhammad';
+        // $email = 'bagartiyt@gmail.com';
+        // $name = 'Sania Muhammad';
         
-        $subject = "Welcome to Eventiary!";
-        $content = "<h1>Hi, {$name}!</h1><p>Thank you for registering. We're happy to have you.</p>";
+        // $subject = "Welcome to Eventiary!";
+        // $content = "<h1>Hi, {$name}!</h1><p>Thank you for registering. We're happy to have you.</p>";
 
-        // Call the helper function
-        $wasSent = sendEmail($email, $subject, $content);
+        // // Call the helper function
+        // $wasSent = sendEmail($email, $subject, $content);
 
-        if ($wasSent) {
-            // Email sent successfully
-            return view('home');
-        } else {
-            // Handle email failure
-            return redirect()->back()->with('error', 'Registration complete, but we could not send a welcome email.');
-        }
+        // if ($wasSent) {
+        //     // Email sent successfully
+        //     return view('home');
+        // } else {
+        //     // Handle email failure
+        //     return redirect()->back()->with('error', 'Registration complete, but we could not send a welcome email.');
+        // }
         return view('home');
     }
     public function about_us(){
@@ -61,6 +64,42 @@ class siteController extends Controller
 
         return view('organizers', compact('organizers'));
     }
+    public function organizerProfile($id)
+    {
+        $organizer = User::where('id', $id)
+                        ->where('login_type', 3)
+                        ->firstOrFail();
+
+        // Portfolio Items
+        $portfolios = OrganizerPortfolio::where('organizer_id', $id)
+                        ->orderBy('id', 'DESC')
+                        ->get();
+
+        // Team Members
+        $team = OrganizerTeamMember::where('organizer_id', $id)
+                        ->orderBy('id', 'DESC')
+                        ->get();
+
+        // ⭐ All Reviews
+        $reviews = Review::where('to', $id)
+                    ->with('reviewer') // load reviewer name/photo
+                    ->orderBy('id', 'DESC')
+                    ->get();
+
+        // ⭐ Average Rating
+        $avgRating = Review::where('to', $id)->avg('rating');
+        $avgRating = $avgRating ? number_format($avgRating, 1) : 0;
+
+        return view('organizer_profile', compact(
+            'organizer',
+            'portfolios',
+            'team',
+            'reviews',
+            'avgRating'
+        ));
+    }
+
+
 
     public function vendors($action = null, $id = null)
     {
@@ -80,8 +119,6 @@ class siteController extends Controller
 
         return view('vendors', compact('vendors', 'action', 'id', 'selectedVendor', 'vendorServices'));
     }
-
-
 
     // Events
     public function events($href = null)
@@ -283,8 +320,8 @@ class siteController extends Controller
         $dbUser->name = $request->name;
         $dbUser->username = $request->username;
         $dbUser->phone = $request->phone;
-        $dbUser->id_modify = $user->id;
-        $dbUser->date_modify = now();
+        // $dbUser->id_modify = $user->id;
+        // $dbUser->date_modify = now();
 
         $dbUser->save();
 

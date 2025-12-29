@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\EventJob;
 use App\Models\EventType;
+use App\Models\Payment;
+use App\Models\Review;
 use App\Models\User;
 use App\Models\VendorType;
 use Illuminate\Support\Facades\DB;
@@ -14,9 +17,38 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
-    public function index(){
-        return view('admin.dashboard');
+    public function index()
+    {
+        // Users
+        $totalUsers      = User::whereNull('deleted_at')->count();
+        $totalOrganizers = User::where('login_type', 3)->count();
+        $totalVendors    = User::where('login_type', 4)->count();
+        $totalClients    = User::where('login_type', 2)->count();
+
+        // Jobs
+        $totalJobs       = EventJob::count();
+
+        // Events
+        $totalEvents     = Event::count();
+
+        // Payments
+        $totalPayments   = Payment::count();
+
+        // Reviews
+        $totalReviews    = Review::count();
+
+        return view('admin.dashboard', compact(
+            'totalUsers',
+            'totalOrganizers',
+            'totalVendors',
+            'totalClients',
+            'totalJobs',
+            'totalEvents',
+            'totalPayments',
+            'totalReviews'
+        ));
     }
+
     public function eventsList()
     {
         $events = Event::with(['user', 'eventType'])
@@ -38,9 +70,44 @@ class AdminController extends Controller
         $vendors = User::where('login_type', 4)->get(); // 4 = Vendor
         return view('admin.vendors_list', compact('vendors'));
     }
-    public function transactions(){
-        return view('admin.transactions');
+    public function transactions()
+    {
+        $payments = Payment::select(
+                'payments.*',
+                'u_from.name as from_name',
+                'u_from.email as from_email',
+                'u_from.photo as from_photo',
+
+                'u_to.name as to_name',
+                'u_to.email as to_email',
+                'u_to.photo as to_photo'
+            )
+            ->leftJoin('users as u_from', 'u_from.id', '=', 'payments.id_from')
+            ->leftJoin('users as u_to', 'u_to.id', '=', 'payments.id_to')
+            ->orderBy('payments.id', 'DESC')
+            ->get();
+
+        return view('admin.transactions', compact('payments'));
     }
+
+    public function all_jobs()
+    {
+        $jobs = EventJob::select(
+                    'event_jobs.*',
+                    'users.name as user_name',
+                    'users.email as user_email',
+                    'users.photo as user_photo',
+                    'events.event_name'
+                )
+                ->leftJoin('users', 'users.id', '=', 'event_jobs.user_id')
+                ->leftJoin('events', 'events.event_id', '=', 'event_jobs.event_id')
+                ->orderBy('event_jobs.id', 'DESC')
+                ->get();
+
+        return view('admin.jobs', compact('jobs'));
+    }
+
+
 
     public function event_types($action="list",$href=null){
         if($action == "edit" && isset($href)){

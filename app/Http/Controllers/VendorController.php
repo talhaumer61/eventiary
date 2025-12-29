@@ -10,12 +10,49 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class VendorController extends Controller
 {
-    public function index(){
-        return view('vendor.dashboard');
+    public function index()
+    {
+        $vendorId = auth()->id();
+        // pushNotification(
+        //     $vendorId,
+        //     "Welcome",
+        //     "Welcome to your Vendor Dashboard!"
+        // );
+
+
+        // Total services created by this vendor
+        $totalServices = \App\Models\VendorService::where('id_vendor', $vendorId)
+                            ->where('is_deleted', 0)
+                            ->count();
+
+        // Total assignments
+        $assignments = \App\Models\EventVendorAssignment::where('vendor_id', $vendorId)
+                            ->where('is_deleted', 0)
+                            ->count();
+
+        // Reviews Received
+        $reviews = \App\Models\Review::where('to', $vendorId)->count();
+
+        // Average Rating
+        $avgRating = \App\Models\Review::where('to', $vendorId)->avg('rating');
+        $avgRating = $avgRating ? number_format($avgRating, 1) : 0;
+
+        // Payments Received (optional)
+        $totalPayments = \App\Models\Payment::where('id_to', $vendorId)->sum('amount_transferred');
+
+        return view('vendor.dashboard', compact(
+            'totalServices',
+            'assignments',
+            'reviews',
+            'avgRating',
+            'totalPayments'
+        ));
     }
+
     public function my_services($action = 'list', $href = null)
     {
         $vendorId = Auth::user()->id;
@@ -174,5 +211,30 @@ class VendorController extends Controller
     
     public function vendor_signup(){
         return view('vendor.signup');
+    }
+
+    public function profile(){
+        return view('vendor.profile');
+    }
+
+    public function payments()
+    {
+        $userId = auth()->id();
+
+       
+            // Payments RECEIVED by organizer
+            $payments = DB::table('payments')
+                ->where('id_to', $userId)
+                ->leftJoin('users', 'payments.id_from', '=', 'users.id')
+                ->select(
+                    'payments.*',
+                    'users.name as receiver_name',
+                    'users.email as receiver_email',
+                    'users.photo as receiver_photo'
+                )
+                ->orderBy('payments.id', 'desc')
+                ->get();
+
+        return view('vendor.payments', compact('payments'));
     }
 }

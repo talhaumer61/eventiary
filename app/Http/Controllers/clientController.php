@@ -9,6 +9,7 @@ use Illuminate\Support\Str;
 use App\Models\Event;
 use App\Models\EventOrganizerAssignment;
 use App\Models\EventVendorAssignment;
+use App\Models\Review;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -324,7 +325,7 @@ class clientController extends Controller
 
     public function my_vendors()
     {
-        $clientId = Auth::id();
+        $clientId = Auth::user()->id;
 
         // Events created by client
         $events = Event::where('id_added', $clientId)->get();
@@ -385,9 +386,28 @@ class clientController extends Controller
     public function user_messages(){
         return view('client.user_messages');
     }
-    public function payments(){
-        return view('client.payments');
+    public function payments()
+    {
+        $userId = Auth::id();
+
+        $payments = DB::table('payments')
+            ->leftJoin('users as receiver', 'receiver.id', '=', 'payments.id_to')
+            ->leftJoin('users as payer', 'payer.id', '=', 'payments.id_from')
+            ->select(
+                'payments.*',
+                'receiver.name as receiver_name',
+                'receiver.email as receiver_email',
+                'receiver.photo as receiver_photo',
+                'payer.name as payer_name',
+                'payer.email as payer_email'
+            )
+            ->where('payments.id_from', $userId)
+            ->orderBy('payments.paid_at', 'desc')
+            ->paginate(10);
+
+        return view('client.payments', compact('payments'));
     }
+
     public function budget_tracking(){
         return view('client.budget_tracking');
     }
@@ -397,6 +417,63 @@ class clientController extends Controller
         return view('client.profile', compact('user'));
     }
     
+    public function submitReview(Request $request)
+{
+    $request->validate([
+        'assignment_id' => 'required|exists:event_organizer_assignments,id',
+        'from' => 'required|exists:users,id',
+        'to' => 'required|exists:users,id',
+        'rating' => 'required|integer|min:1|max:5',
+        'review' => 'required|string'
+    ]);
+
+    // Insert review
+    Review::create([
+        'assignment_id' => $request->assignment_id,
+        'from' => $request->from,
+        'to' => $request->to,
+        'rating' => $request->rating,
+        'review' => $request->review,
+    ]);
+
+    // Update assignment status → 4 = Completed
+    DB::table('event_organizer_assignments')
+        ->where('id', $request->assignment_id)
+        ->update(['status' => 4]);
+
+    sessionMsg('success', 'Review submitted successfully!', 'success');
+    return back();
+}
+
+public function submitVendorReview(Request $request)
+{
+    $request->validate([
+        'assignment_id' => 'required|exists:event_vendor_assignments,id',
+        'from' => 'required|exists:users,id',
+        'to'   => 'required|exists:users,id',
+        'rating' => 'required|integer|min:1|max:5',
+        'review' => 'required|string'
+    ]);
+
+    // Insert review
+    Review::create([
+        'assignment_id' => $request->assignment_id,
+        'from' => $request->from,
+        'to'   => $request->to,
+        'rating' => $request->rating,
+        'review' => $request->review,
+    ]);
+
+    // Mark vendor assignment as completed (status = 4)
+    DB::table('event_vendor_assignments')
+        ->where('id', $request->assignment_id)
+        ->update(['status' => 4]);
+
+    sessionMsg('success', 'Vendor Review submitted successfully!', 'success');
+    return back();
+}
+
+
 
 
     

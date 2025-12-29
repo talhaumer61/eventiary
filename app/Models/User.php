@@ -22,6 +22,8 @@ class User extends Authenticatable
         'id_role',
         'login_type',
         'status',
+        'stripe_account_id',
+        'stripe_onboarded',
     ];
 
     protected $hidden = [
@@ -39,6 +41,12 @@ class User extends Authenticatable
     public function services()
     {
         return $this->hasMany(VendorService::class, 'id_vendor');
+    }
+
+    // Bcrypt is automatically applied using setPasswordAttribute
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = bcrypt($value);
     }
 
 }

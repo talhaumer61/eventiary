@@ -70,24 +70,30 @@
                     </a>
                 </li>
                 <li class="slide">
+                    <a href="/my-cards" class="side-menu__item">
+                        <i class="bi bi-layout-text-window side-menu__icon"></i>
+                        <span class="side-menu__label">My Cards</span>
+                    </a>
+                </li>
+                <li class="slide">
                     <a href="/payments" class="side-menu__item">
                         <i class="bi bi-cash side-menu__icon"></i>
                         <span class="side-menu__label">Payments</span>
                     </a>
                 </li>
-                <li class="slide">
+                {{-- <li class="slide">
                     <a href="/budget-tracking" class="side-menu__item">
                         <i class="bi bi-credit-card side-menu__icon"></i>
                         <span class="side-menu__label">Budget Tracking</span>
                     </a>
-                </li>
+                </li> --}}
                 <li class="slide">
-                    <a href="#" class="side-menu__item">
+                    <a href="my-jobs" class="side-menu__item">
                         <i class="bi bi-diagram-3 side-menu__icon"></i>
                         <span class="side-menu__label">Jobs</span>
                     </a>
                 </li>
-                <li class="slide has-sub">
+                {{-- <li class="slide has-sub">
                     <a href="javascript:void(0);" class="side-menu__item">
                         <i class="bi bi-ticket-detailed side-menu__icon"></i>
                         <span class="side-menu__label">Tickets</span>
@@ -107,7 +113,7 @@
                             <a href="500-error.html" class="side-menu__item">Sold Tickets</a>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
 
             </ul>
             <div class="slide-right" id="slide-right"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24"> <path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"></path> </svg></div>

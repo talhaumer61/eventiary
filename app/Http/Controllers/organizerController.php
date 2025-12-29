@@ -14,7 +14,14 @@ use Illuminate\Support\Facades\Storage;
 class organizerController extends Controller
 {
     public function index(){
-        return view('organizer.dashboard');
+        $organizerId = auth()->id();
+
+        $assignments = \App\Models\EventOrganizerAssignment::where('organizer_id', $organizerId)->count();
+        $payments = \App\Models\Payment::where('id_to', $organizerId)->count();
+        $portfolio = \App\Models\OrganizerPortfolio::where('organizer_id', $organizerId)->count();
+        $team = \App\Models\OrganizerTeamMember::where('organizer_id', $organizerId)->count();
+
+        return view('organizer.dashboard', compact('assignments', 'payments', 'portfolio', 'team'));
     }
     public function my_bookings(){
         $organizerId = Auth::id(); // get currently logged-in organizer
@@ -47,13 +54,21 @@ class organizerController extends Controller
         ]);
 
         $assignment = EventOrganizerAssignment::find($request->assignment_id);
+
         $assignment->status = $request->action === 'accept' ? 1 : 2;
-        $assignment->id_modify = Auth::user()->id;
+        $assignment->id_modify = Auth::id();
         $assignment->date_modify = now();
+
+        // If organizer accepts → set payment pending
+        if ($request->action === 'accept') {
+            $assignment->payment_status = 'pending';
+        }
+
         $assignment->save();
 
         return back()->with('success', 'Request has been ' . $request->action . 'ed.');
     }
+
 
     public function vendors()
     {
@@ -119,5 +134,44 @@ class organizerController extends Controller
     public function profile(){
         return view('organizer.profile');
     }
+
+    public function payments($type = "received")
+    {
+        $userId = auth()->id();
+
+        if ($type == "sent") {
+
+            // Payments SENT by organizer
+            $payments = DB::table('payments')
+                ->where('id_from', $userId)
+                ->leftJoin('users', 'payments.id_to', '=', 'users.id')
+                ->select(
+                    'payments.*',
+                    'users.name as receiver_name',
+                    'users.email as receiver_email',
+                    'users.photo as receiver_photo'
+                )
+                ->orderBy('payments.id', 'desc')
+                ->get();
+
+        } else {
+
+            // Payments RECEIVED by organizer
+            $payments = DB::table('payments')
+                ->where('id_to', $userId)
+                ->leftJoin('users', 'payments.id_from', '=', 'users.id')
+                ->select(
+                    'payments.*',
+                    'users.name as receiver_name',
+                    'users.email as receiver_email',
+                    'users.photo as receiver_photo'
+                )
+                ->orderBy('payments.id', 'desc')
+                ->get();
+        }
+
+        return view('organizer.payments', compact('payments', 'type'));
+    }
+
 
 }

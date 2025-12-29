@@ -1,3 +1,23 @@
+<style>
+.star-rating {
+    display: flex;
+    gap: 8px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.rating-star {
+    color: #ccc;
+    transition: color 0.2s ease;
+}
+
+.rating-star.selected,
+.rating-star:hover,
+.rating-star:hover ~ .rating-star {
+    color: gold;
+}
+</style>
+
 <div class="row">
     <div class="col-xl-12">
         <div class="card custom-card mt-4">
@@ -34,6 +54,8 @@
                                 <th>Service</th>
                                 <th>Date</th>
                                 <th>Status</th>
+                                <th>Payment</th>
+                                <th>Review</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -49,9 +71,39 @@
                                         @if($req->status == 3)
                                             <span class="badge bg-warning">Pending</span>
                                         @elseif($req->status == 1)
-                                            <span class="badge bg-success">Accepted</span>
+                                            <span class="badge bg-secondary">Accepted</span>
                                         @elseif($req->status == 2)
                                             <span class="badge bg-danger">Rejected</span>
+                                        @elseif($req->status == 4)
+                                            <span class="badge bg-success">Completed</span>
+                                        @endif
+                                    </td>
+                                    <td>
+                                        @if($req->status == 1) 
+                                                @if($req->payment_status == 'pending')
+                                                    <a href="{{ route('vendor.assignment.pay', $req->id) }}" 
+                                                    class="btn btn-primary btn-sm ms-1">
+                                                        Pay Advance (20%)
+                                                    </a>
+                                                @elseif($req->payment_status == 'paid')
+                                                    <span class="badge bg-success ms-1">Paid</span>
+                                                @endif
+                                        @else
+                                            <span class="text-muted">N/A</span>
+                                        @endif
+                                    </td>
+                                    <td>
+                                        @if($req->status == 1 && $req->payment_status == 'paid')
+
+                                            <button class="btn btn-warning btn-sm"
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#vendorReviewModal"
+                                                    onclick="setVendorReviewData({{ $req->id }}, {{ $req->vendor_id }})">
+                                                Submit Review
+                                            </button>
+
+                                        @else
+                                            <span class="text-muted">N/A</span>
                                         @endif
                                     </td>
                                     <td>
@@ -156,3 +208,70 @@
     }
   });
 </script>
+
+<!-- Submit Vendor Review Modal -->
+<div class="modal fade" id="vendorReviewModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <form action="{{ route('client.vendor.submit.review') }}" method="POST">
+      @csrf
+
+      <input type="hidden" name="assignment_id" id="vendor_review_assignment_id">
+      <input type="hidden" name="from" value="{{ auth()->id() }}">
+      <input type="hidden" name="to" id="vendor_review_vendor_id">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Submit Review</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+
+          <label class="form-label">Rating</label>
+
+          <div class="star-rating mb-3">
+              <i class="rating-star ri-star-line" data-value="1"></i>
+              <i class="rating-star ri-star-line" data-value="2"></i>
+              <i class="rating-star ri-star-line" data-value="3"></i>
+              <i class="rating-star ri-star-line" data-value="4"></i>
+              <i class="rating-star ri-star-line" data-value="5"></i>
+          </div>
+
+          <input type="hidden" name="rating" id="vendor_rating_value" required>
+
+          <label class="form-label mt-3">Review</label>
+          <textarea name="review" rows="4" class="form-control" required placeholder="Write your review..."></textarea>
+
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-primary" type="submit">Submit Review</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<script>
+function setVendorReviewData(assignmentId, vendorId) {
+    document.getElementById('vendor_review_assignment_id').value = assignmentId;
+    document.getElementById('vendor_review_vendor_id').value = vendorId;
+}
+</script>
+<script>
+document.querySelectorAll("#vendorReviewModal .rating-star").forEach(star => {
+    star.addEventListener("click", function () {
+        let value = this.getAttribute("data-value");
+        document.getElementById("vendor_rating_value").value = value;
+
+        // reset
+        document.querySelectorAll("#vendorReviewModal .rating-star")
+                .forEach(s => s.classList.remove("selected"));
+
+        for (let i = 1; i <= value; i++) {
+            document.querySelector('#vendorReviewModal .rating-star[data-value="'+i+'"]')
+                .classList.add("selected");
+        }
+    });
+});
+</script>
+

@@ -25,45 +25,6 @@
           <div class="header-element mx-lg-0 mx-2">
               <a aria-label="Hide Sidebar" class="sidemenu-toggle header-link animated-arrow hor-toggle horizontal-navtoggle" data-bs-toggle="sidebar" href="javascript:void(0);"><span></span></a>
           </div>
-          <!-- End::header-element -->
-
-          <!-- Start::header-element -->
-          <div class="header-element header-search d-md-block d-none">
-              <!-- Start::header-link -->
-              <input type="text" class="header-search-bar form-control border-0 bg-body" placeholder="Search for Results...">
-              <a href="javascript:void(0);" class="header-search-icon border-0">
-                  <i class="bi bi-search"></i>
-              </a>
-              <!-- End::header-link -->
-          </div>
-          <!-- End::header-element -->
-
-          <!-- Start::header-element --> 
-          {{-- <div class="header-element ms-3 d-lg-block d-none my-auto">
-              <!-- Start::dashboards list -->
-              <div class="dropdown my-auto">
-                  <a href="javascript:void(0);" class="btn bg-body header-dashboards-button text-start d-flex align-items-center justify-content-between" data-bs-toggle="dropdown" aria-expanded="false">
-                  </a> 
-                  <ul class="dropdown-menu dashboard-dropdown" role="menu">
-                      <li><a class="dropdown-item dashboards-dropdown-item" href="index.html">Sales Dashboard</a></li>
-                      <li><a class="dropdown-item dashboards-dropdown-item" href="index-1.html">Analytics Dashboard</a></li>
-                      <li><a class="dropdown-item dashboards-dropdown-item" href="index-2.html">Ecommerce Dashboard</a></li>
-                      <li><a class="dropdown-item dashboards-dropdown-item" href="index-3.html">CRM Dashboard</a></li>
-                      <li><a class="dropdown-item dashboards-dropdown-item" href="index-4.html">HRM Dashboard</a></li>
-                      <li><a class="dropdown-item dashboards-dropdown-item" href="index-5.html">NFT Dashboard</a></li>
-                      <li><a class="dropdown-item dashboards-dropdown-item" href="index-6.html">Crypto Dashboard</a></li>
-                      <li><a class="dropdown-item dashboards-dropdown-item" href="index-7.html">Jobs Dashboard</a></li>
-                      <li><a class="dropdown-item dashboards-dropdown-item" href="index-8.html">Projects Dashboard</a></li>
-                      <li><a class="dropdown-item dashboards-dropdown-item" href="index-9.html">Courses Dashboard</a></li>
-                      <li><a class="dropdown-item dashboards-dropdown-item" href="index-10.html">Stocks Dashboard</a></li>
-                      <li><a class="dropdown-item dashboards-dropdown-item" href="index-11.html">Personal Dashboard</a></li>
-                      <li><a class="dropdown-item dashboards-dropdown-item" href="index-12.html">Customer Dashboard</a></li>
-                  </ul>
-              </div>
-              <!-- End::dashboards list -->
-          </div> --}}
-          <!-- End::header-element -->
-
       </div>
       <!-- End::header-content-left -->
 
@@ -78,98 +39,8 @@
                   <!-- End::header-link-icon -->
               </a>  
           </li>
-          <!-- End::header-element -->
-
-          <!-- Start::header-element -->
-          {{-- <li class="header-element country-selector">
-              <!-- Start::header-link|dropdown-toggle -->
-              <a href="javascript:void(0);" class="header-link dropdown-toggle" data-bs-auto-close="outside" data-bs-toggle="dropdown">
-                  <img src="dashboard/images/flags/us_flag.jpg" alt="img" class="rounded-circle">
-              </a>
-              <!-- End::header-link|dropdown-toggle -->
-              <ul class="main-header-dropdown dropdown-menu dropdown-menu-end" data-popper-placement="none">
-                  <li>
-                      <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);">
-                          <span class="avatar avatar-xs lh-1 me-2">
-                              <img src="dashboard/images/flags/us_flag.jpg" alt="img">
-                          </span>
-                          English
-                      </a>
-                  </li>
-                  <li>
-                      <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);">
-                          <span class="avatar avatar-xs lh-1 me-2">
-                              <img src="dashboard/images/flags/spain_flag.jpg" alt="img" >
-                          </span>
-                          Spanish
-                      </a>
-                  </li>
-                  <li>
-                      <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);">
-                          <span class="avatar avatar-xs lh-1 me-2">
-                              <img src="dashboard/images/flags/french_flag.jpg" alt="img" >
-                          </span>
-                          French
-                      </a>
-                  </li>
-                  <li>
-                      <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);">
-                          <span class="avatar avatar-xs lh-1 me-2">
-                              <img src="dashboard/images/flags/germany_flag.jpg" alt="img" >
-                          </span>
-                          German
-                      </a>
-                  </li>
-                  <li>
-                      <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);">
-                          <span class="avatar avatar-xs lh-1 me-2">
-                              <img src="dashboard/images/flags/italy_flag.jpg" alt="img" >
-                          </span>
-                          Italian
-                      </a>
-                  </li>
-                  <li>
-                      <a class="dropdown-item d-flex align-items-center" href="javascript:void(0);">
-                          <span class="avatar avatar-xs lh-1 me-2">
-                              <img src="dashboard/images/flags/russia_flag.jpg" alt="img" >
-                          </span>
-                          Russian
-                      </a>
-                  </li>
-              </ul>
-          </li> --}}
           
-
-          
-          {{-- <li class="header-element header-theme-mode">
-              <!-- Start::header-link|layout-setting -->
-              <a href="javascript:void(0);" class="header-link layout-setting">
-                  <span class="light-layout">
-                      <!-- Start::header-link-icon -->
-                      <i class="bi bi-moon header-link-icon"></i>
-                      <!-- End::header-link-icon -->
-                  </span>
-                  <span class="dark-layout">
-                      <!-- Start::header-link-icon -->
-                      <i class="bi bi-brightness-high header-link-icon"></i>
-                      <!-- End::header-link-icon -->
-                  </span>
-              </a>
-              <!-- End::header-link|layout-setting -->
-          </li> --}}
-          
-
-          
-          {{-- <li class="header-element cart-dropdown">
-            <a type="button" class="btn btn-primary btn-wave" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-primary"
-                data-bs-placement="top" title="Primary Tooltip">
-                Primary Tooltip
-            </a>
-          </li> --}}
-          
-
-          
-          <li class="header-element notifications-dropdown d-xl-block d-none">
+          {{-- <li class="header-element notifications-dropdown d-xl-block d-none">
               <!-- Start::header-link|dropdown-toggle -->
               <a href="javascript:void(0);" class="header-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" id="messageDropdown" aria-expanded="false">
                   <i class="bi bi-bell header-link-icon"></i>
@@ -290,19 +161,7 @@
                   </div>
               </div>
               <!-- End::main-header-dropdown -->
-          </li>
-          
-
-          
-          {{-- <li class="header-element header-fullscreen">
-              <!-- Start::header-link -->
-              <a onclick="openFullscreen();" href="javascript:void(0);" class="header-link">
-                  <i class="bi bi-fullscreen full-screen-open header-link-icon"></i>
-                  <i class="bi bi-fullscreen-exit full-screen-close header-link-icon d-none"></i>
-              </a>
-              <!-- End::header-link -->
           </li> --}}
-          
 
           
           <li class="header-element">
@@ -321,7 +180,6 @@
               <!-- End::header-link|dropdown-toggle -->
               <ul class="main-header-dropdown dropdown-menu pt-0 overflow-hidden header-profile-dropdown dropdown-menu-end" aria-labelledby="mainHeaderProfile">
                   <li><a class="dropdown-item d-flex align-items-center" href="/admin-profile"><i class="bi bi-person fs-18 me-2 op-7"></i>Profile</a></li>
-                  <li><a class="dropdown-item d-flex align-items-center" href="#"><i class="bi bi-gear fs-16 me-2 op-7"></i>Settings</a></li>
                   <li><a class="dropdown-item d-flex align-items-center" href="/logout"><i class="bi bi-box-arrow-right fs-18 me-2 op-7"></i>Log Out</a></li>
               </ul>
           </li>  

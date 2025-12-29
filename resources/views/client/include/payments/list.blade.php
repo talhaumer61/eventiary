@@ -12,7 +12,7 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-xl-9">
+    <div class="col-xl-12">
         <div class="card custom-card">
             <div class="card-header justify-content-between">
                 <div class="card-title">
@@ -38,345 +38,60 @@
                     <table class="table text-nowrap">
                         <thead>
                             <tr>
-                                <th scope="col">Client</th>
-                                <th scope="col">Invoice ID</th>
-                                <th scope="col">Issued Date</th>
+                                <th scope="col">Receiver</th>
+                                <th scope="col"> Date</th>
                                 <th scope="col">Amount</th>
                                 <th scope="col">Status</th>
-                                <th scope="col">Due Date</th>
-                                <th scope="col">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="invoice-list">
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="me-2 lh-1">
-                                            <span class="avatar avatar-sm avatar-rounded">
-                                                <img src="{{asset('dashboard/images/faces/11.jpg')}}" alt="">
-                                            </span>
+                            @forelse($payments as $payment)
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div class="me-2 lh-1">
+                                                <span class="avatar avatar-sm avatar-rounded">
+                                                    <img src="{{ asset( $payment->receiver_photo ) }}" alt="">
+                                                </span>
+                                            </div>
+                                            <div>
+                                                <p class="mb-0 fw-medium">
+                                                    {{ $payment->receiver_name ?? 'Unknown User' }}
+                                                </p>
+                                                <p class="mb-0 fs-11 text-muted">{{ $payment->receiver_email }}</p>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <p class="mb-0 fw-medium">Toni Stark</p>
-                                            <p class="mb-0 fs-11 text-muted">jsontaylor2416@gmail.com</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="javascript:void(0);" class="fw-medium text-primary">
-                                        #SPK12032901
-                                    </a>
-                                </td>
-                                <td>
-                                    25,Nov 2023
-                                </td>
-                                <td>
-                                    $212.45
-                                </td>
-                                <td>
-                                    <span class="badge bg-success-transparent">Paid</span>
-                                </td>
-                                <td>
-                                    25,Dec 2023
-                                </td>
-                                <td>
-                                    <button class="btn btn-primary-light btn-icon btn-sm"><i class="ri-printer-line"></i></button>
-                                    <button class="btn btn-danger-light btn-icon ms-1 btn-sm invoice-btn"><i class="ri-delete-bin-5-line"></i></button>
-                                </td>
-                            </tr>
-                            <tr class="invoice-list">
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="me-2 lh-1">
-                                            <span class="avatar avatar-sm avatar-rounded">
-                                                <img src="{{asset('dashboard/images/faces/7.jpg')}}" alt="">
-                                            </span>
-                                        </div>
-                                        <div>
-                                            <p class="mb-0 fw-medium">Suzika Stallone</p>
-                                            <p class="mb-0 fs-11 text-muted">suzikastallone3214@gmail.com</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="javascript:void(0);" class="fw-medium text-primary">
-                                        #SPK12032912
-                                    </a>
-                                </td>
-                                <td>
-                                    13,Nov 2023
-                                </td>
-                                <td>
-                                    $512.99
-                                </td>
-                                <td>
-                                    <span class="badge bg-warning-transparent">Pending</span>
-                                </td>
-                                <td>
-                                    13,Dec 2023
-                                </td>
-                                <td>
-                                    <button class="btn btn-primary-light btn-icon btn-sm"><i class="ri-printer-line"></i></button>
-                                    <button class="btn btn-danger-light btn-icon ms-1 btn-sm invoice-btn"><i class="ri-delete-bin-5-line"></i></button>
-                                </td>
-                            </tr>
-                            <tr class="invoice-list">
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="me-2 lh-1">
-                                            <span class="avatar avatar-sm avatar-rounded">
-                                                <img src="{{asset('dashboard/images/faces/15.jpg')}}" alt="">
-                                            </span>
-                                        </div>
-                                        <div>
-                                            <p class="mb-0 fw-medium">Roman Killon</p>
-                                            <p class="mb-0 fs-11 text-muted">romankillon143@gmail.com</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="javascript:void(0);" class="fw-medium text-primary">
-                                        #SPK12032945
-                                    </a>
-                                </td>
-                                <td>
-                                    30,Nov 2023
-                                </td>
-                                <td>
-                                    $2199.49
-                                </td>
-                                <td>
-                                    <span class="badge bg-danger-transparent">Overdue</span>
-                                </td>
-                                <td>
-                                    30,Dec 2023
-                                </td>
-                                <td>
-                                    <button class="btn btn-primary-light btn-icon btn-sm"><i class="ri-printer-line"></i></button>
-                                    <button class="btn btn-danger-light btn-icon ms-1 btn-sm invoice-btn"><i class="ri-delete-bin-5-line"></i></button>
-                                </td>
-                            </tr>
-                            <tr class="invoice-list">
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="me-2 lh-1">
-                                            <span class="avatar avatar-sm avatar-rounded">
-                                                <img src="{{asset('dashboard/images/faces/12.jpg')}}" alt="">
-                                            </span>
-                                        </div>
-                                        <div>
-                                            <p class="mb-0 fw-medium">Charlie Davieson</p>
-                                            <p class="mb-0 fs-11 text-muted">charliedavieson@gmail.com</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="javascript:void(0);" class="fw-medium text-primary">
-                                        #SPK12032922
-                                    </a>
-                                </td>
-                                <td>
-                                    18,Nov 2023
-                                </td>
-                                <td>
-                                    $1569.99
-                                </td>
-                                <td>
-                                    <span class="badge bg-success-transparent">Paid</span>
-                                </td>
-                                <td>
-                                    18,Dec 2023
-                                </td>
-                                <td>
-                                    <button class="btn btn-primary-light btn-icon btn-sm"><i class="ri-printer-line"></i></button>
-                                    <button class="btn btn-danger-light btn-icon ms-1 btn-sm invoice-btn"><i class="ri-delete-bin-5-line"></i></button>
-                                </td>
-                            </tr>
-                            <tr class="invoice-list">
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="me-2 lh-1">
-                                            <span class="avatar avatar-sm avatar-rounded">
-                                                <img src="{{asset('dashboard/images/faces/4.jpg')}}" alt="">
-                                            </span>
-                                        </div>
-                                        <div>
-                                            <p class="mb-0 fw-medium">Selena Deoyl</p>
-                                            <p class="mb-0 fs-11 text-muted">selenadeoyl114@gmail.com</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="javascript:void(0);" class="fw-medium text-primary">
-                                        #SPK12032932
-                                    </a>
-                                </td>
-                                <td>
-                                    18,Nov 2023
-                                </td>
-                                <td>
-                                    $4,873.99
-                                </td>
-                                <td>
-                                    <span class="badge bg-primary-transparent">Due By 1 Day</span>
-                                </td>
-                                <td>
-                                    18,Dec 2023
-                                </td>
-                                <td>
-                                    <button class="btn btn-primary-light btn-icon btn-sm"><i class="ri-printer-line"></i></button>
-                                    <button class="btn btn-danger-light btn-icon ms-1 btn-sm invoice-btn"><i class="ri-delete-bin-5-line"></i></button>
-                                </td>
-                            </tr>
-                            <tr class="invoice-list">
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="me-2 lh-1">
-                                            <span class="avatar avatar-sm avatar-rounded">
-                                                <img src="{{asset('dashboard/images/faces/7.jpg')}}" alt="">
-                                            </span>
-                                        </div>
-                                        <div>
-                                            <p class="mb-0 fw-medium">Kiara Advensh</p>
-                                            <p class="mb-0 fs-11 text-muted">kiaraadvensh87@gmail.com</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="javascript:void(0);" class="fw-medium text-primary">
-                                        #SPK12032978
-                                    </a>
-                                </td>
-                                <td>
-                                    02,Nov 2023
-                                </td>
-                                <td>
-                                    $1923.99
-                                </td>
-                                <td>
-                                    <span class="badge bg-success-transparent">Paid</span>
-                                </td>
-                                <td>
-                                    18,Dec 2023
-                                </td>
-                                <td>
-                                    <button class="btn btn-primary-light btn-icon btn-sm"><i class="ri-printer-line"></i></button>
-                                    <button class="btn btn-danger-light btn-icon ms-1 btn-sm invoice-btn"><i class="ri-delete-bin-5-line"></i></button>
-                                </td>
-                            </tr>
-                            <tr class="invoice-list">
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="me-2 lh-1">
-                                            <span class="avatar avatar-sm avatar-rounded">
-                                                <img src="{{asset('dashboard/images/faces/9.jpg')}}" alt="">
-                                            </span>
-                                        </div>
-                                        <div>
-                                            <p class="mb-0 fw-medium">Joseph Samurai</p>
-                                            <p class="mb-0 fs-11 text-muted">josephsamurai@gmail.com</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="javascript:void(0);" class="fw-medium text-primary">
-                                        #SPK12032919
-                                    </a>
-                                </td>
-                                <td>
-                                    15,Nov 2023
-                                </td>
-                                <td>
-                                    $1,623.99
-                                </td>
-                                <td>
-                                    <span class="badge bg-success-transparent">Paid</span>
-                                </td>
-                                <td>
-                                    15,Dec 2023
-                                </td>
-                                <td>
-                                    <button class="btn btn-primary-light btn-icon btn-sm"><i class="ri-printer-line"></i></button>
-                                    <button class="btn btn-danger-light btn-icon ms-1 btn-sm invoice-btn"><i class="ri-delete-bin-5-line"></i></button>
-                                </td>
-                            </tr>
-                            <tr class="invoice-list">
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="me-2 lh-1">
-                                            <span class="avatar avatar-sm avatar-rounded">
-                                                <img src="{{asset('dashboard/images/faces/13.jpg')}}" alt="">
-                                            </span>
-                                        </div>
-                                        <div>
-                                            <p class="mb-0 fw-medium">Kevin Powell</p>
-                                            <p class="mb-0 fs-11 text-muted">kevinpowell@gmail.com</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="javascript:void(0);" class="fw-medium text-primary">
-                                        #SPK12032931
-                                    </a>
-                                </td>
-                                <td>
-                                    21,Nov 2023
-                                </td>
-                                <td>
-                                    $3,423.99
-                                </td>
-                                <td>
-                                    <span class="badge bg-warning-transparent">Pending</span>
-                                </td>
-                                <td>
-                                    21,Dec 2023
-                                </td>
-                                <td>
-                                    <button class="btn btn-primary-light btn-icon btn-sm"><i class="ri-printer-line"></i></button>
-                                    <button class="btn btn-danger-light btn-icon ms-1 btn-sm invoice-btn"><i class="ri-delete-bin-5-line"></i></button>
-                                </td>
-                            </tr>
-                            <tr class="invoice-list">
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="me-2 lh-1">
-                                            <span class="avatar avatar-sm avatar-rounded">
-                                                <img src="{{asset('dashboard/images/faces/8.jpg')}}" alt="">
-                                            </span>
-                                        </div>
-                                        <div>
-                                            <p class="mb-0 fw-medium">Darla Jung</p>
-                                            <p class="mb-0 fs-11 text-muted">darlajung555@gmail.com</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="javascript:void(0);" class="fw-medium text-primary">
-                                        #SPK12032958
-                                    </a>
-                                </td>
-                                <td>
-                                    15,Oct 2023
-                                </td>
-                                <td>
-                                    $2,982.99
-                                </td>
-                                <td>
-                                    <span class="badge bg-success-transparent">Paid</span>
-                                </td>
-                                <td>
-                                    15,Nov 2023
-                                </td>
-                                <td>
-                                    <button class="btn btn-primary-light btn-icon btn-sm"><i class="ri-printer-line"></i></button>
-                                    <button class="btn btn-danger-light btn-icon ms-1 btn-sm invoice-btn"><i class="ri-delete-bin-5-line"></i></button>
-                                </td>
-                            </tr>
-                        </tbody>
+                                    </td>
+
+                                    <td>
+                                        {{ $payment->paid_at ? date('d M, Y', strtotime($payment->paid_at)) : 'N/A' }}
+                                    </td>
+
+                                    <td>
+                                        Rs {{ number_format($payment->advance_amount, 0) }}
+                                    </td>
+
+                                    <td>
+                                        @if($payment->released_at)
+                                            <span class="badge bg-success-transparent">Paid</span>
+                                        @else
+                                            <span class="badge bg-warning-transparent">Pending</span>
+                                        @endif
+                                    </td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td colspan="7" class="text-center py-4 text-muted">
+                                        No payments found.
+                                    </td>
+                                </tr>
+                            @endforelse
+                            </tbody>
+
                     </table>
                 </div>
             </div>
-            <div class="card-footer border-top-0">
+            {{-- <div class="card-footer border-top-0">
                 <nav aria-label="Page navigation">
                     <ul class="pagination mb-0 float-end">
                         <li class="page-item disabled">
@@ -392,10 +107,10 @@
                         </li>
                     </ul>
                 </nav>
-            </div>
+            </div> --}}
         </div>
     </div>
-    <div class="col-xl-3">
+    {{-- <div class="col-xl-3">
         <div class="card custom-card">
             <div class="card-body">
                 <div class="row gy-3">
@@ -494,5 +209,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 </div>

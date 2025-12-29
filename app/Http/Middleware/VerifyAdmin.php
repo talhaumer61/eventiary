@@ -19,7 +19,7 @@ class VerifyAdmin
         $user = Auth::user();
 
         if (!$user || $user->login_type !== 1) {
-            return redirect('/admin-login')->withErrors(['message' => 'Unauthorized access.']);
+            return redirect('/login')->withErrors(['message' => 'Unauthorized access.']);
         }
 
         return $next($request);

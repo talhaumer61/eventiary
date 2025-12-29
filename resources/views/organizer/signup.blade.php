@@ -51,7 +51,7 @@
                                 </div>
                                 <div class="col-xl-12">
                                     <label for="signup-email" class="form-label text-default">Phone<sup>*</sup></label>
-                                    <input type="text" class="form-control form-control-lg" name="phone" id="signup-phone" placeholder="Phone No">
+                                    <input type="text" class="form-control form-control-lg" name="phone" id="signup-phone" placeholder="Phone No" maxlength="11" pattern="[0-9]{11}" inputmode="numeric">
                                     <small class="text-danger d-none" id="email-error"></small>
                                 </div>
                                 <div class="col-xl-12">
